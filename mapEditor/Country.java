@@ -1,8 +1,11 @@
+import java.util.*;
 public class Country{
-    public int d_id;
-    public int d_armiesPresent;  
-
-    Country(int p_id){
-        this.d_id = p_id;
+    public int d_countryId,d_continentId;
+    public ArrayList <Integer> d_neighborCountries=new ArrayList<>();
+    String d_countryName;
+    Country(int p_countryId,int p_continentId,String p_countryName){
+        this.d_countryId = p_countryId;
+        d_continentId=p_continentId;
+        d_countryName=p_countryName;
     }
 }
