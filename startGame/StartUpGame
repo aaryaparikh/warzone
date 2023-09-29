@@ -2,9 +2,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Start-up Phase:
- * 1. Load the map created in Map editor
- * 2. Show map
+ * Start-up Phase: <br>
+ * 1. Load the map created in Map editor <br>
+ * 2. Show map <br>
  * 3. Add players and assign countries randomly
  */
 public class StartUpGame {
