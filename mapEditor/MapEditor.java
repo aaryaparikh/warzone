@@ -7,8 +7,8 @@ public class MapEditor {
     ArrayList <Country> d_countries=new ArrayList<>();
     int d_continentCount=0,d_countryCount=0;
 
-    public void addContinent(int p_continentId,int p_continentValue,String p_countryName){
-        d_continents.add(new Continent(p_continentId, p_continentValue,p_countryName));
+    public void addContinent(int p_continentId,int p_continentValue){
+        d_continents.add(new Continent(p_continentId, p_continentValue));
         d_continentCount++;
         d_continents.sort((o1,o2)->o1.d_continentId-o2.d_continentId);
     }
@@ -25,8 +25,8 @@ public class MapEditor {
         }
         
     }
-    public void addCountry(int p_countryId,int p_continentId,String p_countryName){
-        d_countries.add(new Country(p_countryId, p_continentId,p_countryName));
+    public void addCountry(int p_countryId,int p_continentId){
+        d_countries.add(new Country(p_countryId, p_continentId));
         d_countries.sort((o1,o2)->o1.d_countryId-o2.d_countryId);
         d_countryCount++;
         
@@ -76,12 +76,12 @@ public class MapEditor {
         System.out.println("Continents");
         for(int l_i=0;l_i<d_continentCount;l_i++)
         {
-            System.out.println(d_continents.get(l_i).d_continentName+" "+d_continents.get(l_i).d_continentId);
+            System.out.println(d_continents.get(l_i).d_continentId+" "+d_continents.get(l_i).d_continentValue);
         }
         System.out.println("Countries");
         for(int l_i=0;l_i<d_countryCount;l_i++)
         {
-            System.out.println(d_countries.get(l_i).d_countryId+" "+d_countries.get(l_i).d_countryName+" "+d_countries.get(l_i).d_continentId);
+            System.out.println(d_countries.get(l_i).d_countryId+" "+d_countries.get(l_i).d_continentId);
         }
         System.out.println("Borders");
         for(int l_i=0;l_i<d_countryCount;l_i++)
@@ -95,12 +95,12 @@ public class MapEditor {
             l_text="[Continents]\n";
             for(int l_i=0;l_i<d_continentCount;l_i++)
             {
-                l_text=l_text+d_continents.get(l_i).d_continentName+" "+d_continents.get(l_i).d_continentId+"\n";
+                l_text=l_text+d_continents.get(l_i).d_continentId+" "+d_continents.get(l_i).d_continentValue+"\n";
             }
             l_text=l_text+"[Countries]\n";
             for(int l_i=0;l_i<d_countryCount;l_i++)
             {
-                l_text=l_text+d_countries.get(l_i).d_countryId+" "+d_countries.get(l_i).d_countryName+" "+d_countries.get(l_i).d_continentId+"\n";
+                l_text=l_text+d_countries.get(l_i).d_countryId+d_countries.get(l_i).d_continentId+"\n";
             }
             l_text=l_text+"[Borders]\n";
             for(int l_i=0;l_i<d_countryCount;l_i++)
@@ -137,7 +137,7 @@ public class MapEditor {
                 
                 if(l_commands[1].equals("-add"))
                 {
-                    map.addContinent(Integer.parseInt(l_commands[2]), Integer.parseInt(l_commands[3]), l_commands[4]);
+                    map.addContinent(Integer.parseInt(l_commands[2]), Integer.parseInt(l_commands[3]));
                 }
                 else if(l_commands[1].equals("-remove")){
                     map.removeContinent(Integer.parseInt(l_commands[2]));
@@ -147,7 +147,7 @@ public class MapEditor {
             {
                 if(l_commands[1].equals("-add"))
                 {
-                    map.addCountry(Integer.parseInt(l_commands[2]), Integer.parseInt(l_commands[3]), l_commands[4]);
+                    map.addCountry(Integer.parseInt(l_commands[2]), Integer.parseInt(l_commands[3]));
                 }
                 else if(l_commands[1].equals("-remove"))
                 {
