@@ -1,3 +1,5 @@
+package mapEditor;
+
 import java.util.*;
 public class Country{
     public int d_countryId;

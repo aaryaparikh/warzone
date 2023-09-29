@@ -1,3 +1,4 @@
+package mapEditor;
 
 public class Continent{
     int d_continentId;
