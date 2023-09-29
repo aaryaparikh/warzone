@@ -1,3 +1,15 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * Class Name: GameEngine
+ * Contains the common methods that will be used in the game start-up and main game play
+ * 1. add players
+ * 2. assign countries randomly to each players
+ * 3. calculate number of armies after each order execution
+ * 
+ */
 class GameEngine {
     private List<Player> d_players;
     private GameMap d_map;
@@ -34,10 +46,14 @@ class GameEngine {
     private int calculateReinforcementArmies(Player d_player, List<Country> ownedCountries) {
         // Implement reinforcement calculation logic based on game rules
         // For simplicity, returning a constant value for demonstration
+    	
+    	// Main Game Loop Team will update this
         return 5;
     }
 
     // Other game phases and methods
+    
+    // Main Game Loop Team will update this (if there are any)
 
     public List<Player> getPlayers() {
         return d_players;
