@@ -2,54 +2,54 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Player {
-    private String name;
-    private List<Country> countries;
-    private List<Order> orders;
-    private int reinforcementPool;
+public class Player {
+    public String d_playerName;
+    public List<Country> d_countries;
+    public List<Order> d_orders;
+    public int d_reinforcementPool;
 
-    public Player(String name) {
-        this.name = name;
-        this.countries = new ArrayList<>();
-        this.orders = new ArrayList<>();
-        this.reinforcementPool = 0;
+    public Player(String d_playerName) {
+        this.d_playerName = d_playerName;
+        this.d_countries = new ArrayList<>();
+        this.d_orders = new ArrayList<>();
+        this.d_reinforcementPool = 0;
     }
 
     public void addCountry(Country country) {
-        countries.add(country);
+        d_countries.add(country);
     }
 
     public void issueOrder(Order order) {
-        orders.add(order);
+        d_orders.add(order);
     }
 
     public Order nextOrder() {
-        if (!orders.isEmpty()) {
-            Order order = orders.get(0);
-            orders.remove(0);
+        if (!d_orders.isEmpty()) {
+            Order order = d_orders.get(0);
+            d_orders.remove(0);
             return order;
         }
         return null;
     }
 
     public List<Country> getCountries() {
-        return countries;
+        return d_countries;
     }
 
     public void assignReinforcements(int numReinforcements) {
-        reinforcementPool += numReinforcements;
+        d_reinforcementPool += numReinforcements;
     }
 
     public void executeDeployOrder(DeployOrder deployOrder) {
         Country country = deployOrder.getCountry();
         int numArmies = deployOrder.getNumArmies();
-        if (countries.contains(country) && reinforcementPool >= numArmies) {
+        if (d_countries.contains(country) && d_reinforcementPool >= numArmies) {
             country.addArmies(numArmies);
-            reinforcementPool -= numArmies;
+            d_reinforcementPool -= numArmies;
         }
     }
     
     public int getReinforcementPool() {
-        return reinforcementPool;
+        return d_reinforcementPool;
     }
 }
