@@ -11,5 +11,5 @@ This is a repository to maintain the Java-based CLI implementation of the well-k
 - **Dev Pandya**        : DP8801        (devpandya651@gmail.com)
 - **Gurleen Pannu**     : GurleenP06    (gurleenpannu2006@gmail.com)
 - **Virag Patel**       : 19IT114       (virag290301@gmail.com)
-- **Yurui Wang**        : wyurui1       (wyurui@gmail.com)
+- **Yurui Wang**        : wyurui1       (wyurui1@gmail.com)
 - **Jnathan Lupague**   : jonloops      (jrlupague@gmail.com)
