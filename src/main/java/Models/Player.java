@@ -1,11 +1,9 @@
-package startPhase;
+package Models;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import gamePhase.DeployOrder;
-import gamePhase.Order;
-import mapEditor.Country;
+import Models.Orders.Order;
 
 public class Player {
     private String name;

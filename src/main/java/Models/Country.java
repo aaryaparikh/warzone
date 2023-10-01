@@ -1,8 +1,6 @@
-package mapEditor;
+package Models;
 import java.util.ArrayList;
 import java.util.List;
-
-import startPhase.Player;
 
 public class Country {
     private String name;
@@ -14,7 +12,7 @@ public class Country {
     public String d_countryIdString;
     public int d_countryId;
     public int d_continentId;
-    public ArrayList <Integer> d_neighborCountries=new ArrayList<>();
+    public ArrayList <Integer> d_neighborCountries=new ArrayList<Integer>();
     String d_countryName;
     Country(int p_countryId,int p_continentId,String p_countryName){
         this.d_countryId = p_countryId;

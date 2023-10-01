@@ -1,12 +1,12 @@
-package controller;
+package Controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import mapEditor.Country;
-import mapEditor.GameMap;
-import startPhase.Player;
+import Models.Country;
+import Models.GameMap;
+import Models.Player;
 
 public class GameEngine {
     private List<Player> players;
@@ -14,7 +14,7 @@ public class GameEngine {
 
     public GameEngine(GameMap map) {
         this.map = map;
-        this.players = new ArrayList<>();
+        this.players = new ArrayList<Player>();
     }
 
     public void addPlayer(Player player) {
@@ -22,7 +22,7 @@ public class GameEngine {
     }
 
     public void assignCountriesRandomly() {
-        List<Country> unassignedCountries = new ArrayList<>(map.getCountries());
+        List<Country> unassignedCountries = new ArrayList<Country>(map.getCountries());
         Collections.shuffle(unassignedCountries);
 
         for (int i = 0; i < unassignedCountries.size(); i++) {

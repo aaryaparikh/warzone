@@ -1,4 +1,4 @@
-package mapEditor;
+package Models;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,9 +16,9 @@ public class GameMap {
     private Map<String, Country> countryNameMap;
 
     public GameMap() {
-        this.countries = new ArrayList<>();
-        this.continents = new ArrayList<>();
-        this.countryNameMap = new HashMap<>(); 
+        this.countries = new ArrayList<Country>();
+        this.continents = new ArrayList<Continent>();
+        this.countryNameMap = new HashMap<String, Country>(); 
     }
 
     public void addContinent(String continentID, int continentValue) {
@@ -119,7 +119,8 @@ public class GameMap {
                     continents.add(currentContinent);
                 } else if (line.startsWith("[Territory]")) {
                     String territoryName = reader.readLine().split("=")[1];
-                    String continentName = reader.readLine().split("=")[1];
+                    @SuppressWarnings("unused")
+					String continentName = reader.readLine().split("=")[1];
                     String[] neighbors = reader.readLine().split("=")[1].split(",");
                     Country country = new Country(territoryName);
                     countries.add(country);

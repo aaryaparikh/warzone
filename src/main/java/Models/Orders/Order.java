@@ -1,6 +1,6 @@
-package gamePhase;
+package Models.Orders;
 
-import controller.GameEngine;
+import Controller.GameEngine;
 
 public abstract class Order {
 

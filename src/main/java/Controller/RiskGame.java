@@ -1,12 +1,10 @@
-package gamePhase;
+package Controller;
 
 import java.util.List;
-import java.util.Map;
 
-import controller.GameEngine;
-import mapEditor.Country;
-import mapEditor.GameMap;
-import startPhase.Player;
+import Models.*;
+import Models.Orders.DeployOrder;
+import Models.Orders.Order;
 
 public class RiskGame {
     public static void main(String[] args) {
@@ -19,7 +17,7 @@ public class RiskGame {
     	 */
     	
     	GameMap map = new GameMap();
-        String filename = "your_map_file.txt";
+        String filename = "risk.map";
         ((GameMap) map).loadMapFromFile(filename);
         
         GameEngine gameEngine = new GameEngine(map);

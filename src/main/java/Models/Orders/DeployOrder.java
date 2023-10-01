@@ -1,8 +1,8 @@
-package gamePhase;
+package Models.Orders;
 
-import controller.GameEngine;
-import mapEditor.Country;
-import startPhase.Player;
+import Controller.GameEngine;
+import Models.Country;
+import Models.Player;
 
 /**
  * Players can place reinforcements to the countries they control.
