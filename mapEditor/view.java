@@ -18,6 +18,9 @@ public class view {
                     case "savemap": 
                         map.write(l_commands[1]); 
                         break;
+                    case "validatemap":
+                        map.validateMap();
+                        break;
                     case "exit":
                         sc.close();
                         return;

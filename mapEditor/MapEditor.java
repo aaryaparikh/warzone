@@ -69,8 +69,13 @@ public class MapEditor {
         for(int l_i=0;l_i<d_countryCount;l_i++){
             System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getNeighborCountries());
         }
+        validateMap();
     }
     public void write(String p_filename){
+        if(!validateMap())
+        {
+            return;
+        }
         try{
             String l_text;
             l_text="[Continents]\n";
@@ -101,5 +106,63 @@ public class MapEditor {
             e.printStackTrace();
         }
     }
-   
+    public boolean validateMap(){
+        HashMap <Integer,Integer> l_counter = new HashMap<>();
+        for(int l_i=0;l_i<d_continentCount;l_i++)
+        {
+            if(!l_counter.containsKey(d_continents.get(l_i).getContinentId()))
+            {
+                l_counter.put(d_continents.get(l_i).getContinentId(), 1);
+            }
+            else{
+                System.out.println("Invalid Map: Duplicate Continents: "+d_continents.get(l_i).getContinentId());
+                return false;
+            }
+            if(d_continents.get(l_i).getContinentValue()<=0)
+            {
+                System.out.println("Invalid Continent Value for Continent ID: "+d_continents.get(l_i).getContinentId());
+                return false;
+            }
+        }
+        l_counter.clear();
+        for(int l_i=0;l_i<d_countryCount;l_i++)
+        {
+            if(!l_counter.containsKey(d_countries.get(l_i).getCountryId()))
+            {
+                l_counter.put(d_countries.get(l_i).getContinentId(), 1);
+            }
+            else{
+                System.out.println("Invalid Map: Duplicate Countries: "+d_countries.get(l_i).getCountryId());
+                return false;
+            }
+            if(d_countries.get(l_i).getNeighborCountries().isEmpty())
+            {
+                System.out.println("Invalid Map: Unreachable Country: No Neighbouring countries assigned to "+d_countries.get(l_i).getCountryId());
+                return false;
+            }
+            int l_neighborCounter=0;
+            for(Integer l_neighbors:d_countries.get(l_i).getNeighborCountries())
+            {
+                if(l_neighbors==d_countries.get(l_i).getCountryId())
+                {
+                    System.out.println("Invalid Map: Country cannot be a neighbor of itself. Country ID: "+l_neighbors);
+                    return false;
+                }
+                for(Integer l_checker:d_countries.get(l_i).getNeighborCountries())
+                {
+                    if(l_checker==l_neighbors)
+                    {
+                        l_neighborCounter++;
+                    }
+                }
+            }
+            if(l_neighborCounter>1)
+            {
+                System.out.println("Invalid Map: Duplicate Neighbors for Country: "+d_countries.get(l_i).getCountryId());
+                return false;
+            }
+        }
+        l_counter.clear();
+        return true;
+    }
 }
