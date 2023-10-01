@@ -1,5 +1,6 @@
-import java.util.List;
-import java.util.Map;
+package startPhase;
+
+import mapEditor.GameMap;
 
 /**
  * Start-up Phase: <br>

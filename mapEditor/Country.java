@@ -1,7 +1,17 @@
 package mapEditor;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.*;
-public class Country{
+import startPhase.Player;
+
+public class Country {
+    private String name;
+    private int armies;
+    private Player owner;
+    private List<Country> neighbors;
+    private Continent continent;
+
+    public String d_countryIdString;
     public int d_countryId;
     public int d_continentId;
     public ArrayList <Integer> d_neighborCountries=new ArrayList<>();
@@ -10,5 +20,45 @@ public class Country{
         this.d_countryId = p_countryId;
         d_continentId=p_continentId;
         d_countryName=p_countryName;
+    }
+
+	public Country(String countryID) {
+		this.d_countryIdString = countryID;
+	}
+
+	public String getName() {
+        return name;
+    }
+
+    public int getArmies() {
+        return armies;
+    }
+
+    public void addArmies(int numArmies) {
+        armies += numArmies;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Player player) {
+        owner = player;
+    }
+
+    public List<Country> getNeighbors() {
+        return neighbors;
+    }
+
+    public void addNeighbor(Country neighbor) {
+        neighbors.add(neighbor);
+    }
+
+    public void removeNeighbor(Country neighbor) {
+        neighbors.remove(neighbor);
+    }
+    
+    public Continent getContinent() {
+        return continent;
     }
 }
