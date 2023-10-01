@@ -1,7 +1,6 @@
 [Continents]
-
-1 5
-2 3
+1 3
+2 5
 
 [Countries]
 1 1

@@ -1,28 +1,35 @@
 import java.util.Scanner;
-
 public class view {
     public static void main(String... args)
     {
-        
-        Scanner sc=new Scanner(System.in);
-        MapEditor map=new MapEditor();
+        Scanner l_sc=new Scanner(System.in);
+        MapEditor l_map=new MapEditor();
         while(true){
             String l_userInput;
-            l_userInput=sc.nextLine();
+            l_userInput=l_sc.nextLine();
             String l_commands[]=l_userInput.split(" ");
             if(l_commands.length == 1 || l_commands.length == 2){
                 switch(l_commands[0]){
                     case "showmap": 
-                        map.showMap(); 
+                        l_map.showMap(); 
                         break;
                     case "savemap": 
-                        map.write(l_commands[1]); 
+                        l_map.write(l_commands[1]); 
                         break;
                     case "validatemap":
-                        map.validateMap();
+                        if(l_map.validateMap())
+                        {
+                            System.out.println("Valid Map");
+                        }
+                        break;
+                    case "loadmap":
+                        l_map=l_map.loadMap(l_commands[1]);
+                        break;
+                    case "editmap":
+                        l_map=l_map.loadMap(l_commands[1]);
                         break;
                     case "exit":
-                        sc.close();
+                        l_sc.close();
                         return;
                 default:
                     System.out.println("Invalid Input");
@@ -36,11 +43,11 @@ public class view {
                             switch(l_commands[l_i])
                             {
                                 case "-add":
-                                    map.addContinent(Integer.parseInt(l_commands[++l_i]), Integer.parseInt(l_commands[++l_i]));
+                                    l_map.addContinent(Integer.parseInt(l_commands[++l_i]), Integer.parseInt(l_commands[++l_i]));
                                     l_i++;
                                     break;
                                 case "-remove":
-                                    map.removeContinent(Integer.parseInt(l_commands[++l_i]));
+                                    l_map.removeContinent(Integer.parseInt(l_commands[++l_i]));
                                     l_i++;
                                     break;
                                 default:
@@ -55,11 +62,11 @@ public class view {
                             switch(l_commands[l_i])
                             {
                                 case "-add":
-                                    map.addCountry(Integer.parseInt(l_commands[++l_i]), Integer.parseInt(l_commands[++l_i])); 
+                                    l_map.addCountry(Integer.parseInt(l_commands[++l_i]), Integer.parseInt(l_commands[++l_i])); 
                                     l_i++;
                                     break;
                                 case "-remove":
-                                    map.removeCountry(Integer.parseInt(l_commands[++l_i]));
+                                    l_map.removeCountry(Integer.parseInt(l_commands[++l_i]));
                                     l_i++;
                                     break;
                                 default:
@@ -73,11 +80,17 @@ public class view {
                             switch(l_commands[l_i])
                             {
                                 case "-add":
-                                    map.addNeighbor(Integer.parseInt(l_commands[++l_i]),Integer.parseInt(l_commands[++l_i]));
+                                    int l_countryId=Integer.parseInt(l_commands[++l_i]);
+                                    int l_neighbor=Integer.parseInt(l_commands[++l_i]);
+                                    l_map.addNeighbor(l_countryId,l_neighbor);
+                                    l_map.addNeighbor(l_neighbor, l_countryId);
                                     l_i++;
                                     break;
                                 case "-remove":
-                                    map.removeNeighbor(Integer.parseInt(l_commands[++l_i]), Integer.parseInt(l_commands[++l_i])); 
+                                    int l_rCountryId=Integer.parseInt(l_commands[++l_i]);
+                                    int l_rNeighbor=Integer.parseInt(l_commands[++l_i]);
+                                    l_map.removeNeighbor(l_rCountryId, l_rNeighbor); 
+                                    l_map.removeNeighbor(l_rNeighbor, l_rCountryId); 
                                     l_i++;
                                     break;
                                 default:
@@ -87,7 +100,7 @@ public class view {
                         }
                         break;
                     case "showmap": 
-                        map.showMap(); 
+                        l_map.showMap(); 
                         break;
                     default:
                         System.out.println("Invalid Input");
