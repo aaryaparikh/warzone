@@ -1,3 +1,8 @@
+<<<<<<< HEAD:mapEditor/MapEditor.java
+=======
+package Models;
+
+>>>>>>> 6bbd35776b016c14e98a0c040809ab6f51a67d2c:src/main/java/Models/MapEditor.java
 import java.util.*;
 import java.io.FileWriter;
 public class MapEditor {
@@ -101,5 +106,68 @@ public class MapEditor {
             e.printStackTrace();
         }
     }
+<<<<<<< HEAD:mapEditor/MapEditor.java
    
+=======
+    
+    public static void main(String... args)
+    {
+        
+        Scanner sc=new Scanner(System.in);
+        MapEditor map=new MapEditor();
+        while(true){
+            String l_userInput;
+            l_userInput=sc.nextLine();
+            String l_commands[]=l_userInput.split(" ");
+            if(l_commands.length == 1 || l_commands.length == 2){
+                switch(l_commands[0]){
+                    case "showmap": 
+                        map.showMap(); 
+                        break;
+                    case "savemap": 
+                        map.write(l_commands[1]); 
+                        break;
+                default:
+                    System.out.println("Please Enter Valid Command");
+                }
+            }
+            else{
+                switch(l_commands[0]+" "+l_commands[1]){
+                    case "editcontinent -add": 
+                        map.addContinent(Integer.parseInt(l_commands[2]), Integer.parseInt(l_commands[3]), l_commands[4]); 
+                        break;
+                    case "editcontinent -remove": 
+                        map.removeContinent(Integer.parseInt(l_commands[2]));  
+                        break;
+                    case "editcountry -add": 
+                        map.addCountry(Integer.parseInt(l_commands[2]), Integer.parseInt(l_commands[3]), l_commands[4]); 
+                        break;
+                    case "editcountry -remove": 
+                        map.removeCountry(Integer.parseInt(l_commands[2])); 
+                        break;
+                    case "editneighbor -add": 
+                        map.addNeighbor(Integer.parseInt(l_commands[2]),Integer.parseInt(l_commands[3])); 
+                        break;
+                    case "editneighbor -remove": 
+                        map.removeNeighbor(Integer.parseInt(l_commands[2]), Integer.parseInt(l_commands[3])); 
+                        break;
+                    case "showmap": 
+                        map.showMap(); 
+                        break;
+                    default:
+                        System.out.println("Please Enter Valid Command");
+                }
+            }
+            
+            System.out.println("More Commands?(y/n): ");
+            String l_temp2;
+            l_temp2=sc.nextLine();
+            if(l_temp2.equals("n"))
+            {
+                break;
+            }
+        }
+        sc.close();
+    }
+>>>>>>> 6bbd35776b016c14e98a0c040809ab6f51a67d2c:src/main/java/Models/MapEditor.java
 }
