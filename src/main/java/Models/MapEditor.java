@@ -1,9 +1,7 @@
-package mapEditor;
+package Models;
 
 import java.util.*;
-import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 public class MapEditor {
     ArrayList <Continent> d_continents=new ArrayList<>();
     ArrayList <Country> d_countries=new ArrayList<>();
@@ -101,6 +99,7 @@ public class MapEditor {
             e.printStackTrace();
         }
     }
+    
     public static void main(String... args)
     {
         
