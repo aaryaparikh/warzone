@@ -29,6 +29,26 @@ public class CommandHandler {
     public String handlePlayerCommand(String p_command, Player p_currentPlayer) {
         String[] l_command = p_command.split(" ");
         switch (l_command[0]) {
+        	case "end":
+        		switch (d_gameEngine.getPhase()) {
+        			case "edit":
+                		d_gameEngine.setphase("start");
+                        d_gameEngine.getPhaseView().showNextPhaseInfo("start");
+                        break;
+        			case "start":
+                		d_gameEngine.setphase("play");
+                		d_gameEngine.getPhaseView().showNextPhaseInfo("play");
+                		break;
+        			case "play":
+        				d_gameEngine.setphase("end");
+                		d_gameEngine.getPhaseView().showNextPhaseInfo("end");
+                		break;
+        			case "execute":
+                		d_gameEngine.setphase("end");
+                		d_gameEngine.getPhaseView().showNextPhaseInfo("end");
+                		break;
+        		}
+        		break;
             case "showmap":
             	if(d_gameEngine.getPhase() == "edit")
             		d_gameEngine.getGameMap().showMap();

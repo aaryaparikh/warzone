@@ -1,9 +1,10 @@
-package Views;
+package Services;
 
+import Controller.CommandHandler;
 import Controller.GameEngine;
 import Models.*;
 
-public class RiskGame {
+public class Build1Demo {
     public static void main(String[] args) {
         
     	/*
@@ -29,10 +30,17 @@ public class RiskGame {
         map.addNeighbor(1, 86);
         	
         GameEngine gameEngine = new GameEngine(map);
+        CommandHandler commandHandler = new CommandHandler(gameEngine);
+        gameEngine.getPhaseView().showGameInfo();
+        
         gameEngine.setphase("edit");
+        gameEngine.getPhaseView().showNextPhaseInfo("edit");
         
         map.showMap();
+        MapService mapService = new MapService(map);
+        mapService.main(null);
         
+        commandHandler.handlePlayerCommand("end", null);
         
         Player player1 = new Player("Player 1");
         Player player2 = new Player("Player 2");
@@ -41,6 +49,8 @@ public class RiskGame {
 
         gameEngine.assignCountriesRandomly();
 
+        commandHandler.handlePlayerCommand("end", null);
+        
         /*
     	 * Main Game Loop:
     	 * 1. Assign reinforcements

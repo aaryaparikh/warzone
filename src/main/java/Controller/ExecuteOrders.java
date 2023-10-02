@@ -25,8 +25,7 @@ public class ExecuteOrders extends GamePhase {
 	 * @return string to output result of issue orders
 	 */
 	public String executeOrders() {
-        System.out.println("\nExecute orders phase start");
-
+        super.d_gameEngine.getPhaseView().showNextPhaseInfo("execute");
     	for (Player player : super.d_gameEngine.getPlayers()) {
             while (true) {
                 Order l_order = player.nextOrder();
@@ -41,7 +40,9 @@ public class ExecuteOrders extends GamePhase {
 
             }
         }
-        System.out.println("\nExecute orders phase end, it moves to next round");
+        System.out.println("[Execute orders phase end, moves to next round]");
+        super.d_gameEngine.getPhaseView().showNextPhaseInfo("play");
+
 		return "nextRound";
 	}
 }

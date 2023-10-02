@@ -7,6 +7,7 @@ import java.util.List;
 import Models.Country;
 import Models.MapEditor;
 import Models.Player;
+import Views.PhaseView;
 
 /**
  * Represents the game engine core for the strategy game.
@@ -16,6 +17,7 @@ public class GameEngine {
     private MapEditor d_map;
     private CommandHandler d_commandHandler;
     private String d_phase;
+    private PhaseView d_phaseView;
 
     /**
      * Constructor for GameEngine.
@@ -26,6 +28,7 @@ public class GameEngine {
         this.d_map = map;
         this.d_players = new ArrayList<Player>();
         this.d_commandHandler = new CommandHandler(this);
+        this.setPhaseView(new PhaseView(this));
     }
 
     /**
@@ -69,7 +72,6 @@ public class GameEngine {
             player.addCountry(country);
             country.setOwner(player);
         }
-        d_phase = "play";
     }
 
     /**
@@ -144,6 +146,24 @@ public class GameEngine {
      */	
 	public void setphase(String d_phase) {
 		this.d_phase = d_phase;
+	}
+
+    /**
+     * Get the phase view.
+     *
+     * @return PhaseView.
+     */
+	public PhaseView getPhaseView() {
+		return d_phaseView;
+	}
+	
+    /**
+     * Set the phase view.
+     *
+     * @param PhaseView.
+     */	
+	public void setPhaseView(PhaseView d_phaseView) {
+		this.d_phaseView = d_phaseView;
 	}
 
     // Other game phases and methods
