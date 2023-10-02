@@ -26,28 +26,36 @@ public class DeployOrder extends Order {
 	}
 
 	/**
-	 * method to execute deploy order
+	 * Method to execute deploy order.
 	 * 
-	 * @param p_game object calling this function
-	 * @return Positive response string if this order was executed successfully, otherwise negative response
+	 * @param p_game the object representing the game.
+	 * @return a response string indicating the result of the order execution.
 	 */
 	@Override
 	public String execute(GameEngine p_game) {
-		if (!d_player.getCountries().contains(d_country)) {
-			return String.format("Player \"%s\" does not control country \"%d\"", d_player.getName(), d_country);
-		}
-		
-		if (d_player.getReinforcementPool() < d_armies) {
-			return String.format("Player \"%s\" does not enough armies", d_player.getName());
-		}
-		
-		for (int i = 0; i < p_game.getGameMap().getCountries().size(); i++) {
-			if (p_game.getGameMap().getCountries().get(i).equals(d_country)) {
-				p_game.getGameMap().getCountries().get(i).addArmies(d_armies);
-			}
-		}
-		d_player.decreaseReinforcementPool(d_armies);
-		return String.format("Player \"%s\" deployed \"%d\" armies to country \"%d\"", d_player.getName(), d_armies,
-				d_country);
+	    // Check if the player controls the specified country.
+	    if (!d_player.getCountries().contains(d_country)) {
+	        return String.format("Player \"%s\" does not control country \"%d\"", d_player.getName(), d_country);
+	    }
+	    
+	    // Check if the player has enough armies.
+	    if (d_player.getReinforcementPool() < d_armies) {
+	        return String.format("Player \"%s\" does not have enough armies", d_player.getName());
+	    }
+	    
+	    // Find the country in the game map and add armies.
+	    for (Country country : p_game.getGameMap().getCountries()) {
+	        if (country.equals(d_country)) {
+	            country.addArmies(d_armies);
+	            break;
+	        }
+	    }
+	    
+	    // Decrease the player's reinforcement pool.
+	    d_player.decreaseReinforcementPool(d_armies);
+	    
+	    return String.format("Player \"%s\" deployed \"%d\" armies to country \"%d\"",
+	            d_player.getName(), d_armies, d_country);
 	}
+
 }

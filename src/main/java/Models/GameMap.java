@@ -63,14 +63,14 @@ public class GameMap {
     public void showMap() {
         System.out.println("Map Contents:");
         for (Continent continent : continents) {
-            System.out.println("Continent: " + continent.getContinentName() + " (Value: " + continent.getControlValue() + ")");
+            System.out.println("Continent: " + continent.getContinentId() + " (Value: " + continent.getControlValue() + ")");
             for (Country country : countries) {
-                if (country.getContinent() == continent) {
-                    System.out.println("- Country: " + country.getName());
-                    System.out.print("  Neighbors: ");
-                    for (Country neighbor : country.getNeighbors()) {
-                        System.out.print(neighbor.getName() + " ");
-                    }
+                if (country.getContinent() == continent.getContinentId()) {
+                    System.out.println("- Country: " + country.getD_countryId());
+                    //System.out.print("  Neighbors: ");
+                    //for (Country neighbor : country.getNeighbors()) {
+                        //System.out.print(neighbor.getName() + " ");
+                    //}
                     System.out.println();
                 }
             }
@@ -89,7 +89,7 @@ public class GameMap {
             for (Country country : countries) {
                 writer.println("[Territory]");
                 writer.println("TerritoryName=" + country.getName());
-                writer.println("ContinentName=" + country.getContinent().getContinentName());
+                //writer.println("ContinentName=" + country.getContinent().getContinentName());
                 writer.print("AdjacentTerritories=");
                 for (Country neighbor : country.getNeighbors()) {
                     writer.print(neighbor.getName() + ",");
@@ -108,7 +108,7 @@ public class GameMap {
             continents.clear();
             countryNameMap.clear();
 
-            String line;
+            String line = reader.readLine();
             Continent currentContinent = null;
 
             while ((line = reader.readLine()) != null) {
