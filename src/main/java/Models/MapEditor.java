@@ -61,7 +61,8 @@ public class MapEditor {
             }
         } 
     }
-    public void showMap(){
+    
+    public void showMap() {
         System.out.println("[Continents]");
         for(int l_i=0;l_i<d_continentCount;l_i++)
         {
@@ -71,6 +72,24 @@ public class MapEditor {
         for(int l_i=0;l_i<d_countryCount;l_i++)
         {
             System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getContinentId());
+        }
+        System.out.println("[Borders]");
+        for(int l_i=0;l_i<d_countryCount;l_i++){
+            System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getNeighborCountries());
+        }
+        validateMap();
+    }
+    
+    public void showGameMap() {
+        System.out.println("[Continents]");
+        for(int l_i=0;l_i<d_continentCount;l_i++)
+        {
+            System.out.println(d_continents.get(l_i).getContinentId()+" "+d_continents.get(l_i).getContinentValue());
+        }
+        System.out.println("[Countries]");
+        for(int l_i=0;l_i<d_countryCount;l_i++)
+        {
+            System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getContinentId()+" Armies:"+d_countries.get(l_i).getArmies()+" Owner:"+d_countries.get(l_i).getOwner().getName());
         }
         System.out.println("[Borders]");
         for(int l_i=0;l_i<d_countryCount;l_i++){

@@ -30,7 +30,10 @@ public class CommandHandler {
         String[] l_command = p_command.split(" ");
         switch (l_command[0]) {
             case "showmap":
-                d_gameEngine.getGameMap().showMap();
+            	if(d_gameEngine.getPhase() == "edit")
+            		d_gameEngine.getGameMap().showMap();
+            	else if(d_gameEngine.getPhase() == "play")
+            		d_gameEngine.getGameMap().showGameMap();
                 break;
 
             case "savemap":

@@ -15,6 +15,7 @@ public class GameEngine {
     private List<Player> d_players;
     private MapEditor d_map;
     private CommandHandler d_commandHandler;
+    private String d_phase;
 
     /**
      * Constructor for GameEngine.
@@ -68,6 +69,7 @@ public class GameEngine {
             player.addCountry(country);
             country.setOwner(player);
         }
+        d_phase = "play";
     }
 
     /**
@@ -125,6 +127,24 @@ public class GameEngine {
         }
         return false;
     }
+    
+    /**
+     * Get the current game phase.
+     *
+     * @return Phase.
+     */
+	public String getPhase() {
+		return d_phase;
+	}
+
+    /**
+     * Set the current game phase.
+     *
+     * @param Phase.
+     */	
+	public void setphase(String d_phase) {
+		this.d_phase = d_phase;
+	}
 
     // Other game phases and methods
 }

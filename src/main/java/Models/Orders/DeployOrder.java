@@ -35,7 +35,7 @@ public class DeployOrder extends Order {
 	public String execute(GameEngine p_game) {
 	    // Check if the player controls the specified country.
 	    if (!d_player.getCountries().contains(d_country)) {
-	        return String.format("Player \"%s\" does not control country \"%d\"", d_player.getName(), d_country);
+	        return String.format("Player \"%s\" does not control country \"%d\"", d_player.getName(), d_country.getCountryId());
 	    }
 	    
 	    // Check if the player has enough armies.
@@ -55,7 +55,7 @@ public class DeployOrder extends Order {
 	    d_player.decreaseReinforcementPool(d_armies);
 	    
 	    return String.format("Player \"%s\" deployed \"%d\" armies to country \"%d\"",
-	            d_player.getName(), d_armies, d_country);
+	            d_player.getName(), d_armies, d_country.getCountryId());
 	}
 
 }

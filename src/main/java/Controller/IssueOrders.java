@@ -41,7 +41,6 @@ public class IssueOrders extends GamePhase {
             }   
         }
         
-        l_scanner.close();
         System.out.println("\nIssue orders phase end");
         return "";
     }

@@ -29,6 +29,7 @@ public class RiskGame {
         map.addNeighbor(1, 86);
         	
         GameEngine gameEngine = new GameEngine(map);
+        gameEngine.setphase("edit");
         
         map.showMap();
         
