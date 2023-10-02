@@ -26,9 +26,8 @@ public class Continent {
 		return this.d_continentName;
 	}
 
-	public String getControlValue() {
-		// TODO Auto-generated method stub
-		return null;
+	public int getControlValue() {
+		return this.d_continentValue;
 	}
 
 	public int getContinentId() {

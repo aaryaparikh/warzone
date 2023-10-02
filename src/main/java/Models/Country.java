@@ -11,7 +11,15 @@ public class Country {
 
     public String d_countryIdString;
     public int d_countryId;
-    public int d_continentId;
+    public int getD_countryId() {
+		return d_countryId;
+	}
+
+	public void setD_countryId(int d_countryId) {
+		this.d_countryId = d_countryId;
+	}
+
+	public int d_continentId;
     public ArrayList <Integer> d_neighborCountries=new ArrayList<Integer>();
     String d_countryName;
     
@@ -62,8 +70,8 @@ public class Country {
         neighbors.remove(neighbor);
     }
     
-    public Continent getContinent() {
-        return continent;
+    public int getContinent() {
+        return d_continentId;
     }
 
 	public int getNumberOfArmiesPresent() {

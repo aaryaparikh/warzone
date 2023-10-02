@@ -1,10 +1,6 @@
 package Controller;
 
-import java.util.List;
-
 import Models.*;
-import Models.Orders.DeployOrder;
-import Models.Orders.Order;
 
 public class RiskGame {
     public static void main(String[] args) {
@@ -17,9 +13,20 @@ public class RiskGame {
     	 */
     	
     	GameMap map = new GameMap();
-        String filename = "risk.map";
-        ((GameMap) map).loadMapFromFile(filename);
+        //String filename = "src/main/resources/risk.txt";
         
+        map.addContinent("1", 3);
+        map.addContinent("2", 5);
+        
+        map.addCountry("01", "1");
+        map.addCountry("02", "1");
+        map.addCountry("86", "2");
+        
+        //map.addNeighbor("01", "02");
+        //map.addNeighbor("02", "01");
+        //map.addNeighbor("86", "01");
+        //map.addNeighbor("01", "86");
+        	
         GameEngine gameEngine = new GameEngine(map);
         
         ((GameMap) map).showMap();
@@ -38,31 +45,15 @@ public class RiskGame {
     	 * 2. Issue orders
     	 * 3. Execute orders
     	 */
+
         while (true) {
             gameEngine.assignReinforcements();
 
-            for (Player player : gameEngine.getPlayers()) {
-                List<Country> ownedCountries = player.getCountries();
-                for (Country country : ownedCountries) {
-                    int numReinforcements = player.getReinforcementPool();
-                    if (numReinforcements > 0) {
-                        DeployOrder deployOrder = new DeployOrder(player, country, 1);
-                        player.issueOrder(deployOrder);
-                    }
-                }
-            }
+            gameEngine.playerIssueOrdersInTurn();
 
-            for (Player player : gameEngine.getPlayers()) {
-                while (true) {
-                    Order order = player.nextOrder();
-                    if (order == null) {
-                        break;
-                    }
-                    order.execute(gameEngine);
-                }
-            }
-
-            // End game condition (one player owns all countries)
+            if (gameEngine.executeAllCommittedOrders() == "gameOver")
+            	break;
+            
             // Perform other game phases and checks
         }
     }
