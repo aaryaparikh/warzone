@@ -1,5 +1,6 @@
-package Controller;
+package Views;
 
+import Controller.GameEngine;
 import Models.*;
 
 public class RiskGame {

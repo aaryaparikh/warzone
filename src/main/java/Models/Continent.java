@@ -1,9 +1,23 @@
 package Models;
 
 public class Continent {
-    int d_continentId;
+    private int d_continentId;
+    private int d_continentValue;
+    
+    public Continent(int p_continentId,int p_continentValue){
+        this.d_continentId=p_continentId;
+        this.d_continentValue=p_continentValue;
+    }
+    
+    public int getContinentId(){
+        return d_continentId;
+    }
+    public int getContinentValue(){
+        return d_continentValue;
+    }	
+	
+	
     String d_continentIdString;
-    int d_continentValue;
     String d_continentName;
     
     public Continent(int p_continentId,int p_continentValue,String p_continentName){
@@ -17,11 +31,6 @@ public class Continent {
         this.d_continentValue=p_continentValue;
 	}
 
-	public Continent(int p_continentId, int p_continentValue) {
-        this.d_continentId=p_continentId;
-        this.d_continentValue=p_continentValue;
-	}
-
 	public Object getContinentName() {
 		return this.d_continentName;
 	}
@@ -30,7 +39,4 @@ public class Continent {
 		return this.d_continentValue;
 	}
 
-	public int getContinentId() {
-		return this.d_continentId;
-	}
 }
