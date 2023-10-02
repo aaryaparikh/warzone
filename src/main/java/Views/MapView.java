@@ -2,7 +2,7 @@ package Views;
 
 import java.util.Scanner;
 
-import Controller.MapEditor;
+import Models.MapEditor;
 
 public class MapView {
     public static void main(String... args)

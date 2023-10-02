@@ -1,16 +1,20 @@
-package Controller;
+package Models;
 import java.util.*;
-
-import Models.Continent;
-import Models.Country;
-
 import java.io.*;
 
 public class MapEditor {
-    ArrayList <Continent> d_continents=new ArrayList<>();
-    ArrayList <Country> d_countries=new ArrayList<>();
-    int d_continentCount=0;
+    ArrayList <Continent> d_continents=new ArrayList<Continent>();
+    ArrayList <Country> d_countries=new ArrayList<Country>();
+	int d_continentCount=0;
     int d_countryCount=0;
+    
+    public ArrayList<Country> getCountries() {
+		return d_countries;
+	}
+    
+	public void setCountries(ArrayList<Country> d_countries) {
+		this.d_countries = d_countries;
+	}
 
     public void addContinent(int p_continentId,int p_continentValue){
         d_continents.add(new Continent(p_continentId, p_continentValue));
@@ -26,11 +30,13 @@ public class MapEditor {
             }
         }   
     }
+    
     public void addCountry(int p_countryId,int p_continentId){
         d_countries.add(new Country(p_countryId, p_continentId));
         d_countries.sort((o1,o2)->o1.getCountryId()-o2.getCountryId());
         d_countryCount++;
     }
+    
     public void removeCountry(int p_countryId){
         for(int l_i=0;l_i<d_countryCount;l_i++){
             if(d_countries.get(l_i).getCountryId()==p_countryId){
@@ -40,6 +46,7 @@ public class MapEditor {
             }
         }
     }
+    
     public void addNeighbor(int p_countryId,int p_neighborCountryId){
         for(int l_i=0;l_i<d_countryCount;l_i++){
             if(d_countries.get(l_i).getCountryId()==p_countryId){

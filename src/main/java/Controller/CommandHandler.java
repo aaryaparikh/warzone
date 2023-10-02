@@ -47,13 +47,13 @@ public class CommandHandler{
         } else {
             switch (commands[0] + " " + commands[1]) {
                 case "editcontinent -add":
-                	d_gameEngine.getGameMap().addContinent(commands[2], Integer.parseInt(commands[3]));
+                	d_gameEngine.getGameMap().addContinent(Integer.parseInt(commands[2]), Integer.parseInt(commands[3]));
                     break;
                 case "editcontinent -remove":
-                	d_gameEngine.getGameMap().removeContinent(commands[2]);
+                	d_gameEngine.getGameMap().removeContinent(Integer.parseInt(commands[2]));
                     break;
                 case "editcountry -add":
-                	d_gameEngine.getGameMap().addCountry(commands[2], commands[3]);
+                	d_gameEngine.getGameMap().addCountry(Integer.parseInt(commands[2]), Integer.parseInt(commands[3]));
                     break;
                 case "showmap":
                 	d_gameEngine.getGameMap().showMap();
