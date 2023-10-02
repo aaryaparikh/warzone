@@ -33,6 +33,7 @@ public class ExecuteOrders extends GamePhase {
                 }
                 l_order.execute(super.d_gameEngine);
                 if (super.d_gameEngine.checkIfGameIsOver() == true)
+                	
                 	return "gameOver";
             }
         }
