@@ -17,6 +17,11 @@ public class Continent {
         this.d_continentValue=p_continentValue;
 	}
 
+	public Continent(int p_continentId, int p_continentValue) {
+        this.d_continentId=p_continentId;
+        this.d_continentValue=p_continentValue;
+	}
+
 	public Object getContinentName() {
 		return this.d_continentName;
 	}
@@ -24,5 +29,9 @@ public class Continent {
 	public String getControlValue() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public int getContinentId() {
+		return this.d_continentId;
 	}
 }

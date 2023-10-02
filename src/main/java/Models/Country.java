@@ -14,6 +14,7 @@ public class Country {
     public int d_continentId;
     public ArrayList <Integer> d_neighborCountries=new ArrayList<Integer>();
     String d_countryName;
+    
     Country(int p_countryId,int p_continentId,String p_countryName){
         this.d_countryId = p_countryId;
         d_continentId=p_continentId;
@@ -36,6 +37,11 @@ public class Country {
         armies += numArmies;
     }
 
+	public void subtractArmies(int d_armies) {
+		armies -= d_armies;
+		
+	}
+	
     public Player getOwner() {
         return owner;
     }
@@ -59,4 +65,16 @@ public class Country {
     public Continent getContinent() {
         return continent;
     }
+
+	public int getNumberOfArmiesPresent() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void setNumberOfArmiesPresent(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }

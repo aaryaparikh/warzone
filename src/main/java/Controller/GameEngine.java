@@ -17,6 +17,14 @@ public class GameEngine {
         this.players = new ArrayList<Player>();
     }
 
+    public List<Player> getPlayers() {
+        return this.players;
+    }
+
+	public GameMap getGameMap() {
+		return this.map;
+	}
+	
     public void addPlayer(Player player) {
         players.add(player);
     }
@@ -49,11 +57,5 @@ public class GameEngine {
 
     // Other game phases and methods
 
-    public List<Player> getPlayers() {
-        return this.players;
-    }
 
-	public GameMap getGameMap() {
-		return this.map;
-	}
 }
