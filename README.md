@@ -13,3 +13,11 @@ This is a repository to maintain the Java-based CLI implementation of the well-k
 - **Virag Patel**       : 19IT114       (virag290301@gmail.com)
 - **Yurui Wang**        : wyurui1       (wyurui1@gmail.com)
 - **Jnathan Lupague**   : jonloops      (jrlupague@gmail.com)
+
+# Build1
+For the presentation of build1, please run Build1Demo.java under src/main/java.
+
+<<TBD>> TBD here indicates the current phase.
+<Order> Order here indicates what command needs to enter as presentation requirment. If you enter the first order in the commands list, it will move to next phase or next turn. Especially, if enter "end" in issue order phase, it will move to end phase immediately, only if all players enter "commit" it will  move to execute order phase.
+
+Also could run MapService.java to check the work of editing map. There is no conflict between them.
