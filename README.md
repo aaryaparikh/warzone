@@ -17,7 +17,10 @@ This is a repository to maintain the Java-based CLI implementation of the well-k
 # Build1
 For the presentation of build1, please run Build1Demo.java under src/main/java.
 
-<<TBD>> TBD here indicates the current phase.
-<Order> Order here indicates what command needs to enter as presentation requirment. If you enter the first order in the commands list, it will move to next phase or next turn. Especially, if enter "end" in issue order phase, it will move to end phase immediately, only if all players enter "commit" it will  move to execute order phase.
+If everything runs correctly, it will show something like \<\<TBD\>\>\<Order1\>\<Order2\>
+
+\<\<TBD\>\> TBD here indicates the current phase.
+
+\<Order\> Order here indicates what command needs to enter as presentation requirment. If you enter the first order in the commands list, it will move to next phase or next turn. Especially, if enter "end" in issue order phase, it will move to end phase immediately, only if all players enter "commit" it will  move to execute order phase.
 
 Also could run MapService.java to check the work of editing map. There is no conflict between them.
