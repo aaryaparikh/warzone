@@ -13,24 +13,24 @@ public class RiskGame {
     	 * 3. Add players and assign countries randomly
     	 */
     	
-    	GameMap map = new GameMap();
+    	MapEditor map = new MapEditor();
         //String filename = "src/main/resources/risk.txt";
         
-        map.addContinent("1", 3);
-        map.addContinent("2", 5);
+        map.addContinent(1, 3);
+        map.addContinent(2, 5);
         
-        map.addCountry("01", "1");
-        map.addCountry("02", "1");
-        map.addCountry("86", "2");
+        map.addCountry(1, 1);
+        map.addCountry(2, 1);
+        map.addCountry(86, 2);
         
-        //map.addNeighbor("01", "02");
-        //map.addNeighbor("02", "01");
-        //map.addNeighbor("86", "01");
-        //map.addNeighbor("01", "86");
+        map.addNeighbor(1, 2);
+        map.addNeighbor(2, 1);
+        map.addNeighbor(86, 1);
+        map.addNeighbor(1, 86);
         	
         GameEngine gameEngine = new GameEngine(map);
         
-        ((GameMap) map).showMap();
+        map.showMap();
         
         
         Player player1 = new Player("Player 1");

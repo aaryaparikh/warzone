@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import Models.Country;
-import Models.GameMap;
+import Models.MapEditor;
 import Models.Player;
 
 /**
@@ -13,7 +13,7 @@ import Models.Player;
  */
 public class GameEngine {
     private List<Player> d_players;
-    private GameMap d_map;
+    private MapEditor d_map;
     private CommandHandler d_commandHandler;
 
     /**
@@ -21,7 +21,7 @@ public class GameEngine {
      *
      * @param map The game map.
      */
-    public GameEngine(GameMap map) {
+    public GameEngine(MapEditor map) {
         this.d_map = map;
         this.d_players = new ArrayList<Player>();
         this.d_commandHandler = new CommandHandler(this);
@@ -41,7 +41,7 @@ public class GameEngine {
      *
      * @return The game map.
      */
-    public GameMap getGameMap() {
+    public MapEditor getGameMap() {
         return this.d_map;
     }
 
