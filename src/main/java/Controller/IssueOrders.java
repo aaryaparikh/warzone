@@ -27,21 +27,21 @@ public class IssueOrders extends GamePhase {
      */
     public String issueOrders() {
         System.out.println("\nIssue orders phase start");
-
+        Scanner l_scanner = new Scanner(System.in);
+        String l_userInput;
+        
         for (Player player : super.d_gameEngine.getPlayers()) {
             System.out.println("Player " + player.getName() + "'s turn");
 
-            Scanner l_scanner = new Scanner(System.in);
-            String l_userInput;
+
             l_userInput = l_scanner.nextLine();
 
             while ("continue".equals(super.d_commandHandler.handlePlayerCommand(l_userInput, player))) {
                 l_userInput = l_scanner.nextLine();
-            }
-
-            l_scanner.close();
+            }   
         }
-
+        
+        l_scanner.close();
         System.out.println("\nIssue orders phase end");
         return "";
     }
