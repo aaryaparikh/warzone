@@ -8,8 +8,12 @@ import java.util.Scanner;
 
 import Models.Continent;
 import Models.Country;
-import Models.Map;
+import Models.GameMap;
 
+/**
+ * Edit the map information
+ *
+ */
 public class MapEditor {
     private int d_continentCount;
 	private List<Continent> d_continents;
@@ -59,7 +63,7 @@ public class MapEditor {
      * @param p_fileName The name of the file to load the map from.
      * @return The loaded map.
      */
-    public Map loadMap(String p_fileName)
+    public GameMap loadMap(String p_fileName)
     {
         String l_text="";
         try{
@@ -78,7 +82,7 @@ public class MapEditor {
         String l_continents[]=l_text.split("\n\n")[0].split("\n");
         String l_countries[]=l_text.split("\n\n")[1].split("\n");
         String l_neigbors[]=l_text.split("\n\n")[2].split("\n");
-        Map l_map=new Map();
+        GameMap l_map=new GameMap();
         for(int l_i=1;l_i<l_continents.length;l_i++) {
             int l_continentId=Integer.parseInt(l_continents[l_i].split(" ")[0]);
             int l_continentValue=Integer.parseInt(l_continents[l_i].split(" ")[1]);

@@ -2,28 +2,40 @@ package Services;
 
 import java.util.Scanner;
 
-import Models.Map;
+import Models.GameMap;
 
+/**
+ * MapService for all command in map edit phase
+ */
 public class MapService {
-	public static Map d_map;
+	public static GameMap d_map;
 	
-	public MapService(Map p_map) {
-		d_map = p_map;
+    /**
+     * Constructor for Map Service
+     *
+     * @param p_gameMap the game map object
+     */
+	public MapService(GameMap p_gameMap) {
+		d_map = p_gameMap;
 	}
 	
-    public static void main(String... args)
-    {
+    /**
+     * Main function for map service
+     *
+     * @param args
+     */
+    public void main(String[] args) {
         @SuppressWarnings("resource")
 		Scanner l_sc=new Scanner(System.in);
-        Map l_map = new Map();
-        if (d_map != null)
-        	l_map=d_map;
+        
+        GameMap l_map = d_map;
+        
         while(true){
             String l_userInput;
             l_userInput=l_sc.nextLine();
             String l_commands[]=l_userInput.split(" ");
-            if(l_commands.length == 1 || l_commands.length == 2){
-                switch(l_commands[0]){
+            if(l_commands.length == 1 || l_commands.length == 2) {
+                switch(l_commands[0]) {
                     case "showmap": 
                         l_map.showMap(); 
                         break;
@@ -31,8 +43,7 @@ public class MapService {
                         l_map.d_mapEditor.write(l_commands[1]); 
                         break;
                     case "validatemap":
-                        if(l_map.d_mapEditor.validateMap())
-                        {
+                        if(l_map.d_mapEditor.validateMap()) {
                             System.out.println("Valid Map");
                         }
                         break;

@@ -6,7 +6,7 @@ import Utils.MapEditor;
 /**
  * Represents a map containing continents and countries.
  */
-public class Map {
+public class GameMap {
     private ArrayList<Continent> d_continents = new ArrayList<Continent>();
     private ArrayList<Country> d_countries = new ArrayList<Country>();
     private int d_continentCount = 0;
