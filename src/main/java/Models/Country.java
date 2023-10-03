@@ -1,6 +1,5 @@
 package Models;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Represents a country in the game.
