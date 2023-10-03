@@ -26,9 +26,9 @@ public class ExecuteOrders extends GamePhase {
 	 */
 	public String executeOrders() {
         super.d_gameEngine.getPhaseView().showNextPhaseInfo("execute");
-    	for (Player player : super.d_gameEngine.getPlayers()) {
+    	for (Player l_player : super.d_gameEngine.getPlayers()) {
             while (true) {
-                Order l_order = player.nextOrder();
+                Order l_order = l_player.nextOrder();
                 if (l_order == null) {
                     break;
                 }

@@ -79,7 +79,7 @@ public class GameEngine {
      */
     public void assignReinforcements() {
         for (Player player : d_players) {
-            List<Country> ownedCountries = player.getCountries();
+            List<Country> ownedCountries = player.getD_countries();
             int reinforcementArmies = calculateReinforcementArmies(player, ownedCountries);
             player.assignReinforcements(reinforcementArmies);
         }
@@ -123,7 +123,7 @@ public class GameEngine {
      */
     public Boolean checkIfGameIsOver() {
         for (Player player : d_players) {
-            if (player.getCountries().size() == d_map.getCountries().size()) {
+            if (player.getD_countries().size() == d_map.getCountries().size()) {
                 return true;
             }
         }

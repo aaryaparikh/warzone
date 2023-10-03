@@ -33,29 +33,18 @@ public class DeployOrder extends Order {
 	 */
 	@Override
 	public String execute(GameEngine p_game) {
-	    // Check if the player controls the specified country.
-	    if (!d_player.getCountries().contains(d_country)) {
-	        return String.format("Player \"%s\" does not control country \"%d\"", d_player.getName(), d_country.getCountryId());
-	    }
-	    
-	    // Check if the player has enough armies.
-	    if (d_player.getReinforcementPool() < d_armies) {
-	        return String.format("Player \"%s\" does not have enough armies", d_player.getName());
-	    }
-	    
-	    // Find the country in the game map and add armies.
-	    for (Country country : p_game.getGameMap().getCountries()) {
-	        if (country.equals(d_country)) {
-	            country.addArmies(d_armies);
+	    for (Country l_country : p_game.getGameMap().getCountries()) {
+	        if (l_country.equals(d_country)) {
+	            l_country.addArmies(d_armies);
 	            break;
 	        }
 	    }
 	    
 	    // Decrease the player's reinforcement pool.
-	    d_player.decreaseReinforcementPool(d_armies);
+	    //d_player.decreaseReinforcementPool(d_armies);
 	    
 	    return String.format("Player \"%s\" deployed \"%d\" armies to country \"%d\"",
-	            d_player.getName(), d_armies, d_country.getCountryId());
+	            d_player.getD_name(), d_armies, d_country.getCountryId());
 	}
 
 }
