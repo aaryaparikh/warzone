@@ -13,10 +13,10 @@ import java.util.Scanner;
 public class StartUpGameService {
     public static void main(String[] args) {
         
-    	GameMap d_map = new GameMap();
+    	Map d_map = new Map();
     	
         @SuppressWarnings("resource")
-			Scanner l_loadMap=new Scanner(System.in);
+		Scanner l_loadMap=new Scanner(System.in);
         
         System.out.println("Please load the map..  [Use command: loadmap <filename.txt>]");
         

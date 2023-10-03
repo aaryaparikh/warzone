@@ -45,7 +45,7 @@ public class AdvanceOrder extends Order {
         // Step 3: Check if the player controls the resource country
         if (!d_player.getD_countries().contains(d_resourceCountryName)) {
             return String.format("Player \"%s\" does not control country \"%d\", hence armies cannot be moved.",
-                    d_player.getD_name(), d_resourceCountryName);
+                    d_player.getName(), d_resourceCountryName);
         }
 
         // Step 4: Check if there are enough armies in the resource country
@@ -95,7 +95,7 @@ public class AdvanceOrder extends Order {
             d_player.getD_countries().get(d_targetCountryName).setArmies(d_armies - l_capabilityDestinationCountryArmies);
             return String.format(
                     "Armies successfully moved from country \"%d\" to country \"%d\" and the ownership changed to \"%s\" player.",
-                    d_resourceCountryName, d_targetCountryName, d_player.getD_name());
+                    d_resourceCountryName, d_targetCountryName, d_player.getName());
 
         // Step 10: Handle the scenario where the source country and destination country are evenly matched
         } else if (l_capabilitySourceCountryArmies == l_destinationCountryArmies) {
@@ -103,7 +103,7 @@ public class AdvanceOrder extends Order {
             p_game.getGameMap().getCountries().get(d_targetCountryName).setArmies(0);
             return String.format(
                     "Armies from country \"%d\" were not able to advance to country \"%d\" as the attacking armies were only able to defeat the exact number of armies present in the defending country",
-                    d_resourceCountryName, d_targetCountryName, d_player.getD_name());
+                    d_resourceCountryName, d_targetCountryName, d_player.getName());
             
         // Step 11: Handle the scenario where the destination country wins
         } else {
@@ -111,7 +111,7 @@ public class AdvanceOrder extends Order {
             p_game.getGameMap().getCountries().get(d_targetCountryName).subtractArmies(l_capabilitySourceCountryArmies);
             return String.format(
                     "Armies from country \"%d\" were not able to advance to country \"%d\" as the attacking armies could not defeat all the armies present in the defending country",
-                    d_resourceCountryName, d_targetCountryName, d_player.getD_name());
+                    d_resourceCountryName, d_targetCountryName, d_player.getName());
         }
 	}
 }

@@ -59,7 +59,7 @@ public class DeployOrder extends Order {
 	    }
 	    
 	    return String.format("Player \"%s\" deployed \"%d\" armies to country \"%d\"",
-	            d_player.getD_name(), d_armies, d_country.getCountryId());
+	            d_player.getName(), d_armies, d_country.getCountryId());
 	}
 
 }

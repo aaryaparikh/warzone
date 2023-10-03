@@ -75,14 +75,14 @@ public class PlayerCommandHandler {
                     	
                 	    // Check if the player controls the specified country.
                 	    if (!p_currentPlayer.getD_countries().contains(l_country)) {
-                	        String l_response = String.format("Player \"%s\" does not control country \"%d\"", p_currentPlayer.getD_name(), l_country.getCountryId());
+                	        String l_response = String.format("Player \"%s\" does not control country \"%d\"", p_currentPlayer.getName(), l_country.getCountryId());
                 	        System.out.println(l_response);
                 	        return "stayCurrentPlayer";
                 	    }
                 	    
                 	    // Check if the player has enough armies.
                 	    if (p_currentPlayer.getD_reinforcementPool() < Integer.parseInt(l_command[2])) {
-                	    	String l_response = String.format("Player \"%s\" does not have enough armies", p_currentPlayer.getD_name());
+                	    	String l_response = String.format("Player \"%s\" does not have enough armies", p_currentPlayer.getName());
                 	    	System.out.println(l_response);
                 	        return "stayCurrentPlayer";
                 	    }

@@ -58,11 +58,11 @@ public class MapCommandHandler {
                 break;
 
             case "savemap":
-                d_gameEngine.getGameMap().write(l_command[1]);
+                d_gameEngine.getGameMap().d_mapEditor.write(l_command[1]);
                 break;
 
             case "validatemap":
-                if (d_gameEngine.getGameMap().validateMap()) {
+                if (d_gameEngine.getGameMap().d_mapEditor.validateMap()) {
                     System.out.println("Valid Map");
                 }
                 break;

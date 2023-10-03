@@ -14,7 +14,7 @@ public class Build1Demo {
     	 * 3. Add players and assign countries randomly
     	 */
     	
-    	MapEditor map = new MapEditor();
+    	Map map = new Map();
         //String filename = "src/main/resources/risk.txt";
         
         map.addContinent(1, 3);

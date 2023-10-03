@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import Constants.GameConstants;
 import Models.Country;
-import Models.MapEditor;
+import Models.Map;
 import Models.Player;
 import Utils.MapCommandHandler;
 import Views.PhaseView;
@@ -14,8 +15,8 @@ import Views.PhaseView;
  * Represents the game engine core for the strategy game.
  */
 public class GameEngine {
-    private List<Player> d_players;
-    private MapEditor d_map;
+	private List<Player> d_players;
+    private Map d_map;
     private MapCommandHandler d_commandHandler;
     private String d_phase;
     private PhaseView d_phaseView;
@@ -25,7 +26,7 @@ public class GameEngine {
      *
      * @param map The game map.
      */
-    public GameEngine(MapEditor map) {
+    public GameEngine(Map map) {
         this.d_map = map;
         this.d_players = new ArrayList<Player>();
         this.d_commandHandler = new MapCommandHandler(this);
@@ -46,7 +47,7 @@ public class GameEngine {
      *
      * @return The game map.
      */
-    public MapEditor getGameMap() {
+    public Map getGameMap() {
         return this.d_map;
     }
 
@@ -96,7 +97,7 @@ public class GameEngine {
     private int calculateReinforcementArmies(Player player, List<Country> ownedCountries) {
         // Implement reinforcement calculation logic based on game rules
         // For simplicity, returning a constant value for demonstration
-        return 5;
+        return GameConstants.DEFAULT_PLAYER_REINFORCEMENT;
     }
 
     /**

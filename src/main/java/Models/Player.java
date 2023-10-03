@@ -116,21 +116,12 @@ public class Player {
         return d_reinforcementPool -= decreaseArmiesNumber;
     }
 
-    /**
+   /**
      * Gets the name of the player.
      *
      * @return The name of the player.
      */
-    public String getD_name() {
-        return this.d_name;
-    }
-
-   /**
-     * Sets the name of the player.
-     *
-     * @return The name of the player.
-     */
-    public String getD_name() {
+    public String getName() {
         return this.d_name;
     }
 }

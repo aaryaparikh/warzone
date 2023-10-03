@@ -29,7 +29,7 @@ public class IssueOrders extends GamePhase {
     	while(l_remainedPlayers > 0) {
     		for (Player l_player : l_playerPool) {
 	        	if (l_player.getD_reinforcementPool() != 0) {
-	                System.out.println("[Player " + l_player.getD_name() + "'s turn][" + l_player.getD_reinforcementPool() +" armies need to deploy]");
+	                System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool() +" armies need to deploy]");
 	                l_player.issueOrder();
 	        	} else
                 	l_remainedPlayers -= 1;

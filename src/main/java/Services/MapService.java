@@ -2,12 +2,12 @@ package Services;
 
 import java.util.Scanner;
 
-import Models.MapEditor;
+import Models.Map;
 
 public class MapService {
-	public static MapEditor d_map;
+	public static Map d_map;
 	
-	public MapService(MapEditor p_map) {
+	public MapService(Map p_map) {
 		d_map = p_map;
 	}
 	
@@ -15,7 +15,7 @@ public class MapService {
     {
         @SuppressWarnings("resource")
 		Scanner l_sc=new Scanner(System.in);
-        MapEditor l_map = new MapEditor();
+        Map l_map = new Map();
         if (d_map != null)
         	l_map=d_map;
         while(true){
@@ -28,19 +28,19 @@ public class MapService {
                         l_map.showMap(); 
                         break;
                     case "savemap": 
-                        l_map.write(l_commands[1]); 
+                        l_map.d_mapEditor.write(l_commands[1]); 
                         break;
                     case "validatemap":
-                        if(l_map.validateMap())
+                        if(l_map.d_mapEditor.validateMap())
                         {
                             System.out.println("Valid Map");
                         }
                         break;
                     case "loadmap":
-                        l_map=l_map.loadMap(l_commands[1]);
+                        l_map=l_map.d_mapEditor.loadMap(l_commands[1]);
                         break;
                     case "editmap":
-                        l_map=l_map.loadMap(l_commands[1]);
+                        l_map=l_map.d_mapEditor.loadMap(l_commands[1]);
                         break;
                     case "exit":
                         return;
