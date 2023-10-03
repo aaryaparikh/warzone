@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import Models;
+
 /**
  * Contains the common methods that will be used in the game start-up and main game play <br>
  * 1. show map containing the current information <br>
