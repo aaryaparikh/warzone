@@ -1,9 +1,7 @@
 package Controller;
 
-import java.util.Scanner;
-
+import java.util.List;
 import Models.Player;
-
 
 /**
  * Represents the issue orders phase of the game.
@@ -22,26 +20,24 @@ public class IssueOrders extends GamePhase {
 
     /**
      * Function that takes player's input and adds their orders to the queue.
-     *
-     * @return A string to output the result of the issue orders phase.
      */
-    public String issueOrders() {
-        Scanner l_scanner = new Scanner(System.in);
-        String l_userInput;
+    public void issueOrders() {
+    	List<Player> l_playerPool = super.d_gameEngine.getPlayers();
+    	
+    	while(l_playerPool.size() != 0) {
+    		int l_remainedReinforcement = 0;
+    		for (Player l_player : l_playerPool) {
+	        	if (l_player.getD_reinforcementPool() != 0) {
+	                System.out.println("[Player " + l_player.getD_name() + "'s turn to deploy]");
+	                l_player.issueOrder();
+	        	}
+	        	l_remainedReinforcement += l_player.getD_reinforcementPool();
+	        }
+    		if (l_remainedReinforcement == 0)
+    			break;
+    	}
         
-        for (Player player : super.d_gameEngine.getPlayers()) {
-            System.out.println("[Player " + player.getName() + "'s turn]");
-
-
-            l_userInput = l_scanner.nextLine();
-
-            while ("continue".equals(super.d_commandHandler.handlePlayerCommand(l_userInput, player))) {
-                l_userInput = l_scanner.nextLine();
-            }   
-        }
-        
-        System.out.println("[All players have committed orders]");
-        return "";
+        System.out.println("[All players have deployed all reinforcement]");
     }
 }
 

@@ -89,7 +89,7 @@ public class MapEditor {
         System.out.println("[Countries]");
         for(int l_i=0;l_i<d_countryCount;l_i++)
         {
-            System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getContinentId()+" Armies:"+d_countries.get(l_i).getArmies()+" Owner:"+d_countries.get(l_i).getOwner().getName());
+            System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getContinentId()+" Armies:"+d_countries.get(l_i).getArmies()+" Owner:"+d_countries.get(l_i).getOwner().getD_name());
         }
         System.out.println("[Borders]");
         for(int l_i=0;l_i<d_countryCount;l_i++){

@@ -2,28 +2,33 @@ package Models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
+import Controller.GameEngine;
 import Models.Orders.Order;
+import Utils.PlayerCommandHandler;
 
 /**
  * Represents a player in the game.
  */
 public class Player {
-    private String name;
-    private List<Country> countries;
-    private List<Order> orders;
-    private int reinforcementPool;
+    private String d_name;
+    private List<Country> d_countries;
+    private List<Order> d_orders;
+    private int d_reinforcementPool;
+    private PlayerCommandHandler d_playerCommandHandler;
 
     /**
      * Creates a new player with the specified name.
      *
-     * @param name The name of the player.
+     * @param d_name The name of the player.
      */
-    public Player(String name) {
-        this.name = name;
-        this.countries = new ArrayList<>();
-        this.orders = new ArrayList<>();
-        this.reinforcementPool = 0;
+    public Player(String p_name, GameEngine p_gameEngine) {
+        this.d_name = p_name;
+        this.d_countries = new ArrayList<>();
+        this.d_orders = new ArrayList<>();
+        this.d_reinforcementPool = 0;
+        this.d_playerCommandHandler = new PlayerCommandHandler(p_gameEngine);
     }
 
     /**
@@ -31,17 +36,33 @@ public class Player {
      *
      * @param country The country to be added.
      */
-    public void addCountry(Country country) {
-        countries.add(country);
+    public void addCountry(Country p_country) {
+        d_countries.add(p_country);
     }
+    
+    /**
+     * Adds a country to the player's list of controlled countries.
+     *
+     * @param country The country to be added.
+     */
+    public void addOrder(Order p_order) {
+        d_orders.add(p_order);
+    }   
 
     /**
      * Issues an order to the player.
      *
      * @param order The order to be issued.
      */
-    public void issueOrder(Order order) {
-        orders.add(order);
+    public void issueOrder() {
+        @SuppressWarnings("resource")
+		Scanner l_scanner = new Scanner(System.in);
+        String l_userInput, l_response = "";
+        
+        while (l_response != "nextPlayer") {
+            l_userInput = l_scanner.nextLine();
+            l_response = d_playerCommandHandler.handlePlayerCommand(l_userInput, this);
+        }
     }
 
     /**
@@ -50,9 +71,9 @@ public class Player {
      * @return The next order, or null if no orders are available.
      */
     public Order nextOrder() {
-        if (!orders.isEmpty()) {
-            Order order = orders.get(0);
-            orders.remove(0);
+        if (!d_orders.isEmpty()) {
+            Order order = d_orders.get(0);
+            d_orders.remove(0);
             return order;
         }
         return null;
@@ -63,8 +84,8 @@ public class Player {
      *
      * @return The list of countries.
      */
-    public List<Country> getCountries() {
-        return countries;
+    public List<Country> getD_countries() {
+        return d_countries;
     }
 
     /**
@@ -73,7 +94,7 @@ public class Player {
      * @param numReinforcements The number of reinforcements to assign.
      */
     public void assignReinforcements(int numReinforcements) {
-        reinforcementPool += numReinforcements;
+        d_reinforcementPool += numReinforcements;
     }
 
     /**
@@ -81,8 +102,8 @@ public class Player {
      *
      * @return The current reinforcement pool.
      */
-    public int getReinforcementPool() {
-        return reinforcementPool;
+    public int getD_reinforcementPool() {
+        return d_reinforcementPool;
     }
 
     /**
@@ -92,7 +113,7 @@ public class Player {
      * @return The updated reinforcement pool value.
      */
     public int decreaseReinforcementPool(int decreaseArmiesNumber) {
-        return reinforcementPool -= decreaseArmiesNumber;
+        return d_reinforcementPool -= decreaseArmiesNumber;
     }
 
     /**
@@ -100,7 +121,7 @@ public class Player {
      *
      * @return The name of the player.
      */
-    public String getName() {
-        return this.name;
+    public String getD_name() {
+        return this.d_name;
     }
 }

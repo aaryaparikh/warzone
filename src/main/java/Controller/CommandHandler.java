@@ -137,22 +137,6 @@ public class CommandHandler {
             case "commit":
                 return "commit";
                 
-            // Handle deploying armies
-            case "deploy":
-                for (Player player : d_gameEngine.getPlayers()) {
-                    if (player.equals(p_currentPlayer)) {
-                        for (Country country : d_gameEngine.getGameMap().getCountries()) {
-                            if (country.getCountryId() == Integer.parseInt(l_command[1])) {
-                                DeployOrder deployOrder = new DeployOrder(player, country,
-                                        Integer.parseInt(l_command[2]));
-                                player.issueOrder(deployOrder);
-                                break;
-                            }
-                        }
-                        break;
-                    }
-                }
-                break;
 
             default:
                 System.out.println("Please Enter a Valid Command");
