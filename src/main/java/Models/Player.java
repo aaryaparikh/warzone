@@ -124,4 +124,13 @@ public class Player {
     public String getD_name() {
         return this.d_name;
     }
+
+   /**
+     * Sets the name of the player.
+     *
+     * @return The name of the player.
+     */
+    public String getD_name() {
+        return this.d_name;
+    }
 }
