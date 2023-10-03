@@ -13,7 +13,8 @@ public class MapService {
 	
     public static void main(String... args)
     {
-        Scanner l_sc=new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner l_sc=new Scanner(System.in);
         MapEditor l_map = new MapEditor();
         if (d_map != null)
         	l_map=d_map;

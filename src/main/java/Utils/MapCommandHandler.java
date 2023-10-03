@@ -1,5 +1,6 @@
-package Controller;
+package Utils;
 
+import Controller.GameEngine;
 import Models.Country;
 import Models.Player;
 import Models.Orders.DeployOrder;
@@ -7,7 +8,7 @@ import Models.Orders.DeployOrder;
 /**
  * Handles player commands.
  */
-public class CommandHandler {
+public class MapCommandHandler {
     private GameEngine d_gameEngine;
 
     /**
@@ -15,7 +16,7 @@ public class CommandHandler {
      *
      * @param p_gameEngine The game engine.
      */
-    public CommandHandler(GameEngine p_gameEngine) {
+    public MapCommandHandler(GameEngine p_gameEngine) {
         d_gameEngine = p_gameEngine;
     }
 

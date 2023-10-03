@@ -7,6 +7,7 @@ import java.util.List;
 import Models.Country;
 import Models.MapEditor;
 import Models.Player;
+import Utils.MapCommandHandler;
 import Views.PhaseView;
 
 /**
@@ -15,7 +16,7 @@ import Views.PhaseView;
 public class GameEngine {
     private List<Player> d_players;
     private MapEditor d_map;
-    private CommandHandler d_commandHandler;
+    private MapCommandHandler d_commandHandler;
     private String d_phase;
     private PhaseView d_phaseView;
 
@@ -27,7 +28,7 @@ public class GameEngine {
     public GameEngine(MapEditor map) {
         this.d_map = map;
         this.d_players = new ArrayList<Player>();
-        this.d_commandHandler = new CommandHandler(this);
+        this.d_commandHandler = new MapCommandHandler(this);
         this.setPhaseView(new PhaseView(this));
     }
 

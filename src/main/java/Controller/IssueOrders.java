@@ -2,6 +2,7 @@ package Controller;
 
 import java.util.List;
 import Models.Player;
+import Utils.MapCommandHandler;
 
 /**
  * Represents the issue orders phase of the game.
@@ -14,7 +15,7 @@ public class IssueOrders extends GamePhase {
      * @param p_gameEngine     The game engine.
      * @param p_commandHandler The command handler.
      */
-    public IssueOrders(GameEngine p_gameEngine, CommandHandler p_commandHandler) {
+    public IssueOrders(GameEngine p_gameEngine, MapCommandHandler p_commandHandler) {
         super(p_gameEngine, p_commandHandler);
     }
 
@@ -23,21 +24,21 @@ public class IssueOrders extends GamePhase {
      */
     public void issueOrders() {
     	List<Player> l_playerPool = super.d_gameEngine.getPlayers();
-    	
-    	while(l_playerPool.size() != 0) {
-    		int l_remainedReinforcement = 0;
+		int l_remainedPlayers = l_playerPool.size();
+
+    	while(l_remainedPlayers > 0) {
     		for (Player l_player : l_playerPool) {
 	        	if (l_player.getD_reinforcementPool() != 0) {
-	                System.out.println("[Player " + l_player.getD_name() + "'s turn to deploy]");
+	                System.out.println("[Player " + l_player.getD_name() + "'s turn][" + l_player.getD_reinforcementPool() +" armies need to deploy]");
 	                l_player.issueOrder();
-	        	}
-	        	l_remainedReinforcement += l_player.getD_reinforcementPool();
+	        	} else
+                	l_remainedPlayers -= 1;
 	        }
-    		if (l_remainedReinforcement == 0)
-    			break;
     	}
         
         System.out.println("[All players have deployed all reinforcement]");
+        super.d_gameEngine.getPhaseView().showNextPhaseInfo("execute");
+        super.d_gameEngine.setphase("execute");
     }
 }
 

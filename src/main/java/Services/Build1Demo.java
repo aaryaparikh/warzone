@@ -1,8 +1,8 @@
 package Services;
 
-import Controller.CommandHandler;
 import Controller.GameEngine;
 import Models.*;
+import Utils.MapCommandHandler;
 
 public class Build1Demo {
     public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class Build1Demo {
         map.addNeighbor(1, 86);
         	
         GameEngine gameEngine = new GameEngine(map);
-        CommandHandler commandHandler = new CommandHandler(gameEngine);
+        MapCommandHandler commandHandler = new MapCommandHandler(gameEngine);
         gameEngine.getPhaseView().showGameInfo();
         
         gameEngine.setphase("edit");

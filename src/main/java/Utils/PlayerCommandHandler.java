@@ -56,8 +56,23 @@ public class PlayerCommandHandler {
 
             // Handle deploying armies
             case "deploy":
+            	if (l_command.length < 3) {
+        	        String l_response = String.format("Please enter enough parameter for deploy order");
+        	        System.out.println(l_response);
+        	        return "stayCurrentPlayer";
+            	}
+            	
+            	if (l_command.length > 3) {
+        	        String l_response = String.format("Please enter less parameter for deploy order");
+        	        System.out.println(l_response);
+        	        return "stayCurrentPlayer";
+            	}
+            	
+            	boolean l_ifCountryInMap = false;
                 for (Country l_country : d_gameEngine.getGameMap().getCountries()) {
                     if (l_country.getCountryId() == Integer.parseInt(l_command[1])) {
+                    	l_ifCountryInMap = true;
+                    	
                 	    // Check if the player controls the specified country.
                 	    if (!p_currentPlayer.getD_countries().contains(l_country)) {
                 	        String l_response = String.format("Player \"%s\" does not control country \"%d\"", p_currentPlayer.getD_name(), l_country.getCountryId());
@@ -78,10 +93,18 @@ public class PlayerCommandHandler {
                         break;
                     }
                 }
+                
+                if (l_ifCountryInMap == false) {
+        	        String l_response = String.format("Please deploy to a valid country in the map");
+        	        System.out.println(l_response);
+        	        return "stayCurrentPlayer";                	
+                }
                 break;
 
             default:
-                System.out.println("Please Enter a Valid Command");
+                System.out.println("Please enter a valid command");
+    	        return "stayCurrentPlayer";
+                
         }
         return "nextPlayer";
     }
