@@ -2,6 +2,8 @@ package Services;
 
 import java.util.List;
 import java.util.Map;
+import Controller;
+import Models;
 
 /**
  * Start-up Phase: <br>
@@ -21,11 +23,11 @@ public class StartUpGameService {
         
         // add players
         Player d_player1 = new Player("Player 1");
-        d_player1.setName("NewPlayer 1");
+        d_player1.setD_name("NewPlayer 1");
         Player d_player2 = new Player("Player 2");
-        d_player2.setName("NewPlayer 2");
+        d_player2.setD_name("NewPlayer 2");
         Player d_player3 = new Player("Player 3");
-        d_player3.setName("NewPlayer 3");
+        d_player3.setD_name("NewPlayer 3");
         d_gameEngine.addPlayer(d_player1);
         d_gameEngine.addPlayer(d_player2);
         d_gameEngine.addPlayer(d_player3);
