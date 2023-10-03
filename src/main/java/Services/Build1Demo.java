@@ -4,60 +4,62 @@ import Controller.GameEngine;
 import Models.*;
 import Utils.MapCommandHandler;
 
+/**
+ * Build1 Demo:
+ * 1. Initialize the map
+ * 2. Enter map edit phase
+ * 3. Enter startup game phase
+ * 4. Main loop for game play
+ */
 public class Build1Demo {
+	
+	/**
+	 * Initialize the default game map
+	 * 
+	 * @param game map object
+	 * 
+	 */
+	public static void defaultGameMap(GameMap p_gameMap) {  
+		p_gameMap.addContinent(1, 3);
+		p_gameMap.addContinent(2, 5);
+        
+		p_gameMap.addCountry(1, 1);
+		p_gameMap.addCountry(2, 1);
+		p_gameMap.addCountry(7, 2);
+        
+		p_gameMap.addNeighbor(1, 2);
+		p_gameMap.addNeighbor(2, 1);
+		p_gameMap.addNeighbor(7, 1);
+		p_gameMap.addNeighbor(1, 7);
+	}
+	
+	/**
+	 * Main function for build1 presentation
+	 * 
+	 * @param args
+	 * 
+	 */	
     public static void main(String[] args) {
-        
-    	/*
-    	 * Start-up Phase:
-    	 * 1. Load the map created in Map editor
-    	 * 2. Show map
-    	 * 3. Add players and assign countries randomly
-    	 */
-    	
-    	Map map = new Map();
-        //String filename = "src/main/resources/risk.txt";
-        
-        map.addContinent(1, 3);
-        map.addContinent(2, 5);
-        
-        map.addCountry(1, 1);
-        map.addCountry(2, 1);
-        map.addCountry(86, 2);
-        
-        map.addNeighbor(1, 2);
-        map.addNeighbor(2, 1);
-        map.addNeighbor(86, 1);
-        map.addNeighbor(1, 86);
-        	
+    	GameMap map = new GameMap();
+    	defaultGameMap(map);
         GameEngine gameEngine = new GameEngine(map);
         MapCommandHandler commandHandler = new MapCommandHandler(gameEngine);
         gameEngine.getPhaseView().showGameInfo();
         
+        // Map edit phase
         gameEngine.setphase("edit");
         gameEngine.getPhaseView().showNextPhaseInfo("edit");
         
-        map.showMap();
         MapService mapService = new MapService(map);
         mapService.main(null);
         
         commandHandler.handlePlayerCommand("end", null);
         
-        Player player1 = new Player("Player 1", gameEngine);
-        Player player2 = new Player("Player 2", gameEngine);
-        gameEngine.addPlayer(player1);
-        gameEngine.addPlayer(player2);
-
-        gameEngine.assignCountriesRandomly();
-
-        commandHandler.handlePlayerCommand("end", null);
+        // Start up phase
+        StartUpGameService StartupService = new StartUpGameService(gameEngine);
+        StartupService.main(null);        
         
-        /*
-    	 * Main Game Loop:
-    	 * 1. Assign reinforcements
-    	 * 2. Issue orders
-    	 * 3. Execute orders
-    	 */
-
+        // Main game loop
         while (true) {
             gameEngine.assignReinforcements();
 
@@ -65,8 +67,6 @@ public class Build1Demo {
 
             if (gameEngine.executeAllCommittedOrders() == "gameOver")
             	break;
-            
-            // Perform other game phases and checks
         }
     }
 }

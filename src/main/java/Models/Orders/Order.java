@@ -2,6 +2,9 @@ package Models.Orders;
 
 import Controller.GameEngine;
 
+/**
+ * Order abstract
+ */
 public abstract class Order {
 
 	/**

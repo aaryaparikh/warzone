@@ -4,6 +4,9 @@ import java.util.List;
 import Controller.GameEngine;
 import Models.Player;
 
+/**
+ * Players can advance reinforcements to another country.
+ */
 public class AdvanceOrder extends Order {
 	private Player d_player;
 	private int d_resourceCountryName;

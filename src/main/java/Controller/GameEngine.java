@@ -6,7 +6,7 @@ import java.util.List;
 
 import Constants.GameConstants;
 import Models.Country;
-import Models.Map;
+import Models.GameMap;
 import Models.Player;
 import Utils.MapCommandHandler;
 import Views.PhaseView;
@@ -16,7 +16,7 @@ import Views.PhaseView;
  */
 public class GameEngine {
 	private List<Player> d_players;
-    private Map d_map;
+    private GameMap d_map;
     private MapCommandHandler d_commandHandler;
     private String d_phase;
     private PhaseView d_phaseView;
@@ -26,7 +26,7 @@ public class GameEngine {
      *
      * @param map The game map.
      */
-    public GameEngine(Map map) {
+    public GameEngine(GameMap map) {
         this.d_map = map;
         this.d_players = new ArrayList<Player>();
         this.d_commandHandler = new MapCommandHandler(this);
@@ -47,7 +47,7 @@ public class GameEngine {
      *
      * @return The game map.
      */
-    public Map getGameMap() {
+    public GameMap getGameMap() {
         return this.d_map;
     }
 
@@ -56,8 +56,27 @@ public class GameEngine {
      *
      * @param player The player to add.
      */
-    public void addPlayer(Player player) {
-        d_players.add(player);
+    public boolean addPlayer(Player p_player) {
+        if (d_players.contains(p_player))
+        	return false;
+        else {
+        	d_players.add(p_player);
+            return true;
+        }
+    }
+    
+    /**
+     * Remove a player to the game.
+     *
+     * @param player The player to remove.
+     */
+    public boolean removePlayer(Player p_player) {
+        if (!d_players.contains(p_player))
+        	return false;
+        else {
+        	d_players.remove(p_player);
+            return true;
+        }
     }
 
     /**

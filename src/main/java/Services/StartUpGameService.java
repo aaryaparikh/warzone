@@ -1,111 +1,102 @@
 package Services;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
+import Controller.GameEngine;
+import Models.Player;
 
 /**
- * Start-up Phase: <br>
- * 1. Load the map for game play <br>
- * 2. Show map <br>
- * 3. Add players and assign countries randomly
+ * StartupService for all command in startup phase
  */
 public class StartUpGameService {
-    public static void main(String[] args) {
-        
-    	Map d_map = new Map();
-    	
+	private GameEngine d_gameEngine;
+	
+    /**
+     * Constructor for Startup Service
+     *
+     * @param p_gameMap the game engine object
+     */
+	public StartUpGameService(GameEngine p_gameEngine) {
+		d_gameEngine = p_gameEngine;
+	}
+	
+    /**
+     * Main function for startup service
+     *
+     * @param args
+     */
+    public void main(String[] args) {
         @SuppressWarnings("resource")
-		Scanner l_loadMap=new Scanner(System.in);
+		Scanner l_scanner=new Scanner(System.in);
         
-        System.out.println("Please load the map..  [Use command: loadmap <filename.txt>]");
+        Player l_defaultPlayer = new Player("You", d_gameEngine);
+        d_gameEngine.addPlayer(l_defaultPlayer);
+        d_gameEngine.assignCountriesRandomly();
         
-        //load map from file saved from mapEditor
-        String l_userInputToLoadMap;
-        l_userInputToLoadMap=l_loadMap.nextLine();
-        String l_loadMapCommand[]=l_userInputToLoadMap.split(" ");
-
-        if (l_loadMapCommand.length == 2) {
-        	switch(l_loadMapCommand[0]){
-        		case "loadmap": ((GameMap) d_map).loadMapFromFile(l_loadMapCommand[1]);
-        	}
-//            String d_filename = "your_map_file.txt";
-        } else {
-        	System.out.println("Command cannot be executed. Please check your input again.");
-        }
-    
-        GameEngine d_gameEngine = new GameEngine(d_map);
-    	
-        System.out.println("Please add players..  [Use command: gameplay -add <player name> or gameplay -remove <player name>]");
-        
-        String addPlayerStatus = "in-progress";
-        while (!(addPlayerStatus == "complete")) {
+        String l_userInput;
+        while(true) {
         	
-        @SuppressWarnings("resource")
-			Scanner l_addPlayers=new Scanner(System.in);
-        
-        //add players
-        String l_userInputToAddPlayers;
-        l_userInputToAddPlayers=l_addPlayers.nextLine();
-        String l_addPlayersCommand[]=l_userInputToAddPlayers.split(" ");
-        
-        if (l_addPlayersCommand.length > 0) {
-        	switch(l_addPlayersCommand[0]){
-        	case "gameplay" :
-        		switch (l_addPlayersCommand[1]){
-	        		case "complete":
-	        			addPlayerStatus = "complete";
-	        			System.out.println(" ");
-	        			break;
-	        		case "-add":
-	        			Player addPlayer = new Player(l_addPlayersCommand[2]);
-	        			addPlayer.setName(l_addPlayersCommand[2]);
-	        			d_gameEngine.addPlayer(addPlayer);
-	        			System.out.println("Player " + l_addPlayersCommand[2] + " added.");
-	        			System.out.println(" ");
-	        			break;
-	        		case "-remove":
-	        			Player removePlayer = new Player(l_addPlayersCommand[2]);
-	        			d_gameEngine.removePlayer(removePlayer);
-	        			System.out.println("Player " + l_addPlayersCommand[2] + " removed.");
-	        			System.out.println(" ");
-	        			break;
-        		}
-        	}
-//            String d_filename = "your_map_file.txt";
-            if (!(addPlayerStatus == "complete")) {
-        	System.out.println("Please continue to add or remove players.. [Once done: gameplay complete]");
-            }
-        } else {
-        	System.out.println("Command cannot be executed. Please check your input again.");
-        	}
+            l_userInput=l_scanner.nextLine();
+            String l_commands[]=l_userInput.split(" ");
+            
+            switch(l_commands[0]){
+	            case "end":
+	            	boolean ifAllPlayerAssigned = true;
+	            	for (Player l_player : d_gameEngine.getPlayers())
+	            		if (l_player.getD_countries().size() == 0) {
+		                	System.out.println("Please assign countries before end startup phase.");
+		                	ifAllPlayerAssigned = false;
+		                	break;
+	            		}
+	            	if (ifAllPlayerAssigned) {
+	            		d_gameEngine.setphase("play");
+	            		d_gameEngine.getPhaseView().showNextPhaseInfo("play");
+		                return;      
+	            	}
+	            	break;
+	            case "showmap": 
+	                d_gameEngine.getGameMap().showGameMap(); 
+	                break;
+	            case "loadmap":
+	            	if (l_commands.length < 2) {
+	                	System.out.println("Please enter valid map file path");
+	            		continue;	            		
+	            	}
+	            	else
+	            		d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]);
+	                break;
+	            case "gameplayer":
+	            	if (l_commands.length < 3) {
+	                	System.out.println("Please enter enough parameter for order gameplayer");
+	            		continue;	            		
+	            	}
+	            	else {
+    	                Player l_player = new Player(l_commands[2], d_gameEngine);
+	            		switch(l_commands[1]) {
+		    	            case "-add": 
+		    	                if(d_gameEngine.addPlayer(l_player))
+		    	                	System.out.println("Player " + l_commands[2] + " is added.");
+		    	                else
+		    	                	System.out.println("Player " + l_commands[2] + " already exists. Can't add again.");
+		    	                break;  
+		    	            case "-remove": 
+		    	                if(d_gameEngine.removePlayer(l_player))
+		    	                	System.out.println("Player " + l_commands[2] + " is removed.");
+		    	                else
+		    	                	System.out.println("Player " + l_commands[2] + " don't exist. Can't remove.");
+		    	                break;  
+		                    default:
+		                        System.out.println("Please enter valid parameter for order gameplayer");
+	            		}
+	            	}
+	                break;
+	            case "assigncountries":
+	            	d_gameEngine.assignCountriesRandomly();
+                	System.out.println("All countries are assigned to players");
+	            	break;
+                default:
+                    System.out.println("Invalid Input");
+            }   
         }
 
-        
-        @SuppressWarnings("resource")
-			Scanner l_assignCountries=new Scanner(System.in);
-        
-        System.out.println("Please assign the countries..  [Use command: assigncountries]");
-        
-        // assign countries randomly for each players
-        String l_userInputToAssignCountries;
-        l_userInputToAssignCountries=l_assignCountries.nextLine();
-        String l_assignCountriesCommand[]=l_userInputToAssignCountries.split(" ");
-
-        if (l_assignCountriesCommand.length == 1) {
-        	switch(l_assignCountriesCommand[0]){
-        		case "assigncountries": d_gameEngine.assignCountriesRandomly();
-        	}
-        } else {
-        	System.out.println("Command cannot be executed. Please check your input again.");
-        }
-
-        
-        // assign reinforcements for each players
-        d_gameEngine.assignReinforcements();;
-        
-        // show map
-        ((GameMap) d_map).showMap();
-        
     }
 }
