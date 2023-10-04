@@ -9,9 +9,10 @@ import Views.MapView;
  * Represents a map containing continents and countries.
  */
 public class GameMap {
+
 	private ArrayList<Continent> d_continents = new ArrayList<>();
 	private ArrayList<Country> d_countries = new ArrayList<>();
-	private int d_continentCount = 0;
+	int d_continentCount = 0;
 	private int d_countryCount = 0;
 	public MapEditor d_mapEditor;
 	private MapView d_mapView;
@@ -25,7 +26,7 @@ public class GameMap {
 	}
 
 	/**
-	 * Gets the count of Continent
+	 * <<<<<<< HEAD Gets the count of Continent
 	 *
 	 * @return d_continentCount The count of continent
 	 */
@@ -58,6 +59,16 @@ public class GameMap {
 	 */
 	public void setD_countryCount(int d_countryCount) {
 		this.d_countryCount = d_countryCount;
+	}
+
+	/**
+	 * Reset GameMap
+	 */
+	public void mapReset() {
+		d_continents = new ArrayList<>();
+		d_countries = new ArrayList<>();
+		d_continentCount = 0;
+		d_countryCount = 0;
 	}
 
 	/**
