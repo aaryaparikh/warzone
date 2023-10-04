@@ -3,6 +3,7 @@ package Services;
 import java.util.Scanner;
 
 import Models.GameMap;
+import Views.MapView;
 
 /**
  * MapService for all command in map edit phase
@@ -18,13 +19,12 @@ public class MapService {
 	public MapService(GameMap p_gameMap) {
 		d_map = p_gameMap;
 	}
-	
     /**
      * Main function for map service
      *
      * @param args
      */
-    public void main(String[] args) {
+    public GameMap main(String[] args) {
         @SuppressWarnings("resource")
 		Scanner l_sc=new Scanner(System.in);
         
@@ -61,84 +61,72 @@ public class MapService {
                 	else
                 		l_map=l_map.d_mapEditor.loadMap(l_commands[1]);
                     break;
+                case "exit":
+                    return d_map;
                 case "end":
-                	if(l_map.d_mapEditor.validateMap())
-                        return;
-                	else
-                        System.out.println("Since invalid map, can't move to play.");
-                	break;
+                    return d_map;
                 case "editcontinent":
-                	if(l_commands.length < 3)
-                		System.out.println("Please enter enough parameter for editing continent.");
-                	else
-	                    switch(l_commands[1]) {
+                    for(int l_i=1;l_i<l_commands.length;)
+                    {
+	                    switch(l_commands[l_i]) {
 	                        case "-add":
-	                        	if(l_commands.length < 4)
-	                        		System.out.println("Please enter enough parameter for adding continent.");
-	                        	else
-	                        		l_map.addContinent(Integer.parseInt(l_commands[2]), Integer.parseInt(l_commands[3]));
+	                    	    l_map.addContinent(Integer.parseInt(l_commands[++l_i]), Integer.parseInt(l_commands[++l_i]));
+                                l_i++;
 	                            break;
 	                        case "-remove":
-	                        	if(l_commands.length < 3)
-	                        		System.out.println("Please enter enough parameter for removing continent.");
-	                        	else
-	                        		l_map.removeContinent(Integer.parseInt(l_commands[2]));
-	                            break;
+	                    	    l_map.removeContinent(Integer.parseInt(l_commands[++l_i]));
+                                l_i++;
+                                break;
 	                        default:
 	                            System.out.println("Invalid Input");
 	                            break;
-	                    }
+                        }
+                    }
                     break;
                 case "editcountry":
-                	if(l_commands.length < 3)
-                		System.out.println("Please enter enough parameter for editing country.");
-                    switch(l_commands[1]) {
-                        case "-add":
-                        	if(l_commands.length < 4)
-                        		System.out.println("Please enter enough parameter for adding country.");
-                        	else
-                        		l_map.addCountry(Integer.parseInt(l_commands[2]), Integer.parseInt(l_commands[3])); 
-                            break;
-                        case "-remove":
-                        	if(l_commands.length < 3)
-                        		System.out.println("Please enter enough parameter for removing country.");
-                        	else
-                        		l_map.removeCountry(Integer.parseInt(l_commands[2]));
-                            break;
-                        default:
-                            System.out.println("Invalid Input");
-                            break;
+                	for(int l_i=1;l_i<l_commands.length;)
+                    {
+                        switch(l_commands[l_i]) {
+                            case "-add":
+                    	        l_map.addCountry(Integer.parseInt(l_commands[++l_i]), Integer.parseInt(l_commands[++l_i])); 
+                                l_i++;
+                                break;
+                            case "-remove":
+                    	        l_map.removeCountry(Integer.parseInt(l_commands[++l_i]));
+                                l_i++;
+                                break;
+                            default:
+                                System.out.println("Invalid Input");
+                        }
                     }
                     break;
                 case "editneighbor":
-                	if(l_commands.length < 4)
-                		System.out.println("Please enter enough parameter for editing neighbor.");
-                	else {
-                		switch(l_commands[1]) {
-	                        case "-add":
-	                            int l_countryId=Integer.parseInt(l_commands[2]);
-	                            int l_neighbor=Integer.parseInt(l_commands[3]);
-	                            if(l_countryId != l_neighbor)
-	                            	l_map.addNeighbor(l_neighbor, l_countryId);
-                            	l_map.addNeighbor(l_countryId,l_neighbor);
-	                            break;
-	                        case "-remove":
-	                            int l_rCountryId=Integer.parseInt(l_commands[2]);
-	                            int l_rNeighbor=Integer.parseInt(l_commands[3]);
-	                            if(l_rCountryId != l_rNeighbor)
-	                            	l_map.removeNeighbor(l_rNeighbor, l_rCountryId);
-	                            l_map.removeNeighbor(l_rCountryId, l_rNeighbor);
-	                            break;
-	                        default:
-	                            System.out.println("Invalid Input");
-	                        break;
-                		}
-                	}
+                	for(int l_i=1;l_i<l_commands.length;)
+                    {
+                        switch(l_commands[l_i]) {
+                            case "-add":
+                                int l_countryId=Integer.parseInt(l_commands[++l_i]);
+                                int l_neighbor=Integer.parseInt(l_commands[++l_i]);
+                                l_map.addNeighbor(l_countryId,l_neighbor);
+                                l_map.addNeighbor(l_neighbor, l_countryId);
+                                l_i++;
+                                break;
+                            case "-remove":
+                                int l_rCountryId=Integer.parseInt(l_commands[++l_i]);
+                                int l_rNeighbor=Integer.parseInt(l_commands[++l_i]);
+                                l_map.removeNeighbor(l_rCountryId, l_rNeighbor); 
+                                l_map.removeNeighbor(l_rNeighbor, l_rCountryId); 
+                                break;
+                            default:
+                                System.out.println("Invalid Input");
+                            break;
+                        }
+                    }
                     break;
             default:
                 System.out.println("Invalid Input");
             }         
         }
-        
+               
     }
 }
