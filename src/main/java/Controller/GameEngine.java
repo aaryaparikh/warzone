@@ -57,7 +57,7 @@ public class GameEngine {
      * @param player The player to add.
      */
     public boolean addPlayer(Player p_player) {
-        if (d_players.contains(p_player))
+        if (checkPlayerInList(p_player))
         	return false;
         else {
         	d_players.add(p_player);
@@ -71,12 +71,28 @@ public class GameEngine {
      * @param player The player to remove.
      */
     public boolean removePlayer(Player p_player) {
-        if (!d_players.contains(p_player))
+        if (!checkPlayerInList(p_player))
         	return false;
         else {
-        	d_players.remove(p_player);
+        	for(Player l_player : d_players)
+        		if(l_player.getName().equals(p_player.getName())) {
+        			d_players.remove(l_player);
+        			break;
+        		}
             return true;
         }
+    }
+    
+    /**
+     * Check whether a player in current list.
+     *
+     * @param player The player to check.
+     */
+    public boolean checkPlayerInList(Player p_player) {
+    	for(Player l_player : d_players)
+    		if(l_player.getName().equals(p_player.getName()))
+    			return true;
+    	return false;
     }
 
     /**
