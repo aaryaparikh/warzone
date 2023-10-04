@@ -36,7 +36,7 @@ public class MapService {
             String l_commands[]=l_userInput.split(" ");
             switch(l_commands[0]) {
                 case "showmap": 
-                    l_map.getD_mapView().showMap();; 
+                    l_map.getD_mapView().showMap(); 
                     break;
                 case "savemap":
                 	if(l_commands.length < 2)
