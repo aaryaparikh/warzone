@@ -28,7 +28,7 @@ public class GameEngine {
 	 */
 	public GameEngine(GameMap map) {
 		this.d_map = map;
-		this.d_players = new ArrayList<Player>();
+		this.d_players = new ArrayList<>();
 		this.d_commandHandler = new MapCommandHandler(this);
 		this.setPhaseView(new PhaseView(this));
 	}
@@ -49,15 +49,6 @@ public class GameEngine {
 	 */
 	public GameMap getGameMap() {
 		return this.d_map;
-	}
-
-	/**
-	 * Set the game map.
-	 *
-	 * @param The game map.
-	 */
-	public void setGameMap(GameMap p_map) {
-		this.d_map = p_map;
 	}
 
 	/**
@@ -108,7 +99,7 @@ public class GameEngine {
 	 * Assign countries to players randomly.
 	 */
 	public void assignCountriesRandomly() {
-		List<Country> l_unassignedCountries = new ArrayList<Country>(d_map.getCountries());
+		List<Country> l_unassignedCountries = new ArrayList<>(d_map.getCountries());
 
 		Collections.shuffle(l_unassignedCountries);
 
@@ -216,4 +207,6 @@ public class GameEngine {
 	public void setPhaseView(PhaseView d_phaseView) {
 		this.d_phaseView = d_phaseView;
 	}
+
+	// Other game phases and methods
 }
