@@ -50,11 +50,20 @@ public class StartUpGameService {
 				boolean ifAllPlayerAssigned = true;
 				for (Player l_player : d_gameEngine.getPlayers())
 					if (l_player.getD_countries().size() == 0) {
-						System.out.println("Please assign countries before end startup phase.");
+						System.out.println("Please assign all players before play.");
 						ifAllPlayerAssigned = false;
 						break;
 					}
-				if (ifAllPlayerAssigned) {
+
+				boolean ifAllCountryAssigned = true;
+				for (Country l_country : d_gameEngine.getGameMap().getCountries())
+					if (l_country.getOwner() == null) {
+						System.out.println("Please assign all countries before play.");
+						ifAllCountryAssigned = false;
+						break;
+					}
+
+				if (ifAllPlayerAssigned && ifAllCountryAssigned) {
 					d_gameEngine.setphase("play");
 					d_gameEngine.getPhaseView().showNextPhaseInfo("play");
 					return;
@@ -74,31 +83,44 @@ public class StartUpGameService {
 					d_gameEngine.setGameMap(d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]));
 				break;
 			case "gameplayer":
-				if (l_commands.length < 3)
-					System.out.println("Please enter enough parameter for order gameplayer");
-				else {
-					Player l_player = new Player(l_commands[2], d_gameEngine);
-					switch (l_commands[1]) {
-					case "-add":
-						if (d_gameEngine.addPlayer(l_player))
-							System.out.println("Player " + l_commands[2] + " is added.");
-						else
-							System.out.println("Player " + l_commands[2] + " already exists. Can't add again.");
-						break;
-					case "-remove":
-						if (d_gameEngine.removePlayer(l_player))
-							System.out.println("Player " + l_commands[2] + " is removed.");
-						else
-							System.out.println("Player " + l_commands[2] + " don't exist. Can't remove.");
-						break;
-					default:
-						System.out.println("Please enter valid parameter for order gameplayer");
+				try {
+					for (int l_i = 1; l_i < l_commands.length; l_i += 2) {
+						Player l_player = new Player(l_commands[l_i + 1], d_gameEngine);
+						switch (l_commands[l_i]) {
+						case "-add":
+
+							// If number of player exceed number of country, stop adding
+							if (d_gameEngine.getPlayers().size() >= d_gameEngine.getGameMap().getCountries().size()) {
+								System.out.println("Can't add more gameplayer");
+								break;
+							}
+
+							if (d_gameEngine.addPlayer(l_player))
+								System.out.println("Player " + l_commands[l_i + 1] + " is added.");
+							else
+								System.out
+										.println("Player " + l_commands[l_i + 1] + " already exists. Can't add again.");
+							break;
+						case "-remove":
+							if (d_gameEngine.removePlayer(l_player))
+								System.out.println("Player " + l_commands[l_i + 1] + " is removed.");
+							else
+								System.out.println("Player " + l_commands[l_i + 1] + " don't exist. Can't remove.");
+							break;
+						default:
+							System.out.println("Please enter valid parameter for order gameplayer");
+						}
 					}
+				} catch (Exception e) {
+					System.out.println("Invalid command for gameplayer");
 				}
+
 				break;
 			case "assigncountries":
 				if (d_gameEngine.getPlayers().size() == 0)
 					System.out.println("No players, can't assign countries");
+				else if (d_gameEngine.getPlayers().size() >= d_gameEngine.getGameMap().getCountries().size())
+					System.out.println("Can't assign countries because too many players");
 				else {
 					d_gameEngine.assignCountriesRandomly();
 					System.out.println("All countries are assigned to players");

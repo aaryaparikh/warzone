@@ -216,6 +216,4 @@ public class GameEngine {
 	public void setPhaseView(PhaseView d_phaseView) {
 		this.d_phaseView = d_phaseView;
 	}
-
-	// Other game phases and methods
 }
