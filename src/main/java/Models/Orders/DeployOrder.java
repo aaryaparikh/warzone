@@ -11,21 +11,21 @@ public class DeployOrder extends Order {
 	private Player d_player;
 	private Country d_country;
 	private int d_armies;
-	
-    /**
-     * Gets player object
-     *
-     * @return player object
-     */
+
+	/**
+	 * Gets player object
+	 *
+	 * @return player object
+	 */
 	public Player getPlayer() {
 		return d_player;
 	}
 
-    /**
-     * Sets player object
-     *
-     * @param player object
-     */	
+	/**
+	 * Sets player object
+	 *
+	 * @param player object
+	 */
 	public void setPlayer(Player d_player) {
 		this.d_player = d_player;
 	}
@@ -51,15 +51,15 @@ public class DeployOrder extends Order {
 	 */
 	@Override
 	public String execute(GameEngine p_game) {
-	    for (Country l_country : p_game.getGameMap().getCountries()) {
-	        if (l_country.equals(d_country)) {
-	            l_country.addArmies(d_armies);
-	            break;
-	        }
-	    }
-	    
-	    return String.format("Player \"%s\" deployed \"%d\" armies to country \"%d\"",
-	            d_player.getName(), d_armies, d_country.getCountryId());
+		for (Country l_country : p_game.getGameMap().getCountries()) {
+			if (l_country.equals(d_country)) {
+				l_country.addArmies(d_armies);
+				break;
+			}
+		}
+
+		return String.format("Player \"%s\" deployed \"%d\" armies to country \"%d\"", d_player.getName(), d_armies,
+				d_country.getCountryId());
 	}
 
 }

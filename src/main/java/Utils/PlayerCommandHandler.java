@@ -10,103 +10,106 @@ import Models.Orders.Order;
  * Handles player commands.
  */
 public class PlayerCommandHandler {
-    private GameEngine d_gameEngine;
-    
-    /**
-     * Constructor for CommandHandler.
-     *
-     * @param p_gameEngine The game engine.
-     */
-    public PlayerCommandHandler(GameEngine p_gameEngine) {
-    	d_gameEngine = p_gameEngine;
-    }
+	private GameEngine d_gameEngine;
 
-    /**
-     * Handles player commands.
-     *
-     * @param p_command       The player's command.
-     * @param p_currentPlayer The current player.
-     */
-    public String handlePlayerCommand(String p_command, Player p_currentPlayer) {
-        String[] l_command = p_command.split(" ");
-        switch (l_command[0]) {
-        	case "end":
-        		switch (d_gameEngine.getPhase()) {
-        			case "edit":
-                		d_gameEngine.setphase("start");
-                        d_gameEngine.getPhaseView().showNextPhaseInfo("start");
-                        break;
-        			case "start":
-                		d_gameEngine.setphase("play");
-                		d_gameEngine.getPhaseView().showNextPhaseInfo("play");
-                		break;
-        			case "play":
-        				d_gameEngine.setphase("end");
-                		d_gameEngine.getPhaseView().showNextPhaseInfo("end");
-                		break;
-        			case "execute":
-                		d_gameEngine.setphase("end");
-                		d_gameEngine.getPhaseView().showNextPhaseInfo("end");
-                		break;
-        		}
-        		break;
-            case "showmap":
-            	d_gameEngine.getGameMap().getD_mapView().showGameMap();
-            	return "stayCurrentPlayer";
+	/**
+	 * Constructor for CommandHandler.
+	 *
+	 * @param p_gameEngine The game engine.
+	 */
+	public PlayerCommandHandler(GameEngine p_gameEngine) {
+		d_gameEngine = p_gameEngine;
+	}
 
-            // Handle deploying armies
-            case "deploy":
-            	if (l_command.length < 3) {
-        	        String l_response = String.format("Please enter enough parameter for deploy order");
-        	        System.out.println(l_response);
-        	        return "stayCurrentPlayer";
-            	}
-            	
-            	if (l_command.length > 3) {
-        	        String l_response = String.format("Please enter less parameter for deploy order");
-        	        System.out.println(l_response);
-        	        return "stayCurrentPlayer";
-            	}
-            	
-            	boolean l_ifCountryInMap = false;
-                for (Country l_country : d_gameEngine.getGameMap().getCountries()) {
-                    if (l_country.getCountryId() == Integer.parseInt(l_command[1])) {
-                    	l_ifCountryInMap = true;
-                    	
-                	    // Check if the player controls the specified country.
-                	    if (!p_currentPlayer.getD_countries().contains(l_country)) {
-                	        String l_response = String.format("Player \"%s\" does not control country \"%d\"", p_currentPlayer.getName(), l_country.getCountryId());
-                	        System.out.println(l_response);
-                	        return "stayCurrentPlayer";
-                	    }
-                	    
-                	    // Check if the player has enough armies.
-                	    if (p_currentPlayer.getD_reinforcementPool() < Integer.parseInt(l_command[2])) {
-                	    	String l_response = String.format("Player \"%s\" does not have enough armies", p_currentPlayer.getName());
-                	    	System.out.println(l_response);
-                	        return "stayCurrentPlayer";
-                	    }
-                	    
-                        DeployOrder deployOrder = new DeployOrder(p_currentPlayer, l_country, Integer.parseInt(l_command[2]));
-                        p_currentPlayer.addOrder(deployOrder);
-                        p_currentPlayer.decreaseReinforcementPool(Integer.parseInt(l_command[2]));
-                        break;
-                    }
-                }
-                
-                if (l_ifCountryInMap == false) {
-        	        String l_response = String.format("Please deploy to a valid country in the map");
-        	        System.out.println(l_response);
-        	        return "stayCurrentPlayer";                	
-                }
-                break;
+	/**
+	 * Handles player commands.
+	 *
+	 * @param p_command       The player's command.
+	 * @param p_currentPlayer The current player.
+	 */
+	public String handlePlayerCommand(String p_command, Player p_currentPlayer) {
+		String[] l_command = p_command.split(" ");
+		switch (l_command[0]) {
+		case "end":
+			switch (d_gameEngine.getPhase()) {
+			case "edit":
+				d_gameEngine.setphase("start");
+				d_gameEngine.getPhaseView().showNextPhaseInfo("start");
+				break;
+			case "start":
+				d_gameEngine.setphase("play");
+				d_gameEngine.getPhaseView().showNextPhaseInfo("play");
+				break;
+			case "play":
+				d_gameEngine.setphase("end");
+				d_gameEngine.getPhaseView().showNextPhaseInfo("end");
+				break;
+			case "execute":
+				d_gameEngine.setphase("end");
+				d_gameEngine.getPhaseView().showNextPhaseInfo("end");
+				break;
+			}
+			break;
+		case "showmap":
+			d_gameEngine.getGameMap().getD_mapView().showGameMap();
+			return "stayCurrentPlayer";
 
-            default:
-                System.out.println("Please enter a valid command");
-    	        return "stayCurrentPlayer";
-                
-        }
-        return "nextPlayer";
-    }
+		// Handle deploying armies
+		case "deploy":
+			if (l_command.length < 3) {
+				String l_response = String.format("Please enter enough parameter for deploy order");
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
+
+			if (l_command.length > 3) {
+				String l_response = String.format("Please enter less parameter for deploy order");
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
+
+			boolean l_ifCountryInMap = false;
+			for (Country l_country : d_gameEngine.getGameMap().getCountries()) {
+				if (l_country.getCountryId() == Integer.parseInt(l_command[1])) {
+					l_ifCountryInMap = true;
+
+					// Check if the player controls the specified country.
+					if (!p_currentPlayer.getD_countries().contains(l_country)) {
+						String l_response = String.format("Player \"%s\" does not control country \"%d\"",
+								p_currentPlayer.getName(), l_country.getCountryId());
+						System.out.println(l_response);
+						return "stayCurrentPlayer";
+					}
+
+					// Check if the player has enough armies.
+					if (p_currentPlayer.getD_reinforcementPool() < Integer.parseInt(l_command[2])) {
+						String l_response = String.format("Player \"%s\" does not have enough armies",
+								p_currentPlayer.getName());
+						System.out.println(l_response);
+						return "stayCurrentPlayer";
+					}
+
+					DeployOrder deployOrder = new DeployOrder(p_currentPlayer, l_country,
+							Integer.parseInt(l_command[2]));
+					p_currentPlayer.addOrder(deployOrder);
+					p_currentPlayer.decreaseReinforcementPool(Integer.parseInt(l_command[2]));
+					break;
+				}
+			}
+
+			if (l_ifCountryInMap == false) {
+				String l_response = String.format("Please deploy to a valid country in the map");
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
+			break;
+
+		default:
+			System.out.println("Please enter a valid command");
+			return "stayCurrentPlayer";
+
+		}
+		return "nextPlayer";
+	}
 
 }
