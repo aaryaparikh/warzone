@@ -52,6 +52,15 @@ public class GameEngine {
     }
 
     /**
+     * Set the game map.
+     *
+     * @param The game map.
+     */
+    public void setGameMap(GameMap p_map) {
+        this.d_map = p_map;
+    }
+    
+    /**
      * Add a player to the game.
      *
      * @param player The player to add.

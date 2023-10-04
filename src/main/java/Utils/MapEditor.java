@@ -17,16 +17,17 @@ import Models.GameMap;
 public class MapEditor {
 	private List<Continent> d_continents;
 	private List<Country> d_countries;
+	private GameMap d_gameMap;
 
 	/**
      * Constructor for map editor
      *
-     * @param p_continents Continent list
-     * @param p_countries Country list
+     * @param p_gameMap Current map in game engine
      */
     public MapEditor(GameMap p_gameMap) {
 		this.d_continents = p_gameMap.getContinents();
 		this.d_countries = p_gameMap.getCountries();
+		this.d_gameMap = p_gameMap;
 	}
 	
 	/**
@@ -73,7 +74,7 @@ public class MapEditor {
      * @param p_fileName The name of the file to load the map from.
      * @return The loaded map.
      */
-    public GameMap loadMap(String p_fileName)
+    public GameMap editMap(String p_fileName)
     {
         String l_text="";
         GameMap l_map = new GameMap();
@@ -83,6 +84,7 @@ public class MapEditor {
             
             // Check whether the file exist in the path
             if(!l_mapFile.exists()) {
+                System.out.println("Map file dosen't exist, a new map is created from scratch.");
                 l_mapFile.createNewFile();
                 l_text="[Continents]\n";
                 l_text=l_text+"\n[Countries]\n";
@@ -121,13 +123,84 @@ public class MapEditor {
                         l_map.addNeighbor(l_countryId, l_neighbor);
                     }
                 }
+                
+                // validate the loaded map
+                d_countries = l_map.getCountries();
+                d_continents = l_map.getContinents();
+                validateMap();
             }   
         }
         catch(Exception e) {
-            System.out.println(e);
+            System.out.println("Map file is in unknown format, so it can't be loaded or edited.");
+            return d_gameMap;
         }
         
         return l_map;
+    }
+    
+    /**
+     * Loads a map from a file with the given filename.
+     *
+     * @param p_fileName The name of the file to load the map from.
+     * @return The loaded map.
+     */
+    public GameMap loadMap(String p_fileName) {
+        String l_text="";
+        
+        try{
+            File l_mapFile = new File("src/main/resources/"+p_fileName+".txt");
+            
+            // Check whether the file exist in the path
+            if(!l_mapFile.exists()) {
+                System.out.println("Map file dosen't exist, load map fails.");
+            }
+            else {
+            	@SuppressWarnings("resource")
+				Scanner l_reader = new Scanner(l_mapFile);
+                while(l_reader.hasNextLine()) {
+                    l_text+=l_reader.nextLine();
+                    l_text+="\n";
+                }
+                
+                GameMap l_map = new GameMap();
+
+                // Read map information form the file
+                String l_continents[]=l_text.split("\n\n")[0].split("\n");
+                String l_countries[]=l_text.split("\n\n")[1].split("\n");
+                String l_neigbors[]=l_text.split("\n\n")[2].split("\n");
+                
+                for(int l_i=1; l_i<l_continents.length; l_i++) {
+                    int l_continentId=Integer.parseInt(l_continents[l_i].split(" ")[0]);
+                    int l_continentValue=Integer.parseInt(l_continents[l_i].split(" ")[1]);
+                    l_map.addContinent(l_continentId, l_continentValue);
+                }
+                
+                for(int l_i=1; l_i<l_countries.length; l_i++) {
+                    int l_countryId=Integer.parseInt(l_countries[l_i].split(" ")[0]);
+                    int l_continentId=Integer.parseInt(l_countries[l_i].split(" ")[1]);
+                    String l_neighborsOfCountry[]=l_neigbors[l_i].split(" ");
+                    l_map.addCountry(l_countryId, l_continentId);
+                    
+                    for(int l_j=1; l_j<l_neighborsOfCountry.length; l_j++) {
+                        int l_neighbor=Integer.parseInt(l_neighborsOfCountry[l_j]);
+                        l_map.addNeighbor(l_countryId, l_neighbor);
+                    }
+                }
+                
+                // validate the loaded map
+                d_countries = l_map.getCountries();
+                d_continents = l_map.getContinents();
+                if(validateMap() == false)
+                	return d_gameMap;
+                else
+                    return l_map;
+            }   
+        }
+        catch(Exception e) {
+            System.out.println("Map file is in unknown format, so it can't be loaded or edited.");
+            return d_gameMap;
+        }
+        return d_gameMap;
     }
     
     /**

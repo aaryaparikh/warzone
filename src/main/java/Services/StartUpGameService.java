@@ -60,7 +60,7 @@ public class StartUpGameService {
 	            	if (l_commands.length < 2)
 	                	System.out.println("Please enter valid map file path");
 	            	else
-	            		d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]);
+	            		d_gameEngine.setGameMap(d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]));
 	                break;
 	            case "gameplayer":
 	            	if (l_commands.length < 3)

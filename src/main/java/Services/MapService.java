@@ -49,12 +49,6 @@ public class MapService {
                         System.out.println("Valid Map");
                     }
                     break;
-                case "loadmap":
-                	if(l_commands.length < 2)
-                        System.out.println("Please enter file path to load map.");
-                	else
-                		l_map=l_map.d_mapEditor.loadMap(l_commands[1]);
-                    break;
                 case "editmap":
                 	if(l_commands.length < 2)
                         System.out.println("Please enter file path to load map.");

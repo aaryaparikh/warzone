@@ -23,6 +23,16 @@ public class GameMap {
     	d_mapView = new MapView(this);
     }
     
+    /**
+     * Reset GameMap
+     */
+    public void mapReset() {
+    	d_continents = new ArrayList<Continent>();
+    	d_countries = new ArrayList<Country>();
+    	d_continentCount = 0;
+    	d_countryCount = 0;
+    }
+    
 	/**
      * Gets the map view object
      *
