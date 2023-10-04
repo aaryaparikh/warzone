@@ -178,8 +178,11 @@ public class MapService {
 								l_i += 1;
 							} else {
 								try {
-									l_map.addNeighbor(Integer.parseInt(l_commands[l_i + 1]),
-											Integer.parseInt(l_commands[l_i + 2]));
+									if (!l_commands[l_i + 1].equals(l_commands[l_i + 2]))
+										l_map.addNeighbor(Integer.parseInt(l_commands[l_i + 1]),
+												Integer.parseInt(l_commands[l_i + 2]));
+									l_map.addNeighbor(Integer.parseInt(l_commands[l_i + 2]),
+											Integer.parseInt(l_commands[l_i + 1]));
 								} catch (Exception e) {
 									System.out.println(e);
 								}
@@ -196,8 +199,11 @@ public class MapService {
 								l_i += 1;
 							} else {
 								try {
-									l_map.removeNeighbor(Integer.parseInt(l_commands[l_i + 1]),
+									if (!l_commands[l_i + 1].equals(l_commands[l_i + 2]))
+										l_map.removeNeighbor(Integer.parseInt(l_commands[l_i + 1]),
 											Integer.parseInt(l_commands[l_i + 2]));
+									l_map.removeNeighbor(Integer.parseInt(l_commands[l_i + 2]),
+											Integer.parseInt(l_commands[l_i + 1]));
 								} catch (Exception e) {
 									System.out.println(e);
 								}

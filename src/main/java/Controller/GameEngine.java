@@ -85,6 +85,9 @@ public class GameEngine {
 		else {
 			for (Player l_player : d_players)
 				if (l_player.getName().equals(p_player.getName())) {
+					for (Country l_country : d_map.getCountries())
+						if (l_country.getOwner().equals(l_player))
+							l_country.setOwner(null);
 					d_players.remove(l_player);
 					break;
 				}
