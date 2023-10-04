@@ -54,21 +54,17 @@ public class StartUpGameService {
 	            	}
 	            	break;
 	            case "showmap": 
-	                d_gameEngine.getGameMap().showGameMap(); 
+	                d_gameEngine.getGameMap().getD_mapView().showGameMap(); 
 	                break;
 	            case "loadmap":
-	            	if (l_commands.length < 2) {
+	            	if (l_commands.length < 2)
 	                	System.out.println("Please enter valid map file path");
-	            		continue;	            		
-	            	}
 	            	else
 	            		d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]);
 	                break;
 	            case "gameplayer":
-	            	if (l_commands.length < 3) {
+	            	if (l_commands.length < 3)
 	                	System.out.println("Please enter enough parameter for order gameplayer");
-	            		continue;	            		
-	            	}
 	            	else {
     	                Player l_player = new Player(l_commands[2], d_gameEngine);
 	            		switch(l_commands[1]) {

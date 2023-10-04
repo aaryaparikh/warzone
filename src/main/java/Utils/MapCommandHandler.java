@@ -52,9 +52,9 @@ public class MapCommandHandler {
         		break;
             case "showmap":
             	if(d_gameEngine.getPhase() == "edit")
-            		d_gameEngine.getGameMap().showMap();
+            		d_gameEngine.getGameMap().getD_mapView().showMap();
             	else if(d_gameEngine.getPhase() == "play")
-            		d_gameEngine.getGameMap().showGameMap();
+            		d_gameEngine.getGameMap().getD_mapView().showGameMap();
                 break;
 
             case "savemap":

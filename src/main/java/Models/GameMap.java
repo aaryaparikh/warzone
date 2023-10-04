@@ -2,6 +2,7 @@ package Models;
 import java.util.*;
 
 import Utils.MapEditor;
+import Views.MapView;
 
 /**
  * Represents a map containing continents and countries.
@@ -12,10 +13,33 @@ public class GameMap {
     private int d_continentCount = 0;
     private int d_countryCount = 0;
     public MapEditor d_mapEditor;
+	private MapView d_mapView;
     
+    /**
+     * Constructor for GameMap
+     */
     public GameMap() {
     	d_mapEditor = new MapEditor(this);
+    	d_mapView = new MapView(this);
     }
+    
+	/**
+     * Gets the map view object
+     *
+     * @return The map view object
+     */
+	public MapView getD_mapView() {
+		return d_mapView;
+	}
+	
+    /**
+     * Sets the map view object
+     *
+     * @param map view object
+     */
+	public void setD_mapView(MapView d_mapView) {
+		this.d_mapView = d_mapView;
+	}
 
 	/**
      * Gets the list of countries on the map.
@@ -126,43 +150,4 @@ public class GameMap {
         }
     }
     
-    /**
-     * Displays a summary of the map, including continents, countries, and their borders.
-     */
-    public void showMap() {
-        System.out.println("[Continents]");
-        for(int l_i=0;l_i<d_continentCount;l_i++) {
-            System.out.println(d_continents.get(l_i).getContinentId()+" "+d_continents.get(l_i).getContinentValue());
-        }
-        System.out.println("[Countries]");
-        for(int l_i=0;l_i<d_countryCount;l_i++) {
-            System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getContinentId());
-        }
-        System.out.println("[Borders]");
-        for(int l_i=0;l_i<d_countryCount;l_i++) {
-            System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getNeighborCountries());
-        }
-        d_mapEditor.validateMap();
-    }
-    
-    /**
-     * Displays a summary of the game map, including continents, countries, armies, and owners.
-     */
-    public void showGameMap() {
-        System.out.println("[Continents]");
-        for(int l_i=0;l_i<d_continentCount;l_i++) {
-            System.out.println(d_continents.get(l_i).getContinentId()+" "+d_continents.get(l_i).getContinentValue());
-        }
-        System.out.println("[Countries]");
-        for(int l_i=0;l_i<d_countryCount;l_i++) {
-            System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getContinentId()+" Armies:"+d_countries.get(l_i).getArmies()+" Owner:"+d_countries.get(l_i).getOwner().getName());
-        }
-        System.out.println("[Borders]");
-        for(int l_i=0;l_i<d_countryCount;l_i++) {
-            System.out.println(d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getNeighborCountries());
-        }
-        d_mapEditor.validateMap();
-    }
-    
-
 }

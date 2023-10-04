@@ -51,7 +51,7 @@ public class PlayerCommandHandler {
         		}
         		break;
             case "showmap":
-            	d_gameEngine.getGameMap().showGameMap();
+            	d_gameEngine.getGameMap().getD_mapView().showGameMap();
             	return "stayCurrentPlayer";
 
             // Handle deploying armies

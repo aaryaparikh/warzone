@@ -56,7 +56,13 @@ public class Country {
      * @param p_neighborCountryId The identifier of the neighboring country to be removed.
      */
     public void removeNeighbor(int p_neighborCountryId) {
-        d_neighborCountries.remove(p_neighborCountryId);
+    	for(int l_i=0; l_i<d_neighborCountries.size(); l_i++) {
+    		if(d_neighborCountries.get(l_i) == p_neighborCountryId) {
+    	        d_neighborCountries.remove(l_i);
+    	        break;
+    		}
+    			
+    	}
     }
 
     /**
