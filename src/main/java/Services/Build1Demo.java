@@ -41,7 +41,7 @@ public class Build1Demo {
 	 */	
     public static void main(String[] args) {
     	GameMap map = new GameMap();
-    	
+    	defaultGameMap(map);
         GameEngine gameEngine = new GameEngine(map);
         MapCommandHandler commandHandler = new MapCommandHandler(gameEngine);
         gameEngine.getPhaseView().showGameInfo();
@@ -51,7 +51,7 @@ public class Build1Demo {
         gameEngine.getPhaseView().showNextPhaseInfo("edit");
         
         MapService mapService = new MapService(map);
-        map=mapService.main(null);
+        mapService.main(null);
         
         commandHandler.handlePlayerCommand("end", null);
         
