@@ -11,7 +11,7 @@ public class GameMap {
     private ArrayList<Country> d_countries = new ArrayList<Country>();
     private int d_continentCount = 0;
     private int d_countryCount = 0;
-    public MapEditor d_mapEditor = new MapEditor();
+    public MapEditor d_mapEditor;
 
 	/**
      * Gets the list of countries on the map.

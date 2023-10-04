@@ -15,11 +15,25 @@ import Models.GameMap;
  *
  */
 public class MapEditor {
-    private int d_continentCount;
+	private int d_continentCount;
 	private List<Continent> d_continents;
 	private int d_countryCount;
 	private List<Country> d_countries;
 
+	/**
+     * Constructor for map editor
+     *
+     * @param p_continents Continent list
+     * @param p_countries Country list
+     */
+    public MapEditor(List<Continent> p_continents, List<Country> p_countries) {
+		super();
+		this.d_continentCount = p_continents.size();
+		this.d_continents = p_continents;
+		this.d_countryCount = p_countries.size();
+		this.d_countries = p_countries;
+	}
+	
 	/**
      * Writes the map information to a file with the given filename.
      *
@@ -47,7 +61,7 @@ public class MapEditor {
                 }
                 l_text+="\n";
             }
-            FileWriter l_writer=new FileWriter("maps/"+p_filename+".txt");
+            FileWriter l_writer=new FileWriter("src/main/resources/"+p_filename+".txt");
             l_writer.write(l_text);
             l_writer.close();
             System.out.println("File Saved Successfully");
@@ -67,7 +81,7 @@ public class MapEditor {
     {
         String l_text="";
         try{
-            File l_mapFile = new File("maps/"+p_fileName+".txt");
+            File l_mapFile = new File("src/main/resources/"+p_fileName+".txt");
             Scanner l_reader = new Scanner(l_mapFile);
             while(l_reader.hasNextLine()) {
                 l_text+=l_reader.nextLine();
@@ -110,7 +124,7 @@ public class MapEditor {
         HashMap <Integer,Integer> l_counter = new HashMap<>();
         
         // Step 1: Check for duplicate continents and validate continent values.
-        for(int l_i=0;l_i<d_continentCount;l_i++) {
+        for(int l_i=0; l_i<d_continentCount; l_i++) {
             if(!l_counter.containsKey(d_continents.get(l_i).getContinentId())) {
                 l_counter.put(d_continents.get(l_i).getContinentId(), 1);
             }
