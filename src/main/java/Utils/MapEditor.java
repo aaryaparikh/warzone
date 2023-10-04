@@ -15,9 +15,7 @@ import Models.GameMap;
  *
  */
 public class MapEditor {
-	private int d_continentCount;
 	private List<Continent> d_continents;
-	private int d_countryCount;
 	private List<Country> d_countries;
 
 	/**
@@ -26,12 +24,9 @@ public class MapEditor {
      * @param p_continents Continent list
      * @param p_countries Country list
      */
-    public MapEditor(List<Continent> p_continents, List<Country> p_countries) {
-		super();
-		this.d_continentCount = p_continents.size();
-		this.d_continents = p_continents;
-		this.d_countryCount = p_countries.size();
-		this.d_countries = p_countries;
+    public MapEditor(GameMap p_gameMap) {
+		this.d_continents = p_gameMap.getContinents();
+		this.d_countries = p_gameMap.getCountries();
 	}
 	
 	/**
@@ -46,15 +41,15 @@ public class MapEditor {
         try{
             String l_text;
             l_text="[Continents]\n";
-            for(int l_i=0;l_i<d_continentCount;l_i++) {
+            for(int l_i=0; l_i<d_continents.size(); l_i++) {
                 l_text=l_text+d_continents.get(l_i).getContinentId()+" "+d_continents.get(l_i).getContinentValue()+"\n";
             }
             l_text=l_text+"\n[Countries]\n";
-            for(int l_i=0;l_i<d_countryCount;l_i++) {
+            for(int l_i=0;l_i<d_countries.size();l_i++) {
                 l_text=l_text+d_countries.get(l_i).getCountryId()+" "+d_countries.get(l_i).getContinentId()+"\n";
             }
             l_text=l_text+"\n[Borders]\n";
-            for(int l_i=0;l_i<d_countryCount;l_i++) {
+            for(int l_i=0;l_i<d_countries.size();l_i++) {
                 l_text=l_text+d_countries.get(l_i).getCountryId();
                 for(int l_j=0;l_j<d_countries.get(l_i).getNeighborCountries().size();l_j++) {
                     l_text+=" "+d_countries.get(l_i).getNeighborCountries().get(l_j);
@@ -124,7 +119,7 @@ public class MapEditor {
         HashMap <Integer,Integer> l_counter = new HashMap<>();
         
         // Step 1: Check for duplicate continents and validate continent values.
-        for(int l_i=0; l_i<d_continentCount; l_i++) {
+        for(int l_i=0; l_i<d_continents.size(); l_i++) {
             if(!l_counter.containsKey(d_continents.get(l_i).getContinentId())) {
                 l_counter.put(d_continents.get(l_i).getContinentId(), 1);
             }
@@ -140,7 +135,7 @@ public class MapEditor {
         l_counter.clear();
         
         // Step 2: Check for duplicate countries, unreachable countries, and continent assignments.
-        for(int l_i=0;l_i<d_countryCount;l_i++) {
+        for(int l_i=0;l_i<d_countries.size();l_i++) {
         	
             // Step 3: Check for duplicate countries
             if(!l_counter.containsKey(d_countries.get(l_i).getCountryId())) {
@@ -159,7 +154,7 @@ public class MapEditor {
             
             // Step 5: Check if the country is assigned to a valid continent
             int l_check=0;
-            for(int l_j=0;l_j<d_continentCount;l_j++) {
+            for(int l_j=0;l_j<d_continents.size();l_j++) {
                 if(d_countries.get(l_i).getContinentId()==d_continents.get(l_j).getContinentId()) {
                     l_check=1;
                     break;
@@ -191,7 +186,7 @@ public class MapEditor {
                 
                 // Step 8: Check if neighboring country exists
                 int l_checker=0;
-                for(int l_j=0;l_j<d_countryCount;l_j++) {
+                for(int l_j=0;l_j<d_countries.size();l_j++) {
                     if(d_countries.get(l_j).getCountryId()==l_neighbors) {
                         l_checker=1;
                     }
@@ -204,7 +199,7 @@ public class MapEditor {
             
             // Step 9: Check if continent exists
             int l_checker=0;
-            for(int l_j=0;l_j<d_continentCount;l_j++) {
+            for(int l_j=0;l_j<d_continents.size();l_j++) {
                 if(d_countries.get(l_i).getContinentId()==d_continents.get(l_j).getContinentId()) {
                     l_checker=1;
                 }

@@ -12,6 +12,10 @@ public class GameMap {
     private int d_continentCount = 0;
     private int d_countryCount = 0;
     public MapEditor d_mapEditor;
+    
+    public GameMap() {
+    	d_mapEditor = new MapEditor(this);
+    }
 
 	/**
      * Gets the list of countries on the map.
@@ -29,6 +33,15 @@ public class GameMap {
      */
     public void setCountries(ArrayList<Country> d_countries) {
         this.d_countries = d_countries;
+    }
+    
+	/**
+     * Gets the list of countries on the map.
+     *
+     * @return The list of countries.
+     */
+    public ArrayList<Continent> getContinents() {
+        return d_continents;
     }
 
     /**
