@@ -1,6 +1,6 @@
 package Models;
 
-import java.util.*;
+import java.util.ArrayList;
 
 import Utils.MapEditor;
 import Views.MapView;
@@ -9,9 +9,10 @@ import Views.MapView;
  * Represents a map containing continents and countries.
  */
 public class GameMap {
-	private ArrayList<Continent> d_continents = new ArrayList<Continent>();
-	private ArrayList<Country> d_countries = new ArrayList<Country>();
-	private int d_continentCount = 0;
+
+	private ArrayList<Continent> d_continents = new ArrayList<>();
+	private ArrayList<Country> d_countries = new ArrayList<>();
+	int d_continentCount = 0;
 	private int d_countryCount = 0;
 	public MapEditor d_mapEditor;
 	private MapView d_mapView;
@@ -25,11 +26,47 @@ public class GameMap {
 	}
 
 	/**
+	 * <<<<<<< HEAD Gets the count of Continent
+	 *
+	 * @return d_continentCount The count of continent
+	 */
+	public int getD_continentCount() {
+		return d_continentCount;
+	}
+
+	/**
+	 * Sets the count of Continent
+	 *
+	 * @param d_continentCount The continent count
+	 */
+	public void setD_continentCount(int d_continentCount) {
+		this.d_continentCount = d_continentCount;
+	}
+
+	/**
+	 * Gets the country count
+	 *
+	 * @return countryCount
+	 */
+	public int getD_countryCount() {
+		return d_countryCount;
+	}
+
+	/**
+	 * Gets the country Count
+	 *
+	 * @param d_countryCount
+	 */
+	public void setD_countryCount(int d_countryCount) {
+		this.d_countryCount = d_countryCount;
+	}
+
+	/**
 	 * Reset GameMap
 	 */
 	public void mapReset() {
-		d_continents = new ArrayList<Continent>();
-		d_countries = new ArrayList<Country>();
+		d_continents = new ArrayList<>();
+		d_countries = new ArrayList<>();
 		d_continentCount = 0;
 		d_countryCount = 0;
 	}
