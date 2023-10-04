@@ -102,8 +102,8 @@ public class Player {
 	 *
 	 * @param numReinforcements The number of reinforcements to assign.
 	 */
-	public void assignReinforcements(int numReinforcements) {
-		d_reinforcementPool += numReinforcements;
+	public void assignReinforcements(int p_numReinforcements) {
+		d_reinforcementPool += p_numReinforcements;
 	}
 
 	/**
@@ -122,8 +122,8 @@ public class Player {
 	 *                             reinforcement pool by.
 	 * @return The updated reinforcement pool value.
 	 */
-	public int decreaseReinforcementPool(int decreaseArmiesNumber) {
-		return d_reinforcementPool -= decreaseArmiesNumber;
+	public int decreaseReinforcementPool(int p_decreaseArmiesNumber) {
+		return d_reinforcementPool -= p_decreaseArmiesNumber;
 	}
 
 	/**

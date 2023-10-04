@@ -26,6 +26,7 @@ public class IssueOrders extends GamePhase {
 		List<Player> l_playerPool = super.d_gameEngine.getPlayers();
 		int l_remainedPlayers = l_playerPool.size();
 
+		// issue order in round-robin fashion
 		while (l_remainedPlayers > 0) {
 			for (Player l_player : l_playerPool) {
 				if (l_player.getD_reinforcementPool() != 0) {
@@ -39,6 +40,6 @@ public class IssueOrders extends GamePhase {
 
 		System.out.println("[All players have deployed all reinforcement]");
 		super.d_gameEngine.getPhaseView().showNextPhaseInfo("execute");
-		super.d_gameEngine.setphase("execute");
+		super.d_gameEngine.setPhase("execute");
 	}
 }

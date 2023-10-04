@@ -32,6 +32,7 @@ public class PhaseView {
 	 * @param p_phase The name of the next game phase.
 	 */
 	public void showNextPhaseInfo(String p_phase) {
+		// different output for different phase
 		switch (p_phase) {
 		case "edit":
 			System.out.println("\n<<Edit map phase>><end><showmap><savemap><editmap><validatemap>");

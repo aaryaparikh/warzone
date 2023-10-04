@@ -24,10 +24,10 @@ public class GameEngine {
 	/**
 	 * Constructor for GameEngine.
 	 *
-	 * @param map The game map.
+	 * @param p_map The game map.
 	 */
-	public GameEngine(GameMap map) {
-		this.d_map = map;
+	public GameEngine(GameMap p_map) {
+		this.d_map = p_map;
 		this.d_players = new ArrayList<>();
 		this.d_commandHandler = new MapCommandHandler(this);
 		this.setPhaseView(new PhaseView(this));
@@ -76,6 +76,11 @@ public class GameEngine {
 		else {
 			for (Player l_player : d_players)
 				if (l_player.getName().equals(p_player.getName())) {
+
+					// remove country owner
+					for (Country l_country : d_map.getCountries())
+						if (l_country.getOwner().equals(l_player))
+							l_country.setOwner(null);
 					d_players.remove(l_player);
 					break;
 				}
@@ -103,10 +108,12 @@ public class GameEngine {
 
 		Collections.shuffle(l_unassignedCountries);
 
+		// reset owner of countries before assign
 		for (Player l_player : d_players) {
 			l_player.resetCountry();
 		}
 
+		// assign country
 		for (int l_i = 0; l_i < l_unassignedCountries.size(); l_i++) {
 			Player l_player = d_players.get(l_i % d_players.size());
 			Country l_country = l_unassignedCountries.get(l_i);
@@ -133,7 +140,7 @@ public class GameEngine {
 	 * @param ownedCountries The list of countries owned by the player.
 	 * @return The number of reinforcement armies.
 	 */
-	private int calculateReinforcementArmies(Player player, List<Country> ownedCountries) {
+	private int calculateReinforcementArmies(Player p_player, List<Country> p_ownedCountries) {
 		// Implement reinforcement calculation logic based on game rules
 		// For simplicity, returning a constant value for demonstration
 		return GameConstants.DEFAULT_PLAYER_REINFORCEMENT;
@@ -143,7 +150,7 @@ public class GameEngine {
 	 * Allow players to issue orders in their turn.
 	 */
 	public void playerIssueOrdersInTurn() {
-		IssueOrders l_issueOrderPhase = new IssueOrders(this, d_commandHandler); // Method parameters start with p_
+		IssueOrders l_issueOrderPhase = new IssueOrders(this, d_commandHandler);
 		l_issueOrderPhase.issueOrders();
 	}
 
@@ -153,8 +160,8 @@ public class GameEngine {
 	 * @return The result of executing orders.
 	 */
 	public String executeAllCommittedOrders() {
-		ExecuteOrders l_executeOrderPhase = new ExecuteOrders(this, d_commandHandler); // Method parameters start with
-																						// p_
+		ExecuteOrders l_executeOrderPhase = new ExecuteOrders(this, d_commandHandler);
+
 		return l_executeOrderPhase.executeOrders();
 	}
 
@@ -164,8 +171,8 @@ public class GameEngine {
 	 * @return True if the game is over, otherwise false.
 	 */
 	public Boolean checkIfGameIsOver() {
-		for (Player player : d_players) {
-			if (player.getD_countries().size() == d_map.getCountries().size()) {
+		for (Player l_player : d_players) {
+			if (l_player.getD_countries().size() == d_map.getCountries().size()) {
 				return true;
 			}
 		}
@@ -186,8 +193,8 @@ public class GameEngine {
 	 *
 	 * @param Phase.
 	 */
-	public void setphase(String d_phase) {
-		this.d_phase = d_phase;
+	public void setPhase(String p_phase) {
+		this.d_phase = p_phase;
 	}
 
 	/**
@@ -204,8 +211,8 @@ public class GameEngine {
 	 *
 	 * @param PhaseView.
 	 */
-	public void setPhaseView(PhaseView d_phaseView) {
-		this.d_phaseView = d_phaseView;
+	public void setPhaseView(PhaseView p_phaseView) {
+		this.d_phaseView = p_phaseView;
 	}
 
 	// Other game phases and methods

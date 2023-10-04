@@ -36,36 +36,37 @@ public class Build1Demo {
 	 * @param args
 	 * 
 	 */
-	public static void main(String[] args) {
-		GameMap map = new GameMap();
-		defaultGameMap(map);
-		GameEngine gameEngine = new GameEngine(map);
-		MapCommandHandler commandHandler = new MapCommandHandler(gameEngine);
-		gameEngine.getPhaseView().showGameInfo();
+	public static void main(String[] p_args) {
+		// Initialize Map and Game Engine
+		GameMap l_map = new GameMap();
+		defaultGameMap(l_map);
+		GameEngine l_gameEngine = new GameEngine(l_map);
+		MapCommandHandler l_commandHandler = new MapCommandHandler(l_gameEngine);
+		l_gameEngine.getPhaseView().showGameInfo();
 
 		// Initialize map edit phase
-		gameEngine.setphase("edit");
-		gameEngine.getPhaseView().showNextPhaseInfo("edit");
-		MapService mapService = new MapService(map);
+		l_gameEngine.setPhase("edit");
+		l_gameEngine.getPhaseView().showNextPhaseInfo("edit");
+		MapService l_mapService = new MapService(l_map);
 
-		while (gameEngine.getPhase().equals("edit")) {
+		while (l_gameEngine.getPhase().equals("edit")) {
 			// Enter map edit phase
-			mapService.main(null);
-			commandHandler.handlePlayerCommand("end", null);
+			l_mapService.main(null);
+			l_commandHandler.handlePlayerCommand("end", null);
 
 			// Enter start up phase
-			StartUpGameService StartupService = new StartUpGameService(gameEngine);
+			StartUpGameService StartupService = new StartUpGameService(l_gameEngine);
 			StartupService.main(null);
-			mapService.setD_map(gameEngine.getGameMap());
+			l_mapService.setD_map(l_gameEngine.getGameMap());
 		}
 
 		// Enter game play phase
-		while (gameEngine.getPhase().equals("play")) {
-			gameEngine.assignReinforcements();
+		while (l_gameEngine.getPhase().equals("play")) {
+			l_gameEngine.assignReinforcements();
 
-			gameEngine.playerIssueOrdersInTurn();
+			l_gameEngine.playerIssueOrdersInTurn();
 
-			if (gameEngine.executeAllCommittedOrders() == "gameOver")
+			if (l_gameEngine.executeAllCommittedOrders() == "gameOver")
 				break;
 		}
 
