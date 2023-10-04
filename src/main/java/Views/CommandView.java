@@ -1,5 +1,8 @@
 package Views;
 
+/**
+ * Command View class
+ */
 public class CommandView {
 
 	/**

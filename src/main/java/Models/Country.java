@@ -10,7 +10,6 @@ public class Country {
 	private int d_continentId;
 	private int d_armies;
 	private Player d_owner;
-
 	private ArrayList<Integer> d_neighborCountries = new ArrayList<Integer>();
 
 	/**
@@ -91,8 +90,8 @@ public class Country {
 	 *
 	 * @param d_armies The number of armies to set.
 	 */
-	public void setArmies(int d_armies) {
-		this.d_armies = d_armies;
+	public void setArmies(int p_armies) {
+		this.d_armies = p_armies;
 	}
 
 	/**
@@ -109,8 +108,8 @@ public class Country {
 	 *
 	 * @param d_owner The player who owns the country.
 	 */
-	public void setOwner(Player d_owner) {
-		this.d_owner = d_owner;
+	public void setOwner(Player p_owner) {
+		this.d_owner = p_owner;
 	}
 
 	/**
@@ -118,8 +117,8 @@ public class Country {
 	 *
 	 * @param numArmies The number of armies to add.
 	 */
-	public void addArmies(int numArmies) {
-		this.d_armies += numArmies;
+	public void addArmies(int p_numArmies) {
+		this.d_armies += p_numArmies;
 	}
 
 	/**
@@ -127,7 +126,7 @@ public class Country {
 	 *
 	 * @param numArmies The number of armies to subtract.
 	 */
-	public void subtractArmies(int numArmies) {
-		this.d_armies -= numArmies;
+	public void subtractArmies(int p_numArmies) {
+		this.d_armies -= p_numArmies;
 	}
 }

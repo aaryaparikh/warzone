@@ -10,8 +10,8 @@ import Views.MapView;
  */
 public class GameMap {
 
-	private ArrayList<Continent> d_continents = new ArrayList<>();
-	private ArrayList<Country> d_countries = new ArrayList<>();
+	private ArrayList<Continent> d_continents = new ArrayList<Continent>();
+	private ArrayList<Country> d_countries = new ArrayList<Country>();
 	int d_continentCount = 0;
 	private int d_countryCount = 0;
 	public MapEditor d_mapEditor;
@@ -39,8 +39,8 @@ public class GameMap {
 	 *
 	 * @param d_continentCount The continent count
 	 */
-	public void setD_continentCount(int d_continentCount) {
-		this.d_continentCount = d_continentCount;
+	public void setD_continentCount(int p_continentCount) {
+		this.d_continentCount = p_continentCount;
 	}
 
 	/**
@@ -57,16 +57,16 @@ public class GameMap {
 	 *
 	 * @param d_countryCount
 	 */
-	public void setD_countryCount(int d_countryCount) {
-		this.d_countryCount = d_countryCount;
+	public void setD_countryCount(int p_countryCount) {
+		this.d_countryCount = p_countryCount;
 	}
 
 	/**
 	 * Reset GameMap
 	 */
 	public void mapReset() {
-		d_continents = new ArrayList<>();
-		d_countries = new ArrayList<>();
+		d_continents = new ArrayList<Continent>();
+		d_countries = new ArrayList<Country>();
 		d_continentCount = 0;
 		d_countryCount = 0;
 	}
@@ -85,8 +85,8 @@ public class GameMap {
 	 *
 	 * @param map view object
 	 */
-	public void setD_mapView(MapView d_mapView) {
-		this.d_mapView = d_mapView;
+	public void setD_mapView(MapView p_mapView) {
+		this.d_mapView = p_mapView;
 	}
 
 	/**
@@ -103,8 +103,8 @@ public class GameMap {
 	 *
 	 * @param d_countries The list of countries to set.
 	 */
-	public void setCountries(ArrayList<Country> d_countries) {
-		this.d_countries = d_countries;
+	public void setCountries(ArrayList<Country> p_countries) {
+		this.d_countries = p_countries;
 	}
 
 	/**

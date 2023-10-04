@@ -33,23 +33,25 @@ public class MapCommandHandler {
 		case "end":
 			switch (d_gameEngine.getPhase()) {
 			case "edit":
-				d_gameEngine.setphase("start");
+				d_gameEngine.setPhase("start");
 				d_gameEngine.getPhaseView().showNextPhaseInfo("start");
 				break;
 			case "start":
-				d_gameEngine.setphase("play");
+				d_gameEngine.setPhase("play");
 				d_gameEngine.getPhaseView().showNextPhaseInfo("play");
 				break;
 			case "play":
-				d_gameEngine.setphase("end");
+				d_gameEngine.setPhase("end");
 				d_gameEngine.getPhaseView().showNextPhaseInfo("end");
 				break;
 			case "execute":
-				d_gameEngine.setphase("end");
+				d_gameEngine.setPhase("end");
 				d_gameEngine.getPhaseView().showNextPhaseInfo("end");
 				break;
 			}
 			break;
+		
+		// show general map
 		case "showmap":
 			if (d_gameEngine.getPhase() == "edit")
 				d_gameEngine.getGameMap().getD_mapView().showMap();

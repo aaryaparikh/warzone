@@ -26,8 +26,8 @@ public class DeployOrder extends Order {
 	 *
 	 * @param player object
 	 */
-	public void setPlayer(Player d_player) {
-		this.d_player = d_player;
+	public void setPlayer(Player p_player) {
+		this.d_player = p_player;
 	}
 
 	/**

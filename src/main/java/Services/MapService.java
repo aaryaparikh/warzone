@@ -33,7 +33,7 @@ public class MapService {
 	 *
 	 * @param args
 	 */
-	public void main(String[] args) {
+	public void main(String[] p_args) {
 		@SuppressWarnings("resource")
 		Scanner l_sc = new Scanner(System.in);
 
@@ -43,6 +43,8 @@ public class MapService {
 			String l_userInput;
 			l_userInput = l_sc.nextLine();
 			String l_commands[] = l_userInput.split(" ");
+			
+			// solve the command
 			switch (l_commands[0]) {
 			case "showmap":
 				l_map.getD_mapView().showMap();
@@ -70,6 +72,8 @@ public class MapService {
 				else
 					System.out.println("Since invalid map, can't move to play.");
 				break;
+				
+			// edit continent with two kinds of options
 			case "editcontinent":
 				if (l_commands.length < 4)
 					System.out.println("Please enter enough parameter for editing continent.");
@@ -77,14 +81,18 @@ public class MapService {
 					for (int l_i = 1; l_i < l_commands.length;) {
 						switch (l_commands[l_i]) {
 						case "-add":
+							
+							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
 								System.out.println("Edit some continents but no more enough parameter for adding.");
+							// make sure no -add or -remove being recognized as parameter
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
 								System.out.println("Please don't enter duplicated -add or -remove");
 							else if (l_commands[l_i + 2].equals("-add") || l_commands[l_i + 2].equals("-remove")) {
 								System.out.println("Please enter enough parameter.");
 								l_i += 1;
 							} else {
+								// make sure all parameter is integer otherwise an exception
 								try {
 									l_map.addContinent(Integer.parseInt(l_commands[l_i + 1]),
 											Integer.parseInt(l_commands[l_i + 2]));
@@ -95,8 +103,11 @@ public class MapService {
 							}
 							break;
 						case "-remove":
+							
+							// make sure -add with two parameters
 							if (l_i + 1 >= l_commands.length)
 								System.out.println("Edit some continents but no more enough parameter for removing.");
+							// make sure no -add or -remove being recognized as parameter
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
 								System.out.println("Please don't enter duplicated -add or -remove");
 							else {
@@ -116,6 +127,8 @@ public class MapService {
 						l_i += 1;
 					}
 				break;
+				
+			// edit country with two kind of options
 			case "editcountry":
 				if (l_commands.length < 4)
 					System.out.println("Please enter enough parameter for editing country.");
@@ -123,6 +136,8 @@ public class MapService {
 					for (int l_i = 1; l_i < l_commands.length;) {
 						switch (l_commands[l_i]) {
 						case "-add":
+							
+							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
 								System.out.println("Edit some countries but no more enough parameter for adding.");
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
@@ -141,6 +156,7 @@ public class MapService {
 							}
 							break;
 						case "-remove":
+							// make sure -add with two parameters
 							if (l_i + 1 >= l_commands.length)
 								System.out.println("Edit some countries but no more enough parameter for removing.");
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
@@ -162,6 +178,8 @@ public class MapService {
 						l_i += 1;
 					}
 				break;
+				
+			// edit neighbor with two kinds of options
 			case "editneighbor":
 				if (l_commands.length < 4)
 					System.out.println("Please enter enough parameter for editing neighbor.");
@@ -169,6 +187,7 @@ public class MapService {
 					for (int l_i = 1; l_i < l_commands.length;) {
 						switch (l_commands[l_i]) {
 						case "-add":
+							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
 								System.out.println("Edit some neighbors but no more enough parameter for adding.");
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
@@ -190,6 +209,7 @@ public class MapService {
 							}
 							break;
 						case "-remove":
+							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
 								System.out.println("Edit some neighbors but no more enough parameter for adding.");
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
@@ -201,7 +221,7 @@ public class MapService {
 								try {
 									if (!l_commands[l_i + 1].equals(l_commands[l_i + 2]))
 										l_map.removeNeighbor(Integer.parseInt(l_commands[l_i + 1]),
-											Integer.parseInt(l_commands[l_i + 2]));
+												Integer.parseInt(l_commands[l_i + 2]));
 									l_map.removeNeighbor(Integer.parseInt(l_commands[l_i + 2]),
 											Integer.parseInt(l_commands[l_i + 1]));
 								} catch (Exception e) {

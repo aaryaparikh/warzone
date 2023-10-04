@@ -44,7 +44,8 @@ public class StartUpGameService {
 
 			l_userInput = l_scanner.nextLine();
 			String l_commands[] = l_userInput.split(" ");
-
+			
+			// handle command
 			switch (l_commands[0]) {
 			case "end":
 				boolean ifAllPlayerAssigned = true;
@@ -64,13 +65,15 @@ public class StartUpGameService {
 					}
 
 				if (ifAllPlayerAssigned && ifAllCountryAssigned) {
-					d_gameEngine.setphase("play");
+					d_gameEngine.setPhase("play");
 					d_gameEngine.getPhaseView().showNextPhaseInfo("play");
 					return;
 				}
 				break;
+				
+			// move back to map editor
 			case "backtoedit":
-				d_gameEngine.setphase("edit");
+				d_gameEngine.setPhase("edit");
 				d_gameEngine.getPhaseView().showNextPhaseInfo("edit");
 				return;
 			case "showmap":
@@ -82,6 +85,8 @@ public class StartUpGameService {
 				else
 					d_gameEngine.setGameMap(d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]));
 				break;
+				
+			// game player order support multiple options
 			case "gameplayer":
 				try {
 					for (int l_i = 1; l_i < l_commands.length; l_i += 2) {
@@ -116,6 +121,8 @@ public class StartUpGameService {
 				}
 
 				break;
+				
+			// before assign countries, ensure there are at least one player and players less than countries.
 			case "assigncountries":
 				if (d_gameEngine.getPlayers().size() == 0)
 					System.out.println("No players, can't assign countries");
