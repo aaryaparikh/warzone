@@ -36,7 +36,7 @@ public class MapService {
             String l_commands[]=l_userInput.split(" ");
             switch(l_commands[0]) {
                 case "showmap": 
-                    l_map.showMap(); 
+                    l_map.getD_mapView().showMap(); 
                     break;
                 case "savemap":
                 	if(l_commands.length < 2)
@@ -61,10 +61,12 @@ public class MapService {
                 	else
                 		l_map=l_map.d_mapEditor.loadMap(l_commands[1]);
                     break;
-                case "exit":
-                    return;
                 case "end":
-                    return;
+                	if(l_map.d_mapEditor.validateMap())
+                        return;
+                	else
+                        System.out.println("Since invalid map, can't move to play.");
+                	break;
                 case "editcontinent":
                 	if(l_commands.length < 3)
                 		System.out.println("Please enter enough parameter for editing continent.");
