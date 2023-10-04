@@ -98,7 +98,7 @@ class CountryTest {
 	}
 
 	/**
-	 * checks whether add Armies works fine
+	 * checks whether add and subtract Armies works fine
 	 */
 	@Test
 	public void shoudl_ReturnValidNoOfArmies_AfterAddingandRemoving() {
