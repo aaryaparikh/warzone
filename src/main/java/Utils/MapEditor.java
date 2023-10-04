@@ -34,8 +34,9 @@ public class MapEditor {
      *
      * @param p_filename The name of the file to write to.
      */
-    public void write(String p_filename) {
+    public void write(String p_fileName) {
         if(!validateMap()) {
+            System.out.println("Since invalid Map, it can't be saved.");
             return;
         }
         try{
@@ -56,7 +57,7 @@ public class MapEditor {
                 }
                 l_text+="\n";
             }
-            FileWriter l_writer=new FileWriter("src/main/resources/"+p_filename+".txt");
+            FileWriter l_writer=new FileWriter("src/main/resources/"+p_fileName+".txt");
             l_writer.write(l_text);
             l_writer.close();
             System.out.println("File Saved Successfully");
@@ -75,38 +76,57 @@ public class MapEditor {
     public GameMap loadMap(String p_fileName)
     {
         String l_text="";
+        GameMap l_map = new GameMap();
+        
         try{
             File l_mapFile = new File("src/main/resources/"+p_fileName+".txt");
-            Scanner l_reader = new Scanner(l_mapFile);
-            while(l_reader.hasNextLine()) {
-                l_text+=l_reader.nextLine();
-                l_text+="\n";
+            
+            // Check whether the file exist in the path
+            if(!l_mapFile.exists()) {
+                l_mapFile.createNewFile();
+                l_text="[Continents]\n";
+                l_text=l_text+"\n[Countries]\n";
+                l_text=l_text+"\n[Borders]\n";
+                FileWriter l_writer=new FileWriter("src/main/resources/"+p_fileName+".txt");
+                l_writer.write(l_text);
+                l_writer.close();
             }
-            l_reader.close();
+            else {
+            	@SuppressWarnings("resource")
+				Scanner l_reader = new Scanner(l_mapFile);
+                while(l_reader.hasNextLine()) {
+                    l_text+=l_reader.nextLine();
+                    l_text+="\n";
+                }
+                
+                // Read map information form the file
+                String l_continents[]=l_text.split("\n\n")[0].split("\n");
+                String l_countries[]=l_text.split("\n\n")[1].split("\n");
+                String l_neigbors[]=l_text.split("\n\n")[2].split("\n");
+                
+                for(int l_i=1; l_i<l_continents.length; l_i++) {
+                    int l_continentId=Integer.parseInt(l_continents[l_i].split(" ")[0]);
+                    int l_continentValue=Integer.parseInt(l_continents[l_i].split(" ")[1]);
+                    l_map.addContinent(l_continentId, l_continentValue);
+                }
+                
+                for(int l_i=1; l_i<l_countries.length; l_i++) {
+                    int l_countryId=Integer.parseInt(l_countries[l_i].split(" ")[0]);
+                    int l_continentId=Integer.parseInt(l_countries[l_i].split(" ")[1]);
+                    String l_neighborsOfCountry[]=l_neigbors[l_i].split(" ");
+                    l_map.addCountry(l_countryId, l_continentId);
+                    
+                    for(int l_j=1; l_j<l_neighborsOfCountry.length; l_j++) {
+                        int l_neighbor=Integer.parseInt(l_neighborsOfCountry[l_j]);
+                        l_map.addNeighbor(l_countryId, l_neighbor);
+                    }
+                }
+            }   
         }
         catch(Exception e) {
             System.out.println(e);
         }
         
-        String l_continents[]=l_text.split("\n\n")[0].split("\n");
-        String l_countries[]=l_text.split("\n\n")[1].split("\n");
-        String l_neigbors[]=l_text.split("\n\n")[2].split("\n");
-        GameMap l_map=new GameMap();
-        for(int l_i=1;l_i<l_continents.length;l_i++) {
-            int l_continentId=Integer.parseInt(l_continents[l_i].split(" ")[0]);
-            int l_continentValue=Integer.parseInt(l_continents[l_i].split(" ")[1]);
-            l_map.addContinent(l_continentId, l_continentValue);
-        }
-        for(int l_i=1;l_i<l_countries.length;l_i++) {
-            int l_countryId=Integer.parseInt(l_countries[l_i].split(" ")[0]);
-            int l_continentId=Integer.parseInt(l_countries[l_i].split(" ")[1]);
-            String l_neighborsOfCountry[]=l_neigbors[l_i].split(" ");
-            l_map.addCountry(l_countryId, l_continentId);
-            for(int l_j=1;l_j<l_neighborsOfCountry.length;l_j++) {
-                int l_neighbor=Integer.parseInt(l_neighborsOfCountry[l_j]);
-                l_map.addNeighbor(l_countryId, l_neighbor);
-            }
-        }
         return l_map;
     }
     
@@ -118,6 +138,12 @@ public class MapEditor {
     public boolean validateMap(){
         HashMap <Integer,Integer> l_counter = new HashMap<>();
         
+        // Step 0: Check for empty map
+        if (d_countries.size() == 0 || d_continents.size() == 0) {
+            System.out.println("Invalid Map: at least one country and one continent.");
+            return false;
+        }
+
         // Step 1: Check for duplicate continents and validate continent values.
         for(int l_i=0; l_i<d_continents.size(); l_i++) {
             if(!l_counter.containsKey(d_continents.get(l_i).getContinentId())) {
