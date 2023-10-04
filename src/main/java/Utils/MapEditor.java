@@ -75,8 +75,13 @@ public class MapEditor {
     public GameMap loadMap(String p_fileName)
     {
         String l_text="";
+        GameMap l_map=new GameMap();
         try{
             File l_mapFile = new File("src/main/resources/"+p_fileName+".txt");
+            if(!l_mapFile.exists())
+            {
+                return l_map;
+            }
             Scanner l_reader = new Scanner(l_mapFile);
             while(l_reader.hasNextLine()) {
                 l_text+=l_reader.nextLine();
@@ -91,7 +96,6 @@ public class MapEditor {
         String l_continents[]=l_text.split("\n\n")[0].split("\n");
         String l_countries[]=l_text.split("\n\n")[1].split("\n");
         String l_neigbors[]=l_text.split("\n\n")[2].split("\n");
-        GameMap l_map=new GameMap();
         for(int l_i=1;l_i<l_continents.length;l_i++) {
             int l_continentId=Integer.parseInt(l_continents[l_i].split(" ")[0]);
             int l_continentValue=Integer.parseInt(l_continents[l_i].split(" ")[1]);
