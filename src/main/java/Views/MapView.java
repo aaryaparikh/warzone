@@ -6,6 +6,9 @@ import Models.Continent;
 import Models.Country;
 import Models.GameMap;
 
+/**
+ *  Map View class
+ */
 public class MapView {
 	private List<Continent> d_continents;
 	private List<Country> d_countries;
