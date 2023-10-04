@@ -25,8 +25,8 @@ public class Player {
      */
     public Player(String p_name, GameEngine p_gameEngine) {
         this.d_name = p_name;
-        this.d_countries = new ArrayList<>();
-        this.d_orders = new ArrayList<>();
+        this.d_countries = new ArrayList<Country>();
+        this.d_orders = new ArrayList<Order>();
         this.d_reinforcementPool = 0;
         this.d_playerCommandHandler = new PlayerCommandHandler(p_gameEngine);
     }
@@ -39,6 +39,15 @@ public class Player {
     public void addCountry(Country p_country) {
         d_countries.add(p_country);
     }
+    
+    /**
+     * Adds a country to the player's list of controlled countries.
+     *
+     * @param country The country to be added.
+     */
+    public void resetCountry() {
+        d_countries = new ArrayList<Country>();
+    }    
     
     /**
      * Adds a country to the player's list of controlled countries.

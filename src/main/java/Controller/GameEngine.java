@@ -99,15 +99,19 @@ public class GameEngine {
      * Assign countries to players randomly.
      */
     public void assignCountriesRandomly() {
-        List<Country> unassignedCountries = new ArrayList<Country>(d_map.getCountries());
+        List<Country> l_unassignedCountries = new ArrayList<Country>(d_map.getCountries());
 
-        Collections.shuffle(unassignedCountries);
+        Collections.shuffle(l_unassignedCountries);
 
-        for (int i = 0; i < unassignedCountries.size(); i++) {
-            Player player = d_players.get(i % d_players.size());
-            Country country = unassignedCountries.get(i);
-            player.addCountry(country);
-            country.setOwner(player);
+        for (Player l_player : d_players) {
+        	l_player.resetCountry();
+        }
+        
+        for (int l_i = 0; l_i < l_unassignedCountries.size(); l_i++) {
+            Player l_player = d_players.get(l_i % d_players.size());
+            Country l_country = l_unassignedCountries.get(l_i);
+            l_player.addCountry(l_country);
+            l_country.setOwner(l_player);
         }
     }
 
@@ -115,10 +119,10 @@ public class GameEngine {
      * Assign reinforcements to players.
      */
     public void assignReinforcements() {
-        for (Player player : d_players) {
-            List<Country> ownedCountries = player.getD_countries();
-            int reinforcementArmies = calculateReinforcementArmies(player, ownedCountries);
-            player.assignReinforcements(reinforcementArmies);
+        for (Player l_player : d_players) {
+            List<Country> l_ownedCountries = l_player.getD_countries();
+            int l_reinforcementArmies = calculateReinforcementArmies(l_player, l_ownedCountries);
+            l_player.assignReinforcements(l_reinforcementArmies);
         }
     }
 
