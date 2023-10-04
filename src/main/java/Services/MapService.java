@@ -107,28 +107,33 @@ public class MapService {
                             break;
                         default:
                             System.out.println("Invalid Input");
+                            break;
                     }
                     break;
                 case "editneighbor":
                 	if(l_commands.length < 4)
                 		System.out.println("Please enter enough parameter for editing neighbor.");
-                        switch(l_commands[1]) {
-                            case "-add":
-                                int l_countryId=Integer.parseInt(l_commands[2]);
-                                int l_neighbor=Integer.parseInt(l_commands[3]);
-                                l_map.addNeighbor(l_countryId,l_neighbor);
-                                l_map.addNeighbor(l_neighbor, l_countryId);
-                                break;
-                            case "-remove":
-                                int l_rCountryId=Integer.parseInt(l_commands[2]);
-                                int l_rNeighbor=Integer.parseInt(l_commands[3]);
-                                l_map.removeNeighbor(l_rCountryId, l_rNeighbor); 
-                                l_map.removeNeighbor(l_rNeighbor, l_rCountryId); 
-                                break;
-                            default:
-                                System.out.println("Invalid Input");
-                            break;
-                        }
+                	else {
+                		switch(l_commands[1]) {
+	                        case "-add":
+	                            int l_countryId=Integer.parseInt(l_commands[2]);
+	                            int l_neighbor=Integer.parseInt(l_commands[3]);
+	                            if(l_countryId != l_neighbor)
+	                            	l_map.addNeighbor(l_neighbor, l_countryId);
+                            	l_map.addNeighbor(l_countryId,l_neighbor);
+	                            break;
+	                        case "-remove":
+	                            int l_rCountryId=Integer.parseInt(l_commands[2]);
+	                            int l_rNeighbor=Integer.parseInt(l_commands[3]);
+	                            if(l_rCountryId != l_rNeighbor)
+	                            	l_map.removeNeighbor(l_rNeighbor, l_rCountryId);
+	                            l_map.removeNeighbor(l_rCountryId, l_rNeighbor);
+	                            break;
+	                        default:
+	                            System.out.println("Invalid Input");
+	                        break;
+                		}
+                	}
                     break;
             default:
                 System.out.println("Invalid Input");
