@@ -8,7 +8,7 @@ import Models.GameMap;
  * MapService for all command in map edit phase
  */
 public class MapService {
-	public static GameMap d_map;
+	public GameMap d_map;
 	
     /**
      * Constructor for Map Service
@@ -16,6 +16,15 @@ public class MapService {
      * @param p_gameMap the game map object
      */
 	public MapService(GameMap p_gameMap) {
+		d_map = p_gameMap;
+	}
+	
+    /**
+     * Update the Map in Map Service
+     *
+     * @param p_gameMap the game map object
+     */
+	public void setD_map(GameMap p_gameMap) {
 		d_map = p_gameMap;
 	}
 	

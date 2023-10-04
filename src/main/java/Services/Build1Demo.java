@@ -46,21 +46,24 @@ public class Build1Demo {
         MapCommandHandler commandHandler = new MapCommandHandler(gameEngine);
         gameEngine.getPhaseView().showGameInfo();
         
-        // Map edit phase
+        // Initialize map edit phase
         gameEngine.setphase("edit");
         gameEngine.getPhaseView().showNextPhaseInfo("edit");
+    	MapService mapService = new MapService(map);
         
-        MapService mapService = new MapService(map);
-        mapService.main(null);
+        while(gameEngine.getPhase().equals("edit")) {
+            // Enter map edit phase
+	        mapService.main(null);
+	        commandHandler.handlePlayerCommand("end", null);
+	        
+	        // Enter start up phase
+	        StartUpGameService StartupService = new StartUpGameService(gameEngine);
+	        StartupService.main(null); 
+	        mapService.setD_map(gameEngine.getGameMap());
+        }
         
-        commandHandler.handlePlayerCommand("end", null);
-        
-        // Start up phase
-        StartUpGameService StartupService = new StartUpGameService(gameEngine);
-        StartupService.main(null);        
-        
-        // Main game loop
-        while (true) {
+        // Enter game play phase
+        while(gameEngine.getPhase().equals("play")) {
             gameEngine.assignReinforcements();
 
             gameEngine.playerIssueOrdersInTurn();
@@ -68,5 +71,7 @@ public class Build1Demo {
             if (gameEngine.executeAllCommittedOrders() == "gameOver")
             	break;
         }
+        
+        //End game play
     }
 }

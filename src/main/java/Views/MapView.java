@@ -67,7 +67,10 @@ public class MapView {
         System.out.println("\tId\tContinent\tArmies\tOwner");
         
         for(int l_i=0;l_i<d_countries.size();l_i++) {
-            System.out.println("\t" +d_countries.get(l_i).getCountryId()+"\t"+d_countries.get(l_i).getContinentId()+"\t\t"+d_countries.get(l_i).getArmies()+"\t"+d_countries.get(l_i).getOwner().getName());
+        	if (d_countries.get(l_i).getOwner()== null)
+                System.out.println("\t" +d_countries.get(l_i).getCountryId()+"\t"+d_countries.get(l_i).getContinentId()+"\t\t"+d_countries.get(l_i).getArmies()+"\t"+"None");
+        	else
+        		System.out.println("\t" +d_countries.get(l_i).getCountryId()+"\t"+d_countries.get(l_i).getContinentId()+"\t\t"+d_countries.get(l_i).getArmies()+"\t"+d_countries.get(l_i).getOwner().getName());
         }
         
         System.out.println("\n\t[Borders]");

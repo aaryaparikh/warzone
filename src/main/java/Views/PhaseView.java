@@ -36,10 +36,10 @@ public class PhaseView {
                 System.out.println("\n<<Edit map phase>><end><showmap><savemap><editmap><validatemap>");
                 break;
             case "start":
-                System.out.println("\n<<Game startup phase>><end><showmap><loadmap><gameplayer><assigncountries>");
+                System.out.println("\n<<Game startup phase>><end><backtoedit><showmap><loadmap><gameplayer><assigncountries>");
                 break;
             case "play":
-                System.out.println("\n<<Game issue order phase>><commit><end><deploy>");
+                System.out.println("\n<<Game issue order phase>><end><deploy>");
                 break;
             case "execute":
                 System.out.println("\n<<Game execute order phase>>");

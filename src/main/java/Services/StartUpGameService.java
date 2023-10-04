@@ -2,6 +2,7 @@ package Services;
 
 import java.util.Scanner;
 import Controller.GameEngine;
+import Models.Country;
 import Models.Player;
 
 /**
@@ -28,9 +29,15 @@ public class StartUpGameService {
         @SuppressWarnings("resource")
 		Scanner l_scanner=new Scanner(System.in);
         
-        Player l_defaultPlayer = new Player("You", d_gameEngine);
-        d_gameEngine.addPlayer(l_defaultPlayer);
-        d_gameEngine.assignCountriesRandomly();
+        // Decide whether add a default player "You"
+        if(d_gameEngine.getPlayers().size() == 0) {
+        	Player l_defaultPlayer = new Player("You", d_gameEngine);
+            d_gameEngine.addPlayer(l_defaultPlayer);
+        }
+
+        // Initialize Game map
+        for(Country l_country:d_gameEngine.getGameMap().getCountries())
+        	l_country.setOwner(null);
         
         String l_userInput;
         while(true) {
@@ -53,6 +60,10 @@ public class StartUpGameService {
 		                return;      
 	            	}
 	            	break;
+	            case "backtoedit":
+            		d_gameEngine.setphase("edit");
+            		d_gameEngine.getPhaseView().showNextPhaseInfo("edit");
+	                return;
 	            case "showmap": 
 	                d_gameEngine.getGameMap().getD_mapView().showGameMap(); 
 	                break;
@@ -86,8 +97,12 @@ public class StartUpGameService {
 	            	}
 	                break;
 	            case "assigncountries":
-	            	d_gameEngine.assignCountriesRandomly();
-                	System.out.println("All countries are assigned to players");
+	            	if (d_gameEngine.getPlayers().size() == 0)
+	                	System.out.println("No players, can't assign countries");
+	            	else {
+	            		d_gameEngine.assignCountriesRandomly();
+	                	System.out.println("All countries are assigned to players");
+	            	}
 	            	break;
                 default:
                     System.out.println("Invalid Input");
