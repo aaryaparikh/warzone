@@ -80,6 +80,7 @@ public class MapEditor {
             File l_mapFile = new File("src/main/resources/"+p_fileName+".txt");
             if(!l_mapFile.exists())
             {
+                l_mapFile.createNewFile();
                 return l_map;
             }
             Scanner l_reader = new Scanner(l_mapFile);
