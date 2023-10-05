@@ -8,6 +8,8 @@ import Models.Orders.Order;
 
 /**
  * Handles player commands.
+ * 
+ * @author YURUI
  */
 public class PlayerCommandHandler {
 	private GameEngine d_gameEngine;
@@ -26,6 +28,8 @@ public class PlayerCommandHandler {
 	 *
 	 * @param p_command       The player's command.
 	 * @param p_currentPlayer The current player.
+	 * 
+	 * @return handle command result
 	 */
 	public String handlePlayerCommand(String p_command, Player p_currentPlayer) {
 		String[] l_command = p_command.split(" ");

@@ -7,6 +7,8 @@ import Models.Orders.DeployOrder;
 
 /**
  * Handles player commands.
+ * 
+ * @author YURUI
  */
 public class MapCommandHandler {
 	private GameEngine d_gameEngine;

@@ -7,13 +7,19 @@ import Views.MapView;
 
 /**
  * Represents a map containing continents and countries.
+ * 
+ * @author Aarya
  */
 public class GameMap {
 
 	private ArrayList<Continent> d_continents = new ArrayList<Continent>();
 	private ArrayList<Country> d_countries = new ArrayList<Country>();
-	int d_continentCount = 0;
+	private int d_continentCount = 0;
 	private int d_countryCount = 0;
+	
+	/**
+	 * Map editor for editing a map
+	 */
 	public MapEditor d_mapEditor;
 	private MapView d_mapView;
 
@@ -26,7 +32,7 @@ public class GameMap {
 	}
 
 	/**
-	 * <<<<<<< HEAD Gets the count of Continent
+	 * Gets the count of Continent
 	 *
 	 * @return d_continentCount The count of continent
 	 */
@@ -37,7 +43,7 @@ public class GameMap {
 	/**
 	 * Sets the count of Continent
 	 *
-	 * @param d_continentCount The continent count
+	 * @param p_continentCount The continent count
 	 */
 	public void setD_continentCount(int p_continentCount) {
 		this.d_continentCount = p_continentCount;
@@ -55,7 +61,7 @@ public class GameMap {
 	/**
 	 * Gets the country Count
 	 *
-	 * @param d_countryCount
+	 * @param p_countryCount Country counter
 	 */
 	public void setD_countryCount(int p_countryCount) {
 		this.d_countryCount = p_countryCount;
@@ -83,7 +89,7 @@ public class GameMap {
 	/**
 	 * Sets the map view object
 	 *
-	 * @param map view object
+	 * @param p_mapView view object
 	 */
 	public void setD_mapView(MapView p_mapView) {
 		this.d_mapView = p_mapView;
@@ -101,7 +107,7 @@ public class GameMap {
 	/**
 	 * Sets the list of countries on the map.
 	 *
-	 * @param d_countries The list of countries to set.
+	 * @param p_countries The list of countries to set.
 	 */
 	public void setCountries(ArrayList<Country> p_countries) {
 		this.d_countries = p_countries;

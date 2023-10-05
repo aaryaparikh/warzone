@@ -10,6 +10,8 @@ import Utils.PlayerCommandHandler;
 
 /**
  * Represents a player in the game.
+ * 
+ * @author Dev
  */
 public class Player {
 	private String d_name;
@@ -21,7 +23,8 @@ public class Player {
 	/**
 	 * Creates a new player with the specified name.
 	 *
-	 * @param d_name The name of the player.
+	 * @param p_name The name of the player.
+	 * @param p_gameEngine The game engine
 	 */
 	public Player(String p_name, GameEngine p_gameEngine) {
 		this.d_name = p_name;
@@ -34,16 +37,15 @@ public class Player {
 	/**
 	 * Adds a country to the player's list of controlled countries.
 	 *
-	 * @param country The country to be added.
+	 * @param p_country The country to be added.
 	 */
 	public void addCountry(Country p_country) {
 		d_countries.add(p_country);
 	}
 
 	/**
-	 * Adds a country to the player's list of controlled countries.
+	 * Resets a country information.
 	 *
-	 * @param country The country to be added.
 	 */
 	public void resetCountry() {
 		d_countries = new ArrayList<>();
@@ -52,7 +54,7 @@ public class Player {
 	/**
 	 * Adds a country to the player's list of controlled countries.
 	 *
-	 * @param country The country to be added.
+	 * @param p_order The country to be added.
 	 */
 	public void addOrder(Order p_order) {
 		d_orders.add(p_order);
@@ -61,7 +63,6 @@ public class Player {
 	/**
 	 * Issues an order to the player.
 	 *
-	 * @param order The order to be issued.
 	 */
 	public void issueOrder() {
 		@SuppressWarnings("resource")
@@ -100,7 +101,7 @@ public class Player {
 	/**
 	 * Assigns reinforcements to the player.
 	 *
-	 * @param numReinforcements The number of reinforcements to assign.
+	 * @param p_numReinforcements The number of reinforcements to assign.
 	 */
 	public void assignReinforcements(int p_numReinforcements) {
 		d_reinforcementPool += p_numReinforcements;
@@ -118,13 +119,12 @@ public class Player {
 	/**
 	 * Decreases the reinforcement pool by a specified number of armies.
 	 *
-	 * @param decreaseArmiesNumber The number of armies to decrease the
+	 * @param p_decreaseArmiesNumber The number of armies to decrease the
 	 *                             reinforcement pool by.
 	 * @return The updated reinforcement pool value.
 	 */
 	public int decreaseReinforcementPool(int p_decreaseArmiesNumber) {
-		if(p_decreaseArmiesNumber > this.d_reinforcementPool)
-		{
+		if(p_decreaseArmiesNumber > this.d_reinforcementPool) {
 			return this.d_reinforcementPool;
 		}
 		return d_reinforcementPool -= p_decreaseArmiesNumber;

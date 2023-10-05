@@ -9,15 +9,25 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GameMapTest {
-
+/**
+ * JUnit 5 test class for Gamemap class.
+ * 
+ * @author Virag
+ */
+public class GameMapTest {
 	private GameMap t_map;
 
+	/**
+	 * setup test
+	 */
 	@BeforeEach
 	public void setup() {
 		this.t_map = new GameMap();
 	}
 
+	/**
+	 * after test
+	 */
 	@AfterEach
 	public void teardown() {
 		this.t_map = null;

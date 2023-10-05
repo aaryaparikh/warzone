@@ -13,6 +13,7 @@ import Models.GameMap;
 /**
  * Edit the map information
  *
+ *@author Aarya
  */
 public class MapEditor {
 	private List<Continent> d_continents;
@@ -33,7 +34,7 @@ public class MapEditor {
 	/**
 	 * Writes the map information to a file with the given filename.
 	 *
-	 * @param p_filename The name of the file to write to.
+	 * @param p_fileName The name of the file to write to.
 	 */
 	public void write(String p_fileName) {
 		if (!validateMap()) {

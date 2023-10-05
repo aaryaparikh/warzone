@@ -6,8 +6,13 @@ import Models.GameMap;
 
 /**
  * MapService for all command in map edit phase
+ * 
+ * @author Aarya
  */
 public class MapService {
+	/**
+	 * get information of current map
+	 */
 	public GameMap d_map;
 
 	/**
@@ -31,7 +36,7 @@ public class MapService {
 	/**
 	 * Main function for map service
 	 *
-	 * @param args
+	 * @param p_args main function parameter
 	 */
 	public void main(String[] p_args) {
 		@SuppressWarnings("resource")

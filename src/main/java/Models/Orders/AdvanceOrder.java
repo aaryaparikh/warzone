@@ -7,6 +7,8 @@ import Models.Player;
 
 /**
  * Players can advance reinforcements to another country.
+ * 
+ * @author YURUI
  */
 public class AdvanceOrder extends Order {
 	private Player d_player;
@@ -18,9 +20,9 @@ public class AdvanceOrder extends Order {
 	 * Constructor to assign initial values
 	 * 
 	 * @param p_player          player who is committing advance command
-	 * @param p_countryNameFrom country from which the reinforcements are to be
+	 * @param p_sourceCountryName country from which the reinforcements are to be
 	 *                          taken
-	 * @param p_countryNameTo   country to which reinforcements are to be advanced
+	 * @param p_targetCountryName   country to which reinforcements are to be advanced
 	 * @param p_armies          number of reinforcements
 	 */
 	public AdvanceOrder(Player p_player, int p_sourceCountryName, int p_targetCountryName, int p_armies) {

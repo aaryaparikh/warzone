@@ -8,7 +8,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CountryTest {
+/**
+ * JUnit 5 test class for Country class.
+ * 
+ * @author Dev
+ */
+public class CountryTest {
 
 	private Country t_country;
 

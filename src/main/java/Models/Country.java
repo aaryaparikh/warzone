@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * Represents a country in the game.
+ * 
+ * @author Dev
  */
 public class Country {
 	private int d_countryId;
@@ -88,7 +90,7 @@ public class Country {
 	/**
 	 * Sets the number of armies in this country.
 	 *
-	 * @param d_armies The number of armies to set.
+	 * @param p_armies The number of armies to set.
 	 */
 	public void setArmies(int p_armies) {
 		this.d_armies = p_armies;
@@ -106,7 +108,7 @@ public class Country {
 	/**
 	 * Sets the player who owns this country.
 	 *
-	 * @param d_owner The player who owns the country.
+	 * @param p_owner The player who owns the country.
 	 */
 	public void setOwner(Player p_owner) {
 		this.d_owner = p_owner;
@@ -115,7 +117,7 @@ public class Country {
 	/**
 	 * Adds armies to this country.
 	 *
-	 * @param numArmies The number of armies to add.
+	 * @param p_numArmies The number of armies to add.
 	 */
 	public void addArmies(int p_numArmies) {
 		this.d_armies += p_numArmies;
@@ -124,7 +126,7 @@ public class Country {
 	/**
 	 * Subtracts armies from this country.
 	 *
-	 * @param numArmies The number of armies to subtract.
+	 * @param p_numArmies The number of armies to subtract.
 	 */
 	public void subtractArmies(int p_numArmies) {
 		this.d_armies -= p_numArmies;

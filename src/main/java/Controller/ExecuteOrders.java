@@ -8,6 +8,8 @@ import Utils.MapCommandHandler;
 
 /**
  * Represents the execute orders phase of the game.
+ * 
+ * @author YURUI
  */
 public class ExecuteOrders extends GamePhase {
 

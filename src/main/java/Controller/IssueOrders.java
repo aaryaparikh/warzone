@@ -6,6 +6,8 @@ import Utils.MapCommandHandler;
 
 /**
  * Represents the issue orders phase of the game.
+ * 
+ * @author YURUI
  */
 public class IssueOrders extends GamePhase {
 

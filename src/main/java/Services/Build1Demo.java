@@ -7,13 +7,15 @@ import Utils.MapCommandHandler;
 /**
  * Build1 Demo: 1. Initialize the map 2. Enter map edit phase 3. Enter startup
  * game phase 4. Main loop for game play
+ * 
+ * @author YURUI
  */
 public class Build1Demo {
 
 	/**
 	 * Initialize the default game map
 	 * 
-	 * @param game map object
+	 * @param p_gameMap game map object
 	 * 
 	 */
 	public static void defaultGameMap(GameMap p_gameMap) {
@@ -33,7 +35,7 @@ public class Build1Demo {
 	/**
 	 * Main function for build1 presentation
 	 * 
-	 * @param args
+	 * @param p_args parameter for main function
 	 * 
 	 */
 	public static void main(String[] p_args) {
