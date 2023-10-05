@@ -39,7 +39,7 @@ public class Build1Demo {
 	public static void main(String[] p_args) {
 		// Initialize Map and Game Engine
 		GameMap l_map = new GameMap();
-		defaultGameMap(l_map);
+		//defaultGameMap(l_map);
 		GameEngine l_gameEngine = new GameEngine(l_map);
 		MapCommandHandler l_commandHandler = new MapCommandHandler(l_gameEngine);
 		l_gameEngine.getPhaseView().showGameInfo();
@@ -66,7 +66,7 @@ public class Build1Demo {
 
 			l_gameEngine.playerIssueOrdersInTurn();
 
-			if (l_gameEngine.executeAllCommittedOrders() == "gameOver")
+			if (l_gameEngine.executeAllCommittedOrders().equals("gameOver"))
 				break;
 		}
 

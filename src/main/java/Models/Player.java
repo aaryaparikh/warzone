@@ -68,7 +68,7 @@ public class Player {
 		Scanner l_scanner = new Scanner(System.in);
 		String l_userInput, l_response = "";
 
-		while (l_response != "nextPlayer") {
+		while (!l_response.equals("nextPlayer")) {
 			l_userInput = l_scanner.nextLine();
 			l_response = d_playerCommandHandler.handlePlayerCommand(l_userInput, this);
 		}
@@ -123,6 +123,10 @@ public class Player {
 	 * @return The updated reinforcement pool value.
 	 */
 	public int decreaseReinforcementPool(int p_decreaseArmiesNumber) {
+		if(p_decreaseArmiesNumber > this.d_reinforcementPool)
+		{
+			return this.d_reinforcementPool;
+		}
 		return d_reinforcementPool -= p_decreaseArmiesNumber;
 	}
 
