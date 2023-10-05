@@ -52,7 +52,7 @@ public class MapCommandHandler {
 				break;
 			}
 			break;
-		
+
 		// show general map
 		case "showmap":
 			if (d_gameEngine.getPhase() == "edit")

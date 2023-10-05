@@ -23,7 +23,7 @@ public class Player {
 	/**
 	 * Creates a new player with the specified name.
 	 *
-	 * @param p_name The name of the player.
+	 * @param p_name       The name of the player.
 	 * @param p_gameEngine The game engine
 	 */
 	public Player(String p_name, GameEngine p_gameEngine) {
@@ -120,11 +120,11 @@ public class Player {
 	 * Decreases the reinforcement pool by a specified number of armies.
 	 *
 	 * @param p_decreaseArmiesNumber The number of armies to decrease the
-	 *                             reinforcement pool by.
+	 *                               reinforcement pool by.
 	 * @return The updated reinforcement pool value.
 	 */
 	public int decreaseReinforcementPool(int p_decreaseArmiesNumber) {
-		if(p_decreaseArmiesNumber > this.d_reinforcementPool) {
+		if (p_decreaseArmiesNumber > this.d_reinforcementPool) {
 			return this.d_reinforcementPool;
 		}
 		return d_reinforcementPool -= p_decreaseArmiesNumber;

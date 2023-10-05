@@ -16,7 +16,7 @@ public class GameMap {
 	private ArrayList<Country> d_countries = new ArrayList<Country>();
 	private int d_continentCount = 0;
 	private int d_countryCount = 0;
-	
+
 	/**
 	 * Map editor for editing a map
 	 */

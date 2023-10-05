@@ -39,7 +39,7 @@ public class ExecuteOrders extends GamePhase {
 				Order l_order = l_player.nextOrder();
 				if (l_order != null) {
 					System.out.println(l_order.execute(super.d_gameEngine));
-					
+
 					// check whether the game is over
 					if (super.d_gameEngine.checkIfGameIsOver() == true) {
 						System.out.println("\n[GAME OVER!]");

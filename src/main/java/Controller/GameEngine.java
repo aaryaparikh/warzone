@@ -52,7 +52,7 @@ public class GameEngine {
 	public GameMap getGameMap() {
 		return this.d_map;
 	}
-	
+
 	/**
 	 * Set the game map.
 	 *

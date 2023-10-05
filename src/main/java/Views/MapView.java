@@ -7,7 +7,7 @@ import Models.Country;
 import Models.GameMap;
 
 /**
- *  Map View class
+ * Map View class
  */
 public class MapView {
 	private List<Continent> d_continents;

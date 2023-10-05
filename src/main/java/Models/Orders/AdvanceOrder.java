@@ -19,11 +19,11 @@ public class AdvanceOrder extends Order {
 	/**
 	 * Constructor to assign initial values
 	 * 
-	 * @param p_player          player who is committing advance command
+	 * @param p_player            player who is committing advance command
 	 * @param p_sourceCountryName country from which the reinforcements are to be
-	 *                          taken
-	 * @param p_targetCountryName   country to which reinforcements are to be advanced
-	 * @param p_armies          number of reinforcements
+	 *                            taken
+	 * @param p_targetCountryName country to which reinforcements are to be advanced
+	 * @param p_armies            number of reinforcements
 	 */
 	public AdvanceOrder(Player p_player, int p_sourceCountryName, int p_targetCountryName, int p_armies) {
 		d_player = p_player;
@@ -40,14 +40,14 @@ public class AdvanceOrder extends Order {
 	 */
 	@Override
 	public String execute(GameEngine p_game) {
-		Country l_resourceCountry = null, l_targetCountry = null; 
+		Country l_resourceCountry = null, l_targetCountry = null;
 		for (Country l_country : p_game.getGameMap().getCountries()) {
 			if (l_country.getCountryId() == d_resourceCountryName)
 				l_resourceCountry = l_country;
 			if (l_country.getCountryId() == d_targetCountryName)
 				l_targetCountry = l_country;
 		}
-		
+
 		// Step 1: Check if the resource country exists
 		if (!p_game.getGameMap().getCountries().contains(l_resourceCountry))
 			return String.format("Country \"%d\" does not exist", d_resourceCountryName);
@@ -74,8 +74,7 @@ public class AdvanceOrder extends Order {
 		}
 
 		// Step 6: Check if the target country is a neighbor of the resource country
-		List<Integer> l_neighboringCountries = l_resourceCountry
-				.getNeighborCountries();
+		List<Integer> l_neighboringCountries = l_resourceCountry.getNeighborCountries();
 		if (!l_neighboringCountries.contains(d_targetCountryName)) {
 			return String.format(
 					"Armies cannot be moved from country \"%d\" to country \"%d\" because they are not neighbors",

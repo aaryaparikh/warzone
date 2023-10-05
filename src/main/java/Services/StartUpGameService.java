@@ -46,7 +46,7 @@ public class StartUpGameService {
 
 			l_userInput = l_scanner.nextLine();
 			String l_commands[] = l_userInput.split(" ");
-			
+
 			// handle command
 			switch (l_commands[0]) {
 			case "end":
@@ -72,7 +72,7 @@ public class StartUpGameService {
 					return;
 				}
 				break;
-				
+
 			// move back to map editor
 			case "backtoedit":
 				d_gameEngine.setPhase("edit");
@@ -87,7 +87,7 @@ public class StartUpGameService {
 				else
 					d_gameEngine.setGameMap(d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]));
 				break;
-				
+
 			// game player order support multiple options
 			case "gameplayer":
 				try {
@@ -123,8 +123,9 @@ public class StartUpGameService {
 				}
 
 				break;
-				
-			// before assign countries, ensure there are at least one player and players less than countries.
+
+			// before assign countries, ensure there are at least one player and players
+			// less than countries.
 			case "assigncountries":
 				if (d_gameEngine.getPlayers().size() == 0)
 					System.out.println("No players, can't assign countries");

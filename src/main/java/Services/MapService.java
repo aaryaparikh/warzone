@@ -48,7 +48,7 @@ public class MapService {
 			String l_userInput;
 			l_userInput = l_sc.nextLine();
 			String l_commands[] = l_userInput.split(" ");
-			
+
 			// solve the command
 			switch (l_commands[0]) {
 			case "showmap":
@@ -77,7 +77,7 @@ public class MapService {
 				else
 					System.out.println("Since invalid map, can't move to play.");
 				break;
-				
+
 			// edit continent with two kinds of options
 			case "editcontinent":
 				if (l_commands.length < 4)
@@ -86,7 +86,7 @@ public class MapService {
 					for (int l_i = 1; l_i < l_commands.length;) {
 						switch (l_commands[l_i]) {
 						case "-add":
-							
+
 							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
 								System.out.println("Edit some continents but no more enough parameter for adding.");
@@ -108,7 +108,7 @@ public class MapService {
 							}
 							break;
 						case "-remove":
-							
+
 							// make sure -add with two parameters
 							if (l_i + 1 >= l_commands.length)
 								System.out.println("Edit some continents but no more enough parameter for removing.");
@@ -132,7 +132,7 @@ public class MapService {
 						l_i += 1;
 					}
 				break;
-				
+
 			// edit country with two kind of options
 			case "editcountry":
 				if (l_commands.length < 4)
@@ -141,7 +141,7 @@ public class MapService {
 					for (int l_i = 1; l_i < l_commands.length;) {
 						switch (l_commands[l_i]) {
 						case "-add":
-							
+
 							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
 								System.out.println("Edit some countries but no more enough parameter for adding.");
@@ -183,7 +183,7 @@ public class MapService {
 						l_i += 1;
 					}
 				break;
-				
+
 			// edit neighbor with two kinds of options
 			case "editneighbor":
 				if (l_commands.length < 4)

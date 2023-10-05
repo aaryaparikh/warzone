@@ -12,7 +12,7 @@ public abstract class GamePhase {
 	 * get information from game engine in a phase
 	 */
 	public GameEngine d_gameEngine;
-	
+
 	/**
 	 * handle a command and return result
 	 */

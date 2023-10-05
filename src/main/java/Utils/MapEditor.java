@@ -13,7 +13,7 @@ import Models.GameMap;
 /**
  * Edit the map information
  *
- *@author Aarya
+ * @author Aarya
  */
 public class MapEditor {
 	private List<Continent> d_continents;
