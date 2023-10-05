@@ -13,23 +13,23 @@ import org.junit.jupiter.api.BeforeEach;
  */
 public class ContinentTest {
 
-	private Continent t_continent;
+	private Continent d_continent;
 
 	/**
-	 * sets up <i>t_continent</i> variable of type Continent and initialize it with
+	 * sets up <i>d_continent</i> variable of type Continent and initialize it with
 	 * predefined values
 	 */
 	@BeforeEach
 	public void setup() {
-		this.t_continent = new Continent(1, 5);
+		this.d_continent = new Continent(1, 5);
 	}
 
 	/**
-	 * tears down the <i>t_continent</i> variable by setting it to null
+	 * tears down the <i>d_continent</i> variable by setting it to null
 	 */
 	@AfterEach
 	public void teardown() {
-		this.t_continent = null;
+		this.d_continent = null;
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class ContinentTest {
 		int l_expectedContinentID = 1;
 
 		// then
-		assertEquals(l_expectedContinentID, t_continent.getContinentId());
+		assertEquals(l_expectedContinentID, d_continent.getContinentId());
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class ContinentTest {
 		int l_expectedContinentValue = 5;
 
 		// then
-		assertEquals(l_expectedContinentValue, t_continent.getContinentValue());
+		assertEquals(l_expectedContinentValue, d_continent.getContinentValue());
 	}
 
 }

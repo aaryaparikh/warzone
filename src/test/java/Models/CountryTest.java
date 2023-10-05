@@ -15,23 +15,23 @@ import org.junit.jupiter.api.Test;
  */
 public class CountryTest {
 
-	private Country t_country;
+	private Country d_country;
 
 	/**
-	 * sets up <i>t_country</i> variable of type Country and initialize it with
+	 * sets up <i>d_country</i> variable of type Country and initialize it with
 	 * predefined values
 	 */
 	@BeforeEach
 	public void setup() {
-		this.t_country = new Country(15, 1);
+		this.d_country = new Country(15, 1);
 	}
 
 	/**
-	 * tears down the <i>t_country</i> variable by setting it to null
+	 * tears down the <i>d_country</i> variable by setting it to null
 	 */
 	@AfterEach
 	public void teardown() {
-		this.t_country = null;
+		this.d_country = null;
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class CountryTest {
 		int l_expectedCountryId = 15;
 
 		// then
-		assertEquals(l_expectedCountryId, t_country.getCountryId());
+		assertEquals(l_expectedCountryId, d_country.getCountryId());
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class CountryTest {
 		int l_expectedContinentId = 1;
 
 		// then
-		assertEquals(l_expectedContinentId, t_country.getContinentId());
+		assertEquals(l_expectedContinentId, d_country.getContinentId());
 	}
 
 	/**
@@ -67,16 +67,16 @@ public class CountryTest {
 		int l_expectedNeighbors = 6;
 		Object[] test_arr = { 2, 3, 4, 5, 6, 7 };
 
-		this.t_country.addNeighbor(2);
-		this.t_country.addNeighbor(3);
-		this.t_country.addNeighbor(4);
-		this.t_country.addNeighbor(5);
-		this.t_country.addNeighbor(6);
-		this.t_country.addNeighbor(7);
+		this.d_country.addNeighbor(2);
+		this.d_country.addNeighbor(3);
+		this.d_country.addNeighbor(4);
+		this.d_country.addNeighbor(5);
+		this.d_country.addNeighbor(6);
+		this.d_country.addNeighbor(7);
 
 		// then
-		assertAll(() -> assertEquals(l_expectedNeighbors, this.t_country.getNeighborCountries().size()),
-				() -> assertArrayEquals(test_arr, this.t_country.getNeighborCountries().toArray()));
+		assertAll(() -> assertEquals(l_expectedNeighbors, this.d_country.getNeighborCountries().size()),
+				() -> assertArrayEquals(test_arr, this.d_country.getNeighborCountries().toArray()));
 	}
 
 	/**
@@ -88,17 +88,17 @@ public class CountryTest {
 		int l_expectedNeighbors = 5;
 		Object[] l_test_arr = { 2, 3, 4, 6, 7 };
 
-		this.t_country.addNeighbor(2);
-		this.t_country.addNeighbor(3);
-		this.t_country.addNeighbor(4);
-		this.t_country.addNeighbor(5);
-		this.t_country.addNeighbor(6);
-		this.t_country.addNeighbor(7);
-		this.t_country.removeNeighbor(5);
+		this.d_country.addNeighbor(2);
+		this.d_country.addNeighbor(3);
+		this.d_country.addNeighbor(4);
+		this.d_country.addNeighbor(5);
+		this.d_country.addNeighbor(6);
+		this.d_country.addNeighbor(7);
+		this.d_country.removeNeighbor(5);
 
 		// then
-		assertAll(() -> assertEquals(l_expectedNeighbors, this.t_country.getNeighborCountries().size()),
-				() -> assertArrayEquals(l_test_arr, this.t_country.getNeighborCountries().toArray()));
+		assertAll(() -> assertEquals(l_expectedNeighbors, this.d_country.getNeighborCountries().size()),
+				() -> assertArrayEquals(l_test_arr, this.d_country.getNeighborCountries().toArray()));
 
 	}
 
@@ -112,17 +112,17 @@ public class CountryTest {
 		int l_expectedArmyAfterSub = 5;
 
 		// when
-		t_country.setArmies(5);
-		t_country.addArmies(5);
+		d_country.setArmies(5);
+		d_country.addArmies(5);
 
 		// then
-		assertEquals(l_expectedArmyAfterAdd, t_country.getArmies());
+		assertEquals(l_expectedArmyAfterAdd, d_country.getArmies());
 
 		// when
-		t_country.subtractArmies(5);
+		d_country.subtractArmies(5);
 
 		//
-		assertEquals(l_expectedArmyAfterSub, t_country.getArmies());
+		assertEquals(l_expectedArmyAfterSub, d_country.getArmies());
 
 	}
 }
