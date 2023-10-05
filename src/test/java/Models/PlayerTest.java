@@ -16,14 +16,14 @@ import Controller.GameEngine;
  */
 public class PlayerTest {
 
-	private Player t_player;
+	private Player d_player;
 
 	/**
 	 * set up test
 	 */
 	@BeforeEach
 	public void setUp() {
-		this.t_player = new Player("Dev", new GameEngine(new GameMap()));
+		this.d_player = new Player("Dev", new GameEngine(new GameMap()));
 	}
 
 	/**
@@ -31,7 +31,7 @@ public class PlayerTest {
 	 */
 	@AfterEach
 	public void teardown() {
-		this.t_player = null;
+		this.d_player = null;
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class PlayerTest {
 	 */
 	@Test
 	public void should_ReturnName() {
-		assertEquals("Dev", t_player.getName());
+		assertEquals("Dev", d_player.getName());
 	}
 
 	/**
@@ -51,12 +51,12 @@ public class PlayerTest {
 		int l_expectedReinforcement = 4;
 
 		// when
-		t_player.assignReinforcements(2);
-		t_player.assignReinforcements(4);
-		t_player.decreaseReinforcementPool(2);
+		d_player.assignReinforcements(2);
+		d_player.assignReinforcements(4);
+		d_player.decreaseReinforcementPool(2);
 
 		// then
-		assertEquals(l_expectedReinforcement, t_player.getD_reinforcementPool());
+		assertEquals(l_expectedReinforcement, d_player.getD_reinforcementPool());
 	}
 
 	/**
@@ -73,19 +73,19 @@ public class PlayerTest {
 		l_country[3] = new Country(4, 2);
 
 		// when
-		t_player.addCountry(l_country[0]);
-		t_player.addCountry(l_country[1]);
-		t_player.addCountry(l_country[2]);
-		t_player.addCountry(l_country[3]);
+		d_player.addCountry(l_country[0]);
+		d_player.addCountry(l_country[1]);
+		d_player.addCountry(l_country[2]);
+		d_player.addCountry(l_country[3]);
 
 		// then
-		assertAll(() -> assertEquals(l_expectedCountry, t_player.getD_countries().size()),
-				() -> assertEquals(l_country[0].getCountryId(), t_player.getD_countries().get(0).getCountryId()));
+		assertAll(() -> assertEquals(l_expectedCountry, d_player.getD_countries().size()),
+				() -> assertEquals(l_country[0].getCountryId(), d_player.getD_countries().get(0).getCountryId()));
 
 		// when
-		t_player.resetCountry();
+		d_player.resetCountry();
 
 		// then
-		assertEquals(0, t_player.getD_countries().size());
+		assertEquals(0, d_player.getD_countries().size());
 	}
 }

@@ -14,14 +14,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Virag
  */
 public class GameMapTest {
-	private GameMap t_map;
+	private GameMap d_map;
 
 	/**
 	 * setup test
 	 */
 	@BeforeEach
 	public void setup() {
-		this.t_map = new GameMap();
+		this.d_map = new GameMap();
 	}
 
 	/**
@@ -29,7 +29,7 @@ public class GameMapTest {
 	 */
 	@AfterEach
 	public void teardown() {
-		this.t_map = null;
+		this.d_map = null;
 	}
 
 	/**
@@ -43,13 +43,13 @@ public class GameMapTest {
 		int[] l_arr = { 1, 2, 3 };
 		int[] l_troops = { 8, 5, 10 };
 
-		this.t_map.addContinent(3, 10);
-		this.t_map.addContinent(2, 5);
-		this.t_map.addContinent(1, 8);
+		this.d_map.addContinent(3, 10);
+		this.d_map.addContinent(2, 5);
+		this.d_map.addContinent(1, 8);
 
 		// then
-		ArrayList<Continent> l_continents = this.t_map.getContinents();
-		assertAll(() -> assertEquals(l_expectedContinents, this.t_map.getD_continentCount()),
+		ArrayList<Continent> l_continents = this.d_map.getContinents();
+		assertAll(() -> assertEquals(l_expectedContinents, this.d_map.getD_continentCount()),
 				() -> assertEquals(l_arr[0], l_continents.get(0).getContinentId()),
 				() -> assertEquals(l_troops[0], l_continents.get(0).getContinentValue()),
 				() -> assertEquals(l_arr[1], l_continents.get(1).getContinentId()),
@@ -68,15 +68,15 @@ public class GameMapTest {
 		int[] l_arr = { 1, 2, 4 };
 		int[] l_troops = { 8, 5, 6 };
 
-		this.t_map.addContinent(3, 10);
-		this.t_map.addContinent(2, 5);
-		this.t_map.addContinent(1, 8);
-		this.t_map.addContinent(4, 6);
-		this.t_map.removeContinent(3);
+		this.d_map.addContinent(3, 10);
+		this.d_map.addContinent(2, 5);
+		this.d_map.addContinent(1, 8);
+		this.d_map.addContinent(4, 6);
+		this.d_map.removeContinent(3);
 
 		// then
-		ArrayList<Continent> l_continents = this.t_map.getContinents();
-		assertAll(() -> assertEquals(l_expectedContinents, this.t_map.getD_continentCount()),
+		ArrayList<Continent> l_continents = this.d_map.getContinents();
+		assertAll(() -> assertEquals(l_expectedContinents, this.d_map.getD_continentCount()),
 				() -> assertEquals(l_arr[0], l_continents.get(0).getContinentId()),
 				() -> assertEquals(l_arr[1], l_continents.get(1).getContinentId()),
 				() -> assertEquals(l_arr[2], l_continents.get(2).getContinentId()),
@@ -96,15 +96,15 @@ public class GameMapTest {
 		int[] l_expCountry = { 1, 2, 3, 4, 14 };
 		int[] l_expContinent = { 1, 1, 2, 2, 3 };
 
-		t_map.addCountry(14, 3);
-		t_map.addCountry(1, 1);
-		t_map.addCountry(4, 2);
-		t_map.addCountry(3, 2);
-		t_map.addCountry(2, 1);
+		d_map.addCountry(14, 3);
+		d_map.addCountry(1, 1);
+		d_map.addCountry(4, 2);
+		d_map.addCountry(3, 2);
+		d_map.addCountry(2, 1);
 
 		// then
-		ArrayList<Country> l_countries = t_map.getCountries();
-		assertEquals(l_expectedCountryCount, t_map.getD_countryCount());
+		ArrayList<Country> l_countries = d_map.getCountries();
+		assertEquals(l_expectedCountryCount, d_map.getD_countryCount());
 		for (int i = 0; i < 5; i++) {
 			assertEquals(l_expCountry[i], l_countries.get(i).getCountryId());
 			assertEquals(l_expContinent[i], l_countries.get(i).getContinentId());
@@ -121,15 +121,15 @@ public class GameMapTest {
 		int[] l_expCountry = { 1, 2, 4, 14 };
 		int[] l_expContinent = { 1, 1, 2, 3 };
 
-		t_map.addCountry(14, 3);
-		t_map.addCountry(1, 1);
-		t_map.addCountry(4, 2);
-		t_map.addCountry(3, 2);
-		t_map.addCountry(2, 1);
-		t_map.removeCountry(3);
+		d_map.addCountry(14, 3);
+		d_map.addCountry(1, 1);
+		d_map.addCountry(4, 2);
+		d_map.addCountry(3, 2);
+		d_map.addCountry(2, 1);
+		d_map.removeCountry(3);
 
 		// then
-		ArrayList<Country> l_countries = t_map.getCountries();
+		ArrayList<Country> l_countries = d_map.getCountries();
 		assertEquals(l_expectedCountryCount, l_countries.size());
 		assertFalse(l_countries.contains(new Country(3, 2)));
 		for (int i = 0; i < 4; i++) {
@@ -149,17 +149,17 @@ public class GameMapTest {
 		Object[] l_neighborList = { 2, 3, 4 };
 		Object[] l_oppositeList = { 1 };
 
-		t_map.addCountry(1, 1);
-		t_map.addCountry(2, 2);
-		t_map.addCountry(3, 2);
-		t_map.addCountry(4, 2);
+		d_map.addCountry(1, 1);
+		d_map.addCountry(2, 2);
+		d_map.addCountry(3, 2);
+		d_map.addCountry(4, 2);
 
-		t_map.addNeighbor(1, 2);
-		t_map.addNeighbor(1, 3);
-		t_map.addNeighbor(1, 4);
+		d_map.addNeighbor(1, 2);
+		d_map.addNeighbor(1, 3);
+		d_map.addNeighbor(1, 4);
 
 		// then
-		ArrayList<Country> l_countries = t_map.getCountries();
+		ArrayList<Country> l_countries = d_map.getCountries();
 		assertAll(() -> assertArrayEquals(l_neighborList, l_countries.get(0).getNeighborCountries().toArray()),
 				() -> assertEquals(l_expectedNeighborCount, l_countries.get(0).getNeighborCountries().size()));
 	}
@@ -174,18 +174,18 @@ public class GameMapTest {
 		int l_expectedNeighborCount = 2;
 		Object[] l_neighborList = { 2, 4 };
 
-		t_map.addCountry(1, 1);
-		t_map.addCountry(2, 2);
-		t_map.addCountry(3, 2);
-		t_map.addCountry(4, 2);
+		d_map.addCountry(1, 1);
+		d_map.addCountry(2, 2);
+		d_map.addCountry(3, 2);
+		d_map.addCountry(4, 2);
 
-		t_map.addNeighbor(1, 2);
-		t_map.addNeighbor(1, 3);
-		t_map.addNeighbor(1, 4);
-		t_map.removeNeighbor(1, 3);
+		d_map.addNeighbor(1, 2);
+		d_map.addNeighbor(1, 3);
+		d_map.addNeighbor(1, 4);
+		d_map.removeNeighbor(1, 3);
 
 		// then
-		ArrayList<Country> l_countries = t_map.getCountries();
+		ArrayList<Country> l_countries = d_map.getCountries();
 		assertAll(() -> assertEquals(l_expectedNeighborCount, l_countries.get(0).getNeighborCountries().size()),
 				() -> assertArrayEquals(l_neighborList, l_countries.get(0).getNeighborCountries().toArray()));
 	}
