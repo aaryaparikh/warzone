@@ -16,8 +16,7 @@ public class MapView {
 	/**
 	 * Constructor for map editor
 	 *
-	 * @param p_continents Continent list
-	 * @param p_countries  Country list
+	 * @param p_gameMap Game map
 	 */
 	public MapView(GameMap p_gameMap) {
 		this.d_continents = p_gameMap.getContinents();

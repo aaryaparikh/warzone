@@ -9,17 +9,26 @@ import org.junit.jupiter.api.Test;
 
 import Controller.GameEngine;
 
-class PlayerTest {
+/**
+ * JUnit 5 test class for player class.
+ * 
+ * @author Gurleen
+ */
+public class PlayerTest {
 
 	private Player t_player;
-//	private GameEngine t_gameEngine;
-//	private GameMap t_map;
 
+	/**
+	 * set up test
+	 */
 	@BeforeEach
 	public void setUp() {
 		this.t_player = new Player("Dev", new GameEngine(new GameMap()));
 	}
 
+	/**
+	 * after test
+	 */
 	@AfterEach
 	public void teardown() {
 		this.t_player = null;

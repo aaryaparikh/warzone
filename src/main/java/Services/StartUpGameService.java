@@ -7,6 +7,8 @@ import Models.Player;
 
 /**
  * StartupService for all command in startup phase
+ * 
+ * @author Jonathan
  */
 public class StartUpGameService {
 	private GameEngine d_gameEngine;
@@ -14,7 +16,7 @@ public class StartUpGameService {
 	/**
 	 * Constructor for Startup Service
 	 *
-	 * @param p_gameMap the game engine object
+	 * @param p_gameEngine the game engine object
 	 */
 	public StartUpGameService(GameEngine p_gameEngine) {
 		d_gameEngine = p_gameEngine;
@@ -23,7 +25,7 @@ public class StartUpGameService {
 	/**
 	 * Main function for startup service
 	 *
-	 * @param args
+	 * @param args main function parameters
 	 */
 	public void main(String[] args) {
 		@SuppressWarnings("resource")

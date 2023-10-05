@@ -6,6 +6,8 @@ import Models.Player;
 
 /**
  * Players can place reinforcements to the countries they control.
+ * 
+ * @author YURUI
  */
 public class DeployOrder extends Order {
 	private Player d_player;
@@ -24,7 +26,7 @@ public class DeployOrder extends Order {
 	/**
 	 * Sets player object
 	 *
-	 * @param player object
+	 * @param p_player object
 	 */
 	public void setPlayer(Player p_player) {
 		this.d_player = p_player;

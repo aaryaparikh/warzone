@@ -1,12 +1,17 @@
 package Models;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
-class ContinentTest {
+/**
+ * JUnit 5 test class for Continent class.
+ * 
+ * @author Dev
+ */
+public class ContinentTest {
 
 	private Continent t_continent;
 

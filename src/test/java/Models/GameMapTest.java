@@ -1,25 +1,33 @@
 package Models;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class GameMapTest {
+import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * JUnit 5 test class for Gamemap class.
+ * 
+ * @author Virag
+ */
+public class GameMapTest {
 	private GameMap t_map;
 
+	/**
+	 * setup test
+	 */
 	@BeforeEach
 	public void setup() {
 		this.t_map = new GameMap();
 	}
 
+	/**
+	 * after test
+	 */
 	@AfterEach
 	public void teardown() {
 		this.t_map = null;

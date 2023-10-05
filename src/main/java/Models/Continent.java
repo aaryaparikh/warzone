@@ -2,6 +2,8 @@ package Models;
 
 /**
  * Represents a continent in the game map.
+ * 
+ * @author Aarya
  */
 public class Continent {
 	private int d_continentId;

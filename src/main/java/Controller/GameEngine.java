@@ -13,6 +13,8 @@ import Views.PhaseView;
 
 /**
  * Represents the game engine core for the strategy game.
+ * 
+ * @author YURUI
  */
 public class GameEngine {
 	private List<Player> d_players;
@@ -54,7 +56,7 @@ public class GameEngine {
 	/**
 	 * Set the game map.
 	 *
-	 * @param The game map.
+	 * @param p_map The game map.
 	 */
 	public void setGameMap(GameMap p_map) {
 		this.d_map = p_map;
@@ -63,7 +65,9 @@ public class GameEngine {
 	/**
 	 * Add a player to the game.
 	 *
-	 * @param player The player to add.
+	 * @param p_player The player to add.
+	 * 
+	 * @return whether it successes to add a player
 	 */
 	public boolean addPlayer(Player p_player) {
 		if (checkPlayerInList(p_player))
@@ -77,7 +81,9 @@ public class GameEngine {
 	/**
 	 * Remove a player to the game.
 	 *
-	 * @param player The player to remove.
+	 * @param p_player The player to remove.
+	 * 
+	 * @return whether it successes to remove a player
 	 */
 	public boolean removePlayer(Player p_player) {
 		if (!checkPlayerInList(p_player))
@@ -100,7 +106,9 @@ public class GameEngine {
 	/**
 	 * Check whether a player in current list.
 	 *
-	 * @param player The player to check.
+	 * @param p_player The player to check.
+	 * 
+	 * @return whether the player is in the list
 	 */
 	public boolean checkPlayerInList(Player p_player) {
 		for (Player l_player : d_players)
@@ -200,7 +208,7 @@ public class GameEngine {
 	/**
 	 * Set the current game phase.
 	 *
-	 * @param Phase.
+	 * @param p_phase the phase to set
 	 */
 	public void setPhase(String p_phase) {
 		this.d_phase = p_phase;
@@ -218,7 +226,7 @@ public class GameEngine {
 	/**
 	 * Set the phase view.
 	 *
-	 * @param PhaseView.
+	 * @param p_phaseView the phase needs to view
 	 */
 	public void setPhaseView(PhaseView p_phaseView) {
 		this.d_phaseView = p_phaseView;

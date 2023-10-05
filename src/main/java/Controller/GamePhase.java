@@ -4,9 +4,18 @@ import Utils.MapCommandHandler;
 
 /**
  * Represents an abstract game phase.
+ * 
+ * @author YURUI
  */
 public abstract class GamePhase {
+	/**
+	 * get information from game engine in a phase
+	 */
 	public GameEngine d_gameEngine;
+	
+	/**
+	 * handle a command and return result
+	 */
 	public MapCommandHandler d_commandHandler;
 
 	/**
