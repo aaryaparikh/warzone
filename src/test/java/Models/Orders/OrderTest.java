@@ -12,7 +12,12 @@ import Models.GameMap;
 import Models.Player;
 import Utils.MapEditor;
 
-class OrderTest {
+/**
+ * JUnit 5 test class for player class.
+ *
+ * @author Dev
+ */
+public class OrderTest {
 
 	private DeployOrder d_depOrder;
 	private GameMap d_map;
@@ -20,6 +25,9 @@ class OrderTest {
 	private Player d_player;
 	private GameEngine d_gameEngine;
 
+	/**
+	 * Set up
+	 */
 	@BeforeEach
 	public void setUp() {
 		d_map = new GameMap();
@@ -32,6 +40,9 @@ class OrderTest {
 
 	}
 
+	/**
+	 * Tear Down
+	 */
 	@AfterEach
 	public void tearDown() {
 		d_lmap = null;
@@ -40,6 +51,9 @@ class OrderTest {
 		d_depOrder = null;
 	}
 
+	/**
+	 * checks whether the Player's army is successfully deployed
+	 */
 	@Test
 	public void should_DeployPlayersArmy() {
 		// given
