@@ -14,30 +14,30 @@ import Utils.MapEditor;
 
 class OrderTest {
 
-	private DeployOrder t_depOrder;
-	private GameMap t_map;
-	private MapEditor t_lmap;
-	private Player t_player;
-	private GameEngine t_gameEngine;
+	private DeployOrder d_depOrder;
+	private GameMap d_map;
+	private MapEditor d_lmap;
+	private Player d_player;
+	private GameEngine d_gameEngine;
 
 	@BeforeEach
 	public void setUp() {
-		t_map = new GameMap();
-		t_lmap = new MapEditor(t_map);
-		t_map = t_lmap.loadMap("right");
-		t_gameEngine = new GameEngine(t_map);
-		t_player = new Player("Dev", t_gameEngine);
-		t_player.addCountry(new Country(1, 1));
-		t_depOrder = new DeployOrder(t_player, new Country(1, 1), 5);
+		d_map = new GameMap();
+		d_lmap = new MapEditor(d_map);
+		d_map = d_lmap.loadMap("right");
+		d_gameEngine = new GameEngine(d_map);
+		d_player = new Player("Dev", d_gameEngine);
+		d_player.addCountry(new Country(1, 1));
+		d_depOrder = new DeployOrder(d_player, new Country(1, 1), 5);
 
 	}
 
 	@AfterEach
 	public void tearDown() {
-		t_lmap = null;
-		t_map = null;
-		t_player = null;
-		t_depOrder = null;
+		d_lmap = null;
+		d_map = null;
+		d_player = null;
+		d_depOrder = null;
 	}
 
 	@Test
@@ -46,7 +46,7 @@ class OrderTest {
 		String l_expectedString = "Player \"Dev\" deployed \"5\" armies to country \"1\"";
 
 		// when
-		String l_returnedString = t_depOrder.execute(t_gameEngine);
+		String l_returnedString = d_depOrder.execute(d_gameEngine);
 
 		// then
 		assertEquals(l_expectedString, l_returnedString);
