@@ -76,6 +76,16 @@ public class GameMap {
 		d_continentCount = 0;
 		d_countryCount = 0;
 	}
+	
+	/**
+	 * Load GameMap
+	 * 
+	 * @param 
+	 */
+	public void loadGameMap(String p_filePath) {
+		d_countries = d_mapEditor.editMap(p_filePath).getCountries();
+		d_continents = d_mapEditor.editMap(p_filePath).getContinents();
+	}
 
 	/**
 	 * Gets the map view object
@@ -110,18 +120,29 @@ public class GameMap {
 	 * @param p_countries The list of countries to set.
 	 */
 	public void setCountries(ArrayList<Country> p_countries) {
-		this.d_countries = p_countries;
+		d_countries.clear();
+		d_countries.addAll(p_countries);
 	}
 
 	/**
-	 * Gets the list of countries on the map.
+	 * Gets the list of continents on the map.
 	 *
-	 * @return The list of countries.
+	 * @return The list of continents.
 	 */
 	public ArrayList<Continent> getContinents() {
 		return d_continents;
 	}
 
+	/**
+	 * Sets the list of continents on the map.
+	 * 
+	 * @param p_continents list of continents
+	 */
+	public void setContinents(ArrayList<Continent> p_continents) {
+		d_continents.clear();
+		d_continents.addAll(p_continents);
+	}
+	
 	/**
 	 * Adds a new continent to the map.
 	 *
