@@ -7,35 +7,35 @@ import Models.Player;
 public class BlockadeOrder extends Order {
 	private Player d_player;
 	private Country d_targetCountry;
-	
+
 	public BlockadeOrder(Player p_player, Country p_targetCountry) {
 		this.d_player = p_player;
 		this.d_targetCountry = p_targetCountry;
 	}
-	
+
 	@Override
 	public String execute(GameEngine p_game) {
-		
+
 		// Check if the player controls the specified country.
 		if (!d_player.getD_countries().contains(d_targetCountry))
-			return(String.format("Player \"%s\" doesn't control target country \"%d\", can't blockade.",
+			return (String.format("Player \"%s\" doesn't control target country \"%d\", can't blockade.",
 					d_player.getName(), d_targetCountry.getCountryId()));
 
 		// Execute blockade card order
 		if (d_targetCountry.getArmies() > 0) {
-			d_targetCountry.setArmies(d_targetCountry.getArmies() *3);
+			d_targetCountry.setArmies(d_targetCountry.getArmies() * 3);
 			d_targetCountry.setOwner(null);
-			
+
 			d_player.getD_countries().remove(d_targetCountry);
 			d_player.deleteCardsOwned("blockade");
-			return String.format("Player \"%s\" blockade country \"%d\", it has \"%s\" armies and become neutral.", d_player.getName(),
-					d_targetCountry.getCountryId(), d_targetCountry.getArmies());
+			return String.format("Player \"%s\" blockade country \"%d\", it has \"%s\" armies and become neutral.",
+					d_player.getName(), d_targetCountry.getCountryId(), d_targetCountry.getArmies());
 		} else {
 			d_targetCountry.setOwner(null);
 			d_player.getD_countries().remove(d_targetCountry);
 			d_player.deleteCardsOwned("blockade");
-			return String.format("Player \"%s\" blockade a country \"%d\", but no army.", 
-					d_player.getName(), d_targetCountry.getCountryId());
+			return String.format("Player \"%s\" blockade a country \"%d\", but no army.", d_player.getName(),
+					d_targetCountry.getCountryId());
 		}
 	}
 

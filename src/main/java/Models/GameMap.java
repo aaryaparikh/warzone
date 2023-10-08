@@ -76,11 +76,11 @@ public class GameMap {
 		d_continentCount = 0;
 		d_countryCount = 0;
 	}
-	
+
 	/**
 	 * Load GameMap
 	 * 
-	 * @param 
+	 * @param
 	 */
 	public void loadGameMap(String p_filePath) {
 		d_countries = d_mapEditor.editMap(p_filePath).getCountries();
@@ -142,7 +142,7 @@ public class GameMap {
 		d_continents.clear();
 		d_continents.addAll(p_continents);
 	}
-	
+
 	/**
 	 * Adds a new continent to the map.
 	 *

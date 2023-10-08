@@ -19,11 +19,10 @@ public class AdvanceOrder extends Order {
 	/**
 	 * Constructor to assign initial values
 	 * 
-	 * @param p_player            player who is committing advance command
-	 * @param p_sourceCountry country from which the reinforcements are to be
-	 *                            taken
+	 * @param p_player        player who is committing advance command
+	 * @param p_sourceCountry country from which the reinforcements are to be taken
 	 * @param p_targetCountry country to which reinforcements are to be advanced
-	 * @param p_armies            number of reinforcements
+	 * @param p_armies        number of reinforcements
 	 */
 	public AdvanceOrder(Player p_player, Country p_sourceCountry, Country p_targetCountry, int p_armies) {
 		d_player = p_player;
@@ -67,11 +66,11 @@ public class AdvanceOrder extends Order {
 			return String.format("Armies successfully moved from country \"%d\" to country \"%d\"",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId());
 		}
-		
+
 		// Check if the player has negotiated with player who owns target country.
 		if (d_player.getNegotiatedPlayers().contains(d_targetCountry.getOwner())) {
-			return String.format("Can't attack, there is a negotiation between \"%s\" and \"%s\".",
-					d_player.getName(), d_targetCountry.getOwner());
+			return String.format("Can't attack, there is a negotiation between \"%s\" and \"%s\".", d_player.getName(),
+					d_targetCountry.getOwner());
 		}
 
 		// Determine the capabilities of source and destination countries
@@ -87,30 +86,34 @@ public class AdvanceOrder extends Order {
 
 			d_targetCountry.setOwner(d_player);
 			d_player.addCountry(d_targetCountry);
-			
+
 			// Check if target country is neutral
 			if (l_playerBeingAttacked != null)
 				l_playerBeingAttacked.getD_countries().remove(d_targetCountry);
+
 			d_resourceCountry.setArmies(l_sourceCountryArmies - d_armies);
 			d_targetCountry.setArmies(d_armies - l_capabilityTargetCountryArmies);
+
+			d_player.addCardsOwned("random");
 			return String.format(
 					"Armies successfully moved from country \"%d\" to country \"%d\" and the ownership changed to \"%s\" player.",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
 
-		// Handle the attack where the source country and destination country are evenly matched
+			// Handle the attack where the source country and destination country are evenly
+			// matched
 		} else if (l_capabilitySourceCountryArmies == l_targetCountryArmies) {
 			d_resourceCountry.setArmies(l_sourceCountryArmies - l_capabilityTargetCountryArmies);
 			d_targetCountry.setArmies(0);
 			return String.format(
-					"Armies from country \"%d\" were not able to advance to country \"%d\" as the attacking armies were only able to defeat the exact number of armies present in the defending country",
+					"Armies from country \"%d\" were not able to advance to country \"%d\" as the attacking armies were only able to defeat the exact number of armies in target country",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
 
-		// Handle the attack where the destination country wins
+			// Handle the attack where the destination country wins
 		} else {
 			d_resourceCountry.setArmies(l_sourceCountryArmies - d_armies);
 			d_targetCountry.subtractArmies(l_capabilitySourceCountryArmies);
 			return String.format(
-					"Armies from country \"%d\" were not able to advance to country \"%d\" \n as the attacking armies could not defeat all the armies present in the defending country",
+					"Armies from country \"%d\" were not able to advance to country \"%d\" \n as the attacking armies could not defeat all the armies in target country",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
 		}
 	}

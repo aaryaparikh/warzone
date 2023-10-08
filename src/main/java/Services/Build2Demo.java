@@ -46,28 +46,25 @@ public class Build2Demo {
 		MapCommandHandler l_commandHandler = new MapCommandHandler(l_gameEngine);
 		l_gameEngine.getPhaseView().showGameInfo();
 
-		/* Initialize map edit phase
-		l_gameEngine.setPhase("edit");
-		l_gameEngine.getPhaseView().showNextPhaseInfo("edit");
-		MapService l_mapService = new MapService(l_map);
+		/*
+		 * Initialize map edit phase l_gameEngine.setPhase("edit");
+		 * l_gameEngine.getPhaseView().showNextPhaseInfo("edit"); MapService
+		 * l_mapService = new MapService(l_map);
+		 * 
+		 * while (l_gameEngine.getPhase().equals("edit")) { // Enter map edit phase
+		 * l_mapService.main(null); l_commandHandler.handlePlayerCommand("end", null);
+		 * 
+		 * // Enter start up phase StartUpGameService StartupService = new
+		 * StartUpGameService(l_gameEngine); StartupService.main(null);
+		 * l_mapService.setD_map(l_gameEngine.getGameMap()); }
+		 */
 
-		while (l_gameEngine.getPhase().equals("edit")) {
-			// Enter map edit phase
-			l_mapService.main(null);
-			l_commandHandler.handlePlayerCommand("end", null);
-
-			// Enter start up phase
-			StartUpGameService StartupService = new StartUpGameService(l_gameEngine);
-			StartupService.main(null);
-			l_mapService.setD_map(l_gameEngine.getGameMap());
-		}*/
-		
-		Player p1 = new Player("Aarya",l_gameEngine);
-		Player p2 = new Player("Yurui",l_gameEngine);
+		Player p1 = new Player("Aarya", l_gameEngine);
+		Player p2 = new Player("Yurui", l_gameEngine);
 		l_gameEngine.addPlayer(p1);
 		l_gameEngine.addPlayer(p2);
 		l_gameEngine.assignCountriesRandomly();
-		
+
 		l_gameEngine.setPhase("play");
 		l_gameEngine.getPhaseView().showNextPhaseInfo("play");
 

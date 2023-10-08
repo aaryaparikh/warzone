@@ -18,11 +18,10 @@ public class AirliftOrder extends Order {
 	/**
 	 * Constructor to assign initial values
 	 * 
-	 * @param p_player            player who is committing airlift command
-	 * @param p_sourceCountry country from which the reinforcements are to be
-	 *                            taken
+	 * @param p_player        player who is committing airlift command
+	 * @param p_sourceCountry country from which the reinforcements are to be taken
 	 * @param p_targetCountry country to which reinforcements are to be taken
-	 * @param p_armies            number of reinforcements
+	 * @param p_armies        number of reinforcements
 	 */
 	public AirliftOrder(Player p_player, Country p_sourceCountry, Country p_targetCountry, int p_armies) {
 		d_player = p_player;
@@ -41,7 +40,8 @@ public class AirliftOrder extends Order {
 	public String execute(GameEngine p_game) {
 		// Check if the player controls the source country
 		if (!d_player.getD_countries().contains(d_resourceCountry)) {
-			return String.format("Player \"%s\" does not control resource country \"%d\", hence armies cannot be airlifted.",
+			return String.format(
+					"Player \"%s\" does not control resource country \"%d\", hence armies cannot be airlifted.",
 					d_player.getName(), d_resourceCountry.getCountryId());
 		}
 
@@ -52,7 +52,8 @@ public class AirliftOrder extends Order {
 
 		// Check if the target country is controlled by player
 		if (!d_player.getD_countries().contains(d_targetCountry)) {
-			return String.format("Player \"%s\" does not control target country \"%d\", hence armies cannot be airlifted.",
+			return String.format(
+					"Player \"%s\" does not control target country \"%d\", hence armies cannot be airlifted.",
 					d_player.getName(), d_targetCountry.getCountryId());
 		}
 
@@ -61,6 +62,6 @@ public class AirliftOrder extends Order {
 		d_targetCountry.addArmies(d_armies);
 		return String.format("Armies successfully airlifted from country \"%d\" to country \"%d\"",
 				d_resourceCountry.getCountryId(), d_targetCountry.getCountryId());
-		
+
 	}
 }

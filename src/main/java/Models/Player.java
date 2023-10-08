@@ -1,10 +1,12 @@
 package Models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
+import Constants.GameConstants;
 import Controller.GameEngine;
 import Models.Orders.Order;
 import Utils.PlayerCommandHandler;
@@ -36,7 +38,7 @@ public class Player {
 		this.d_reinforcementPool = 0;
 		this.d_negotiatedPlayers = new ArrayList<>();
 		this.d_playerCommandHandler = new PlayerCommandHandler(p_gameEngine);
-		
+
 		// Initialize card owned list
 		this.d_cardsOwned = new HashMap<String, Integer>();
 		this.d_cardsOwned.put("bomb", 1);
@@ -125,11 +127,11 @@ public class Player {
 	public void setNegotiatedPlayers(List<Player> p_negotiatedPlayers) {
 		this.d_negotiatedPlayers = p_negotiatedPlayers;
 	}
-	
+
 	public void addNegotiatedPlayers(Player p_negotiatedPlayers) {
 		this.d_negotiatedPlayers.add(p_negotiatedPlayers);
 	}
-	
+
 	public void removeNegotiatedPlayers(Player p_negotiatedPlayers) {
 		this.d_negotiatedPlayers.remove(p_negotiatedPlayers);
 	}
@@ -143,21 +145,30 @@ public class Player {
 		return d_reinforcementPool;
 	}
 
-	
 	public HashMap<String, Integer> getCardsOwned() {
 		return d_cardsOwned;
 	}
-	
+
 	public void setCardsOwned(HashMap<String, Integer> p_cardsOwned) {
 		this.d_cardsOwned = p_cardsOwned;
 	}
-	
+
 	public void addCardsOwned(String p_cardType) {
-		this.d_cardsOwned.replace(p_cardType, this.d_cardsOwned.get(p_cardType)+1);
+		String l_cardType = p_cardType;
+
+		// Get a random card
+		if (l_cardType.equals("random")) {
+			List<String> l_cardList = new ArrayList<String>();
+			l_cardList.addAll(GameConstants.GAME_CARD_LIST);
+			Collections.shuffle(l_cardList);
+			l_cardType = l_cardList.get(0);
+		}
+
+		this.d_cardsOwned.replace(p_cardType, this.d_cardsOwned.get(p_cardType) + 1);
 	}
-	
+
 	public void deleteCardsOwned(String p_cardType) {
-		this.d_cardsOwned.replace(p_cardType, this.d_cardsOwned.get(p_cardType)-1);
+		this.d_cardsOwned.replace(p_cardType, this.d_cardsOwned.get(p_cardType) - 1);
 	}
 
 	/**

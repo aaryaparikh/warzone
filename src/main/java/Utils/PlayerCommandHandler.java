@@ -139,34 +139,37 @@ public class PlayerCommandHandler {
 						return "stayCurrentPlayer";
 					}
 
-					// Check if the target country exists in the map and is neighbor of source country.
+					// Check if the target country exists in the map and is neighbor of source
+					// country.
 					for (Country l_targetCountry : d_gameEngine.getGameMap().getCountries()) {
 						if (l_targetCountry.getCountryId() == Integer.parseInt(l_command[2])) {
 							l_ifAdvanceTargetCountryInMap = true;
 							if (!l_sourceCountry.getNeighborCountries().contains(l_targetCountry.getCountryId())) {
-								String l_response = String.format("Target country \"%d\" is not the neighbor of source country \"%d\"",
+								String l_response = String.format(
+										"Target country \"%d\" is not the neighbor of source country \"%d\"",
 										l_targetCountry.getCountryId(), l_sourceCountry.getCountryId());
 								System.out.println(l_response);
 								return "stayCurrentPlayer";
-							} else {								
-								
+							} else {
+
 								// Check if the player has enough armies.
 								if (l_sourceCountry.getArmies() < Integer.parseInt(l_command[3])) {
-									String l_response = String.format("Player \"%s\" does not have enough armies in source country.",
+									String l_response = String.format(
+											"Player \"%s\" does not have enough armies in source country.",
 											p_currentPlayer.getName());
 									System.out.println(l_response);
 									return "stayCurrentPlayer";
 								}
-								
+
 								// Issue a valid advance order
-								AdvanceOrder l_advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry, l_targetCountry,
-										Integer.parseInt(l_command[3]));
+								AdvanceOrder l_advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry,
+										l_targetCountry, Integer.parseInt(l_command[3]));
 								p_currentPlayer.addOrder(l_advanceOrder);
 								break;
 							}
 						}
 					}
-					
+
 					// Target country is not in map
 					if (l_ifAdvanceTargetCountryInMap == false) {
 						String l_response = String.format("Target country \"%d\" does not exist.",
@@ -176,7 +179,7 @@ public class PlayerCommandHandler {
 					}
 				}
 			}
-			
+
 			// Source country is not in map
 			if (l_ifAdvanceSourceCountryInMap == false) {
 				String l_response = String.format("Source country \"%d\" does not exist.",
@@ -185,7 +188,7 @@ public class PlayerCommandHandler {
 				return "stayCurrentPlayer";
 			}
 			break;
-		
+
 		// Handle bomb
 		case "bomb":
 			if (l_command.length < 2) {
@@ -199,11 +202,10 @@ public class PlayerCommandHandler {
 				System.out.println(l_response);
 				return "stayCurrentPlayer";
 			}
-			
+
 			// Check if the player has bomb card.
 			if (p_currentPlayer.getCardsOwned().get(l_command[0]) == 0) {
-				String l_response = String.format("Player \"%s\" does not have bomb card.",
-						p_currentPlayer.getName());
+				String l_response = String.format("Player \"%s\" does not have bomb card.", p_currentPlayer.getName());
 				System.out.println(l_response);
 				return "stayCurrentPlayer";
 			}
@@ -220,11 +222,12 @@ public class PlayerCommandHandler {
 						System.out.println(l_response);
 						return "stayCurrentPlayer";
 					}
-					
+
 					// Check if the target country is adjacent to player's countries.
 					for (Country l_ownedCountry : p_currentPlayer.getD_countries())
 						if (!l_ownedCountry.getNeighborCountries().contains(l_country.getCountryId())) {
-							String l_response = String.format("Player \"%s\" is not adjacent to this country \"%d\", can't bomb.",
+							String l_response = String.format(
+									"Player \"%s\" is not adjacent to this country \"%d\", can't bomb.",
 									p_currentPlayer.getName(), l_country.getCountryId());
 							System.out.println(l_response);
 							return "stayCurrentPlayer";
@@ -243,7 +246,7 @@ public class PlayerCommandHandler {
 				return "stayCurrentPlayer";
 			}
 			break;
-		
+
 		// Handle blockade
 		case "blockade":
 			if (l_command.length < 2) {
@@ -257,7 +260,7 @@ public class PlayerCommandHandler {
 				System.out.println(l_response);
 				return "stayCurrentPlayer";
 			}
-			
+
 			// Check if the player has bomb card.
 			if (p_currentPlayer.getCardsOwned().get(l_command[0]) == 0) {
 				String l_response = String.format("Player \"%s\" does not have blockade card.",
@@ -273,7 +276,8 @@ public class PlayerCommandHandler {
 
 					// Check if the player controls the specified country.
 					if (!p_currentPlayer.getD_countries().contains(l_country)) {
-						String l_response = String.format("Player \"%s\" doesn't control this country \"%d\", can't blockade.",
+						String l_response = String.format(
+								"Player \"%s\" doesn't control this country \"%d\", can't blockade.",
 								p_currentPlayer.getName(), l_country.getCountryId());
 						System.out.println(l_response);
 						return "stayCurrentPlayer";
@@ -292,7 +296,7 @@ public class PlayerCommandHandler {
 				return "stayCurrentPlayer";
 			}
 			break;
-			
+
 		// Handle to airlift armies
 		case "airlift":
 			if (l_command.length < 4) {
@@ -314,7 +318,7 @@ public class PlayerCommandHandler {
 				System.out.println(l_response);
 				return "stayCurrentPlayer";
 			}
-			
+
 			boolean l_ifAirliftSourceCountryInMap = false;
 			boolean l_ifAirliftTargetCountryInMap = false;
 			for (Country l_sourceCountry : d_gameEngine.getGameMap().getCountries()) {
@@ -333,31 +337,33 @@ public class PlayerCommandHandler {
 					for (Country l_targetCountry : d_gameEngine.getGameMap().getCountries()) {
 						if (l_targetCountry.getCountryId() == Integer.parseInt(l_command[2])) {
 							l_ifAirliftTargetCountryInMap = true;
-							
+
 							if (!p_currentPlayer.getD_countries().contains(l_targetCountry)) {
-								String l_response = String.format("Player \"%s\" does not control target country \"%d\"",
+								String l_response = String.format(
+										"Player \"%s\" does not control target country \"%d\"",
 										p_currentPlayer.getName(), l_targetCountry.getCountryId());
 								System.out.println(l_response);
 								return "stayCurrentPlayer";
-							} else {								
-								
+							} else {
+
 								// Check if the player has enough armies.
 								if (l_sourceCountry.getArmies() < Integer.parseInt(l_command[3])) {
-									String l_response = String.format("Player \"%s\" does not have enough armies in source country.",
+									String l_response = String.format(
+											"Player \"%s\" does not have enough armies in source country.",
 											p_currentPlayer.getName());
 									System.out.println(l_response);
 									return "stayCurrentPlayer";
 								}
-								
+
 								// Issue a valid airlift card order
-								AdvanceOrder l_advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry, l_targetCountry,
-										Integer.parseInt(l_command[3]));
+								AdvanceOrder l_advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry,
+										l_targetCountry, Integer.parseInt(l_command[3]));
 								p_currentPlayer.addOrder(l_advanceOrder);
 								break;
 							}
 						}
 					}
-					
+
 					// Target country is not in map
 					if (l_ifAirliftTargetCountryInMap == false) {
 						String l_response = String.format("Target country \"%d\" does not exist.",
@@ -367,7 +373,7 @@ public class PlayerCommandHandler {
 					}
 				}
 			}
-			
+
 			// Source country is not in map
 			if (l_ifAirliftSourceCountryInMap == false) {
 				String l_response = String.format("Source country \"%d\" does not exist.",
@@ -376,7 +382,7 @@ public class PlayerCommandHandler {
 				return "stayCurrentPlayer";
 			}
 			break;
-			
+
 		// Handle negotiating
 		case "negotiate":
 			if (l_command.length < 2) {
@@ -398,16 +404,16 @@ public class PlayerCommandHandler {
 				System.out.println(l_response);
 				return "stayCurrentPlayer";
 			}
-			
+
 			boolean l_ifNegotiatePlayerExist = false;
 			for (Player l_player : d_gameEngine.getPlayers()) {
 				if (l_player.getName().equals(l_command[1])) {
 					l_ifNegotiatePlayerExist = true;
 
-
 					// Check if the player has already negotiate with target player.
 					if (p_currentPlayer.getNegotiatedPlayers().contains(l_player)) {
-						String l_response = String.format("Player \"%s\" has negotiated with player \"%s\", can't do it again.",
+						String l_response = String.format(
+								"Player \"%s\" has negotiated with player \"%s\", can't do it again.",
 								p_currentPlayer.getName(), l_player.getName());
 						System.out.println(l_response);
 						return "stayCurrentPlayer";
@@ -427,13 +433,13 @@ public class PlayerCommandHandler {
 				return "stayCurrentPlayer";
 			}
 			break;
-				
+
 		default:
 			System.out.println("Please enter a valid command");
 			return "stayCurrentPlayer";
-				
+
 		// end switch command
-		}		
+		}
 		return "nextPlayer";
 	}
 
