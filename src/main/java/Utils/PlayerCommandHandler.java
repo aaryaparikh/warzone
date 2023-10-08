@@ -3,6 +3,7 @@ package Utils;
 import Controller.GameEngine;
 import Models.Country;
 import Models.Player;
+import Models.Orders.AdvanceOrder;
 import Models.Orders.DeployOrder;
 
 /**
@@ -107,6 +108,81 @@ public class PlayerCommandHandler {
 			}
 			break;
 
+		// Handle advancing armies
+		case "advance":
+			if (l_command.length < 4) {
+				String l_response = String.format("Please enter enough parameter for deploy order");
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
+
+			if (l_command.length > 4) {
+				String l_response = String.format("Please enter less parameter for deploy order");
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
+
+			boolean l_ifAdvanceSourceCountryInMap = false;
+			boolean l_ifAdvanceTargetCountryInMap = false;
+			for (Country l_sourceCountry : d_gameEngine.getGameMap().getCountries()) {
+				if (l_sourceCountry.getCountryId() == Integer.parseInt(l_command[1])) {
+					l_ifAdvanceSourceCountryInMap = true;
+
+					// Check if the player controls the specified country.
+					if (!p_currentPlayer.getD_countries().contains(l_sourceCountry)) {
+						String l_response = String.format("Player \"%s\" does not control this country \"%d\"",
+								p_currentPlayer.getName(), l_sourceCountry.getCountryId());
+						System.out.println(l_response);
+						return "stayCurrentPlayer";
+					}
+
+					// Check if the target country exists in the map and is neighbor of source country.
+					for (Country l_targetCountry : d_gameEngine.getGameMap().getCountries()) {
+						if (l_targetCountry.getCountryId() == Integer.parseInt(l_command[2])) {
+							l_ifAdvanceTargetCountryInMap = true;
+							if (!l_sourceCountry.getNeighborCountries().contains(l_targetCountry.getCountryId())) {
+								String l_response = String.format("Target country \"%d\" is not the neighbor of source country \"%d\"",
+										l_targetCountry.getCountryId(), l_sourceCountry.getCountryId());
+								System.out.println(l_response);
+								return "stayCurrentPlayer";
+							} else {								
+								
+								// Check if the player has enough armies.
+								if (l_sourceCountry.getArmies() < Integer.parseInt(l_command[3])) {
+									String l_response = String.format("Player \"%s\" does not have enough armies in source country.",
+											p_currentPlayer.getName());
+									System.out.println(l_response);
+									return "stayCurrentPlayer";
+								}
+								
+								// Issue a valid advance order
+								AdvanceOrder advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry, l_targetCountry,
+										Integer.parseInt(l_command[3]));
+								p_currentPlayer.addOrder(advanceOrder);
+								break;
+							}
+						}
+					}
+					
+					// Target country is not in map
+					if (l_ifAdvanceTargetCountryInMap == false) {
+						String l_response = String.format("Target country \"%d\" does not exist.",
+								Integer.parseInt(l_command[2]));
+						System.out.println(l_response);
+						return "stayCurrentPlayer";
+					}
+				}
+			}
+			
+			// Source country is not in map
+			if (l_ifAdvanceSourceCountryInMap == false) {
+				String l_response = String.format("Source country \"%d\" does not exist.",
+						Integer.parseInt(l_command[1]));
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
+			
+			break;
 		default:
 			System.out.println("Please enter a valid command");
 			return "stayCurrentPlayer";
