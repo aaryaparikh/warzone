@@ -67,6 +67,12 @@ public class AdvanceOrder extends Order {
 			return String.format("Armies successfully moved from country \"%d\" to country \"%d\"",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId());
 		}
+		
+		// Check if the player has negotiated with player who owns target country.
+		if (d_player.getNegotiatedPlayers().contains(d_targetCountry.getOwner())) {
+			return String.format("Can't attack, there is a negotiation between \"%s\" and \"%s\".",
+					d_player.getName(), d_targetCountry.getOwner());
+		}
 
 		// Determine the capabilities of source and destination countries
 		int l_sourceCountryArmies = d_resourceCountry.getArmies();
@@ -75,21 +81,23 @@ public class AdvanceOrder extends Order {
 		int l_capabilitySourceCountryArmies = (int) Math.ceil(d_armies * 0.6);
 		int l_capabilityTargetCountryArmies = (int) Math.ceil(l_targetCountryArmies * 0.7);
 
-		// Handle the scenario where the source country wins
+		// Handle the attack where the source country wins
 		if (l_capabilitySourceCountryArmies > l_targetCountryArmies) {
 			Player l_playerBeingAttacked = d_targetCountry.getOwner();
 
 			d_targetCountry.setOwner(d_player);
 			d_player.addCountry(d_targetCountry);
-
-			l_playerBeingAttacked.getD_countries().remove(d_targetCountry);
+			
+			// Check if target country is neutral
+			if (l_playerBeingAttacked != null)
+				l_playerBeingAttacked.getD_countries().remove(d_targetCountry);
 			d_resourceCountry.setArmies(l_sourceCountryArmies - d_armies);
 			d_targetCountry.setArmies(d_armies - l_capabilityTargetCountryArmies);
 			return String.format(
 					"Armies successfully moved from country \"%d\" to country \"%d\" and the ownership changed to \"%s\" player.",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
 
-		// Handle the scenario where the source country and destination country are evenly matched
+		// Handle the attack where the source country and destination country are evenly matched
 		} else if (l_capabilitySourceCountryArmies == l_targetCountryArmies) {
 			d_resourceCountry.setArmies(l_sourceCountryArmies - l_capabilityTargetCountryArmies);
 			d_targetCountry.setArmies(0);
@@ -97,7 +105,7 @@ public class AdvanceOrder extends Order {
 					"Armies from country \"%d\" were not able to advance to country \"%d\" as the attacking armies were only able to defeat the exact number of armies present in the defending country",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
 
-		// Handle the scenario where the destination country wins
+		// Handle the attack where the destination country wins
 		} else {
 			d_resourceCountry.setArmies(l_sourceCountryArmies - d_armies);
 			d_targetCountry.subtractArmies(l_capabilitySourceCountryArmies);

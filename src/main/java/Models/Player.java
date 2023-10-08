@@ -20,6 +20,7 @@ public class Player {
 	private List<Order> d_orders;
 	private int d_reinforcementPool;
 	private HashMap<String, Integer> d_cardsOwned;
+	private List<Player> d_negotiatedPlayers;
 	private PlayerCommandHandler d_playerCommandHandler;
 
 	/**
@@ -33,12 +34,15 @@ public class Player {
 		this.d_countries = new ArrayList<>();
 		this.d_orders = new ArrayList<>();
 		this.d_reinforcementPool = 0;
+		this.d_negotiatedPlayers = new ArrayList<>();
 		this.d_playerCommandHandler = new PlayerCommandHandler(p_gameEngine);
 		
 		// Initialize card owned list
 		this.d_cardsOwned = new HashMap<String, Integer>();
 		this.d_cardsOwned.put("bomb", 1);
 		this.d_cardsOwned.put("blockade", 1);
+		this.d_cardsOwned.put("airlift", 1);
+		this.d_cardsOwned.put("negotiate", 1);
 	}
 
 	/**
@@ -112,6 +116,22 @@ public class Player {
 	 */
 	public void assignReinforcements(int p_numReinforcements) {
 		d_reinforcementPool += p_numReinforcements;
+	}
+
+	public List<Player> getNegotiatedPlayers() {
+		return d_negotiatedPlayers;
+	}
+
+	public void setNegotiatedPlayers(List<Player> p_negotiatedPlayers) {
+		this.d_negotiatedPlayers = p_negotiatedPlayers;
+	}
+	
+	public void addNegotiatedPlayers(Player p_negotiatedPlayers) {
+		this.d_negotiatedPlayers.add(p_negotiatedPlayers);
+	}
+	
+	public void removeNegotiatedPlayers(Player p_negotiatedPlayers) {
+		this.d_negotiatedPlayers.remove(p_negotiatedPlayers);
 	}
 
 	/**

@@ -21,20 +21,18 @@ public class BombOrder extends Order {
 			return(String.format("Player \"%s\" control target country \"%d\", can't bomb.",
 					d_player.getName(), d_targetCountry.getCountryId()));
 		
+		// Check if the player has negotiated with player who owns target country.
+		if (d_player.getNegotiatedPlayers().contains(d_targetCountry.getOwner())) {
+			return String.format("Can't bomb, there is a negotiation between \"%s\" and \"%s\".",
+					d_player.getName(), d_targetCountry.getOwner());
+		}
+		
 		// Check if the target country is adjacent to player's countries.
 		for (Country l_ownedCountry : d_player.getD_countries())
 			if (!l_ownedCountry.getNeighborCountries().contains(d_targetCountry.getCountryId()))
 				return(String.format("Player \"%s\" is not adjacent to target country \"%d\", can't bomb.",
 						d_player.getName(), d_targetCountry.getCountryId()));
 		
-		/*
-		if (d_player.d_negotiatedPlayerNames.contains
-				(p_game.getGameMap().getCountries().get(d_country).getPlayer().getName())) {
-			return String.format("Cannot bomb, as diplomacy is established between \"%s\" and \"%s\".",
-					d_player.getName(),
-					p_game.getGameMap().getCountries().get(d_country).getPlayer().getName());
-		}*/
-
 		// Execute bomb card order
 		if (d_targetCountry.getArmies() >= 0) {
 			int previousArmis = d_targetCountry.getArmies();
