@@ -4,6 +4,7 @@ import Controller.GameEngine;
 import Models.Country;
 import Models.Player;
 import Models.Orders.AdvanceOrder;
+import Models.Orders.BombOrder;
 import Models.Orders.DeployOrder;
 
 /**
@@ -111,13 +112,13 @@ public class PlayerCommandHandler {
 		// Handle advancing armies
 		case "advance":
 			if (l_command.length < 4) {
-				String l_response = String.format("Please enter enough parameter for deploy order");
+				String l_response = String.format("Please enter enough parameter for advance order");
 				System.out.println(l_response);
 				return "stayCurrentPlayer";
 			}
 
 			if (l_command.length > 4) {
-				String l_response = String.format("Please enter less parameter for deploy order");
+				String l_response = String.format("Please enter less parameter for advance order");
 				System.out.println(l_response);
 				return "stayCurrentPlayer";
 			}
@@ -187,7 +188,65 @@ public class PlayerCommandHandler {
 			System.out.println("Please enter a valid command");
 			return "stayCurrentPlayer";
 
-		}
+		
+		// Handle bomb
+		case "bomb":
+			if (l_command.length < 2) {
+				String l_response = String.format("Please enter enough parameter for bomb card order.");
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
+
+			if (l_command.length > 2) {
+				String l_response = String.format("Please enter less parameter for bomb card order.");
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
+
+			boolean l_ifBombCountryInMap = false;
+			for (Country l_country : d_gameEngine.getGameMap().getCountries()) {
+				if (l_country.getCountryId() == Integer.parseInt(l_command[1])) {
+					l_ifBombCountryInMap = true;
+
+					// Check if the player controls the specified country.
+					if (p_currentPlayer.getD_countries().contains(l_country)) {
+						String l_response = String.format("Player \"%s\" control this country \"%d\", can't bomb.",
+								p_currentPlayer.getName(), l_country.getCountryId());
+						System.out.println(l_response);
+						return "stayCurrentPlayer";
+					}
+					
+					// Check if the target country is adjacent to player's countries.
+					for (Country l_ownedCountry : p_currentPlayer.getD_countries())
+						if (!l_ownedCountry.getNeighborCountries().contains(l_country.getCountryId())) {
+							String l_response = String.format("Player \"%s\" is not adjacent to this country \"%d\", can't bomb.",
+									p_currentPlayer.getName(), l_country.getCountryId());
+							System.out.println(l_response);
+							return "stayCurrentPlayer";
+						}
+
+					// Check if the player has bomb card.
+					if (p_currentPlayer.getCardsOwned().get(l_command[0]) == 0) {
+						String l_response = String.format("Player \"%s\" does not have bomb card.",
+								p_currentPlayer.getName());
+						System.out.println(l_response);
+						return "stayCurrentPlayer";
+					}
+
+					BombOrder bombOrder = new BombOrder(p_currentPlayer, l_country);
+					p_currentPlayer.addOrder(bombOrder);
+					p_currentPlayer.deleteCardsOwned(l_command[0]);
+					break;
+				}
+			}
+
+			if (l_ifBombCountryInMap == false) {
+				String l_response = String.format("Please bomb to a valid country in the map");
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
+			break;
+		}		
 		return "nextPlayer";
 	}
 

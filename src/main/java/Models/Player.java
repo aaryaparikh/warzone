@@ -1,6 +1,7 @@
 package Models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,6 +19,7 @@ public class Player {
 	private List<Country> d_countries;
 	private List<Order> d_orders;
 	private int d_reinforcementPool;
+	private HashMap<String, Integer> d_cardsOwned;
 	private PlayerCommandHandler d_playerCommandHandler;
 
 	/**
@@ -32,6 +34,11 @@ public class Player {
 		this.d_orders = new ArrayList<>();
 		this.d_reinforcementPool = 0;
 		this.d_playerCommandHandler = new PlayerCommandHandler(p_gameEngine);
+		
+		// Initialize card owned list
+		this.d_cardsOwned = new HashMap<String, Integer>();
+		this.d_cardsOwned.put("bomb", 1);
+		this.d_cardsOwned.put("blockade", 1);
 	}
 
 	/**
@@ -114,6 +121,23 @@ public class Player {
 	 */
 	public int getD_reinforcementPool() {
 		return d_reinforcementPool;
+	}
+
+	
+	public HashMap<String, Integer> getCardsOwned() {
+		return d_cardsOwned;
+	}
+	
+	public void setCardsOwned(HashMap<String, Integer> p_cardsOwned) {
+		this.d_cardsOwned = p_cardsOwned;
+	}
+	
+	public void addCardsOwned(String p_cardType) {
+		this.d_cardsOwned.replace(p_cardType, this.d_cardsOwned.get(p_cardType)+1);
+	}
+	
+	public void deleteCardsOwned(String p_cardType) {
+		this.d_cardsOwned.replace(p_cardType, this.d_cardsOwned.get(p_cardType)-1);
 	}
 
 	/**
