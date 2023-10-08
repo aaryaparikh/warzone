@@ -125,15 +125,18 @@ public class MapEditor {
 				}
 
 				// validate the loaded map
-				d_countries = l_map.getCountries();
-				d_continents = l_map.getContinents();
+				d_countries.clear();
+				d_countries.addAll(l_map.getCountries());
+				d_continents.clear();
+				d_continents.addAll(l_map.getContinents());
 				validateMap();
 			}
 		} catch (Exception e) {
 			System.out.println("Map file is in unknown format, so it can't be loaded or edited.");
 			return d_gameMap;
 		}
-
+		d_gameMap.setCountries(l_map.getCountries());
+		d_gameMap.setContinents(l_map.getContinents());
 		return l_map;
 	}
 

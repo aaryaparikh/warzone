@@ -41,9 +41,7 @@ public class MapService {
 	public void main(String[] p_args) {
 		@SuppressWarnings("resource")
 		Scanner l_sc = new Scanner(System.in);
-
-		GameMap l_map = d_map;
-
+		
 		while (true) {
 			String l_userInput;
 			l_userInput = l_sc.nextLine();
@@ -52,16 +50,16 @@ public class MapService {
 			// solve the command
 			switch (l_commands[0]) {
 			case "showmap":
-				l_map.getD_mapView().showMap();
+				d_map.getD_mapView().showMap();
 				break;
 			case "savemap":
 				if (l_commands.length < 2)
 					System.out.println("Please enter file path to save map.");
 				else
-					l_map.d_mapEditor.write(l_commands[1]);
+					d_map.d_mapEditor.write(l_commands[1]);
 				break;
 			case "validatemap":
-				if (l_map.d_mapEditor.validateMap()) {
+				if (d_map.d_mapEditor.validateMap()) {
 					System.out.println("Valid Map");
 				}
 				break;
@@ -69,10 +67,10 @@ public class MapService {
 				if (l_commands.length < 2)
 					System.out.println("Please enter file path to load map.");
 				else
-					l_map = l_map.d_mapEditor.loadMap(l_commands[1]);
+					d_map.d_mapEditor.editMap(l_commands[1]);
 				break;
 			case "end":
-				if (l_map.d_mapEditor.validateMap())
+				if (d_map.d_mapEditor.validateMap())
 					return;
 				else
 					System.out.println("Since invalid map, can't move to play.");
@@ -99,7 +97,7 @@ public class MapService {
 							} else {
 								// make sure all parameter is integer otherwise an exception
 								try {
-									l_map.addContinent(Integer.parseInt(l_commands[l_i + 1]),
+									d_map.addContinent(Integer.parseInt(l_commands[l_i + 1]),
 											Integer.parseInt(l_commands[l_i + 2]));
 								} catch (Exception e) {
 									System.out.println(e);
@@ -117,7 +115,7 @@ public class MapService {
 								System.out.println("Please don't enter duplicated -add or -remove");
 							else {
 								try {
-									l_map.removeContinent(Integer.parseInt(l_commands[l_i + 1]));
+									d_map.removeContinent(Integer.parseInt(l_commands[l_i + 1]));
 								} catch (Exception e) {
 									System.out.println(e);
 								}
@@ -152,7 +150,7 @@ public class MapService {
 								l_i += 1;
 							} else {
 								try {
-									l_map.addCountry(Integer.parseInt(l_commands[l_i + 1]),
+									d_map.addCountry(Integer.parseInt(l_commands[l_i + 1]),
 											Integer.parseInt(l_commands[l_i + 2]));
 								} catch (Exception e) {
 									System.out.println(e);
@@ -168,7 +166,7 @@ public class MapService {
 								System.out.println("Please don't enter duplicated -add or -remove");
 							else {
 								try {
-									l_map.removeCountry(Integer.parseInt(l_commands[l_i + 1]));
+									d_map.removeCountry(Integer.parseInt(l_commands[l_i + 1]));
 								} catch (Exception e) {
 									System.out.println(e);
 								}
@@ -203,9 +201,9 @@ public class MapService {
 							} else {
 								try {
 									if (!l_commands[l_i + 1].equals(l_commands[l_i + 2]))
-										l_map.addNeighbor(Integer.parseInt(l_commands[l_i + 1]),
+										d_map.addNeighbor(Integer.parseInt(l_commands[l_i + 1]),
 												Integer.parseInt(l_commands[l_i + 2]));
-									l_map.addNeighbor(Integer.parseInt(l_commands[l_i + 2]),
+									d_map.addNeighbor(Integer.parseInt(l_commands[l_i + 2]),
 											Integer.parseInt(l_commands[l_i + 1]));
 								} catch (Exception e) {
 									System.out.println(e);
@@ -225,9 +223,9 @@ public class MapService {
 							} else {
 								try {
 									if (!l_commands[l_i + 1].equals(l_commands[l_i + 2]))
-										l_map.removeNeighbor(Integer.parseInt(l_commands[l_i + 1]),
+										d_map.removeNeighbor(Integer.parseInt(l_commands[l_i + 1]),
 												Integer.parseInt(l_commands[l_i + 2]));
-									l_map.removeNeighbor(Integer.parseInt(l_commands[l_i + 2]),
+									d_map.removeNeighbor(Integer.parseInt(l_commands[l_i + 2]),
 											Integer.parseInt(l_commands[l_i + 1]));
 								} catch (Exception e) {
 									System.out.println(e);
@@ -247,6 +245,5 @@ public class MapService {
 				System.out.println("Invalid Input");
 			}
 		}
-
 	}
 }
