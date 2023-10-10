@@ -94,7 +94,10 @@ public class AdvanceOrder extends Order {
 			d_resourceCountry.setArmies(l_sourceCountryArmies - d_armies);
 			d_targetCountry.setArmies(d_armies - l_capabilityTargetCountryArmies);
 
-			d_player.addCardsOwned("random");
+			// Give a player card in the end of this turn
+			if (!p_game.getPlayerConquerInTurn().contains(d_player))
+				p_game.setPlayerConquerInTurn(d_player);
+			
 			return String.format(
 					"Armies successfully moved from country \"%d\" to country \"%d\" and the ownership changed to \"%s\" player.",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());

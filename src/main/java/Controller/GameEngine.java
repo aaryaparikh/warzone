@@ -22,6 +22,7 @@ public class GameEngine {
 	private MapCommandHandler d_commandHandler;
 	private String d_phase;
 	private PhaseView d_phaseView;
+	private List<Player> d_playerConquerInTurn;
 
 	/**
 	 * Constructor for GameEngine.
@@ -33,6 +34,7 @@ public class GameEngine {
 		this.d_players = new ArrayList<>();
 		this.d_commandHandler = new MapCommandHandler(this);
 		this.setPhaseView(new PhaseView(this));
+		this.d_playerConquerInTurn = new ArrayList<>();
 	}
 
 	/**
@@ -230,6 +232,31 @@ public class GameEngine {
 	 */
 	public void setPhaseView(PhaseView p_phaseView) {
 		this.d_phaseView = p_phaseView;
+	}
+
+	/**
+	 * Get the list of players who conquer at least one territory in this turn
+	 * 
+	 * @return the d_playerConquerInTurn
+	 */
+	public List<Player> getPlayerConquerInTurn() {
+		return d_playerConquerInTurn;
+	}
+
+	/**
+	 * Set the list of players who conquer at least one territory in this turn
+	 * 
+	 * @param p_playerConquerInTurn the d_playerConquerInTurn to set
+	 */
+	public void setPlayerConquerInTurn(Player p_player) {
+		this.d_playerConquerInTurn.add(p_player);
+	}
+	
+	/**
+	 * Reset the list of players who conquer at least one territory in this turn
+	 */
+	public void resetPlayerConquerInTurn() {
+		this.d_playerConquerInTurn.clear();;
 	}
 
 	// Other game phases and methods

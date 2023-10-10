@@ -53,6 +53,11 @@ public class ExecuteOrders extends GamePhase {
 			}
 		}
 
+		// Allocate cards to players
+		for (Player l_player : super.d_gameEngine.getPlayerConquerInTurn())
+			l_player.addCardsOwned("random");
+		super.d_gameEngine.resetPlayerConquerInTurn();
+		
 		// move to another play round
 		System.out.println("[Execute orders phase end, moves to next round]");
 		super.d_gameEngine.getPhaseView().showNextPhaseInfo("play");

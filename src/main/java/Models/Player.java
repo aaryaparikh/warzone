@@ -164,7 +164,7 @@ public class Player {
 			l_cardType = l_cardList.get(0);
 		}
 
-		this.d_cardsOwned.replace(p_cardType, this.d_cardsOwned.get(p_cardType) + 1);
+		this.d_cardsOwned.replace(l_cardType, this.d_cardsOwned.get(l_cardType) + 1);
 	}
 
 	public void deleteCardsOwned(String p_cardType) {
