@@ -3,11 +3,11 @@ package Models.Orders;
 import Controller.GameEngine;
 import Models.Player;
 
-public class NegotiateOrder extends Order {
+public class DiplomacyOrder extends Order {
 	private Player d_player;
 	private Player d_targetPlayer;
 
-	public NegotiateOrder(Player p_player, Player p_targetPlayer) {
+	public DiplomacyOrder(Player p_player, Player p_targetPlayer) {
 		this.d_player = p_player;
 		this.d_targetPlayer = p_targetPlayer;
 	}

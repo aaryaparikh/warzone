@@ -120,6 +120,9 @@ public class Player {
 		d_reinforcementPool += p_numReinforcements;
 	}
 
+	/**
+	 * @return
+	 */
 	public List<Player> getNegotiatedPlayers() {
 		return d_negotiatedPlayers;
 	}
@@ -134,6 +137,10 @@ public class Player {
 
 	public void removeNegotiatedPlayers(Player p_negotiatedPlayers) {
 		this.d_negotiatedPlayers.remove(p_negotiatedPlayers);
+	}
+	
+	public void resetNegotiatedPlayers() {
+		this.d_negotiatedPlayers.clear();;
 	}
 
 	/**

@@ -7,7 +7,7 @@ import Models.Orders.AdvanceOrder;
 import Models.Orders.BlockadeOrder;
 import Models.Orders.BombOrder;
 import Models.Orders.DeployOrder;
-import Models.Orders.NegotiateOrder;
+import Models.Orders.DiplomacyOrder;
 
 /**
  * Handles player commands.
@@ -224,15 +224,19 @@ public class PlayerCommandHandler {
 					}
 
 					// Check if the target country is adjacent to player's countries.
+					boolean ifTargetCountryAdjacent = false;
 					for (Country l_ownedCountry : p_currentPlayer.getD_countries())
-						if (!l_ownedCountry.getNeighborCountries().contains(l_country.getCountryId())) {
-							String l_response = String.format(
-									"Player \"%s\" is not adjacent to this country \"%d\", can't bomb.",
-									p_currentPlayer.getName(), l_country.getCountryId());
-							System.out.println(l_response);
-							return "stayCurrentPlayer";
-						}
-
+						if (l_ownedCountry.getNeighborCountries().contains(l_country.getCountryId()))
+							ifTargetCountryAdjacent = true;
+					
+					if (ifTargetCountryAdjacent == false) {
+						String l_response = String.format(
+								"Player \"%s\" is not adjacent to this country \"%d\", can't bomb.",
+								p_currentPlayer.getName(), l_country.getCountryId());
+						System.out.println(l_response);
+						return "stayCurrentPlayer";
+					}
+					
 					BombOrder l_bombOrder = new BombOrder(p_currentPlayer, l_country);
 					p_currentPlayer.addOrder(l_bombOrder);
 					p_currentPlayer.deleteCardsOwned(l_command[0]);
@@ -261,7 +265,7 @@ public class PlayerCommandHandler {
 				return "stayCurrentPlayer";
 			}
 
-			// Check if the player has bomb card.
+			// Check if the player has blockade card.
 			if (p_currentPlayer.getCardsOwned().get(l_command[0]) == 0) {
 				String l_response = String.format("Player \"%s\" does not have blockade card.",
 						p_currentPlayer.getName());
@@ -419,7 +423,7 @@ public class PlayerCommandHandler {
 						return "stayCurrentPlayer";
 					}
 
-					NegotiateOrder l_negotiateOrder = new NegotiateOrder(p_currentPlayer, l_player);
+					DiplomacyOrder l_negotiateOrder = new DiplomacyOrder(p_currentPlayer, l_player);
 					p_currentPlayer.addOrder(l_negotiateOrder);
 					p_currentPlayer.addNegotiatedPlayers(l_player);
 					p_currentPlayer.deleteCardsOwned(l_command[0]);
