@@ -31,28 +31,33 @@ public class ExecuteOrders extends GamePhase {
 	 */
 	public String executeOrders() {
 		List<Player> l_playerPool = super.d_gameEngine.getPlayers();
-		int l_remainedPlayers = l_playerPool.size();
-
-		// execute every player's deploy order in round-robin fashion
-		while (l_remainedPlayers > 0) {
-			for (Player l_player : l_playerPool) {
-				Order l_order = l_player.nextOrder();
-				if (l_order != null)
-					if (l_order.getOrderType() != "Deploy")
-						l_player.addOrderAtFirstPosition(l_order);
-					else
-						System.out.println(l_order.execute(super.d_gameEngine));
-				else
-					l_remainedPlayers -= 1;
-			}
-		}
-		l_remainedPlayers = l_playerPool.size();
+		boolean l_ifRemainPlayers = true;
 		
-		// execute every player's other order in round-robin fashion
-		while (l_remainedPlayers > 0) {
+		// execute every player's deploy order in round-robin fashion
+		while (l_ifRemainPlayers == true) {
+			l_ifRemainPlayers = false;
 			for (Player l_player : l_playerPool) {
 				Order l_order = l_player.nextOrder();
 				if (l_order != null) {
+					if (l_order.getOrderType() != "Deploy")
+						l_player.addOrderAtFirstPosition(l_order);
+					else {
+						System.out.println(l_order.execute(super.d_gameEngine));
+						l_ifRemainPlayers = true;
+					}
+				}
+			}
+		}
+		
+		l_ifRemainPlayers = true;
+		
+		// execute every player's other order in round-robin fashion
+		while (l_ifRemainPlayers == true) {
+			l_ifRemainPlayers = false;
+			for (Player l_player : l_playerPool) {
+				Order l_order = l_player.nextOrder();
+				if (l_order != null) {
+					l_ifRemainPlayers = true;
 					System.out.println(l_order.execute(super.d_gameEngine));
 
 					// check whether the game is over
@@ -63,8 +68,7 @@ public class ExecuteOrders extends GamePhase {
 						super.d_gameEngine.setPhase("end");
 						return "gameOver";
 					}
-				} else
-					l_remainedPlayers -= 1;
+				}
 			}
 		}
 
