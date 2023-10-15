@@ -251,12 +251,13 @@ public class GameEngine {
 	public void setPlayerConquerInTurn(Player p_player) {
 		this.d_playerConquerInTurn.add(p_player);
 	}
-	
+
 	/**
 	 * Reset the list of players who conquer at least one territory in this turn
 	 */
 	public void resetPlayerConquerInTurn() {
-		this.d_playerConquerInTurn.clear();;
+		this.d_playerConquerInTurn.clear();
+		;
 	}
 
 	// Other game phases and methods

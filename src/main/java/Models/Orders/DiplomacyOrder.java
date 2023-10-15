@@ -35,4 +35,8 @@ public class DiplomacyOrder extends Order {
 		}
 	}
 
+	@Override
+	public String getOrderType() {
+		return "Negotiate";
+	}
 }

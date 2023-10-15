@@ -33,7 +33,22 @@ public class ExecuteOrders extends GamePhase {
 		List<Player> l_playerPool = super.d_gameEngine.getPlayers();
 		int l_remainedPlayers = l_playerPool.size();
 
-		// execute every player's order in round-robin fashion
+		// execute every player's deploy order in round-robin fashion
+		while (l_remainedPlayers > 0) {
+			for (Player l_player : l_playerPool) {
+				Order l_order = l_player.nextOrder();
+				if (l_order != null)
+					if (l_order.getOrderType() != "Deploy")
+						l_player.addOrderAtFirstPosition(l_order);
+					else
+						System.out.println(l_order.execute(super.d_gameEngine));
+				else
+					l_remainedPlayers -= 1;
+			}
+		}
+		l_remainedPlayers = l_playerPool.size();
+		
+		// execute every player's other order in round-robin fashion
 		while (l_remainedPlayers > 0) {
 			for (Player l_player : l_playerPool) {
 				Order l_order = l_player.nextOrder();
@@ -57,11 +72,11 @@ public class ExecuteOrders extends GamePhase {
 		for (Player l_player : super.d_gameEngine.getPlayerConquerInTurn())
 			l_player.addCardsOwned("random");
 		super.d_gameEngine.resetPlayerConquerInTurn();
-		
+
 		// Reset negotiate relationship
 		for (Player l_player : super.d_gameEngine.getPlayerConquerInTurn())
 			l_player.resetNegotiatedPlayers();
-		
+
 		// move to another play round
 		System.out.println("[Execute orders phase end, moves to next round]");
 		super.d_gameEngine.getPhaseView().showNextPhaseInfo("play");

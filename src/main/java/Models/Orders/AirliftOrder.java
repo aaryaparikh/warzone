@@ -47,7 +47,9 @@ public class AirliftOrder extends Order {
 
 		// Check if there are enough armies in the source country
 		if (d_resourceCountry.getArmies() < d_armies) {
-			return String.format("Country \"%d\" does not have enough armies", d_resourceCountry.getCountryId());
+			d_armies = d_resourceCountry.getArmies();
+			// return String.format("Country \"%d\" does not have enough armies",
+			// d_resourceCountry.getCountryId());
 		}
 
 		// Check if the target country is controlled by player
@@ -63,5 +65,10 @@ public class AirliftOrder extends Order {
 		return String.format("Armies successfully airlifted from country \"%d\" to country \"%d\"",
 				d_resourceCountry.getCountryId(), d_targetCountry.getCountryId());
 
+	}
+
+	@Override
+	public String getOrderType() {
+		return "Airlift";
 	}
 }

@@ -60,6 +60,17 @@ public class PlayerCommandHandler {
 		case "showmap":
 			d_gameEngine.getGameMap().getD_mapView().showGameMap();
 			return "stayCurrentPlayer";
+		case "commit":
+			if (p_currentPlayer.getD_reinforcementPool() == 0) {
+				p_currentPlayer.setIfSignified(true);
+				String l_response = String.format("Player \"%s\" has signified.", p_currentPlayer.getName());
+				System.out.println(l_response);
+				break;
+			} else {
+				String l_response = String.format("Player \"%s\" doesn't deploy all reinforcement, can't commit.", p_currentPlayer.getName());
+				System.out.println(l_response);
+				return "stayCurrentPlayer";
+			}
 
 		// Handle deploying armies
 		case "deploy":
@@ -152,15 +163,6 @@ public class PlayerCommandHandler {
 								return "stayCurrentPlayer";
 							} else {
 
-								// Check if the player has enough armies.
-								if (l_sourceCountry.getArmies() < Integer.parseInt(l_command[3])) {
-									String l_response = String.format(
-											"Player \"%s\" does not have enough armies in source country.",
-											p_currentPlayer.getName());
-									System.out.println(l_response);
-									return "stayCurrentPlayer";
-								}
-
 								// Issue a valid advance order
 								AdvanceOrder l_advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry,
 										l_targetCountry, Integer.parseInt(l_command[3]));
@@ -228,7 +230,7 @@ public class PlayerCommandHandler {
 					for (Country l_ownedCountry : p_currentPlayer.getD_countries())
 						if (l_ownedCountry.getNeighborCountries().contains(l_country.getCountryId()))
 							ifTargetCountryAdjacent = true;
-					
+
 					if (ifTargetCountryAdjacent == false) {
 						String l_response = String.format(
 								"Player \"%s\" is not adjacent to this country \"%d\", can't bomb.",
@@ -236,7 +238,7 @@ public class PlayerCommandHandler {
 						System.out.println(l_response);
 						return "stayCurrentPlayer";
 					}
-					
+
 					BombOrder l_bombOrder = new BombOrder(p_currentPlayer, l_country);
 					p_currentPlayer.addOrder(l_bombOrder);
 					p_currentPlayer.deleteCardsOwned(l_command[0]);
@@ -349,15 +351,6 @@ public class PlayerCommandHandler {
 								System.out.println(l_response);
 								return "stayCurrentPlayer";
 							} else {
-
-								// Check if the player has enough armies.
-								if (l_sourceCountry.getArmies() < Integer.parseInt(l_command[3])) {
-									String l_response = String.format(
-											"Player \"%s\" does not have enough armies in source country.",
-											p_currentPlayer.getName());
-									System.out.println(l_response);
-									return "stayCurrentPlayer";
-								}
 
 								// Issue a valid airlift card order
 								AdvanceOrder l_advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry,

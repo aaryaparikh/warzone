@@ -47,7 +47,9 @@ public class AdvanceOrder extends Order {
 
 		// Check if there are enough armies in the resource country
 		if (d_resourceCountry.getArmies() < d_armies) {
-			return String.format("Country \"%d\" does not have enough armies", d_resourceCountry.getCountryId());
+			d_armies = d_resourceCountry.getArmies();
+			// return String.format("Country \"%d\" does not have enough armies",
+			// d_resourceCountry.getCountryId());
 		}
 
 		// Check if the target country is a neighbor of the resource country
@@ -97,7 +99,7 @@ public class AdvanceOrder extends Order {
 			// Give a player card in the end of this turn
 			if (!p_game.getPlayerConquerInTurn().contains(d_player))
 				p_game.setPlayerConquerInTurn(d_player);
-			
+
 			return String.format(
 					"Armies successfully moved from country \"%d\" to country \"%d\" and the ownership changed to \"%s\" player.",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
@@ -119,5 +121,10 @@ public class AdvanceOrder extends Order {
 					"Armies from country \"%d\" were not able to advance to country \"%d\" \n as the attacking armies could not defeat all the armies in target country",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
 		}
+	}
+
+	@Override
+	public String getOrderType() {
+		return "Advance";
 	}
 }
