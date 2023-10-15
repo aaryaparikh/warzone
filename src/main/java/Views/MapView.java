@@ -78,7 +78,7 @@ public class MapView {
 			if (d_countries.get(l_i).getOwner() == null)
 				System.out.println(
 						"\t" + d_countries.get(l_i).getCountryId() + "\t" + d_countries.get(l_i).getContinentId()
-								+ "\t\t" + d_countries.get(l_i).getArmies() + "\t" + "None");
+								+ "\t\t" + d_countries.get(l_i).getArmies() + "\t" + "Neutral");
 			else
 				System.out.println("\t" + d_countries.get(l_i).getCountryId() + "\t"
 						+ d_countries.get(l_i).getContinentId() + "\t\t" + d_countries.get(l_i).getArmies() + "\t"

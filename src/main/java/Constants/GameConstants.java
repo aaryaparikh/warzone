@@ -1,5 +1,7 @@
 package Constants;
 
+import java.util.List;
+
 /**
  * All Constants Value
  * 
@@ -10,4 +12,9 @@ public final class GameConstants {
 	 * Each player should be assigned 5 armies in default
 	 */
 	public static final int DEFAULT_PLAYER_REINFORCEMENT = 5;
+
+	/**
+	 * Card type in game
+	 */
+	public static final List<String> GAME_CARD_LIST = List.of("bomb", "blockade", "airlift", "negotiate");
 }

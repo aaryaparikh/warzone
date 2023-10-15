@@ -41,7 +41,7 @@ public class MapService {
 	public void main(String[] p_args) {
 		@SuppressWarnings("resource")
 		Scanner l_sc = new Scanner(System.in);
-		
+
 		while (true) {
 			String l_userInput;
 			l_userInput = l_sc.nextLine();
