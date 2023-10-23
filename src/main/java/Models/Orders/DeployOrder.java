@@ -53,7 +53,7 @@ public class DeployOrder extends Order {
 	 */
 	@Override
 	public String execute(GameEngine p_game) {
-		
+
 		boolean ifDeployCountryInControl = false;
 		for (Country l_country : d_player.getD_countries()) {
 			if (l_country.equals(d_country)) {
@@ -62,13 +62,17 @@ public class DeployOrder extends Order {
 				break;
 			}
 		}
-		
+
 		if (ifDeployCountryInControl == true)
 			return String.format("Player \"%s\" deployed \"%d\" armies to country \"%d\"", d_player.getName(), d_armies,
-				d_country.getCountryId());
-		else
-			return String.format("Player \"%s\" can't deploy to country \"%d\", since it is not his territory.", d_player.getName(), d_armies,
 					d_country.getCountryId());
+		else
+			return String.format("Player \"%s\" can't deploy to country \"%d\", since it is not his territory.",
+					d_player.getName(), d_armies, d_country.getCountryId());
 	}
 
+	@Override
+	public String getOrderType() {
+		return "Deploy";
+	}
 }

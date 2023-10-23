@@ -26,21 +26,24 @@ public class IssueOrders extends GamePhase {
 	 */
 	public void issueOrders() {
 		List<Player> l_playerPool = super.d_gameEngine.getPlayers();
-		int l_remainedPlayers = l_playerPool.size();
+		for (Player l_player : l_playerPool)
+			l_player.setIfSignified(false);
+		
+		boolean l_ifRemainPlayers = true;
 
 		// issue order in round-robin fashion
-		while (l_remainedPlayers > 0) {
-			for (Player l_player : l_playerPool) {
-				if (l_player.getD_reinforcementPool() != 0) {
+		while (l_ifRemainPlayers == true) {
+			l_ifRemainPlayers = false;
+			for (Player l_player : l_playerPool)
+				if (l_player.getIfSignified() == false) {
 					System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool()
 							+ " armies need to deploy]");
 					l_player.issueOrder();
-				} else
-					l_remainedPlayers -= 1;
-			}
+					l_ifRemainPlayers = true;
+				}
 		}
 
-		System.out.println("[All players have deployed all reinforcement]");
+		System.out.println("[All players have signified]");
 		super.d_gameEngine.getPhaseView().showNextPhaseInfo("execute");
 		super.d_gameEngine.setPhase("execute");
 	}

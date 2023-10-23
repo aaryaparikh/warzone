@@ -2,7 +2,6 @@ package Services;
 
 import Controller.GameEngine;
 import Models.*;
-import Utils.MapCommandHandler;
 
 /**
  * Build1 Demo: 1. Initialize the map 2. Enter map edit phase 3. Enter startup
@@ -43,7 +42,6 @@ public class Build2Demo {
 		GameMap l_map = new GameMap();
 		defaultGameMap(l_map);
 		GameEngine l_gameEngine = new GameEngine(l_map);
-		MapCommandHandler l_commandHandler = new MapCommandHandler(l_gameEngine);
 		l_gameEngine.getPhaseView().showGameInfo();
 
 		/*

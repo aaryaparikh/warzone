@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import Constants.GameConstants;
+import Models.Continent;
 import Models.Country;
 import Models.GameMap;
 import Models.Player;
@@ -161,8 +162,22 @@ public class GameEngine {
 	 */
 	private int calculateReinforcementArmies(Player p_player, List<Country> p_ownedCountries) {
 		// Implement reinforcement calculation logic based on game rules
-		// For simplicity, returning a constant value for demonstration
-		return GameConstants.DEFAULT_PLAYER_REINFORCEMENT;
+		int l_assignedArmies = p_ownedCountries.size()/3;
+
+		for (Continent l_continent : d_map.getContinents()) {
+			List <Country> l_countryList = new ArrayList<Country>();
+			for (Country l_country : d_map.getCountries()) {
+				if (l_country.getContinentId() == l_continent.getContinentId())
+					l_countryList.add(l_country);
+			}
+			if (p_ownedCountries.containsAll(l_countryList))
+				l_assignedArmies += l_continent.getContinentValue();
+		}
+		
+		if (l_assignedArmies > GameConstants.MINIMUN_PLAYER_REINFORCEMENT)
+			return l_assignedArmies;
+		else
+			return GameConstants.MINIMUN_PLAYER_REINFORCEMENT;
 	}
 
 	/**
@@ -251,12 +266,13 @@ public class GameEngine {
 	public void setPlayerConquerInTurn(Player p_player) {
 		this.d_playerConquerInTurn.add(p_player);
 	}
-	
+
 	/**
 	 * Reset the list of players who conquer at least one territory in this turn
 	 */
 	public void resetPlayerConquerInTurn() {
-		this.d_playerConquerInTurn.clear();;
+		this.d_playerConquerInTurn.clear();
+		;
 	}
 
 	// Other game phases and methods

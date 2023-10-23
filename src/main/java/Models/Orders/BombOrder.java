@@ -46,4 +46,8 @@ public class BombOrder extends Order {
 		}
 	}
 
+	@Override
+	public String getOrderType() {
+		return "Bomb";
+	}
 }

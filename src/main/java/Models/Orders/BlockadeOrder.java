@@ -39,4 +39,8 @@ public class BlockadeOrder extends Order {
 		}
 	}
 
+	@Override
+	public String getOrderType() {
+		return "Blockade";
+	}
 }

@@ -24,6 +24,7 @@ public class Player {
 	private HashMap<String, Integer> d_cardsOwned;
 	private List<Player> d_negotiatedPlayers;
 	private PlayerCommandHandler d_playerCommandHandler;
+	private Boolean d_ifSignified;
 
 	/**
 	 * Creates a new player with the specified name.
@@ -33,10 +34,10 @@ public class Player {
 	 */
 	public Player(String p_name, GameEngine p_gameEngine) {
 		this.d_name = p_name;
-		this.d_countries = new ArrayList<>();
-		this.d_orders = new ArrayList<>();
+		this.d_countries = new ArrayList<Country>();
+		this.d_orders = new ArrayList<Order>();
 		this.d_reinforcementPool = 0;
-		this.d_negotiatedPlayers = new ArrayList<>();
+		this.d_negotiatedPlayers = new ArrayList<Player>();
 		this.d_playerCommandHandler = new PlayerCommandHandler(p_gameEngine);
 
 		// Initialize card owned list
@@ -61,16 +62,31 @@ public class Player {
 	 *
 	 */
 	public void resetCountry() {
-		d_countries = new ArrayList<>();
+		d_countries = new ArrayList<Country>();
 	}
 
 	/**
-	 * Adds a country to the player's list of controlled countries.
+	 * Adds an order to the player's order list.
 	 *
-	 * @param p_order The country to be added.
+	 * @param p_order The order to be added.
 	 */
 	public void addOrder(Order p_order) {
+		if (p_order.getOrderType() == "Deploy")
+			for (int l_i = 0; l_i < d_orders.size(); l_i++)
+				if (d_orders.get(l_i).getOrderType() != "Deploy") {
+					d_orders.add(l_i, p_order);
+					return;
+				}
 		d_orders.add(p_order);
+	}
+	
+	/**
+	 * Adds an order to the first position of player's order list.
+	 *
+	 * @param p_order The order to be added.
+	 */
+	public void addOrderAtFirstPosition(Order p_order) {
+		d_orders.add(0,p_order);
 	}
 
 	/**
@@ -138,9 +154,10 @@ public class Player {
 	public void removeNegotiatedPlayers(Player p_negotiatedPlayers) {
 		this.d_negotiatedPlayers.remove(p_negotiatedPlayers);
 	}
-	
+
 	public void resetNegotiatedPlayers() {
-		this.d_negotiatedPlayers.clear();;
+		this.d_negotiatedPlayers.clear();
+		;
 	}
 
 	/**
@@ -199,5 +216,19 @@ public class Player {
 	 */
 	public String getName() {
 		return this.d_name;
+	}
+
+	/**
+	 * @return the d_ifSignified
+	 */
+	public Boolean getIfSignified() {
+		return d_ifSignified;
+	}
+
+	/**
+	 * @param d_ifSignified the d_ifSignified to set
+	 */
+	public void setIfSignified(Boolean d_ifSignified) {
+		this.d_ifSignified = d_ifSignified;
 	}
 }
