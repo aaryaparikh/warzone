@@ -1,6 +1,7 @@
 package Services;
 
 import Controller.GameEngine;
+import Controller.Phases.EditMapPhase;
 import Models.*;
 import Utils.MapCommandHandler;
 
@@ -47,31 +48,11 @@ public class Build1Demo {
 		l_gameEngine.getPhaseView().showGameInfo();
 
 		// Initialize map edit phase
-		l_gameEngine.setPhase("edit");
+		l_gameEngine.setPhase(new EditMapPhase(l_gameEngine));
 		l_gameEngine.getPhaseView().showNextPhaseInfo("edit");
-		MapService l_mapService = new MapService(l_map);
 
-		while (l_gameEngine.getPhase().equals("edit")) {
-			// Enter map edit phase
-			l_mapService.main(null);
-			l_commandHandler.handlePlayerCommand("end", null);
+		l_gameEngine.start();
 
-			// Enter start up phase
-			StartUpGameService StartupService = new StartUpGameService(l_gameEngine);
-			StartupService.main(null);
-			l_mapService.setD_map(l_gameEngine.getGameMap());
-		}
-
-		// Enter game play phase
-		while (l_gameEngine.getPhase().equals("play")) {
-			l_gameEngine.assignReinforcements();
-
-			l_gameEngine.playerIssueOrdersInTurn();
-
-			if (l_gameEngine.executeAllCommittedOrders().equals("gameOver"))
-				break;
-		}
-
-		// End game play
+		// EndGamePhase game play
 	}
 }

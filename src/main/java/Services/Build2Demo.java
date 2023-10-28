@@ -63,19 +63,9 @@ public class Build2Demo {
 		l_gameEngine.addPlayer(p2);
 		l_gameEngine.assignCountriesRandomly();
 
-		l_gameEngine.setPhase("play");
+		l_gameEngine.start();
 		l_gameEngine.getPhaseView().showNextPhaseInfo("play");
 
-		// Enter game play phase
-		while (l_gameEngine.getPhase().equals("play")) {
-			l_gameEngine.assignReinforcements();
-
-			l_gameEngine.playerIssueOrdersInTurn();
-
-			if (l_gameEngine.executeAllCommittedOrders().equals("gameOver"))
-				break;
-		}
-
-		// End game play
+		// EndGamePhase game play
 	}
 }

@@ -12,7 +12,7 @@ public final class GameConstants {
 	 * Each player should be assigned 5 armies in default
 	 */
 	public static final int DEFAULT_PLAYER_REINFORCEMENT = 5;
-	
+
 	/**
 	 * Each player should be assigned at least 3 armies
 	 */

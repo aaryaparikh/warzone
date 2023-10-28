@@ -3,13 +3,21 @@ package Controller;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 import Constants.GameConstants;
+import Controller.Phases.EditMapPhase;
+import Controller.Phases.EndGamePhase;
+import Controller.Phases.Phase;
+import Controller.Phases.SubPhases.ExecuteOrderPhase;
+import Controller.Phases.SubPhases.IssueOrderPhase;
+import Controller.Phases.SubPhases.PlayMainPhase;
+import Controller.Phases.SubPhases.PlaySetupPhase;
 import Models.Continent;
 import Models.Country;
 import Models.GameMap;
 import Models.Player;
-import Utils.MapCommandHandler;
+import Models.Orders.Order;
 import Views.PhaseView;
 
 /**
@@ -20,10 +28,9 @@ import Views.PhaseView;
 public class GameEngine {
 	private List<Player> d_players;
 	private GameMap d_map;
-	private MapCommandHandler d_commandHandler;
-	private String d_phase;
 	private PhaseView d_phaseView;
 	private List<Player> d_playerConquerInTurn;
+	private Phase d_gamePhase;
 
 	/**
 	 * Constructor for GameEngine.
@@ -33,9 +40,217 @@ public class GameEngine {
 	public GameEngine(GameMap p_map) {
 		this.d_map = p_map;
 		this.d_players = new ArrayList<>();
-		this.d_commandHandler = new MapCommandHandler(this);
 		this.setPhaseView(new PhaseView(this));
 		this.d_playerConquerInTurn = new ArrayList<>();
+	}
+
+	public void start() {
+		setPhase(new EditMapPhase(this));
+		try (Scanner l_sc = new Scanner(System.in)) {
+			// Enter edit map phase
+			getPhaseView().showNextPhaseInfo("edit");
+			while (d_gamePhase instanceof EditMapPhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
+				executeCommand(l_commands, null);
+			}
+
+			// Enter game setup phase
+			getPhaseView().showNextPhaseInfo("start");
+			while (d_gamePhase instanceof PlaySetupPhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
+				executeCommand(l_commands, null);
+			}
+
+			// Enter game play phase
+			getPhaseView().showNextPhaseInfo("play");
+			while (d_gamePhase instanceof PlayMainPhase) {
+				assignReinforcements();
+
+				issueOrdersInTurn();
+
+				if (executeAllCommittedOrders().equals("gameOver"))
+					break;
+			}
+
+			// Enter end phase
+		}
+	}
+
+	public void setPhase(Phase p_phase) {
+		this.d_gamePhase = p_phase;
+	}
+
+	public Phase getPhase() {
+		return d_gamePhase;
+	}
+
+	public String executeCommand(String[] p_commands, Player p_currentPlayer) {
+		String l_response = null;
+		switch (p_commands[0]) {
+		// edit map command
+		case "showmap":
+			l_response = this.d_gamePhase.showMap(p_commands);
+			break;
+		case "savemap":
+			l_response = this.d_gamePhase.saveMap(p_commands);
+			break;
+		case "validatemap":
+			l_response = this.d_gamePhase.validateMap(p_commands);
+			break;
+		case "editmap":
+			l_response = this.d_gamePhase.editMap(p_commands);
+			break;
+		case "editcontinent":
+			l_response = this.d_gamePhase.editContinent(p_commands);
+			break;
+		case "editcountry":
+			l_response = this.d_gamePhase.editCountry(p_commands);
+			break;
+		case "editneighbor":
+			l_response = this.d_gamePhase.editNeighbor(p_commands);
+			break;
+
+		// start up game command
+		case "loadmap":
+			l_response = this.d_gamePhase.loadMap(p_commands);
+			break;
+		case "gameplayer":
+			l_response = this.d_gamePhase.gamePlayer(p_commands);
+			break;
+		case "assigncountries":
+			l_response = this.d_gamePhase.assignCountries(p_commands);
+			break;
+
+		// play game command
+		case "deploy":
+			l_response = this.d_gamePhase.deploy(p_commands, p_currentPlayer);
+			break;
+		case "advance":
+			l_response = this.d_gamePhase.advance(p_commands, p_currentPlayer);
+			break;
+		case "bomb":
+			l_response = this.d_gamePhase.bomb(p_commands, p_currentPlayer);
+			break;
+		case "blockade":
+			l_response = this.d_gamePhase.blockade(p_commands, p_currentPlayer);
+			break;
+		case "airlift":
+			l_response = this.d_gamePhase.airlift(p_commands, p_currentPlayer);
+			break;
+		case "negotiate":
+			l_response = this.d_gamePhase.negotiate(p_commands, p_currentPlayer);
+			break;
+		case "commit":
+			l_response = this.d_gamePhase.commit(p_commands, p_currentPlayer);
+			break;
+
+		// general command
+		case "end":
+			this.d_gamePhase.end(p_commands);
+			break;
+		case "next":
+			this.d_gamePhase.next(p_commands);
+			break;
+		default:
+			System.out.println("Invalid command.");
+		}
+		return l_response;
+	}
+
+	/**
+	 * Function that takes player's input and adds their orders to the queue.
+	 */
+	public void issueOrdersInTurn() {
+		List<Player> l_playerPool = getPlayers();
+		for (Player l_player : l_playerPool)
+			l_player.setIfSignified(false);
+
+		boolean l_ifRemainPlayers = true;
+
+		// issue order in round-robin fashion
+		while (l_ifRemainPlayers == true) {
+			l_ifRemainPlayers = false;
+			for (Player l_player : l_playerPool)
+				if (l_player.getIfSignified() == false) {
+					System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool()
+							+ " armies need to deploy]");
+					l_player.issueOrder();
+					l_ifRemainPlayers = true;
+				}
+		}
+
+		System.out.println("[All players have signified]");
+		getPhaseView().showNextPhaseInfo("execute");
+		setPhase(new ExecuteOrderPhase(null));
+	}
+
+	/**
+	 * function that takes player's and that adds to them to the orders queue
+	 * 
+	 * @return string to output result of issue orders
+	 */
+	public String executeAllCommittedOrders() {
+		List<Player> l_playerPool = getPlayers();
+		boolean l_ifRemainPlayers = true;
+
+		// execute every player's deploy order in round-robin fashion
+		while (l_ifRemainPlayers == true) {
+			l_ifRemainPlayers = false;
+			for (Player l_player : l_playerPool) {
+				Order l_order = l_player.nextOrder();
+				if (l_order != null) {
+					if (l_order.getOrderType() != "Deploy")
+						l_player.addOrderAtFirstPosition(l_order);
+					else {
+						System.out.println(l_order.execute(this));
+						l_ifRemainPlayers = true;
+					}
+				}
+			}
+		}
+
+		l_ifRemainPlayers = true;
+
+		// execute every player's other order in round-robin fashion
+		while (l_ifRemainPlayers == true) {
+			l_ifRemainPlayers = false;
+			for (Player l_player : l_playerPool) {
+				Order l_order = l_player.nextOrder();
+				if (l_order != null) {
+					l_ifRemainPlayers = true;
+					System.out.println(l_order.execute(this));
+
+					// check whether the game is over
+					if (checkIfGameIsOver() == true) {
+						System.out.println("\n[GAME OVER!]");
+						System.out.println("Player:" + l_player.getName() + "is the winner!");
+						getPhaseView().showNextPhaseInfo("end");
+						setPhase(new EndGamePhase(this));
+						return "gameOver";
+					}
+				}
+			}
+		}
+
+		// Allocate cards to players
+		for (Player l_player : getPlayerConquerInTurn())
+			l_player.addCardsOwned("random");
+		resetPlayerConquerInTurn();
+
+		// Reset negotiate relationship
+		for (Player l_player : getPlayerConquerInTurn())
+			l_player.resetNegotiatedPlayers();
+
+		// move to another play round
+		System.out.println("[Execute orders phase end, moves to next round]");
+		getPhaseView().showNextPhaseInfo("play");
+		setPhase(new IssueOrderPhase(this));
+
+		return "nextRound";
 	}
 
 	/**
@@ -162,10 +377,10 @@ public class GameEngine {
 	 */
 	private int calculateReinforcementArmies(Player p_player, List<Country> p_ownedCountries) {
 		// Implement reinforcement calculation logic based on game rules
-		int l_assignedArmies = p_ownedCountries.size()/3;
+		int l_assignedArmies = p_ownedCountries.size() / 3;
 
 		for (Continent l_continent : d_map.getContinents()) {
-			List <Country> l_countryList = new ArrayList<Country>();
+			List<Country> l_countryList = new ArrayList<Country>();
 			for (Country l_country : d_map.getCountries()) {
 				if (l_country.getContinentId() == l_continent.getContinentId())
 					l_countryList.add(l_country);
@@ -173,30 +388,11 @@ public class GameEngine {
 			if (p_ownedCountries.containsAll(l_countryList))
 				l_assignedArmies += l_continent.getContinentValue();
 		}
-		
+
 		if (l_assignedArmies > GameConstants.MINIMUN_PLAYER_REINFORCEMENT)
 			return l_assignedArmies;
 		else
 			return GameConstants.MINIMUN_PLAYER_REINFORCEMENT;
-	}
-
-	/**
-	 * Allow players to issue orders in their turn.
-	 */
-	public void playerIssueOrdersInTurn() {
-		IssueOrders l_issueOrderPhase = new IssueOrders(this, d_commandHandler);
-		l_issueOrderPhase.issueOrders();
-	}
-
-	/**
-	 * Execute all committed orders and return the result.
-	 *
-	 * @return The result of executing orders.
-	 */
-	public String executeAllCommittedOrders() {
-		ExecuteOrders l_executeOrderPhase = new ExecuteOrders(this, d_commandHandler);
-
-		return l_executeOrderPhase.executeOrders();
 	}
 
 	/**
@@ -211,24 +407,6 @@ public class GameEngine {
 			}
 		}
 		return false;
-	}
-
-	/**
-	 * Get the current game phase.
-	 *
-	 * @return Phase.
-	 */
-	public String getPhase() {
-		return d_phase;
-	}
-
-	/**
-	 * Set the current game phase.
-	 *
-	 * @param p_phase the phase to set
-	 */
-	public void setPhase(String p_phase) {
-		this.d_phase = p_phase;
 	}
 
 	/**
