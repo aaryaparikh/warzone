@@ -59,7 +59,7 @@ public class ExecuteOrdersTest {
 		l_player2.addOrder(new DeployOrder(l_player2, l_country2, 1));
 
 		// Call the executeOrders method
-		String l_result = d_executeOrders.executeOrders();
+		String l_result = d_executeOrders.executeAllCommittedOrders();
 
 		// Assert that the result is as expected
 		assertEquals("nextRound", l_result);

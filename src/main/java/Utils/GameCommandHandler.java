@@ -1,0 +1,96 @@
+package Utils;
+
+import Controller.GameEngine;
+import Models.Player;
+
+/**
+ * Handles game commands.
+ * 
+ * @author YURUI
+ */
+public class GameCommandHandler {
+	private GameEngine d_gameEngine;
+
+	/**
+	 * Constructor for CommandHandler.
+	 *
+	 * @param p_gameEngine The game engine.
+	 */
+	public GameCommandHandler(GameEngine p_gameEngine) {
+		d_gameEngine = p_gameEngine;
+	}
+
+	/**
+	 * Handles game setup commands.
+	 *
+	 * @param p_commands      The player's command.
+	 * @param p_currentPlayer The current player.
+	 * 
+	 * @return handle command result
+	 */
+	public String handleGameCommand(String[] p_commands) {
+		String[] l_commands = p_commands;
+		switch (l_commands[0]) {
+		case "showmap":
+			d_gameEngine.getGameMap().getD_mapView().showGameMap();
+			break;
+		case "loadmap":
+			if (l_commands.length < 2)
+				System.out.println("Please enter valid map file path");
+			else
+				d_gameEngine.setGameMap(d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]));
+			break;
+
+		// game player order support multiple options
+		case "gameplayer":
+			try {
+				for (int l_i = 1; l_i < l_commands.length; l_i += 2) {
+					Player l_player = new Player(l_commands[l_i + 1], d_gameEngine);
+					switch (l_commands[l_i]) {
+					case "-add":
+
+						// If number of player exceed number of country, stop adding
+						if (d_gameEngine.getPlayers().size() >= d_gameEngine.getGameMap().getCountries().size()) {
+							System.out.println("Can't add more gameplayer");
+							break;
+						}
+
+						if (d_gameEngine.addPlayer(l_player))
+							System.out.println("Player " + l_commands[l_i + 1] + " is added.");
+						else
+							System.out.println("Player " + l_commands[l_i + 1] + " already exists. Can't add again.");
+						break;
+					case "-remove":
+						if (d_gameEngine.removePlayer(l_player))
+							System.out.println("Player " + l_commands[l_i + 1] + " is removed.");
+						else
+							System.out.println("Player " + l_commands[l_i + 1] + " don't exist. Can't remove.");
+						break;
+					default:
+						System.out.println("Please enter valid parameter for order gameplayer");
+					}
+				}
+			} catch (Exception e) {
+				System.out.println("Invalid command for gameplayer");
+			}
+
+			break;
+
+		// before assign countries, ensure there are at least one player and players
+		// less than countries.
+		case "assigncountries":
+			if (d_gameEngine.getPlayers().size() == 0)
+				System.out.println("No players, can't assign countries");
+			else if (d_gameEngine.getPlayers().size() >= d_gameEngine.getGameMap().getCountries().size())
+				System.out.println("Can't assign countries because too many players");
+			else {
+				d_gameEngine.assignCountriesRandomly();
+				System.out.println("All countries are assigned to players");
+			}
+			break;
+		default:
+			System.out.println("Invalid Input");
+		}
+		return null;
+	}
+}

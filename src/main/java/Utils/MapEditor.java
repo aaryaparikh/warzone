@@ -11,7 +11,7 @@ import Models.Country;
 import Models.GameMap;
 
 /**
- * Edit the map information
+ * EditMapPhase the map information
  *
  * @author Aarya
  */

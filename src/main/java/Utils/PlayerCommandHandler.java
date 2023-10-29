@@ -29,33 +29,15 @@ public class PlayerCommandHandler {
 	/**
 	 * Handles player commands.
 	 *
-	 * @param p_command       The player's command.
+	 * @param p_commands      The player's command.
 	 * @param p_currentPlayer The current player.
 	 * 
 	 * @return handle command result
 	 */
-	public String handlePlayerCommand(String p_command, Player p_currentPlayer) {
-		String[] l_command = p_command.split(" ");
+	public String handlePlayerCommand(String[] p_commands, Player p_currentPlayer) {
+		String[] l_command = p_commands;
 		switch (l_command[0]) {
 		case "end":
-			switch (d_gameEngine.getPhase()) {
-			case "edit":
-				d_gameEngine.setPhase("start");
-				d_gameEngine.getPhaseView().showNextPhaseInfo("start");
-				break;
-			case "start":
-				d_gameEngine.setPhase("play");
-				d_gameEngine.getPhaseView().showNextPhaseInfo("play");
-				break;
-			case "play":
-				d_gameEngine.setPhase("end");
-				d_gameEngine.getPhaseView().showNextPhaseInfo("end");
-				break;
-			case "execute":
-				d_gameEngine.setPhase("end");
-				d_gameEngine.getPhaseView().showNextPhaseInfo("end");
-				break;
-			}
 			break;
 		case "showmap":
 			d_gameEngine.getGameMap().getD_mapView().showGameMap();
@@ -67,12 +49,13 @@ public class PlayerCommandHandler {
 				System.out.println(l_response);
 				break;
 			} else {
-				String l_response = String.format("Player \"%s\" doesn't deploy all reinforcement, can't commit.", p_currentPlayer.getName());
+				String l_response = String.format("Player \"%s\" doesn't deploy all reinforcement, can't commit.",
+						p_currentPlayer.getName());
 				System.out.println(l_response);
 				return "stayCurrentPlayer";
 			}
 
-		// Handle deploying armies
+			// Handle deploying armies
 		case "deploy":
 			if (l_command.length < 3) {
 				String l_response = String.format("Please enter enough parameter for deploy order");

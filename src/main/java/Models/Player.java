@@ -23,6 +23,7 @@ public class Player {
 	private int d_reinforcementPool;
 	private HashMap<String, Integer> d_cardsOwned;
 	private List<Player> d_negotiatedPlayers;
+	private GameEngine d_gameEngine;
 	private PlayerCommandHandler d_playerCommandHandler;
 	private Boolean d_ifSignified;
 
@@ -38,6 +39,7 @@ public class Player {
 		this.d_orders = new ArrayList<Order>();
 		this.d_reinforcementPool = 0;
 		this.d_negotiatedPlayers = new ArrayList<Player>();
+		this.d_gameEngine = p_gameEngine;
 		this.d_playerCommandHandler = new PlayerCommandHandler(p_gameEngine);
 
 		// Initialize card owned list
@@ -79,14 +81,14 @@ public class Player {
 				}
 		d_orders.add(p_order);
 	}
-	
+
 	/**
 	 * Adds an order to the first position of player's order list.
 	 *
 	 * @param p_order The order to be added.
 	 */
 	public void addOrderAtFirstPosition(Order p_order) {
-		d_orders.add(0,p_order);
+		d_orders.add(0, p_order);
 	}
 
 	/**
@@ -98,9 +100,11 @@ public class Player {
 		Scanner l_scanner = new Scanner(System.in);
 		String l_userInput, l_response = "";
 
-		while (!l_response.equals("nextPlayer")) {
+		while (!(l_response == "nextPlayer")) {
 			l_userInput = l_scanner.nextLine();
-			l_response = d_playerCommandHandler.handlePlayerCommand(l_userInput, this);
+			String l_commands[] = l_userInput.split(" ");
+
+			l_response = d_gameEngine.executeCommand(l_commands, this);
 		}
 	}
 

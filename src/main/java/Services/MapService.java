@@ -87,7 +87,8 @@ public class MapService {
 
 							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
-								System.out.println("Edit some continents but no more enough parameter for adding.");
+								System.out.println(
+										"EditMapPhase some continents but no more enough parameter for adding.");
 							// make sure no -add or -remove being recognized as parameter
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
 								System.out.println("Please don't enter duplicated -add or -remove");
@@ -109,7 +110,8 @@ public class MapService {
 
 							// make sure -add with two parameters
 							if (l_i + 1 >= l_commands.length)
-								System.out.println("Edit some continents but no more enough parameter for removing.");
+								System.out.println(
+										"EditMapPhase some continents but no more enough parameter for removing.");
 							// make sure no -add or -remove being recognized as parameter
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
 								System.out.println("Please don't enter duplicated -add or -remove");
@@ -123,7 +125,7 @@ public class MapService {
 							}
 							break;
 						default:
-							System.out.println("Edit some continents, but stop when invalid");
+							System.out.println("EditMapPhase some continents, but stop when invalid");
 							l_i = l_commands.length;
 							break;
 						}
@@ -142,7 +144,8 @@ public class MapService {
 
 							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
-								System.out.println("Edit some countries but no more enough parameter for adding.");
+								System.out.println(
+										"EditMapPhase some countries but no more enough parameter for adding.");
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
 								System.out.println("Please don't enter duplicated -add or -remove");
 							else if (l_commands[l_i + 2].equals("-add") || l_commands[l_i + 2].equals("-remove")) {
@@ -161,7 +164,8 @@ public class MapService {
 						case "-remove":
 							// make sure -add with two parameters
 							if (l_i + 1 >= l_commands.length)
-								System.out.println("Edit some countries but no more enough parameter for removing.");
+								System.out.println(
+										"EditMapPhase some countries but no more enough parameter for removing.");
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
 								System.out.println("Please don't enter duplicated -add or -remove");
 							else {
@@ -174,7 +178,7 @@ public class MapService {
 							}
 							break;
 						default:
-							System.out.println("Edit some continents, but stop when invalid");
+							System.out.println("EditMapPhase some continents, but stop when invalid");
 							l_i = l_commands.length;
 							break;
 						}
@@ -192,7 +196,8 @@ public class MapService {
 						case "-add":
 							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
-								System.out.println("Edit some neighbors but no more enough parameter for adding.");
+								System.out.println(
+										"EditMapPhase some neighbors but no more enough parameter for adding.");
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
 								System.out.println("Please don't enter duplicated -add or -remove");
 							else if (l_commands[l_i + 2].equals("-add") || l_commands[l_i + 2].equals("-remove")) {
@@ -214,7 +219,8 @@ public class MapService {
 						case "-remove":
 							// make sure -add with two parameters
 							if (l_i + 2 >= l_commands.length)
-								System.out.println("Edit some neighbors but no more enough parameter for adding.");
+								System.out.println(
+										"EditMapPhase some neighbors but no more enough parameter for adding.");
 							else if (l_commands[l_i + 1].equals("-add") || l_commands[l_i + 1].equals("-remove"))
 								System.out.println("Please don't enter duplicated -add or -remove");
 							else if (l_commands[l_i + 2].equals("-add") || l_commands[l_i + 2].equals("-remove")) {
@@ -234,7 +240,7 @@ public class MapService {
 							}
 							break;
 						default:
-							System.out.println("Edit some neighbors, but stop when invalid");
+							System.out.println("EditMapPhase some neighbors, but stop when invalid");
 							l_i = l_commands.length;
 							break;
 						}

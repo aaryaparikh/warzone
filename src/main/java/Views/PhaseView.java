@@ -35,20 +35,20 @@ public class PhaseView {
 		// different output for different phase
 		switch (p_phase) {
 		case "edit":
-			System.out.println("\n<<Edit map phase>><end><showmap><savemap><editmap><validatemap>");
+			System.out.println("\n<<EditMapPhase>><end><showmap><savemap><editmap><validatemap>");
 			break;
 		case "start":
-			System.out.println(
-					"\n<<Game startup phase>><end><backtoedit><showmap><loadmap><gameplayer><assigncountries>");
+			System.out
+					.println("\n<<GameStartupPhase>><next><backtoedit><showmap><loadmap><gameplayer><assigncountries>");
 			break;
 		case "play":
-			System.out.println("\n<<Game issue order phase>><end><deploy>");
+			System.out.println("\n<<IssueOrderPhase>><next><deploy><advance><...>");
 			break;
 		case "execute":
-			System.out.println("\n<<Game execute order phase>>");
+			System.out.println("\n<<ExecuteOrderPhase>>");
 			break;
 		case "end":
-			System.out.println("\n<<Game end phase>><TBD>");
+			System.out.println("\n<<EndPhase>><TBD>");
 			break;
 		default:
 			break;
