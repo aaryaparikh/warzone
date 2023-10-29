@@ -5,7 +5,6 @@ import Controller.Phases.PlayGamePhase;
 import Models.Country;
 import Models.Player;
 import Utils.GameCommandHandler;
-import Utils.MapCommandHandler;
 
 public class PlaySetupPhase extends PlayGamePhase {
 	private GameCommandHandler d_gameCommandHandler;

@@ -6,7 +6,6 @@ import Controller.GameEngine;
  * Represents a view for displaying information about the phases in the game.
  */
 public class PhaseView {
-	@SuppressWarnings("unused")
 	private GameEngine d_gameEngine;
 
 	/**
@@ -23,6 +22,7 @@ public class PhaseView {
 	 */
 	public void showGameInfo() {
 		System.out.println("<<Game Start>>");
+		d_gameEngine.getD_logEntryBuffer().setString("\n");
 		d_gameEngine.getD_logEntryBuffer().setString("Game Start");
 	}
 

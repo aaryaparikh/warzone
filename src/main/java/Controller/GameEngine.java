@@ -212,7 +212,9 @@ public class GameEngine {
 					if (l_order.getOrderType() != "Deploy")
 						l_player.addOrderAtFirstPosition(l_order);
 					else {
-						System.out.println(l_order.execute(this));
+						String l_response = l_order.execute(this);
+						System.out.println(l_response);
+						d_logEntryBuffer.setString(l_response);
 						l_ifRemainPlayers = true;
 					}
 				}
@@ -228,7 +230,9 @@ public class GameEngine {
 				Order l_order = l_player.nextOrder();
 				if (l_order != null) {
 					l_ifRemainPlayers = true;
-					System.out.println(l_order.execute(this));
+					String l_response = l_order.execute(this);
+					System.out.println(l_response);
+					d_logEntryBuffer.setString(l_response);
 
 					// check whether the game is over
 					if (checkIfGameIsOver() == true) {
@@ -236,6 +240,7 @@ public class GameEngine {
 						System.out.println("Player:" + l_player.getName() + "is the winner!");
 						getPhaseView().showNextPhaseInfo("end");
 						setPhase(new EndGamePhase(this));
+						d_logEntryBuffer.setString("Player:" + l_player.getName() + "is the winner!");
 						return "gameOver";
 					}
 				}
