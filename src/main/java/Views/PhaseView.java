@@ -23,6 +23,7 @@ public class PhaseView {
 	 */
 	public void showGameInfo() {
 		System.out.println("<<Game Start>>");
+		d_gameEngine.getD_logEntryBuffer().setString("Game Start");
 	}
 
 	/**
@@ -36,19 +37,23 @@ public class PhaseView {
 		switch (p_phase) {
 		case "edit":
 			System.out.println("\n<<EditMapPhase>><end><showmap><savemap><editmap><validatemap>");
+			d_gameEngine.getD_logEntryBuffer().setString("Enter Edit Map Phase");
 			break;
 		case "start":
-			System.out
-					.println("\n<<GameStartupPhase>><next><backtoedit><showmap><loadmap><gameplayer><assigncountries>");
+			System.out.println("\n<<GameStartupPhase>><next><backtoedit><showmap><loadmap><gameplayer><assigncountries>");
+			d_gameEngine.getD_logEntryBuffer().setString("Enter Game Start Up Phase");
 			break;
 		case "play":
 			System.out.println("\n<<IssueOrderPhase>><next><deploy><advance><...>");
+			d_gameEngine.getD_logEntryBuffer().setString("Enter Game Issue Order Phase");
 			break;
 		case "execute":
 			System.out.println("\n<<ExecuteOrderPhase>>");
+			d_gameEngine.getD_logEntryBuffer().setString("Enter Game Execute Order Phase");
 			break;
 		case "end":
 			System.out.println("\n<<EndPhase>><TBD>");
+			d_gameEngine.getD_logEntryBuffer().setString("Enter Game End");
 			break;
 		default:
 			break;

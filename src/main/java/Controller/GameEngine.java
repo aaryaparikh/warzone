@@ -31,6 +31,9 @@ public class GameEngine {
 	private PhaseView d_phaseView;
 	private List<Player> d_playerConquerInTurn;
 	private Phase d_gamePhase;
+	private LogEntryBuffer d_logEntryBuffer;
+	@SuppressWarnings("unused")
+	private LogWriter d_logWriter;
 
 	/**
 	 * Constructor for GameEngine.
@@ -42,10 +45,13 @@ public class GameEngine {
 		this.d_players = new ArrayList<>();
 		this.setPhaseView(new PhaseView(this));
 		this.d_playerConquerInTurn = new ArrayList<>();
+		this.d_logEntryBuffer = new LogEntryBuffer();
+		this.d_logWriter = new LogWriter(d_logEntryBuffer);
 	}
 
 	public void start() {
 		setPhase(new EditMapPhase(this));
+		
 		try (Scanner l_sc = new Scanner(System.in)) {
 			// Enter edit map phase
 			getPhaseView().showNextPhaseInfo("edit");
@@ -451,6 +457,14 @@ public class GameEngine {
 	public void resetPlayerConquerInTurn() {
 		this.d_playerConquerInTurn.clear();
 		;
+	}
+
+	public LogEntryBuffer getD_logEntryBuffer() {
+		return d_logEntryBuffer;
+	}
+
+	public void setD_logEntryBuffer(LogEntryBuffer d_logEntryBuffer) {
+		this.d_logEntryBuffer = d_logEntryBuffer;
 	}
 
 	// Other game phases and methods

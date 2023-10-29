@@ -2,14 +2,13 @@ package Utils;
 
 import Controller.GameEngine;
 import Models.GameMap;
-import Models.Player;
 
 /**
  * Handles player commands.
  * 
  * @author YURUI
  */
-public class MapCommandHandler {
+public class MapCommandHandler extends CommandHandler {
 	private GameMap d_map;
 
 	/**
@@ -18,6 +17,7 @@ public class MapCommandHandler {
 	 * @param p_gameEngine The game engine.
 	 */
 	public MapCommandHandler(GameEngine p_gameEngine) {
+		super(p_gameEngine);
 		d_map = p_gameEngine.getGameMap();
 	}
 
@@ -29,26 +29,42 @@ public class MapCommandHandler {
 	 * @return A response string indicating the result of the command.
 	 */
 	public String handleMapCommand(String[] p_commands) {
+		String l_response = null;
+		
 		switch (p_commands[0]) {
 		case "showmap":
 			d_map.getD_mapView().showMap();
 			break;
 		case "savemap":
-			if (p_commands.length < 2)
-				System.out.println("Please enter file path to save map.");
-			else
+			if (p_commands.length < 2) {
+				l_response = String.format("Please enter file path to save map.");
+				System.out.println(l_response);
+			}
+			else {
 				d_map.d_mapEditor.write(p_commands[1]);
+				l_response = String.format("Map is saved in \"%s.txt\"", p_commands[1]);
+				System.out.println(l_response);
+				d_logEntryBuffer.setString(l_response);
+			}
 			break;
 		case "validatemap":
 			if (d_map.d_mapEditor.validateMap()) {
-				System.out.println("Valid Map");
+				l_response = String.format("This Map is valid");
+				System.out.println(l_response);
+				d_logEntryBuffer.setString(l_response);
+			} else {
+				l_response = String.format("This Map is invalid");
+				d_logEntryBuffer.setString(l_response);
 			}
 			break;
 		case "editmap":
 			if (p_commands.length < 2)
 				System.out.println("Please enter file path to load map.");
-			else
+			else {
 				d_map.d_mapEditor.editMap(p_commands[1]);
+				l_response = String.format("Edit map \"%s\"", p_commands[1]);
+				d_logEntryBuffer.setString(l_response);
+			}
 			break;
 		case "next":
 			if (d_map.d_mapEditor.validateMap())
@@ -80,6 +96,8 @@ public class MapCommandHandler {
 							try {
 								d_map.addContinent(Integer.parseInt(p_commands[l_i + 1]),
 										Integer.parseInt(p_commands[l_i + 2]));
+								l_response = String.format("Add continent \"%s\" with value \"%s\". ", p_commands[l_i + 1], p_commands[l_i + 2]);
+								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);
 							}
@@ -98,6 +116,8 @@ public class MapCommandHandler {
 						else {
 							try {
 								d_map.removeContinent(Integer.parseInt(p_commands[l_i + 1]));
+								l_response = String.format("Remove continent \"%s\". ", p_commands[l_i + 1]);
+								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);
 							}
@@ -105,7 +125,7 @@ public class MapCommandHandler {
 						}
 						break;
 					default:
-						System.out.println("EditMapPhase some continents, but stop when invalid");
+						System.out.println("Edit some continents, but stop when invalid");
 						l_i = p_commands.length;
 						break;
 					}
@@ -134,6 +154,8 @@ public class MapCommandHandler {
 							try {
 								d_map.addCountry(Integer.parseInt(p_commands[l_i + 1]),
 										Integer.parseInt(p_commands[l_i + 2]));
+								l_response = String.format("Add country \"%s\" to continent \"%s\". ", p_commands[l_i + 1], p_commands[l_i + 2]);
+								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);
 							}
@@ -150,6 +172,8 @@ public class MapCommandHandler {
 						else {
 							try {
 								d_map.removeCountry(Integer.parseInt(p_commands[l_i + 1]));
+								l_response = String.format("Remove country \"%s\". ", p_commands[l_i + 1]);
+								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);
 							}
@@ -157,7 +181,7 @@ public class MapCommandHandler {
 						}
 						break;
 					default:
-						System.out.println("EditMapPhase some continents, but stop when invalid");
+						System.out.println("Edit some countries, but stop when invalid");
 						l_i = p_commands.length;
 						break;
 					}
@@ -188,6 +212,8 @@ public class MapCommandHandler {
 											Integer.parseInt(p_commands[l_i + 2]));
 								d_map.addNeighbor(Integer.parseInt(p_commands[l_i + 2]),
 										Integer.parseInt(p_commands[l_i + 1]));
+								l_response = String.format("Add neighbor between \"%s\" and \"%s\". ", p_commands[l_i + 1], p_commands[l_i + 2]);
+								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);
 							}
@@ -210,6 +236,8 @@ public class MapCommandHandler {
 											Integer.parseInt(p_commands[l_i + 2]));
 								d_map.removeNeighbor(Integer.parseInt(p_commands[l_i + 2]),
 										Integer.parseInt(p_commands[l_i + 1]));
+								l_response = String.format("Remove neighbor between \"%s\" and \"%s\". ", p_commands[l_i + 1], p_commands[l_i + 2]);
+								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);
 							}
@@ -217,7 +245,7 @@ public class MapCommandHandler {
 						}
 						break;
 					default:
-						System.out.println("EditMapPhase some neighbors, but stop when invalid");
+						System.out.println("Edit some neighbors, but stop when invalid");
 						l_i = p_commands.length;
 						break;
 					}
@@ -227,6 +255,6 @@ public class MapCommandHandler {
 		default:
 			System.out.println("Invalid Input");
 		}
-		return "continue";
+		return l_response;
 	}
 }

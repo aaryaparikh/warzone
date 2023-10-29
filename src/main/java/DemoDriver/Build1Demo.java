@@ -1,4 +1,4 @@
-package Services;
+package DemoDriver;
 
 import Controller.GameEngine;
 import Controller.Phases.EditMapPhase;

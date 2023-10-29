@@ -14,8 +14,7 @@ import Models.Orders.DiplomacyOrder;
  * 
  * @author YURUI
  */
-public class PlayerCommandHandler {
-	private GameEngine d_gameEngine;
+public class PlayerCommandHandler extends CommandHandler {
 
 	/**
 	 * Constructor for CommandHandler.
@@ -23,8 +22,8 @@ public class PlayerCommandHandler {
 	 * @param p_gameEngine The game engine.
 	 */
 	public PlayerCommandHandler(GameEngine p_gameEngine) {
-		d_gameEngine = p_gameEngine;
-	}
+		super(p_gameEngine);
+	};
 
 	/**
 	 * Handles player commands.
@@ -36,6 +35,7 @@ public class PlayerCommandHandler {
 	 */
 	public String handlePlayerCommand(String[] p_commands, Player p_currentPlayer) {
 		String[] l_command = p_commands;
+		
 		switch (l_command[0]) {
 		case "end":
 			break;
@@ -47,6 +47,7 @@ public class PlayerCommandHandler {
 				p_currentPlayer.setIfSignified(true);
 				String l_response = String.format("Player \"%s\" has signified.", p_currentPlayer.getName());
 				System.out.println(l_response);
+				d_logEntryBuffer.setString(l_response);
 				break;
 			} else {
 				String l_response = String.format("Player \"%s\" doesn't deploy all reinforcement, can't commit.",
@@ -94,6 +95,9 @@ public class PlayerCommandHandler {
 							Integer.parseInt(l_command[2]));
 					p_currentPlayer.addOrder(l_deployOrder);
 					p_currentPlayer.decreaseReinforcementPool(Integer.parseInt(l_command[2]));
+					String l_response = String.format("Add an order of deploying \"%s\" armies on \"%s\" to Player \"%s\".",
+							l_command[2], l_country.getCountryId(), p_currentPlayer.getName());
+					d_logEntryBuffer.setString(l_response);
 					break;
 				}
 			}
@@ -150,6 +154,9 @@ public class PlayerCommandHandler {
 								AdvanceOrder l_advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry,
 										l_targetCountry, Integer.parseInt(l_command[3]));
 								p_currentPlayer.addOrder(l_advanceOrder);
+								String l_response = String.format("Add an order of advancing \"%s\" armies from \"%s\" to \"%s\" for Player \"%s\".",
+										l_command[3], l_sourceCountry.getCountryId(), l_targetCountry.getCountryId(), p_currentPlayer.getName());
+								d_logEntryBuffer.setString(l_response);
 								break;
 							}
 						}
@@ -224,7 +231,13 @@ public class PlayerCommandHandler {
 
 					BombOrder l_bombOrder = new BombOrder(p_currentPlayer, l_country);
 					p_currentPlayer.addOrder(l_bombOrder);
+					String l_response = String.format("Add a card order to bomb \"%s\" for Player \"%s\".",
+							l_country.getCountryId(), p_currentPlayer.getName());
+					d_logEntryBuffer.setString(l_response);
+					
 					p_currentPlayer.deleteCardsOwned(l_command[0]);
+					l_response = String.format("Delete a bomb card for Player \"%s\".", p_currentPlayer.getName());
+					d_logEntryBuffer.setString(l_response);
 					break;
 				}
 			}
@@ -274,7 +287,13 @@ public class PlayerCommandHandler {
 
 					BlockadeOrder l_blockadeOrder = new BlockadeOrder(p_currentPlayer, l_country);
 					p_currentPlayer.addOrder(l_blockadeOrder);
+					String l_response = String.format("Add a card order to blockade \"%s\" for Player \"%s\".",
+							l_country.getCountryId(), p_currentPlayer.getName());
+					d_logEntryBuffer.setString(l_response);
+					
 					p_currentPlayer.deleteCardsOwned(l_command[0]);
+					l_response = String.format("Delete a blockade card for Player \"%s\".", p_currentPlayer.getName());
+					d_logEntryBuffer.setString(l_response);
 					break;
 				}
 			}
@@ -339,6 +358,14 @@ public class PlayerCommandHandler {
 								AdvanceOrder l_advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry,
 										l_targetCountry, Integer.parseInt(l_command[3]));
 								p_currentPlayer.addOrder(l_advanceOrder);
+								String l_response = String.format("Add a card order to airlift \"%s\" armies from \"%s\" to \"%s\" for Player \"%s\".",
+										l_command[3], l_sourceCountry.getCountryId(), l_targetCountry.getCountryId(), p_currentPlayer.getName());
+								d_logEntryBuffer.setString(l_response);
+								
+								p_currentPlayer.deleteCardsOwned(l_command[0]);
+								l_response = String.format("Delete an airlift card for Player \"%s\".", p_currentPlayer.getName());
+								d_logEntryBuffer.setString(l_response);
+								
 								break;
 							}
 						}
@@ -401,8 +428,15 @@ public class PlayerCommandHandler {
 
 					DiplomacyOrder l_negotiateOrder = new DiplomacyOrder(p_currentPlayer, l_player);
 					p_currentPlayer.addOrder(l_negotiateOrder);
+					String l_response = String.format("Add a card order of negotiating with \"%s\" for Player \"%s\".",
+							l_player.getName(), p_currentPlayer.getName());
+					d_logEntryBuffer.setString(l_response);
+					
 					p_currentPlayer.addNegotiatedPlayers(l_player);
+
 					p_currentPlayer.deleteCardsOwned(l_command[0]);
+					l_response = String.format("Delete a negotiate card for Player \"%s\".", p_currentPlayer.getName());
+					d_logEntryBuffer.setString(l_response);
 					break;
 				}
 			}

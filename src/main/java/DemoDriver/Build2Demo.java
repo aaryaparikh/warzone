@@ -1,4 +1,4 @@
-package Services;
+package DemoDriver;
 
 import Controller.GameEngine;
 import Models.*;
@@ -64,8 +64,6 @@ public class Build2Demo {
 		l_gameEngine.assignCountriesRandomly();
 
 		l_gameEngine.start();
-		l_gameEngine.getPhaseView().showNextPhaseInfo("play");
-
 		// EndGamePhase game play
 	}
 }

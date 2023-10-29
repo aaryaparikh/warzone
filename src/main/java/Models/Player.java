@@ -9,7 +9,6 @@ import java.util.Scanner;
 import Constants.GameConstants;
 import Controller.GameEngine;
 import Models.Orders.Order;
-import Utils.PlayerCommandHandler;
 
 /**
  * Represents a player in the game.
@@ -24,7 +23,6 @@ public class Player {
 	private HashMap<String, Integer> d_cardsOwned;
 	private List<Player> d_negotiatedPlayers;
 	private GameEngine d_gameEngine;
-	private PlayerCommandHandler d_playerCommandHandler;
 	private Boolean d_ifSignified;
 
 	/**
@@ -40,7 +38,6 @@ public class Player {
 		this.d_reinforcementPool = 0;
 		this.d_negotiatedPlayers = new ArrayList<Player>();
 		this.d_gameEngine = p_gameEngine;
-		this.d_playerCommandHandler = new PlayerCommandHandler(p_gameEngine);
 
 		// Initialize card owned list
 		this.d_cardsOwned = new HashMap<String, Integer>();
