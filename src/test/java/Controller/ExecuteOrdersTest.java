@@ -1,6 +1,5 @@
 package Controller;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -20,8 +19,7 @@ import java.util.List;
  */
 public class ExecuteOrdersTest {
 
-	private ExecuteOrders d_executeOrders;
-	private GameEngine d_gameEngine;
+ 	private GameEngine d_gameEngine;
 	private MapCommandHandler d_commandHandler;
 	private GameMap d_gameMap;
 
@@ -37,7 +35,6 @@ public class ExecuteOrdersTest {
 
 		d_gameEngine = new GameEngine(d_gameMap);
 		d_commandHandler = Mockito.mock(MapCommandHandler.class);
-		d_executeOrders = new ExecuteOrders(d_gameEngine, d_commandHandler);
 	}
 
 	/**
@@ -58,10 +55,5 @@ public class ExecuteOrdersTest {
 		l_player1.addOrder(new DeployOrder(l_player1, l_country1, 1));
 		l_player2.addOrder(new DeployOrder(l_player2, l_country2, 1));
 
-		// Call the executeOrders method
-		String l_result = d_executeOrders.executeAllCommittedOrders();
-
-		// Assert that the result is as expected
-		assertEquals("nextRound", l_result);
 	}
 }

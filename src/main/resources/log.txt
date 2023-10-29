@@ -1,0 +1,8 @@
+2023/10/29 00:42:26>> Game Start
+2023/10/29 00:42:27>> Edit Map Phase
+2023/10/29 00:42:33>> null
+2023/10/29 00:42:52>> Map is saved at "temp".
+2023/10/29 00:42:52>> Map is saved at "temp".
+2023/10/29 00:48:39>> Game Start
+2023/10/29 00:48:39>> Enter Edit Map Phase
+2023/10/29 00:49:12>> Map is saved at "temp.txt".

@@ -8,8 +8,7 @@ import Models.Player;
  * 
  * @author YURUI
  */
-public class GameCommandHandler {
-	private GameEngine d_gameEngine;
+public class GameCommandHandler extends CommandHandler {
 
 	/**
 	 * Constructor for CommandHandler.
@@ -17,7 +16,7 @@ public class GameCommandHandler {
 	 * @param p_gameEngine The game engine.
 	 */
 	public GameCommandHandler(GameEngine p_gameEngine) {
-		d_gameEngine = p_gameEngine;
+		super(p_gameEngine);
 	}
 
 	/**
@@ -30,6 +29,8 @@ public class GameCommandHandler {
 	 */
 	public String handleGameCommand(String[] p_commands) {
 		String[] l_commands = p_commands;
+		String l_response = null;
+		
 		switch (l_commands[0]) {
 		case "showmap":
 			d_gameEngine.getGameMap().getD_mapView().showGameMap();
@@ -55,14 +56,20 @@ public class GameCommandHandler {
 							break;
 						}
 
-						if (d_gameEngine.addPlayer(l_player))
-							System.out.println("Player " + l_commands[l_i + 1] + " is added.");
+						if (d_gameEngine.addPlayer(l_player)) {
+							l_response = String.format("Player " + l_commands[l_i + 1] + " is added.");
+							System.out.println(l_response);
+							d_logEntryBuffer.setString(l_response);
+						}
 						else
 							System.out.println("Player " + l_commands[l_i + 1] + " already exists. Can't add again.");
 						break;
 					case "-remove":
-						if (d_gameEngine.removePlayer(l_player))
-							System.out.println("Player " + l_commands[l_i + 1] + " is removed.");
+						if (d_gameEngine.removePlayer(l_player)) {
+							l_response = String.format("Player " + l_commands[l_i + 1] + " is removed.");
+							System.out.println(l_response);
+							d_logEntryBuffer.setString(l_response);
+						}
 						else
 							System.out.println("Player " + l_commands[l_i + 1] + " don't exist. Can't remove.");
 						break;
@@ -85,7 +92,9 @@ public class GameCommandHandler {
 				System.out.println("Can't assign countries because too many players");
 			else {
 				d_gameEngine.assignCountriesRandomly();
-				System.out.println("All countries are assigned to players");
+				l_response = String.format("All countries are assigned to players");
+				System.out.println(l_response);
+				d_logEntryBuffer.setString(l_response);
 			}
 			break;
 		default:
