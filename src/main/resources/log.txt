@@ -6,3 +6,31 @@
 2023/10/29 00:48:39>> Game Start
 2023/10/29 00:48:39>> Enter Edit Map Phase
 2023/10/29 00:49:12>> Map is saved at "temp.txt".
+2023/10/29 18:26:25>> Game Start
+2023/10/29 18:26:25>> Enter Edit Map Phase
+2023/10/29 18:26:54>> Edit map "right"
+2023/10/29 18:27:12>> This Map is valid
+2023/10/29 18:27:17>> Enter Game Start Up Phase
+2023/10/29 18:27:55>> All countries are assigned to players
+2023/10/29 18:28:15>> Player Dev is added.
+2023/10/29 18:28:24>> All countries are assigned to players
+2023/10/29 18:28:29>> Enter Game Issue Order Phase
+2023/10/29 18:28:38>> Add an order of deploying "3" armies on "1" to Player "Aarya".
+2023/10/29 18:28:44>> Add an order of deploying "3" armies on "3" to Player "Yurui".
+2023/10/29 18:29:23>> Add an order of deploying "5" armies on "7" to Player "Dev".
+2023/10/29 18:29:25>> Player "Aarya" has signified.
+2023/10/29 18:29:35>> Player "Yurui" has signified.
+2023/10/29 18:29:52>> Add an order of advancing "5" armies from "7" to "1" for Player "Dev".
+2023/10/29 18:29:55>> Player "Dev" has signified.
+2023/10/29 18:29:55>> Enter Game Execute Order Phase
+2023/10/29 19:00:21>> Game Start
+2023/10/29 19:00:21>> Enter Edit Map Phase
+2023/10/29 19:00:25>> Enter Game Start Up Phase
+2023/10/29 19:00:27>> Enter Game Issue Order Phase
+2023/10/29 19:00:39>> Add an order of deploying "5" armies on "2" to Player "Aarya".
+2023/10/29 19:00:44>> Add an order of deploying "3" armies on "1" to Player "Yurui".
+2023/10/29 19:00:52>> Add an order of advancing "5" armies from "2" to "1" for Player "Aarya".
+2023/10/29 19:00:54>> Player "Yurui" has signified.
+2023/10/29 19:00:55>> Player "Aarya" has signified.
+2023/10/29 19:00:55>> Enter Game Execute Order Phase
+2023/10/29 19:00:55>> Enter Game Issue Order Phase

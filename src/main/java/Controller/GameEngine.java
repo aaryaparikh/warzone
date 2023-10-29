@@ -191,7 +191,7 @@ public class GameEngine {
 
 		System.out.println("[All players have signified]");
 		getPhaseView().showNextPhaseInfo("execute");
-		setPhase(new ExecuteOrderPhase(null));
+		setPhase(new ExecuteOrderPhase(this));
 	}
 
 	/**
