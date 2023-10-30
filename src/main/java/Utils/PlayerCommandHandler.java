@@ -42,7 +42,7 @@ public class PlayerCommandHandler extends CommandHandler {
 			d_gameEngine.setPhase(new EndGamePhase(d_gameEngine));
 			System.out.println("Game is ended by Player \"" + p_currentPlayer.getName() + "\".");
 			d_logEntryBuffer.setString("Game is ended by Player \"" + p_currentPlayer.getName() + "\".");
-			break;
+			return "gameEnd";
 		case "showmap":
 			d_gameEngine.getGameMap().getD_mapView().showGameMap();
 			return "stayCurrentPlayer";

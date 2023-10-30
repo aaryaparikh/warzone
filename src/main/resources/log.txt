@@ -74,3 +74,83 @@
 2023/10/29 19:14:31>> Armies successfully moved from country "1" to country "2" and the ownership changed to "Yurui" player.
 2023/10/29 19:14:31>> Enter Game End
 2023/10/29 19:14:31>> Player:Yuruiis the winner!
+2023/10/29 20:35:33>> 
+
+2023/10/29 20:35:33>> Game Start
+2023/10/29 20:35:33>> Enter Edit Map Phase
+2023/10/29 20:35:38>> Enter Game Start Up Phase
+2023/10/29 20:35:41>> Enter Game Issue Order Phase
+2023/10/29 21:29:20>> 
+
+2023/10/29 21:29:20>> Game Start
+2023/10/29 21:29:20>> Enter Edit Map Phase
+2023/10/29 21:29:24>> Enter Game Start Up Phase
+2023/10/29 21:29:25>> Enter Game Issue Order Phase
+2023/10/29 21:29:27>> Game is ended by Player "Aarya".
+2023/10/29 21:44:36>> 
+
+2023/10/29 21:44:36>> Game Start
+2023/10/29 21:44:36>> Enter Edit Map Phase
+2023/10/29 21:44:39>> Enter Game Start Up Phase
+2023/10/29 21:44:41>> Enter Game Issue Order Phase
+2023/10/29 21:45:16>> Game is ended by Player "Aarya".
+2023/10/29 21:46:34>> 
+
+2023/10/29 21:46:34>> Game Start
+2023/10/29 21:46:34>> Enter Edit Map Phase
+2023/10/29 21:46:36>> Enter Game Start Up Phase
+2023/10/29 21:46:37>> Enter Game Issue Order Phase
+2023/10/29 21:47:25>> Game is ended by Player "Aarya".
+2023/10/29 21:50:11>> 
+
+2023/10/29 21:50:11>> Game Start
+2023/10/29 21:50:11>> Enter Edit Map Phase
+2023/10/29 21:50:18>> Enter Game Start Up Phase
+2023/10/29 21:50:19>> Enter Game Issue Order Phase
+2023/10/29 21:50:20>> Game is ended by Player "Aarya".
+2023/10/29 21:51:16>> 
+
+2023/10/29 21:51:16>> Game Start
+2023/10/29 21:51:16>> Enter Edit Map Phase
+2023/10/29 21:51:20>> Enter Game Start Up Phase
+2023/10/29 21:51:21>> Enter Game Issue Order Phase
+2023/10/29 21:51:27>> Game is ended by Player "Aarya".
+2023/10/29 21:52:16>> 
+
+2023/10/29 21:52:16>> Game Start
+2023/10/29 21:52:16>> Enter Edit Map Phase
+2023/10/29 21:52:18>> Enter Game Start Up Phase
+2023/10/29 21:52:19>> Enter Game Issue Order Phase
+2023/10/29 21:52:20>> Game is ended by Player "Aarya".
+2023/10/29 21:52:33>> 
+
+2023/10/29 21:52:33>> Game Start
+2023/10/29 21:52:33>> Enter Edit Map Phase
+2023/10/29 21:52:36>> Enter Game Start Up Phase
+2023/10/29 21:52:37>> Enter Game Issue Order Phase
+2023/10/29 21:52:38>> Game is ended by Player "Aarya".
+2023/10/29 21:55:39>> 
+
+2023/10/29 21:55:39>> Game Start
+2023/10/29 21:55:39>> Enter Edit Map Phase
+2023/10/29 21:55:41>> Enter Game Start Up Phase
+2023/10/29 21:55:42>> Enter Game Issue Order Phase
+2023/10/29 21:55:43>> Game is ended by Player "Aarya".
+2023/10/29 21:57:07>> 
+
+2023/10/29 21:57:07>> Game Start
+2023/10/29 21:57:07>> Enter Edit Map Phase
+2023/10/29 21:57:29>> Enter Game Start Up Phase
+2023/10/29 21:57:29>> Enter Game Issue Order Phase
+2023/10/29 21:57:30>> Game is ended by Player "Aarya".
+2023/10/29 21:58:13>> 
+
+2023/10/29 21:58:13>> Game Start
+2023/10/29 21:58:13>> Enter Edit Map Phase
+2023/10/29 21:58:15>> Enter Game Start Up Phase
+2023/10/29 21:58:15>> Enter Game Issue Order Phase
+2023/10/29 21:58:17>> Game is ended by Player "Aarya".
+2023/10/29 21:58:17>> Enter Game End
+2023/10/29 22:09:43>> 
+2023/10/29 22:09:43>> Game Start
+2023/10/29 22:09:43>> Enter Edit Map Phase

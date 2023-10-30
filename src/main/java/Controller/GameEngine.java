@@ -164,7 +164,7 @@ public class GameEngine {
 
 		// general command
 		case "end":
-			this.d_gamePhase.end(p_commands);
+			l_response = this.d_gamePhase.end(p_commands, p_currentPlayer);
 			break;
 		case "next":
 			this.d_gamePhase.next(p_commands);

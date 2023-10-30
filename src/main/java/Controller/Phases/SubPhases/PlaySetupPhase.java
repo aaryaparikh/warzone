@@ -100,4 +100,9 @@ public class PlaySetupPhase extends PlayGamePhase {
 		}
 	}
 
+	@Override
+	public String end(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
+		return null;
+	}
 }

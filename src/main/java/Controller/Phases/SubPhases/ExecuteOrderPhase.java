@@ -11,55 +11,56 @@ public class ExecuteOrderPhase extends PlayMainPhase {
 
 	@Override
 	public String deploy(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
 		return null;
 	}
 
 	@Override
 	public String advance(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
 		return null;
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public String bomb(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
 		return null;
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public String blockade(String[] p_commands, Player p_currentPlayer) {
-		return null;
-		// TODO Auto-generated method stub
+		printInvalidCommandMessage();
 
+		return null;
 	}
 
 	@Override
 	public String airlift(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
 		return null;
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public String negotiate(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
 		return null;
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public String commit(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
 		return null;
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void next(String[] p_commands) {
-		// TODO Auto-generated method stub
-
+		printInvalidCommandMessage();
+	}
+	
+	@Override
+	public String end(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
+		return null;
 	}
 
 }

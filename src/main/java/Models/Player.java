@@ -102,6 +102,8 @@ public class Player {
 			String l_commands[] = l_userInput.split(" ");
 
 			l_response = d_gameEngine.executeCommand(l_commands, this);
+			if (l_response == "gameEnd")
+				break;
 		}
 	}
 
