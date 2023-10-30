@@ -38,8 +38,11 @@ public class GameCommandHandler extends CommandHandler {
 		case "loadmap":
 			if (l_commands.length < 2)
 				System.out.println("Please enter valid map file path");
-			else
+			else {
 				d_gameEngine.setGameMap(d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]));
+				System.out.println("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
+				d_logEntryBuffer.setString("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
+			}
 			break;
 
 		// game player order support multiple options

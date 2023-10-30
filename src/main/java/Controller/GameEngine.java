@@ -76,13 +76,21 @@ public class GameEngine {
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
 
-				issueOrdersInTurn();
+				if (issueOrdersInTurn().equals("gameEnd"))
+					break;
 
 				if (executeAllCommittedOrders().equals("gameOver"))
 					break;
 			}
 
 			// Enter end phase
+			getPhaseView().showNextPhaseInfo("end");
+			while (d_gamePhase instanceof EndGamePhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
+				executeCommand(l_commands, null);
+			}
 		}
 	}
 
@@ -170,7 +178,7 @@ public class GameEngine {
 	/**
 	 * Function that takes player's input and adds their orders to the queue.
 	 */
-	public void issueOrdersInTurn() {
+	public String issueOrdersInTurn() {
 		List<Player> l_playerPool = getPlayers();
 		for (Player l_player : l_playerPool)
 			l_player.setIfSignified(false);
@@ -185,6 +193,9 @@ public class GameEngine {
 					System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool()
 							+ " armies need to deploy]");
 					l_player.issueOrder();
+					
+					if (this.getPhase() instanceof EndGamePhase)
+						return "gameEnd";
 					l_ifRemainPlayers = true;
 				}
 		}
@@ -192,6 +203,7 @@ public class GameEngine {
 		System.out.println("[All players have signified]");
 		getPhaseView().showNextPhaseInfo("execute");
 		setPhase(new ExecuteOrderPhase(this));
+		return null;
 	}
 
 	/**
@@ -237,10 +249,9 @@ public class GameEngine {
 					// check whether the game is over
 					if (checkIfGameIsOver() == true) {
 						System.out.println("\n[GAME OVER!]");
-						System.out.println("Player:" + l_player.getName() + "is the winner!");
-						getPhaseView().showNextPhaseInfo("end");
+						System.out.println("Player:" + l_player.getName() + " is the winner!");
 						setPhase(new EndGamePhase(this));
-						d_logEntryBuffer.setString("Player:" + l_player.getName() + "is the winner!");
+						d_logEntryBuffer.setString("Player:" + l_player.getName() + " is the winner!");
 						return "gameOver";
 					}
 				}

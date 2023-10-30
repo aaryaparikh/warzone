@@ -62,7 +62,7 @@ public class MapCommandHandler extends CommandHandler {
 				System.out.println("Please enter file path to load map.");
 			else {
 				d_map.d_mapEditor.editMap(p_commands[1]);
-				l_response = String.format("Edit map \"%s\"", p_commands[1]);
+				l_response = String.format("Edit map \"%s.txt\"", p_commands[1]);
 				d_logEntryBuffer.setString(l_response);
 			}
 			break;
