@@ -50,11 +50,10 @@ public class IssueOrderPhase extends PlayMainPhase {
 		String l_response = super.getD_playerCommandHandler().handlePlayerCommand(p_commands, p_currentPlayer);
 		return l_response;
 	}
-
+	
 	@Override
-	public void next(String[] p_commands) {
-		// TODO Auto-generated method stub
-
+	public String end(String[] p_commands, Player p_currentPlayer) {
+		return super.getD_playerCommandHandler().handlePlayerCommand(p_commands, p_currentPlayer);
 	}
 
 }

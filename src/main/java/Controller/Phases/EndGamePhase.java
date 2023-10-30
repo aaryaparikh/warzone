@@ -11,7 +11,7 @@ public class EndGamePhase extends Phase {
 
 	@Override
 	public String showMap(String[] p_commands) {
-		printInvalidCommandMessage();
+		d_gameEngine.getGameMap().getD_mapView().showGameMap();
 		return null;
 	}
 
@@ -117,8 +117,9 @@ public class EndGamePhase extends Phase {
 	}
 
 	@Override
-	public void end(String[] p_commands) {
+	public String end(String[] p_commands, Player p_currentPlayer) {
 		printInvalidCommandMessage();
+		return null;
 	}
 
 }

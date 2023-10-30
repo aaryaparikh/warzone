@@ -122,8 +122,9 @@ public class EditMapPhase extends Phase {
 	}
 
 	@Override
-	public void end(String[] p_commands) {
+	public String end(String[] p_commands, Player p_currentPlayer) {
 		printInvalidCommandMessage();
+		return null;
 	}
 
 }

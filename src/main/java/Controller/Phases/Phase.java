@@ -60,7 +60,7 @@ public abstract class Phase {
 	abstract public void next(String[] p_commands);
 
 	// go to end phase
-	abstract public void end(String[] p_commands);
+	abstract public String end(String[] p_commands, Player p_currentPlayer);
 
 	// methods common to all states
 	public void printInvalidCommandMessage() {

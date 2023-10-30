@@ -1,6 +1,7 @@
 package Utils;
 
 import Controller.GameEngine;
+import Controller.Phases.EndGamePhase;
 import Models.Country;
 import Models.Player;
 import Models.Orders.AdvanceOrder;
@@ -38,7 +39,10 @@ public class PlayerCommandHandler extends CommandHandler {
 		
 		switch (l_command[0]) {
 		case "end":
-			break;
+			d_gameEngine.setPhase(new EndGamePhase(d_gameEngine));
+			System.out.println("Game is ended by Player \"" + p_currentPlayer.getName() + "\".");
+			d_logEntryBuffer.setString("Game is ended by Player \"" + p_currentPlayer.getName() + "\".");
+			return "gameEnd";
 		case "showmap":
 			d_gameEngine.getGameMap().getD_mapView().showGameMap();
 			return "stayCurrentPlayer";

@@ -76,13 +76,21 @@ public class GameEngine {
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
 
-				issueOrdersInTurn();
+				if (issueOrdersInTurn().equals("gameEnd"))
+					break;
 
 				if (executeAllCommittedOrders().equals("gameOver"))
 					break;
 			}
 
 			// Enter end phase
+			getPhaseView().showNextPhaseInfo("end");
+			while (d_gamePhase instanceof EndGamePhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
+				executeCommand(l_commands, null);
+			}
 		}
 	}
 
@@ -156,7 +164,7 @@ public class GameEngine {
 
 		// general command
 		case "end":
-			this.d_gamePhase.end(p_commands);
+			l_response = this.d_gamePhase.end(p_commands, p_currentPlayer);
 			break;
 		case "next":
 			this.d_gamePhase.next(p_commands);
@@ -170,7 +178,7 @@ public class GameEngine {
 	/**
 	 * Function that takes player's input and adds their orders to the queue.
 	 */
-	public void issueOrdersInTurn() {
+	public String issueOrdersInTurn() {
 		List<Player> l_playerPool = getPlayers();
 		for (Player l_player : l_playerPool)
 			l_player.setIfSignified(false);
@@ -185,13 +193,17 @@ public class GameEngine {
 					System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool()
 							+ " armies need to deploy]");
 					l_player.issueOrder();
+					
+					if (this.getPhase() instanceof EndGamePhase)
+						return "gameEnd";
 					l_ifRemainPlayers = true;
 				}
 		}
 
 		System.out.println("[All players have signified]");
 		getPhaseView().showNextPhaseInfo("execute");
-		setPhase(new ExecuteOrderPhase(null));
+		setPhase(new ExecuteOrderPhase(this));
+		return null;
 	}
 
 	/**
@@ -212,7 +224,9 @@ public class GameEngine {
 					if (l_order.getOrderType() != "Deploy")
 						l_player.addOrderAtFirstPosition(l_order);
 					else {
-						System.out.println(l_order.execute(this));
+						String l_response = l_order.execute(this);
+						System.out.println(l_response);
+						d_logEntryBuffer.setString(l_response);
 						l_ifRemainPlayers = true;
 					}
 				}
@@ -228,14 +242,16 @@ public class GameEngine {
 				Order l_order = l_player.nextOrder();
 				if (l_order != null) {
 					l_ifRemainPlayers = true;
-					System.out.println(l_order.execute(this));
+					String l_response = l_order.execute(this);
+					System.out.println(l_response);
+					d_logEntryBuffer.setString(l_response);
 
 					// check whether the game is over
 					if (checkIfGameIsOver() == true) {
 						System.out.println("\n[GAME OVER!]");
-						System.out.println("Player:" + l_player.getName() + "is the winner!");
-						getPhaseView().showNextPhaseInfo("end");
+						System.out.println("Player:" + l_player.getName() + " is the winner!");
 						setPhase(new EndGamePhase(this));
+						d_logEntryBuffer.setString("Player:" + l_player.getName() + " is the winner!");
 						return "gameOver";
 					}
 				}

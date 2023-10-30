@@ -48,9 +48,4 @@ public abstract class PlayGamePhase extends Phase {
 		printInvalidCommandMessage();
 		return null;
 	}
-
-	@Override
-	public void end(String[] p_commands) {
-		printInvalidCommandMessage();
-	}
 }

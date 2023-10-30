@@ -102,6 +102,8 @@ public class Player {
 			String l_commands[] = l_userInput.split(" ");
 
 			l_response = d_gameEngine.executeCommand(l_commands, this);
+			if (l_response == "gameEnd")
+				break;
 		}
 	}
 
@@ -190,6 +192,8 @@ public class Player {
 		}
 
 		this.d_cardsOwned.replace(l_cardType, this.d_cardsOwned.get(l_cardType) + 1);
+		d_gameEngine.getD_logEntryBuffer()
+				.setString("Add one \"" + l_cardType + "\" card to Player \"" + this.getName() + "\"");
 	}
 
 	public void deleteCardsOwned(String p_cardType) {
