@@ -40,7 +40,8 @@ public class PhaseView {
 			d_gameEngine.getD_logEntryBuffer().setString("Enter Edit Map Phase");
 			break;
 		case "start":
-			System.out.println("\n<<GameStartupPhase>><next><backtoedit><showmap><loadmap><gameplayer><assigncountries>");
+			System.out
+					.println("\n<<GameStartupPhase>><next><backtoedit><showmap><loadmap><gameplayer><assigncountries>");
 			d_gameEngine.getD_logEntryBuffer().setString("Enter Game Start Up Phase");
 			break;
 		case "play":

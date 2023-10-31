@@ -49,9 +49,12 @@ public class GameEngine {
 		this.d_logWriter = new LogWriter(d_logEntryBuffer);
 	}
 
+	/**
+	 * Function that defines the main flow of a game
+	 */
 	public void start() {
 		setPhase(new EditMapPhase(this));
-		
+
 		try (Scanner l_sc = new Scanner(System.in)) {
 			// Enter edit map phase
 			getPhaseView().showNextPhaseInfo("edit");
@@ -94,14 +97,9 @@ public class GameEngine {
 		}
 	}
 
-	public void setPhase(Phase p_phase) {
-		this.d_gamePhase = p_phase;
-	}
-
-	public Phase getPhase() {
-		return d_gamePhase;
-	}
-
+	/**
+	 * Function that switches the type of a command
+	 */
 	public String executeCommand(String[] p_commands, Player p_currentPlayer) {
 		String l_response = null;
 		switch (p_commands[0]) {
@@ -177,6 +175,8 @@ public class GameEngine {
 
 	/**
 	 * Function that takes player's input and adds their orders to the queue.
+	 *
+	 * @return string to output result of issuing orders
 	 */
 	public String issueOrdersInTurn() {
 		List<Player> l_playerPool = getPlayers();
@@ -192,8 +192,9 @@ public class GameEngine {
 				if (l_player.getIfSignified() == false) {
 					System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool()
 							+ " armies need to deploy]");
+
 					l_player.issueOrder();
-					
+
 					if (this.getPhase() instanceof EndGamePhase)
 						return "gameEnd";
 					l_ifRemainPlayers = true;
@@ -207,9 +208,9 @@ public class GameEngine {
 	}
 
 	/**
-	 * function that takes player's and that adds to them to the orders queue
+	 * function that execute orders from Player's order list
 	 * 
-	 * @return string to output result of issue orders
+	 * @return string to output result of executing orders
 	 */
 	public String executeAllCommittedOrders() {
 		List<Player> l_playerPool = getPlayers();
@@ -303,6 +304,24 @@ public class GameEngine {
 	}
 
 	/**
+	 * Set the game phase.
+	 *
+	 * @param p_phase The game phase.
+	 */
+	public void setPhase(Phase p_phase) {
+		this.d_gamePhase = p_phase;
+	}
+
+	/**
+	 * Get the game phase.
+	 *
+	 * @return The game phase.
+	 */
+	public Phase getPhase() {
+		return d_gamePhase;
+	}
+
+	/**
 	 * Add a player to the game.
 	 *
 	 * @param p_player The player to add.
@@ -393,8 +412,8 @@ public class GameEngine {
 	/**
 	 * Calculate reinforcement armies for a player.
 	 *
-	 * @param player         The player for whom to calculate reinforcements.
-	 * @param ownedCountries The list of countries owned by the player.
+	 * @param p_player         The player for whom to calculate reinforcements.
+	 * @param p_ownedCountries The list of countries owned by the player.
 	 * @return The number of reinforcement armies.
 	 */
 	private int calculateReinforcementArmies(Player p_player, List<Country> p_ownedCountries) {
@@ -461,7 +480,7 @@ public class GameEngine {
 	/**
 	 * Set the list of players who conquer at least one territory in this turn
 	 * 
-	 * @param p_playerConquerInTurn the d_playerConquerInTurn to set
+	 * @param p_player the d_playerConquerInTurn to set
 	 */
 	public void setPlayerConquerInTurn(Player p_player) {
 		this.d_playerConquerInTurn.add(p_player);
@@ -475,13 +494,21 @@ public class GameEngine {
 		;
 	}
 
+	/**
+	 * Get the log entry buffer.
+	 *
+	 * @return log entry buffer.
+	 */
 	public LogEntryBuffer getD_logEntryBuffer() {
 		return d_logEntryBuffer;
 	}
 
-	public void setD_logEntryBuffer(LogEntryBuffer d_logEntryBuffer) {
-		this.d_logEntryBuffer = d_logEntryBuffer;
+	/**
+	 * Set the log entry buffer.
+	 *
+	 * @param p_logEntryBuffer the log entry buffer
+	 */
+	public void setD_logEntryBuffer(LogEntryBuffer p_logEntryBuffer) {
+		this.d_logEntryBuffer = p_logEntryBuffer;
 	}
-
-	// Other game phases and methods
 }

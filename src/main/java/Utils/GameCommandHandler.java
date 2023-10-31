@@ -30,7 +30,7 @@ public class GameCommandHandler extends CommandHandler {
 	public String handleGameCommand(String[] p_commands) {
 		String[] l_commands = p_commands;
 		String l_response = null;
-		
+
 		switch (l_commands[0]) {
 		case "showmap":
 			d_gameEngine.getGameMap().getD_mapView().showGameMap();
@@ -63,8 +63,7 @@ public class GameCommandHandler extends CommandHandler {
 							l_response = String.format("Player " + l_commands[l_i + 1] + " is added.");
 							System.out.println(l_response);
 							d_logEntryBuffer.setString(l_response);
-						}
-						else
+						} else
 							System.out.println("Player " + l_commands[l_i + 1] + " already exists. Can't add again.");
 						break;
 					case "-remove":
@@ -72,8 +71,7 @@ public class GameCommandHandler extends CommandHandler {
 							l_response = String.format("Player " + l_commands[l_i + 1] + " is removed.");
 							System.out.println(l_response);
 							d_logEntryBuffer.setString(l_response);
-						}
-						else
+						} else
 							System.out.println("Player " + l_commands[l_i + 1] + " don't exist. Can't remove.");
 						break;
 					default:
