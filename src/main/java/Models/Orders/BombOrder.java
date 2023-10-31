@@ -4,15 +4,31 @@ import Controller.GameEngine;
 import Models.Country;
 import Models.Player;
 
+/**
+ * Players can bomb another country.
+ * 
+ */
 public class BombOrder extends Order {
 	private Player d_player;
 	private Country d_targetCountry;
 
+	/**
+	 * Constructor to assign initial values
+	 * 
+	 * @param p_player  player who is committing bomb order
+	 * @param p_country bomb which country
+	 */
 	public BombOrder(Player p_player, Country p_targetCountry) {
 		this.d_player = p_player;
 		this.d_targetCountry = p_targetCountry;
 	}
 
+	/**
+	 * Method to execute bomb order.
+	 * 
+	 * @param p_game the object representing the game.
+	 * @return a response string indicating the result of the order execution.
+	 */
 	@Override
 	public String execute(GameEngine p_game) {
 
@@ -46,6 +62,9 @@ public class BombOrder extends Order {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getOrderType() {
 		return "Bomb";

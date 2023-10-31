@@ -140,24 +140,46 @@ public class Player {
 	}
 
 	/**
-	 * @return
+	 * Gets the list of players negotiated with by this player.
+	 *
+	 * @return The list of negotiated players.
 	 */
 	public List<Player> getNegotiatedPlayers() {
 		return d_negotiatedPlayers;
 	}
 
+	/**
+	 * Sets the list of players negotiated with by this player.
+	 *
+	 * @param p_negotiatedPlayers The list of negotiated players to set.
+	 */
 	public void setNegotiatedPlayers(List<Player> p_negotiatedPlayers) {
 		this.d_negotiatedPlayers = p_negotiatedPlayers;
 	}
 
+	/**
+	 * Adds a player to the list of players negotiated with by this player.
+	 *
+	 * @param p_negotiatedPlayer The player to add to the list of negotiated
+	 *                           players.
+	 */
 	public void addNegotiatedPlayers(Player p_negotiatedPlayers) {
 		this.d_negotiatedPlayers.add(p_negotiatedPlayers);
 	}
 
+	/**
+	 * Removes a player from the list of players negotiated with by this player.
+	 *
+	 * @param p_negotiatedPlayer The player to remove from the list of negotiated
+	 *                           players.
+	 */
 	public void removeNegotiatedPlayers(Player p_negotiatedPlayers) {
 		this.d_negotiatedPlayers.remove(p_negotiatedPlayers);
 	}
 
+	/**
+	 * Resets the list of players negotiated with by this player.
+	 */
 	public void resetNegotiatedPlayers() {
 		this.d_negotiatedPlayers.clear();
 		;
@@ -172,14 +194,30 @@ public class Player {
 		return d_reinforcementPool;
 	}
 
+	/**
+	 * Gets the list of cards owned by this player along with their counts.
+	 *
+	 * @return A HashMap representing the cards owned by the player, where the keys
+	 *         are card types and values are the counts.
+	 */
 	public HashMap<String, Integer> getCardsOwned() {
 		return d_cardsOwned;
 	}
 
+	/**
+	 * Sets the list of cards owned by this player.
+	 *
+	 * @param p_cardsOwned A HashMap representing the cards owned by the player.
+	 */
 	public void setCardsOwned(HashMap<String, Integer> p_cardsOwned) {
 		this.d_cardsOwned = p_cardsOwned;
 	}
 
+	/**
+	 * Adds a card to the list of cards owned by this player.
+	 *
+	 * @param p_cardType The type of card to add.
+	 */
 	public void addCardsOwned(String p_cardType) {
 		String l_cardType = p_cardType;
 
@@ -196,6 +234,11 @@ public class Player {
 				.setString("Add one \"" + l_cardType + "\" card to Player \"" + this.getName() + "\"");
 	}
 
+	/**
+	 * Deletes a card from the list of cards owned by this player.
+	 *
+	 * @param p_cardType The type of card to delete.
+	 */
 	public void deleteCardsOwned(String p_cardType) {
 		this.d_cardsOwned.replace(p_cardType, this.d_cardsOwned.get(p_cardType) - 1);
 	}

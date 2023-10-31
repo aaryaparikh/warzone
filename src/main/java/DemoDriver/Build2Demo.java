@@ -4,7 +4,7 @@ import Controller.GameEngine;
 import Models.*;
 
 /**
- * Build1 Demo: 1. Initialize the map 2. Enter map edit phase 3. Enter startup
+ * Build2 Demo: 1. Initialize the map 2. Enter map edit phase 3. Enter startup
  * game phase 4. Main loop for game play
  * 
  * @author YURUI

@@ -4,15 +4,31 @@ import Controller.GameEngine;
 import Models.Country;
 import Models.Player;
 
+/**
+ * Players blockade a country owned.
+ * 
+ */
 public class BlockadeOrder extends Order {
 	private Player d_player;
 	private Country d_targetCountry;
 
+	/**
+	 * Constructor to blockade order
+	 * 
+	 * @param p_player        player who is committing deploy order
+	 * @param p_targetCountry which country is blockaded
+	 */
 	public BlockadeOrder(Player p_player, Country p_targetCountry) {
 		this.d_player = p_player;
 		this.d_targetCountry = p_targetCountry;
 	}
 
+	/**
+	 * Method to execute diplomacy order.
+	 * 
+	 * @param p_game the object representing the game.
+	 * @return a response string indicating the result of the order execution.
+	 */
 	@Override
 	public String execute(GameEngine p_game) {
 
@@ -39,6 +55,9 @@ public class BlockadeOrder extends Order {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getOrderType() {
 		return "Blockade";

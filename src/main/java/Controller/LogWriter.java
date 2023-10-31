@@ -35,7 +35,8 @@ public class LogWriter implements Observer {
 		try {
 			d_now = LocalDateTime.now();
 			d_logFile = new FileWriter(("src/main/resources/log.txt"), true);
-			d_logFile.append(d_formatter.format(d_now) + ">> " + ((LogEntryBuffer) p_observableState).getString() + "\n");
+			d_logFile.append(
+					d_formatter.format(d_now) + ">> " + ((LogEntryBuffer) p_observableState).getString() + "\n");
 			d_logFile.close();
 		} catch (IOException e) {
 			e.printStackTrace();

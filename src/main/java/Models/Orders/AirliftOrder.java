@@ -16,7 +16,7 @@ public class AirliftOrder extends Order {
 	private int d_armies;
 
 	/**
-	 * Constructor to assign initial values
+	 * Constructor to airlift order
 	 * 
 	 * @param p_player        player who is committing airlift command
 	 * @param p_sourceCountry country from which the reinforcements are to be taken
@@ -67,6 +67,9 @@ public class AirliftOrder extends Order {
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getOrderType() {
 		return "Airlift";

@@ -49,8 +49,7 @@ public class Build1Demo {
 		l_gameEngine.setPhase(new EditMapPhase(l_gameEngine));
 		l_gameEngine.getPhaseView().showNextPhaseInfo("edit");
 
+		// Game start
 		l_gameEngine.start();
-
-		// EndGamePhase game play
 	}
 }

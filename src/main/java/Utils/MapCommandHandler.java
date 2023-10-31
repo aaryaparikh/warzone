@@ -30,7 +30,7 @@ public class MapCommandHandler extends CommandHandler {
 	 */
 	public String handleMapCommand(String[] p_commands) {
 		String l_response = null;
-		
+
 		switch (p_commands[0]) {
 		case "showmap":
 			d_map.getD_mapView().showMap();
@@ -39,8 +39,7 @@ public class MapCommandHandler extends CommandHandler {
 			if (p_commands.length < 2) {
 				l_response = String.format("Please enter file path to save map.");
 				System.out.println(l_response);
-			}
-			else {
+			} else {
 				d_map.d_mapEditor.write(p_commands[1]);
 				l_response = String.format("Map is saved in \"%s.txt\"", p_commands[1]);
 				System.out.println(l_response);
@@ -96,7 +95,8 @@ public class MapCommandHandler extends CommandHandler {
 							try {
 								d_map.addContinent(Integer.parseInt(p_commands[l_i + 1]),
 										Integer.parseInt(p_commands[l_i + 2]));
-								l_response = String.format("Add continent \"%s\" with value \"%s\". ", p_commands[l_i + 1], p_commands[l_i + 2]);
+								l_response = String.format("Add continent \"%s\" with value \"%s\". ",
+										p_commands[l_i + 1], p_commands[l_i + 2]);
 								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);
@@ -154,7 +154,8 @@ public class MapCommandHandler extends CommandHandler {
 							try {
 								d_map.addCountry(Integer.parseInt(p_commands[l_i + 1]),
 										Integer.parseInt(p_commands[l_i + 2]));
-								l_response = String.format("Add country \"%s\" to continent \"%s\". ", p_commands[l_i + 1], p_commands[l_i + 2]);
+								l_response = String.format("Add country \"%s\" to continent \"%s\". ",
+										p_commands[l_i + 1], p_commands[l_i + 2]);
 								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);
@@ -212,7 +213,8 @@ public class MapCommandHandler extends CommandHandler {
 											Integer.parseInt(p_commands[l_i + 2]));
 								d_map.addNeighbor(Integer.parseInt(p_commands[l_i + 2]),
 										Integer.parseInt(p_commands[l_i + 1]));
-								l_response = String.format("Add neighbor between \"%s\" and \"%s\". ", p_commands[l_i + 1], p_commands[l_i + 2]);
+								l_response = String.format("Add neighbor between \"%s\" and \"%s\". ",
+										p_commands[l_i + 1], p_commands[l_i + 2]);
 								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);
@@ -236,7 +238,8 @@ public class MapCommandHandler extends CommandHandler {
 											Integer.parseInt(p_commands[l_i + 2]));
 								d_map.removeNeighbor(Integer.parseInt(p_commands[l_i + 2]),
 										Integer.parseInt(p_commands[l_i + 1]));
-								l_response = String.format("Remove neighbor between \"%s\" and \"%s\". ", p_commands[l_i + 1], p_commands[l_i + 2]);
+								l_response = String.format("Remove neighbor between \"%s\" and \"%s\". ",
+										p_commands[l_i + 1], p_commands[l_i + 2]);
 								d_logEntryBuffer.setString(l_response);
 							} catch (Exception e) {
 								System.out.println(e);

@@ -15,24 +15,6 @@ public class DeployOrder extends Order {
 	private int d_armies;
 
 	/**
-	 * Gets player object
-	 *
-	 * @return player object
-	 */
-	public Player getPlayer() {
-		return d_player;
-	}
-
-	/**
-	 * Sets player object
-	 *
-	 * @param p_player object
-	 */
-	public void setPlayer(Player p_player) {
-		this.d_player = p_player;
-	}
-
-	/**
 	 * Constructor to assign initial values
 	 * 
 	 * @param p_player  player who is committing deploy order
@@ -71,6 +53,27 @@ public class DeployOrder extends Order {
 					d_player.getName(), d_armies, d_country.getCountryId());
 	}
 
+	/**
+	 * Gets player object
+	 *
+	 * @return player object
+	 */
+	public Player getPlayer() {
+		return d_player;
+	}
+
+	/**
+	 * Sets player object
+	 *
+	 * @param p_player object
+	 */
+	public void setPlayer(Player p_player) {
+		this.d_player = p_player;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getOrderType() {
 		return "Deploy";

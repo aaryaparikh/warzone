@@ -17,7 +17,7 @@ public class AdvanceOrder extends Order {
 	private int d_armies;
 
 	/**
-	 * Constructor to assign initial values
+	 * Constructor to advance order
 	 * 
 	 * @param p_player        player who is committing advance command
 	 * @param p_sourceCountry country from which the reinforcements are to be taken
@@ -123,6 +123,9 @@ public class AdvanceOrder extends Order {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getOrderType() {
 		return "Advance";
