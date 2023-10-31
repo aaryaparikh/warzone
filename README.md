@@ -24,3 +24,10 @@ If everything runs correctly, it will show something like \<\<TBD\>\>\<Order1\>\
 \<Order\> Order here indicates what command needs to enter as presentation requirment. If you enter the first order in the commands list, it will move to next phase or next turn. Especially, if enter "end" in issue order phase, it will move to end phase immediately, only if all players enter "commit" it will  move to execute order phase.
 
 Also could run MapService.java to check the work of editing map. There is no conflict between them.
+
+# Build2
+In build2, please run Build2Demo.java under src/main/java.
+
+Except for output from build1, all running information is saved in log.txt which is under src/main/resources.
+
+Add new features for build2's requirement, and refactor the project to follow State Pattern, Command Pattern and Observer Pattern.
