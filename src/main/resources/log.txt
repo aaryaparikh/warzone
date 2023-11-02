@@ -154,3 +154,105 @@
 2023/10/29 22:09:43>> 
 2023/10/29 22:09:43>> Game Start
 2023/10/29 22:09:43>> Enter Edit Map Phase
+2023/10/31 10:06:27>> 
+
+2023/10/31 10:06:27>> Game Start
+2023/10/31 10:06:27>> Enter Edit Map Phase
+2023/11/02 16:09:15>> 
+
+2023/11/02 16:09:15>> Game Start
+2023/11/02 16:09:15>> Enter Edit Map Phase
+2023/11/02 16:09:21>> Enter Game Start Up Phase
+2023/11/02 16:09:33>> Enter Game Issue Order Phase
+2023/11/02 16:10:10>> Add an order of deploying "5" armies on "2" to Player "Aarya".
+2023/11/02 16:11:10>> Add an order of deploying "3" armies on "1" to Player "Yurui".
+2023/11/02 16:11:32>> Player "Aarya" has signified.
+2023/11/02 16:12:07>> Add an order of advancing "3" armies from "1" to "7" for Player "Yurui".
+2023/11/02 16:12:10>> Player "Yurui" has signified.
+2023/11/02 16:12:10>> Enter Game Execute Order Phase
+2023/11/02 16:13:15>> 
+
+2023/11/02 16:13:15>> Game Start
+2023/11/02 16:13:15>> Enter Edit Map Phase
+2023/11/02 16:14:15>> Enter Game Start Up Phase
+2023/11/02 16:14:16>> Enter Game Issue Order Phase
+2023/11/02 16:14:27>> Add an order of deploying "5" armies on "2" to Player "Aarya".
+2023/11/02 16:14:32>> Add an order of deploying "3" armies on "1" to Player "Yurui".
+2023/11/02 16:14:34>> Player "Aarya" has signified.
+2023/11/02 16:14:42>> Add an order of advancing "3" armies from "1" to "7" for Player "Yurui".
+2023/11/02 16:14:44>> Player "Yurui" has signified.
+2023/11/02 16:14:44>> Enter Game Execute Order Phase
+2023/11/02 16:14:44>> Player "Aarya" deployed "5" armies to country "2"
+2023/11/02 16:14:44>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/02 16:14:44>> Armies successfully moved from country "1" to country "7" and the ownership changed to "Yurui" player.
+2023/11/02 16:14:44>> Add one "negotiate" card to Player "Yurui"
+2023/11/02 16:14:44>> Enter Game Issue Order Phase
+2023/11/02 16:27:55>> 
+
+2023/11/02 16:27:55>> Game Start
+2023/11/02 16:27:55>> Enter Edit Map Phase
+2023/11/02 16:27:59>> Enter Game Start Up Phase
+2023/11/02 16:28:05>> Enter Game Issue Order Phase
+2023/11/02 16:28:13>> Game is ended by Player "Aarya".
+2023/11/02 16:28:13>> Enter Game End
+2023/11/02 16:30:33>> 
+
+2023/11/02 16:30:33>> Game Start
+2023/11/02 16:30:33>> Enter Edit Map Phase
+2023/11/02 16:30:47>> Edit map "temp.txt"
+2023/11/02 16:31:00>> Edit map "new.txt"
+2023/11/02 16:31:15>> Add continent "1" with value "4". 
+2023/11/02 16:31:15>> Add continent "2" with value "5". 
+2023/11/02 16:31:15>> Add continent "3" with value "5". 
+2023/11/02 16:31:23>> Add country "1" to continent "1". 
+2023/11/02 16:31:23>> Add country "4" to continent "1". 
+2023/11/02 16:31:23>> Add country "2" to continent "2". 
+2023/11/02 16:31:23>> Add country "5" to continent "2". 
+2023/11/02 16:31:23>> Add country "3" to continent "3". 
+2023/11/02 16:31:23>> Add country "6" to continent "3". 
+2023/11/02 16:31:23>> Add country "7" to continent "3". 
+2023/11/02 16:36:27>> 
+
+2023/11/02 16:36:27>> Game Start
+2023/11/02 16:36:27>> Enter Edit Map Phase
+2023/11/02 16:36:33>> Edit map "new.txt"
+2023/11/02 16:37:01>> Edit map "new1.txt"
+2023/11/02 16:37:11>> Add continent "1" with value "4". 
+2023/11/02 16:37:11>> Add continent "2" with value "5". 
+2023/11/02 16:37:11>> Add continent "3" with value "5". 
+2023/11/02 16:37:12>> Add country "1" to continent "1". 
+2023/11/02 16:37:12>> Add country "4" to continent "1". 
+2023/11/02 16:37:12>> Add country "2" to continent "2". 
+2023/11/02 16:37:12>> Add country "5" to continent "2". 
+2023/11/02 16:37:12>> Add country "3" to continent "3". 
+2023/11/02 16:37:12>> Add country "6" to continent "3". 
+2023/11/02 16:37:12>> Add country "7" to continent "3". 
+2023/11/02 16:43:00>> 
+
+2023/11/02 16:43:00>> Game Start
+2023/11/02 16:43:00>> Enter Edit Map Phase
+2023/11/02 16:43:08>> Add continent "1" with value "4". 
+2023/11/02 16:43:08>> Add continent "2" with value "5". 
+2023/11/02 16:43:08>> Add continent "3" with value "5". 
+2023/11/02 16:43:08>> Add country "1" to continent "1". 
+2023/11/02 16:43:08>> Add country "4" to continent "1". 
+2023/11/02 16:43:08>> Add country "2" to continent "2". 
+2023/11/02 16:43:08>> Add country "5" to continent "2". 
+2023/11/02 16:43:08>> Add country "3" to continent "3". 
+2023/11/02 16:43:08>> Add country "6" to continent "3". 
+2023/11/02 16:43:08>> Add country "7" to continent "3". 
+2023/11/02 16:43:09>> Add neighbor between "1" and "4". 
+2023/11/02 16:43:09>> Add neighbor between "4" and "3". 
+2023/11/02 16:43:09>> Add neighbor between "3" and "4". 
+2023/11/02 16:43:09>> Add neighbor between "4" and "2". 
+2023/11/02 16:43:09>> Add neighbor between "2" and "4". 
+2023/11/02 16:43:09>> Add neighbor between "5" and "2". 
+2023/11/02 16:43:09>> Add neighbor between "2" and "5". 
+2023/11/02 16:43:09>> Add neighbor between "3" and "5". 
+2023/11/02 16:43:09>> Add neighbor between "5" and "3". 
+2023/11/02 16:43:09>> Add neighbor between "5" and "6". 
+2023/11/02 16:43:09>> Add neighbor between "6" and "5". 
+2023/11/02 16:43:09>> Add neighbor between "3" and "6". 
+2023/11/02 16:43:09>> Add neighbor between "6" and "3". 
+2023/11/02 16:43:09>> Add neighbor between "3" and "7". 
+2023/11/02 16:43:09>> Add neighbor between "7" and "3". 

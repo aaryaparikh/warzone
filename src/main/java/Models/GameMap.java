@@ -85,6 +85,8 @@ public class GameMap {
 	public void loadGameMap(String p_filePath) {
 		d_countries = d_mapEditor.editMap(p_filePath).getCountries();
 		d_continents = d_mapEditor.editMap(p_filePath).getContinents();
+		d_countryCount = d_countries.size();
+		d_continentCount = d_continents.size();
 	}
 
 	/**
