@@ -79,10 +79,10 @@ public class GameEngine {
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
 
-				if (issueOrdersInTurn().equals("gameEnd"))
+				if (issueOrdersInTurn() == "gameEnd")
 					break;
 
-				if (executeAllCommittedOrders().equals("gameOver"))
+				if (executeAllCommittedOrders() == "gameOver")
 					break;
 			}
 
