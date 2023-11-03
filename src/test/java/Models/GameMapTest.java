@@ -1,19 +1,17 @@
 package Models;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-/**
- * JUnit 5 test class for Gamemap class.
- * 
- * @author Virag
- */
-public class GameMapTest {
+class GameMapTest {
 	private GameMap d_map;
 
 	/**
@@ -189,5 +187,4 @@ public class GameMapTest {
 		assertAll(() -> assertEquals(l_expectedNeighborCount, l_countries.get(0).getNeighborCountries().size()),
 				() -> assertArrayEquals(l_neighborList, l_countries.get(0).getNeighborCountries().toArray()));
 	}
-
 }
