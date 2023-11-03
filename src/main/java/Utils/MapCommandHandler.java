@@ -5,7 +5,7 @@ import Models.GameMap;
 
 /**
  * Handles player commands.
- * 
+ *
  * @author YURUI
  */
 public class MapCommandHandler extends CommandHandler {
@@ -74,7 +74,7 @@ public class MapCommandHandler extends CommandHandler {
 
 		// edit continent with two kinds of options
 		case "editcontinent":
-			if (p_commands.length < 4)
+			if (p_commands.length < 3)
 				System.out.println("Please enter enough parameter for editing continent.");
 			else
 				for (int l_i = 1; l_i < p_commands.length;) {
