@@ -137,6 +137,8 @@ public class MapEditor {
 		}
 		d_gameMap.setCountries(l_map.getCountries());
 		d_gameMap.setContinents(l_map.getContinents());
+		d_gameMap.setD_continentCount(l_map.getContinents().size());
+		d_gameMap.setD_countryCount(l_map.getCountries().size());
 		return l_map;
 	}
 
