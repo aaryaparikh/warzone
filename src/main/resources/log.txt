@@ -256,3 +256,94 @@
 2023/11/02 16:43:09>> Add neighbor between "6" and "3". 
 2023/11/02 16:43:09>> Add neighbor between "3" and "7". 
 2023/11/02 16:43:09>> Add neighbor between "7" and "3". 
+2023/11/05 00:24:34>> 
+
+2023/11/05 00:24:34>> Game Start
+2023/11/05 00:24:34>> Enter Edit Map Phase
+2023/11/05 00:24:48>> Add continent "1" with value "3". 
+2023/11/05 00:24:48>> Add continent "2" with value "5". 
+2023/11/05 00:24:48>> Add country "1" to continent "1". 
+2023/11/05 00:24:48>> Add country "2" to continent "1". 
+2023/11/05 00:24:48>> Add country "3" to continent "2". 
+2023/11/05 00:24:48>> Add country "4" to continent "2". 
+2023/11/05 00:24:48>> Add country "5" to continent "2". 
+2023/11/05 00:24:49>> Add neighbor between "1" and "2". 
+2023/11/05 00:24:49>> Add neighbor between "1" and "3". 
+2023/11/05 00:24:49>> Add neighbor between "2" and "5". 
+2023/11/05 00:24:49>> Add neighbor between "3" and "4". 
+2023/11/05 00:24:49>> Add neighbor between "5" and "4". 
+2023/11/05 00:28:19>> 
+
+2023/11/05 00:28:19>> Game Start
+2023/11/05 00:28:19>> Enter Edit Map Phase
+2023/11/05 00:28:21>> Add continent "1" with value "3". 
+2023/11/05 00:28:21>> Add continent "2" with value "5". 
+2023/11/05 00:28:21>> Add country "1" to continent "1". 
+2023/11/05 00:28:21>> Add country "2" to continent "1". 
+2023/11/05 00:28:21>> Add country "3" to continent "2". 
+2023/11/05 00:28:21>> Add country "4" to continent "2". 
+2023/11/05 00:28:21>> Add country "5" to continent "2". 
+2023/11/05 00:28:22>> Add neighbor between "1" and "2". 
+2023/11/05 00:28:22>> Add neighbor between "1" and "3". 
+2023/11/05 00:28:22>> Add neighbor between "2" and "5". 
+2023/11/05 00:28:22>> Add neighbor between "3" and "4". 
+2023/11/05 00:28:22>> Add neighbor between "5" and "4". 
+2023/11/05 00:31:12>> 
+
+2023/11/05 00:31:12>> Game Start
+2023/11/05 00:31:12>> Enter Edit Map Phase
+2023/11/05 00:31:25>> Add continent "1" with value "3". 
+2023/11/05 00:31:26>> Add continent "2" with value "5". 
+2023/11/05 00:31:26>> Add country "1" to continent "1". 
+2023/11/05 00:31:26>> Add country "2" to continent "1". 
+2023/11/05 00:31:26>> Add country "3" to continent "2". 
+2023/11/05 00:31:26>> Add country "4" to continent "2". 
+2023/11/05 00:31:26>> Add country "5" to continent "2". 
+2023/11/05 00:31:26>> Add neighbor between "1" and "2". 
+2023/11/05 00:31:26>> Add neighbor between "1" and "3". 
+2023/11/05 00:31:26>> Add neighbor between "2" and "5". 
+2023/11/05 00:31:26>> Add neighbor between "3" and "4". 
+2023/11/05 00:31:26>> Add neighbor between "5" and "4". 
+2023/11/05 00:31:31>> This Map is invalid
+2023/11/05 00:32:08>> Edit map "new2.txt"
+2023/11/05 00:32:11>> Add continent "1" with value "3". 
+2023/11/05 00:32:11>> Add continent "2" with value "5". 
+2023/11/05 00:32:11>> Add country "1" to continent "1". 
+2023/11/05 00:32:11>> Add country "2" to continent "1". 
+2023/11/05 00:32:11>> Add country "3" to continent "2". 
+2023/11/05 00:32:11>> Add country "4" to continent "2". 
+2023/11/05 00:32:11>> Add country "5" to continent "2". 
+2023/11/05 00:38:04>> 
+
+2023/11/05 00:38:04>> Game Start
+2023/11/05 00:38:04>> Enter Edit Map Phase
+2023/11/05 00:38:19>> Edit map "new2.txt"
+2023/11/05 00:38:37>> Add continent "1" with value "3". 
+2023/11/05 00:38:37>> Add continent "2" with value "5". 
+2023/11/05 00:38:37>> Add country "1" to continent "1". 
+2023/11/05 00:38:37>> Add country "2" to continent "1". 
+2023/11/05 00:38:37>> Add country "3" to continent "2". 
+2023/11/05 00:38:37>> Add country "4" to continent "2". 
+2023/11/05 00:38:37>> Add country "5" to continent "2". 
+2023/11/05 00:38:37>> Add neighbor between "1" and "2". 
+2023/11/05 00:38:37>> Add neighbor between "1" and "3". 
+2023/11/05 00:38:37>> Add neighbor between "2" and "5". 
+2023/11/05 00:38:37>> Add neighbor between "3" and "4". 
+2023/11/05 00:38:37>> Add neighbor between "5" and "4". 
+2023/11/05 00:38:44>> 
+
+2023/11/05 00:38:44>> Game Start
+2023/11/05 00:38:45>> Enter Edit Map Phase
+2023/11/05 00:38:49>> Edit map "new3.txt"
+2023/11/05 00:38:52>> Add continent "1" with value "3". 
+2023/11/05 00:38:52>> Add continent "2" with value "5". 
+2023/11/05 00:38:52>> Add country "1" to continent "1". 
+2023/11/05 00:38:52>> Add country "2" to continent "1". 
+2023/11/05 00:38:52>> Add country "3" to continent "2". 
+2023/11/05 00:38:52>> Add country "4" to continent "2". 
+2023/11/05 00:38:52>> Add country "5" to continent "2". 
+2023/11/05 00:38:52>> Add neighbor between "1" and "2". 
+2023/11/05 00:38:52>> Add neighbor between "1" and "3". 
+2023/11/05 00:38:52>> Add neighbor between "2" and "5". 
+2023/11/05 00:38:52>> Add neighbor between "3" and "4". 
+2023/11/05 00:38:52>> Add neighbor between "5" and "4". 
