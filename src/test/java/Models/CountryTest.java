@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * JUnit 5 test class for Country class.
- * 
+ *
  * @author Dev
  */
 public class CountryTest {
@@ -125,4 +125,5 @@ public class CountryTest {
 		assertEquals(l_expectedArmyAfterSub, d_country.getArmies());
 
 	}
+
 }

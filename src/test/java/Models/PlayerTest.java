@@ -10,9 +10,9 @@ import org.junit.jupiter.api.Test;
 import Controller.GameEngine;
 
 /**
- * JUnit 5 test class for player class.
- * 
- * @author Gurleen
+ * JUnit 5 test class for Player class.
+ *
+ * @author Dev
  */
 public class PlayerTest {
 
@@ -88,4 +88,5 @@ public class PlayerTest {
 		// then
 		assertEquals(0, d_player.getD_countries().size());
 	}
+
 }
