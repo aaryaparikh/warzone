@@ -9,7 +9,12 @@ import org.junit.jupiter.api.Test;
 
 import Controller.GameEngine;
 
-class PlayerTest {
+/**
+ * JUnit 5 test class for Player class.
+ *
+ * @author Dev
+ */
+public class PlayerTest {
 
 	private Player d_player;
 

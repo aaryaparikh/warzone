@@ -11,7 +11,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class GameMapTest {
+/**
+ * JUnit 5 test class for GameMap class.
+ *
+ * @author Dev
+ */
+public class GameMapTest {
 	private GameMap d_map;
 
 	/**
