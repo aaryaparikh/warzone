@@ -135,7 +135,7 @@ public class MapCommandHandler extends CommandHandler {
 
 		// edit country with two kind of options
 		case "editcountry":
-			if (p_commands.length < 4)
+			if (p_commands.length < 3)
 				System.out.println("Please enter enough parameter for editing country.");
 			else
 				for (int l_i = 1; l_i < p_commands.length;) {
