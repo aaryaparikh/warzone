@@ -58,6 +58,9 @@ public class DeployOrderTest {
 		return d_gameEngine.getPlayers().get(1).getD_countries().get(0);
 	}
 
+	/**
+	 * sets up some objects and initialize it with some predefined values
+	 */
 	@BeforeEach
 	public void setUp() {
 		d_map = new GameMap();
@@ -72,6 +75,9 @@ public class DeployOrderTest {
 		d_p2.assignReinforcements(4);
 	}
 
+	/**
+	 * tears down the objects created in setup method
+	 */
 	@AfterEach
 	public void tearDown() {
 		d_lmap = null;
@@ -81,6 +87,9 @@ public class DeployOrderTest {
 		d_depOrder = null;
 	}
 
+	/**
+	 * checks whether <i>DeployOrder</i> deploys the armies to valid country
+	 */
 	@Test
 	public void shouldDeployArmies() {
 		// given
@@ -95,6 +104,10 @@ public class DeployOrderTest {
 		assertEquals(l_expected, d_depOrder.execute(d_gameEngine));
 	}
 
+	/**
+	 * checks whether <i>DeployOrder</i> generate appropriate message for invalid
+	 * country
+	 */
 	@Test
 	public void shouldNotDeployArmies() {
 		// given
