@@ -166,6 +166,13 @@ public class GameMap {
 		for (int l_i = 0; l_i < d_continentCount; l_i++) {
 			if (d_continents.get(l_i).getContinentId() == p_continentId) {
 				d_continents.remove(l_i);
+				for(int l_j=0;l_j<d_countryCount;l_j++)
+				{
+					if(d_countries.get(l_j).getContinentId()==p_continentId)
+					{
+						removeCountry(d_countries.get(l_j).getCountryId());
+					}
+				}
 				d_continentCount--;
 				break;
 			}
@@ -196,6 +203,9 @@ public class GameMap {
 				d_countries.remove(l_i);
 				d_countryCount--;
 				break;
+			}
+			else{
+				removeNeighbor(d_countries.get(l_i).getCountryId(), p_countryId);;
 			}
 		}
 	}
