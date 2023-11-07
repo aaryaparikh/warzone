@@ -6,7 +6,7 @@ import Models.Player;
 
 /**
  * Players can airlift reinforcements to another country.
- * 
+ *
  * @author YURUI
  */
 public class AirliftOrder extends Order {
@@ -17,7 +17,7 @@ public class AirliftOrder extends Order {
 
 	/**
 	 * Constructor to airlift order
-	 * 
+	 *
 	 * @param p_player        player who is committing airlift command
 	 * @param p_sourceCountry country from which the reinforcements are to be taken
 	 * @param p_targetCountry country to which reinforcements are to be taken
@@ -32,7 +32,7 @@ public class AirliftOrder extends Order {
 
 	/**
 	 * Method to execute airlift command
-	 * 
+	 *
 	 * @param p_game gets the object of GameEngine class
 	 * @return string according to the executed order
 	 */
@@ -73,5 +73,14 @@ public class AirliftOrder extends Order {
 	@Override
 	public String getOrderType() {
 		return "Airlift";
+	}
+
+	/**
+	 * Return d_armies for testing purpose
+	 *
+	 * @return d_armies
+	 */
+	public int getD_armies() {
+		return d_armies;
 	}
 }
