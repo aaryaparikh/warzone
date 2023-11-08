@@ -11,6 +11,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import Models.Continent;
+import Models.Country;
+import Models.GameMap;
+
 /**
  * JUnit 5 test class for GameMap class.
  *

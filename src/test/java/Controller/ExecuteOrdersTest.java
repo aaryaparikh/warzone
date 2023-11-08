@@ -4,9 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import Models.Player;
-import Models.Orders.DeployOrder;
 import Models.*;
+import Models.Orders.DeployOrder;
 import Utils.MapCommandHandler;
 
 import java.util.ArrayList;
