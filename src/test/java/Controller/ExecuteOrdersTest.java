@@ -6,9 +6,8 @@ import org.mockito.Mockito;
 
 import Models.Player;
 import Models.Orders.DeployOrder;
+import Utils.PlayerCommandHandler;
 import Models.*;
-import Utils.MapCommandHandler;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +19,6 @@ import java.util.List;
 public class ExecuteOrdersTest {
 
  	private GameEngine d_gameEngine;
-	private MapCommandHandler d_commandHandler;
 	private GameMap d_gameMap;
 
 	/**
@@ -34,7 +32,7 @@ public class ExecuteOrdersTest {
 		d_gameMap.addCountry(1, 1);
 
 		d_gameEngine = new GameEngine(d_gameMap);
-		d_commandHandler = Mockito.mock(MapCommandHandler.class);
+		Mockito.mock(PlayerCommandHandler.class);
 	}
 
 	/**
