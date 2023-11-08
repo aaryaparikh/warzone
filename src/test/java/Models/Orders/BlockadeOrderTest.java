@@ -87,6 +87,9 @@ class BlockadeOrderTest {
 		d_p2 = null;
 	}
 
+	/**
+	 * Checks whether Blockade returns valid String
+	 */
 	@Test
 	public void shouldReturnValidString_For_Blockade() {
 		// given
@@ -108,8 +111,11 @@ class BlockadeOrderTest {
 		assertEquals(l_expected, returned);
 	}
 
+	/**
+	 * Checks integrity of the owner being set to null
+	 */
 	@Test
-	public void shouldMaintainIntigrity_Of_Blockade() {
+	public void shouldMaintainIntegrity_Of_Blockade() {
 		// given
 		String l_expected = null;
 
@@ -117,9 +123,6 @@ class BlockadeOrderTest {
 		Country l_source = getSource();
 		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());
 		d_depOrder.execute(d_gameEngine);
-
-		d_p1.getD_countries().stream().forEach(ele -> System.out.println(ele.getCountryId()));
-		d_p1.getD_countries().stream().forEach(ele -> System.out.println(ele.getArmies()));
 
 		// then
 		d_blockeOrder = new BlockadeOrder(d_p1, l_source);
