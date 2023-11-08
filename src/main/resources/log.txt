@@ -510,3 +510,7 @@
 2023/11/07 13:46:36>> Add country "3" to continent "3". 
 2023/11/07 13:46:42>> Add neighbor between "2" and "3". 
 2023/11/07 13:46:55>> Remove continent "3". 
+2023/11/08 13:01:21>> 
+
+2023/11/08 13:01:21>> Game Start
+2023/11/08 13:01:21>> Enter Edit Map Phase
