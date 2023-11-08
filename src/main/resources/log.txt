@@ -582,3 +582,52 @@
  as the attacking armies could not defeat all the armies in target country
 2023/11/07 16:28:57>> Add one "negotiate" card to Player "Yurui"
 2023/11/07 16:28:57>> Enter Game Issue Order Phase
+2023/11/08 17:59:54>> 
+
+2023/11/08 17:59:54>> Game Start
+2023/11/08 17:59:54>> Enter Edit Map Phase
+2023/11/08 18:06:45>> 
+
+2023/11/08 18:06:45>> Game Start
+2023/11/08 18:06:45>> Enter Edit Map Phase
+2023/11/08 18:06:59>> Enter Game Start Up Phase
+2023/11/08 18:07:31>> 
+
+2023/11/08 18:07:31>> Game Start
+2023/11/08 18:07:31>> Enter Edit Map Phase
+2023/11/08 18:07:49>> 
+
+2023/11/08 18:07:49>> Game Start
+2023/11/08 18:07:49>> Enter Edit Map Phase
+2023/11/08 18:08:13>> 
+
+2023/11/08 18:08:13>> Game Start
+2023/11/08 18:08:13>> Enter Edit Map Phase
+2023/11/08 18:09:29>> Enter Game Start Up Phase
+2023/11/08 18:09:30>> Enter Game Issue Order Phase
+2023/11/08 18:09:31>> Game is ended by Player "Aarya".
+2023/11/08 18:09:31>> Enter Game End
+2023/11/08 18:13:54>> 
+
+2023/11/08 18:13:54>> Game Start
+2023/11/08 18:13:54>> Enter Edit Map Phase
+2023/11/08 18:14:41>> 
+
+2023/11/08 18:14:41>> Game Start
+2023/11/08 18:14:41>> Enter Edit Map Phase
+2023/11/08 18:23:11>> 
+
+2023/11/08 18:23:11>> Game Start
+2023/11/08 18:23:11>> Enter Edit Map Phase
+2023/11/08 18:25:07>> 
+
+2023/11/08 18:25:07>> Game Start
+2023/11/08 18:25:07>> Enter Edit Map Phase
+2023/11/08 18:41:35>> 
+
+2023/11/08 18:41:35>> Game Start
+2023/11/08 18:41:35>> Enter Edit Map Phase
+2023/11/08 18:41:37>> Enter Game Start Up Phase
+2023/11/08 18:41:38>> Enter Game Issue Order Phase
+2023/11/08 18:41:40>> Game is ended by Player "Aarya".
+2023/11/08 18:41:40>> Enter Game End

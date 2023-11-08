@@ -188,7 +188,7 @@ public class EndGamePhase extends Phase {
 	 */
 	@Override
 	public String end(String[] p_commands, Player p_currentPlayer) {
-		printInvalidCommandMessage();
+		d_gameEngine.setPhase(null);
 		return null;
 	}
 }
