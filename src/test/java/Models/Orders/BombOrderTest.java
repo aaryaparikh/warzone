@@ -1,6 +1,5 @@
 package Models.Orders;
 
-import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.AfterEach;
@@ -12,12 +11,7 @@ import Models.Country;
 import Models.GameMap;
 import Models.Player;
 
-/**
- * JUnit 5 test class for BlockadeOrder class.
- *
- * @author Dev
- */
-class BlockadeOrderTest {
+public class BombOrderTest {
 
 	public void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
@@ -35,7 +29,7 @@ class BlockadeOrderTest {
 
 	public DeployOrder d_depOrder;
 	public AdvanceOrder d_advOrder;
-	public BlockadeOrder d_blockeOrder;
+	public BombOrder d_bombOrder;
 	public GameMap d_map;
 	public GameEngine d_gameEngine;
 	public Player d_p1;
@@ -88,46 +82,60 @@ class BlockadeOrderTest {
 	}
 
 	/**
-	 * Checks whether Blockade returns valid String
+	 * Checks whether player can bomb on his own country
 	 */
 	@Test
-	public void shouldReturnValidString_For_Blockade() {
+	public void shouldReturnCantBomb() {
 		// given
-		String l_expected = null;
+		String l_expected = "Player \"" + d_p1.getName() + "\" control target country \"" + getSource().getCountryId()
+				+ "\", can't bomb.";
 
 		// when
 		Country l_source = getSource();
 		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());
 		d_depOrder.execute(d_gameEngine);
 
-		d_p1.getD_countries().stream().forEach(ele -> System.out.println(ele.getCountryId()));
-		d_p1.getD_countries().stream().forEach(ele -> System.out.println(ele.getArmies()));
-		// then
-		d_blockeOrder = new BlockadeOrder(d_p1, l_source);
-		String returned = d_blockeOrder.execute(d_gameEngine);
-		l_expected = "Player \"" + d_p1.getName() + "\" blockade country \"" + l_source.getCountryId() + "\", it has \""
-				+ l_source.getArmies() + "\" armies and become neutral.";
-
-		assertEquals(l_expected, returned);
+		d_bombOrder = new BombOrder(d_p1, l_source);
+		assertEquals(l_expected, d_bombOrder.execute(d_gameEngine));
 	}
 
 	/**
-	 * Checks integrity of the owner being set to null
+	 * should bomb the target country
 	 */
-	@Test
-	public void shouldMaintainIntegrity_Of_Blockade() {
-		// given
-		String l_expected = null;
-
-		// when
-		Country l_source = getSource();
-		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());
-		d_depOrder.execute(d_gameEngine);
-
-		// then
-		d_blockeOrder = new BlockadeOrder(d_p1, l_source);
-		d_blockeOrder.execute(d_gameEngine);
-
-		assertNull(l_source.getOwner());
-	}
+//	@Test
+//	public void test() {
+//		String l_expected = "";
+//		Country l_source = getSource();
+//		Country l_target = getInvalidSource();
+//
+//		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());
+//		d_depOrder.execute(d_gameEngine);
+//
+//		d_depOrder = new DeployOrder(d_p2, getInvalidSource(), d_p2.getD_reinforcementPool());
+//		d_depOrder.execute(d_gameEngine);
+//
+//		if (d_p1.getD_countries().get(0).getNeighborCountries().contains(l_target.getCountryId())) {
+//			int l_remaining = l_target.getArmies() - l_target.getArmies() / 2;
+//			l_expected = "Player \"" + d_p1.getName() + "\" bombed country \"" + l_target.getCountryId() + "\", kill \""
+//					+ l_remaining + "\" armies.";
+//			d_bombOrder = new BombOrder(d_p1, l_target);
+//			System.out.println(d_p1.getD_countries().get(0).getNeighborCountries());
+//			System.out.println(l_target.getCountryId());
+//
+//			String l_returned = d_bombOrder.execute(d_gameEngine);
+//			System.out.println(l_returned);
+//			System.out.println(l_expected);
+//			System.out.println("if");
+//			assertEquals(l_expected, l_returned);
+//		} else {
+//			l_expected = "Player \"" + d_p1.getName() + "\" is not adjacent to target country \""
+//					+ l_target.getCountryId() + "\", can't bomb.";
+//			d_bombOrder = new BombOrder(d_p1, l_target);
+//			String l_returned = d_bombOrder.execute(d_gameEngine);
+//			System.out.println(l_returned);
+//			System.out.println(l_expected);
+//			System.out.println("else");
+//			assertEquals(l_expected, l_returned);
+//		}
+//	}
 }

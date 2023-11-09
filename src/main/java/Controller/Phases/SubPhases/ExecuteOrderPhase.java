@@ -10,7 +10,6 @@ import Models.Player;
  * executed by players. This phase allows for the execution of orders, and
  * invalid commands result in "Invalid command" messages.
  *
- * @param p_gameEngine The GameEngine instance that manages the game.
  */
 public class ExecuteOrderPhase extends PlayMainPhase {
 

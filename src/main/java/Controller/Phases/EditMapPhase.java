@@ -5,6 +5,12 @@ import Controller.Phases.SubPhases.PlaySetupPhase;
 import Models.Player;
 import Utils.MapCommandHandler;
 
+/**
+ * The `EditMapPhase` class represents a phase in a game where players can edit
+ * the game map. This phase allows various map editing commands, such as adding
+ * continents, countries, and neighbors. It is responsible for handling
+ * map-related operations during the game setup.
+ */
 public class EditMapPhase extends Phase {
 	private MapCommandHandler d_mapCommandHandler;
 

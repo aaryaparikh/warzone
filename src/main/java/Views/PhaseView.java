@@ -53,7 +53,7 @@ public class PhaseView {
 			d_gameEngine.getD_logEntryBuffer().setString("Enter Game Execute Order Phase");
 			break;
 		case "end":
-			System.out.println("\n<<EndPhase>><TBD>");
+			System.out.println("\n<<EndPhase>><end>");
 			d_gameEngine.getD_logEntryBuffer().setString("Enter Game End");
 			break;
 		default:

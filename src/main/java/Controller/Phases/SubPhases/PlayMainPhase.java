@@ -11,7 +11,6 @@ import Utils.PlayerCommandHandler;
  * includes a player command handler for handling player commands related to
  * game play actions.
  *
- * @param p_gameEngine The GameEngine instance that manages the game.
  */
 public abstract class PlayMainPhase extends PlayGamePhase {
 

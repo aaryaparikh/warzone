@@ -9,7 +9,6 @@ import Models.Player;
  * editing and gameplay commands result in an "Invalid command" message during
  * this phase.
  *
- * @param p_gameEngine The GameEngine instance that manages the game.
  */
 public class EndGamePhase extends Phase {
 

@@ -160,8 +160,8 @@ public class Player {
 	/**
 	 * Adds a player to the list of players negotiated with by this player.
 	 *
-	 * @param p_negotiatedPlayer The player to add to the list of negotiated
-	 *                           players.
+	 * @param p_negotiatedPlayers The player to add to the list of negotiated
+	 *                            players.
 	 */
 	public void addNegotiatedPlayers(Player p_negotiatedPlayers) {
 		this.d_negotiatedPlayers.add(p_negotiatedPlayers);
@@ -170,8 +170,8 @@ public class Player {
 	/**
 	 * Removes a player from the list of players negotiated with by this player.
 	 *
-	 * @param p_negotiatedPlayer The player to remove from the list of negotiated
-	 *                           players.
+	 * @param p_negotiatedPlayers The player to remove from the list of negotiated
+	 *                            players.
 	 */
 	public void removeNegotiatedPlayers(Player p_negotiatedPlayers) {
 		this.d_negotiatedPlayers.remove(p_negotiatedPlayers);
@@ -182,7 +182,6 @@ public class Player {
 	 */
 	public void resetNegotiatedPlayers() {
 		this.d_negotiatedPlayers.clear();
-		;
 	}
 
 	/**
@@ -267,6 +266,8 @@ public class Player {
 	}
 
 	/**
+	 * Gets whether this player signified
+	 * 
 	 * @return the d_ifSignified
 	 */
 	public Boolean getIfSignified() {
@@ -274,6 +275,8 @@ public class Player {
 	}
 
 	/**
+	 * Sets whether this player signified
+	 * 
 	 * @param d_ifSignified the d_ifSignified to set
 	 */
 	public void setIfSignified(Boolean d_ifSignified) {
