@@ -24,39 +24,34 @@ public class InvalidMapTest {
 	private String d_testfileName = "temp.txt";
 	private List<Continent> d_continents;
 	private List<Country> d_countries;
-	
+
 	/**
 	 * Reading the map file from the system
 	 */
 	@BeforeEach
-	public void readMap()
-	{
+	public void readMap() {
 		d_testMapFile = new File("src/main/resources/" + d_testfileName + ".txt");
 	}
-	
+
 	/**
-	 * Reading the contents of the file and creating a map and checking wether it is valid or not
+	 * Reading the contents of the file and creating a map and checking wether it is
+	 * valid or not
 	 */
 	@Test
-	public void isInvalidMap() 
-	{
+	public void isInvalidMap() {
 		String l_text = "";
 		@SuppressWarnings("resource")
 		Scanner l_reader = new Scanner(System.in);
-		try 
-		{
+		try {
 			l_reader = new Scanner(d_testMapFile);
+		} catch (FileNotFoundException e) {
+
 		}
-		catch(FileNotFoundException e)
-		{
-			
-		}
-		while (l_reader.hasNextLine()) 
-		{
+		while (l_reader.hasNextLine()) {
 			l_text += l_reader.nextLine();
 			l_text += "\n";
 		}
-		
+
 		GameMap l_map = new GameMap();
 
 		// Read map information form the file
@@ -81,20 +76,20 @@ public class InvalidMapTest {
 				l_map.addNeighbor(l_countryId, l_neighbor);
 			}
 		}
-		
+
 		d_countries = l_map.getCountries();
 		d_continents = l_map.getContinents();
-		
+
 		assertTrue(validateMap());
-		
+
 	}
-	
+
 	/**
 	 * Method to check wether the map is valid or not
+	 * 
 	 * @return boolean Wether the map is valid or not
 	 */
-	public boolean validateMap()
-	{
+	public boolean validateMap() {
 		HashMap<Integer, Integer> l_counter = new HashMap<>();
 
 		// Step 0: Check for empty map
@@ -203,4 +198,3 @@ public class InvalidMapTest {
 		return true;
 	}
 }
-

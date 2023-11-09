@@ -31,7 +31,7 @@ public class ReinforcementArmiesTest {
 	private GameEngine d_gameEngine;
 	private DeployOrder d_deployOrder;
 	private AdvanceOrder d_advanceOrder;
-	
+
 	/**
 	 * created default Map
 	 *
@@ -61,7 +61,7 @@ public class ReinforcementArmiesTest {
 		p_gameMap.addNeighbor(5, 3);
 		p_gameMap.addNeighbor(5, 4);
 	}
-	
+
 	/**
 	 * sets up some objects and initialize it with some predefined values
 	 */
@@ -80,7 +80,6 @@ public class ReinforcementArmiesTest {
 		d_gameEngine.assignReinforcements();
 	}
 
-	
 	public Country getSource(Player p_player, int index) {
 		return p_player.getD_countries().get(index);
 	}
@@ -163,28 +162,24 @@ public class ReinforcementArmiesTest {
 		assertEquals(l_totalArmies, l_returnedArmies);
 	}
 
-	
 	// To be completed
-	
-	
-	/*
-	@Test
-	public void checkIntegrityAfterAdvance() {
-//		deploy();
-//
-//		System.out.println(d_p1.getD_reinforcementPool() + "" + getSource(d_p1, 0).getArmies());
-//		System.out.println(d_p2.getD_reinforcementPool() + "" + getSource(d_p2, 0).getArmies());
-//
-//		System.out.println(d_p1.getD_countries().get(0).getNeighborCountries());
-//		System.out.println(d_p2.getD_countries().get(0).getNeighborCountries());
-//		System.out.println(d_p3.getD_countries().get(0).getNeighborCountries());
-//		if (d_p1.getD_countries().get(0).getNeighborCountries().size() > 1) {
-//			advance(d_p1, getSource(d_p1, 0), getNeighbor(d_p1.getD_countries().get(0).getNeighborCountries().get(0)),
-//					d_p1.getD_reinforcementPool());
-//		}
 
-//		System.out.println(d_p1.getD_reinforcementPool() + "" + getSource(d_p1, 0).getArmies());
-//		System.out.println(d_p2.getD_reinforcementPool() + "" + getSource(d_p2, 0).getArmies());
-	}*/
+	/*
+	 * @Test public void checkIntegrityAfterAdvance() { // deploy(); // //
+	 * System.out.println(d_p1.getD_reinforcementPool() + "" + getSource(d_p1,
+	 * 0).getArmies()); // System.out.println(d_p2.getD_reinforcementPool() + "" +
+	 * getSource(d_p2, 0).getArmies()); // //
+	 * System.out.println(d_p1.getD_countries().get(0).getNeighborCountries()); //
+	 * System.out.println(d_p2.getD_countries().get(0).getNeighborCountries()); //
+	 * System.out.println(d_p3.getD_countries().get(0).getNeighborCountries()); //
+	 * if (d_p1.getD_countries().get(0).getNeighborCountries().size() > 1) { //
+	 * advance(d_p1, getSource(d_p1, 0),
+	 * getNeighbor(d_p1.getD_countries().get(0).getNeighborCountries().get(0)), //
+	 * d_p1.getD_reinforcementPool()); // }
+	 * 
+	 * // System.out.println(d_p1.getD_reinforcementPool() + "" + getSource(d_p1,
+	 * 0).getArmies()); // System.out.println(d_p2.getD_reinforcementPool() + "" +
+	 * getSource(d_p2, 0).getArmies()); }
+	 */
 
 }
