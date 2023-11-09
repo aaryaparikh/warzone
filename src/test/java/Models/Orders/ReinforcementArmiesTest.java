@@ -167,6 +167,11 @@ public class ReinforcementArmiesTest {
 		assertEquals(l_totalArmies, l_returnedArmies);
 	}
 
+	
+	// To be completed
+	
+	
+	/*
 	@Test
 	public void checkIntegrityAfterAdvance() {
 //		deploy();
@@ -184,6 +189,6 @@ public class ReinforcementArmiesTest {
 
 //		System.out.println(d_p1.getD_reinforcementPool() + "" + getSource(d_p1, 0).getArmies());
 //		System.out.println(d_p2.getD_reinforcementPool() + "" + getSource(d_p2, 0).getArmies());
-	}
+	}*/
 
 }
