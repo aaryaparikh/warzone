@@ -1,10 +1,5 @@
 package Controller;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import Models.*;
-
 import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayInputStream;
@@ -12,9 +7,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import Models.GameMap;
+
 /**
  * JUnit 5 test class for GameEngine class.
- * 
+ *
  * @author YURUI
  */
 public class GameEngineTest {
@@ -54,10 +55,10 @@ public class GameEngineTest {
 	@Test
 	public void testGameEngineIssueOrders() {
 		// Simulate user input
-		String simulatedInput = "next" + System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator()
+		String l_simulatedInput = "next" + System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator()
 				+ "assigncountries" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
 				+ System.lineSeparator() + "end" + System.lineSeparator();
-		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		this.d_gameEngine = new GameEngine(d_map);
 		d_gameEngine.start();
@@ -71,11 +72,11 @@ public class GameEngineTest {
 	@Test
 	public void testGameEngineExecuteOrders() {
 		// Simulate user input
-		String simulatedInput = "next" + System.lineSeparator() + "showmap" + System.lineSeparator()
+		String l_simulatedInput = "next" + System.lineSeparator() + "showmap" + System.lineSeparator()
 				+ "gameplayer -add Yurui" + System.lineSeparator() + "assigncountries" + System.lineSeparator() + "next"
 				+ System.lineSeparator() + "deploy 1 3" + System.lineSeparator() + "commit" + System.lineSeparator()
 				+ "end" + System.lineSeparator() + "end" + System.lineSeparator();
-		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		this.d_gameEngine = new GameEngine(d_map);
 		d_gameEngine.start();

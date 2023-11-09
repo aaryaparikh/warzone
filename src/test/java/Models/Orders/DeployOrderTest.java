@@ -18,11 +18,11 @@ import Models.Player;
  */
 public class DeployOrderTest {
 
-	private static DeployOrder d_depOrder;
-	private static GameMap d_map;
-	private static Player d_p1;
-	private static Player d_p2;
-	private static GameEngine d_gameEngine;
+	public DeployOrder d_depOrder;
+	public GameMap d_map;
+	public Player d_p1;
+	public Player d_p2;
+	public GameEngine d_gameEngine;
 
 	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);

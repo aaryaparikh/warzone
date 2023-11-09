@@ -1,17 +1,19 @@
 package DemoDriver;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
 import static org.junit.Assert.assertTrue;
+
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.io.ByteArrayOutputStream;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * JUnit 5 test class for Build2Demo driver.
- * 
+ *
  * @author YURUI
  */
 public class Build2DemoTest {
@@ -43,9 +45,9 @@ public class Build2DemoTest {
 	@Test
 	public void testDriverDemoStart() {
 		// Simulate user input
-		String simulatedInput = "next" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
+		String l_simulatedInput = "next" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
 				+ System.lineSeparator() + "end" + System.lineSeparator();
-		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		Build2Demo.main(null);
 
@@ -58,9 +60,9 @@ public class Build2DemoTest {
 	@Test
 	public void testDriverDemoShowmap() {
 		// Simulate user input
-		String simulatedInput = "next" + System.lineSeparator() + "showmap" + System.lineSeparator() + "next"
+		String l_simulatedInput = "next" + System.lineSeparator() + "showmap" + System.lineSeparator() + "next"
 				+ System.lineSeparator() + "end" + System.lineSeparator() + "end" + System.lineSeparator();
-		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		Build2Demo.main(null);
 
@@ -73,9 +75,9 @@ public class Build2DemoTest {
 	@Test
 	public void testDriverDemoEnd() {
 		// Simulate user input
-		String simulatedInput = "next" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
+		String l_simulatedInput = "next" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
 				+ System.lineSeparator() + "end" + System.lineSeparator();
-		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		Build2Demo.main(null);
 

@@ -84,6 +84,8 @@ class BlockadeOrderTest {
 		d_gameEngine = null;
 		d_p1 = null;
 		d_p2 = null;
+		d_blockeOrder = null;
+		d_depOrder = null;
 	}
 
 	/**

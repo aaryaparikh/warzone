@@ -1,9 +1,11 @@
 package Models.Orders;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import Controller.GameEngine;
 import Models.Country;
 import Models.GameMap;
@@ -98,6 +100,8 @@ public class AirliftOrderTest {
 		d_gameEngine = null;
 		d_p1 = null;
 		d_p2 = null;
+		d_airLift = null;
+		d_depOrder = null;
 	}
 
 	/**

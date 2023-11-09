@@ -65,6 +65,8 @@ public class AdvanceOrderTest {
 		d_map = null;
 		d_gameEngine = null;
 		d_p1 = null;
+		d_advOrder = null;
+		d_depOrder = null;
 	}
 
 	/**
