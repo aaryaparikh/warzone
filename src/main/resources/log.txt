@@ -570,3 +570,6 @@
 2023/11/08 21:02:38>> Player Virag is added.
 2023/11/08 21:02:38>> Player Virag is added.
 2023/11/08 21:02:38>> All countries are assigned to players
+2023/11/08 21:19:01>> Player Virag is added.
+2023/11/08 21:19:01>> Player Virag is added.
+2023/11/08 21:19:01>> All countries are assigned to players

@@ -52,7 +52,7 @@ public class StartupPhaseTest {
 	/**
 	 * Testing the game player add command functionality
 	 */
-	public void testGameplayerAdd()
+	public void shouldGameplayerAdd()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
 		d_gameEngine.setPhase(l_playsetupPhase);
@@ -65,7 +65,7 @@ public class StartupPhaseTest {
 	/**
 	 * Testing the assign countries command functionality
 	 */
-	public void testAssignCountries()
+	public void shouldAssignCountries()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
 		d_gameEngine.setPhase(l_playsetupPhase);
@@ -84,7 +84,7 @@ public class StartupPhaseTest {
 	/**
 	 * Testing the deploy command functionality
 	 */
-	public void testDeploy()
+	public void shouldDeploy()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
 		d_gameEngine.setPhase(l_playsetupPhase);
@@ -97,7 +97,7 @@ public class StartupPhaseTest {
 	/**
 	 * Testing the advance command functionality
 	 */
-	public void testAdvance()
+	public void shouldAdvance()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
 		d_gameEngine.setPhase(l_playsetupPhase);
@@ -110,7 +110,7 @@ public class StartupPhaseTest {
 	/**
 	 * Testing the bomb command functionality
 	 */
-	public void testBomb()
+	public void shouldBomb()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
 		d_gameEngine.setPhase(l_playsetupPhase);
@@ -123,7 +123,7 @@ public class StartupPhaseTest {
 	/**
 	 * Testing the blockade command functionality
 	 */
-	public void testBlockade()
+	public void shouldBlockade()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
 		d_gameEngine.setPhase(l_playsetupPhase);
@@ -136,7 +136,7 @@ public class StartupPhaseTest {
 	/**
 	 * Testing the airlift command functionality
 	 */
-	public void testAirlift()
+	public void shouldAirlift()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
 		d_gameEngine.setPhase(l_playsetupPhase);
@@ -149,7 +149,7 @@ public class StartupPhaseTest {
 	/**
 	 * Testing the Negotiate command functionality
 	 */
-	public void testNegotiate()
+	public void shouldNegotiate()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
 		d_gameEngine.setPhase(l_playsetupPhase);
@@ -162,7 +162,7 @@ public class StartupPhaseTest {
 	/**
 	 * Testing the game commit command functionality
 	 */
-	public void tesCommit()
+	public void shouldCommit()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
 		d_gameEngine.setPhase(l_playsetupPhase);
