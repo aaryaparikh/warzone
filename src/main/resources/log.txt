@@ -696,3 +696,60 @@
 2023/11/08 21:35:24>> Player Virag is added.
 2023/11/08 21:35:24>> Player Virag is added.
 2023/11/08 21:35:24>> All countries are assigned to players
+2023/11/08 21:40:51>> 
+
+2023/11/08 21:40:51>> Game Start
+2023/11/08 21:40:51>> Enter Edit Map Phase
+2023/11/08 21:40:51>> Enter Game Start Up Phase
+2023/11/08 21:40:51>> Player Yurui is added.
+2023/11/08 21:40:51>> All countries are assigned to players
+2023/11/08 21:40:51>> Enter Game Issue Order Phase
+2023/11/08 21:40:51>> Game is ended by Player "Yurui".
+2023/11/08 21:40:51>> Enter Game End
+2023/11/08 21:40:51>> 
+
+2023/11/08 21:40:51>> Game Start
+2023/11/08 21:40:51>> Enter Edit Map Phase
+2023/11/08 21:40:51>> Enter Game Start Up Phase
+2023/11/08 21:40:51>> Player Yurui is added.
+2023/11/08 21:40:51>> All countries are assigned to players
+2023/11/08 21:40:51>> Enter Game Issue Order Phase
+2023/11/08 21:40:51>> Game is ended by Player "Yurui".
+2023/11/08 21:40:51>> Enter Game End
+2023/11/08 21:40:51>> 
+
+2023/11/08 21:40:51>> Game Start
+2023/11/08 21:40:51>> Enter Edit Map Phase
+2023/11/08 21:40:51>> Enter Game Start Up Phase
+2023/11/08 21:40:51>> Player Yurui is added.
+2023/11/08 21:40:51>> All countries are assigned to players
+2023/11/08 21:40:51>> Enter Game Issue Order Phase
+2023/11/08 21:40:51>> Game is ended by Player "Yurui".
+2023/11/08 21:40:51>> Enter Game End
+2023/11/08 21:40:51>> 
+
+2023/11/08 21:40:51>> Game Start
+2023/11/08 21:40:51>> Enter Edit Map Phase
+2023/11/08 21:40:51>> Enter Game Start Up Phase
+2023/11/08 21:40:51>> Enter Game Issue Order Phase
+2023/11/08 21:40:51>> Game is ended by Player "Aarya".
+2023/11/08 21:40:51>> Enter Game End
+2023/11/08 21:40:51>> 
+
+2023/11/08 21:40:51>> Game Start
+2023/11/08 21:40:51>> Enter Edit Map Phase
+2023/11/08 21:40:51>> Enter Game Start Up Phase
+2023/11/08 21:40:51>> Enter Game Issue Order Phase
+2023/11/08 21:40:51>> Game is ended by Player "Aarya".
+2023/11/08 21:40:51>> Enter Game End
+2023/11/08 21:40:51>> 
+
+2023/11/08 21:40:51>> Game Start
+2023/11/08 21:40:51>> Enter Edit Map Phase
+2023/11/08 21:40:51>> Enter Game Start Up Phase
+2023/11/08 21:40:51>> Enter Game Issue Order Phase
+2023/11/08 21:40:51>> Game is ended by Player "Aarya".
+2023/11/08 21:40:51>> Enter Game End
+2023/11/08 21:40:51>> Player Virag is added.
+2023/11/08 21:40:51>> Player Virag is added.
+2023/11/08 21:40:51>> All countries are assigned to players
