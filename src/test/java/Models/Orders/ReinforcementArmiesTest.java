@@ -65,7 +65,10 @@ public class ReinforcementArmiesTest {
 		p_gameMap.addNeighbor(5, 3);
 		p_gameMap.addNeighbor(5, 4);
 	}
-
+	
+	/**
+	 * sets up some objects and initialize it with some predefined values
+	 */
 	@BeforeEach
 	public void setup() {
 		d_map = new GameMap();
@@ -81,6 +84,7 @@ public class ReinforcementArmiesTest {
 		d_gameEngine.assignReinforcements();
 	}
 
+	
 	public Country getSource(Player p_player, int index) {
 		return p_player.getD_countries().get(index);
 	}
@@ -104,10 +108,6 @@ public class ReinforcementArmiesTest {
 		else
 			return GameConstants.MINIMUN_PLAYER_REINFORCEMENT;
 	}
-
-//	public Country getNeighbor(int p_countryID) {
-//
-//	}
 
 	public void showInfo(Player p_player) {
 		p_player.getD_countries().stream().forEach(

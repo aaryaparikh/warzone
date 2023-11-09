@@ -16,16 +16,16 @@ import java.io.ByteArrayOutputStream;
  */
 public class Build2DemoTest {
 
-	private final InputStream originalSystemIn = System.in;
-	private final PrintStream originalSystemOut = System.out;
-	private final ByteArrayOutputStream systemOutContent = new ByteArrayOutputStream();
+	private final InputStream d_originalSystemIn = System.in;
+	private final PrintStream d_originalSystemOut = System.out;
+	private final ByteArrayOutputStream d_systemOutContent = new ByteArrayOutputStream();
 
 	/**
 	 * Set up output stream
 	 */
 	@BeforeEach
 	public void setUp() {
-		System.setOut(new PrintStream(systemOutContent));
+		System.setOut(new PrintStream(d_systemOutContent));
 	}
 
 	/**
@@ -33,8 +33,8 @@ public class Build2DemoTest {
 	 */
 	@AfterEach
 	public void tearDown() {
-		System.setIn(originalSystemIn);
-		System.setOut(originalSystemOut);
+		System.setIn(d_originalSystemIn);
+		System.setOut(d_originalSystemOut);
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class Build2DemoTest {
 
 		Build2Demo.main(null);
 
-		assertTrue(systemOutContent.toString().contains("<<Game Start>>"));
+		assertTrue(d_systemOutContent.toString().contains("<<Game Start>>"));
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class Build2DemoTest {
 
 		Build2Demo.main(null);
 
-		assertTrue(systemOutContent.toString().contains("[Map]"));
+		assertTrue(d_systemOutContent.toString().contains("[Map]"));
 	}
 
 	/**
@@ -79,6 +79,6 @@ public class Build2DemoTest {
 
 		Build2Demo.main(null);
 
-		assertTrue(systemOutContent.toString().contains("<<EndPhase>>"));
+		assertTrue(d_systemOutContent.toString().contains("<<EndPhase>>"));
 	}
 }

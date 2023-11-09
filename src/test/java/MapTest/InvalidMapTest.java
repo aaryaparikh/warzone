@@ -1,12 +1,5 @@
-
 package MapTest;
 
-/**
- * JUnit 5 test class for checking wether the map is invalid or not.
-
- *
- * @author Virag
- */
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +13,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+/**
+ * JUnit 5 test class for checking wether the map is invalid or not.
+ *
+ * @author Virag
+ */
 public class InvalidMapTest {
 
 	private File d_testMapFile;
@@ -43,6 +41,7 @@ public class InvalidMapTest {
 	public void isInvalidMap() 
 	{
 		String l_text = "";
+		@SuppressWarnings("resource")
 		Scanner l_reader = new Scanner(System.in);
 		try 
 		{

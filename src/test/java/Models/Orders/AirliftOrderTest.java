@@ -1,23 +1,21 @@
 package Models.Orders;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import Controller.GameEngine;
 import Models.Country;
 import Models.GameMap;
 import Models.Player;
 
-class AirliftOrderTest {
+/**
+ * JUnit 5 test class for AdvanceOrder class.
+ *
+ * @author Dev
+ */
+public class AirliftOrderTest {
 
-	/**
-	 * JUnit 5 test class for AdvanceOrder class.
-	 *
-	 * @author Dev
-	 */
 	public void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
@@ -65,8 +63,6 @@ class AirliftOrderTest {
 	 */
 	public Country getValidTarget(Country c1) {
 		Country l_targetCountry = getSourceForPlayer1();
-		int l_target = getSourceForPlayer1().getNeighborCountries().get(0);
-
 		for (Country c : d_gameEngine.getGameMap().getCountries()) {
 			if (c != c1 && c.getOwner() == d_p1) {
 				l_targetCountry = c;
@@ -110,7 +106,6 @@ class AirliftOrderTest {
 	@Test
 	void shouldReturnValidString_When_Airlifted() {
 		Country l_source1 = getSourceForPlayer1();
-		Country l_source2 = getSourceForPlayer2();
 		int l_armies = 4;
 		d_depOrder = new DeployOrder(d_p1, l_source1, d_p1.getD_reinforcementPool());
 		if (d_p1.getD_countries().size() > 1) {

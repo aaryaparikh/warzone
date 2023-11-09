@@ -8,9 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import Controller.GameEngine;
-import Models.Country;
-import Models.GameMap;
-import Models.Player;
 
 /**
  * JUnit 5 test class for Player class.

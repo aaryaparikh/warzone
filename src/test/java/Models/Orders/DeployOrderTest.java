@@ -10,7 +10,6 @@ import Controller.GameEngine;
 import Models.Country;
 import Models.GameMap;
 import Models.Player;
-import Utils.MapEditor;
 
 /**
  * JUnit 5 test class for DeployOrder class.
@@ -21,7 +20,6 @@ public class DeployOrderTest {
 
 	private static DeployOrder d_depOrder;
 	private static GameMap d_map;
-	private static MapEditor d_lmap;
 	private static Player d_p1;
 	private static Player d_p2;
 	private static GameEngine d_gameEngine;
@@ -80,7 +78,6 @@ public class DeployOrderTest {
 	 */
 	@AfterEach
 	public void tearDown() {
-		d_lmap = null;
 		d_map = null;
 		d_p1 = null;
 		d_p2 = null;

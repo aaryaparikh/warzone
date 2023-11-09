@@ -11,6 +11,11 @@ import Models.Country;
 import Models.GameMap;
 import Models.Player;
 
+/**
+ * JUnit 5 test class for Bomb class.
+ *
+ * @author Dev
+ */
 public class BombOrderTest {
 
 	public void defaultGameMap(GameMap p_gameMap) {
@@ -99,43 +104,4 @@ public class BombOrderTest {
 		assertEquals(l_expected, d_bombOrder.execute(d_gameEngine));
 	}
 
-	/**
-	 * should bomb the target country
-	 */
-//	@Test
-//	public void test() {
-//		String l_expected = "";
-//		Country l_source = getSource();
-//		Country l_target = getInvalidSource();
-//
-//		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());
-//		d_depOrder.execute(d_gameEngine);
-//
-//		d_depOrder = new DeployOrder(d_p2, getInvalidSource(), d_p2.getD_reinforcementPool());
-//		d_depOrder.execute(d_gameEngine);
-//
-//		if (d_p1.getD_countries().get(0).getNeighborCountries().contains(l_target.getCountryId())) {
-//			int l_remaining = l_target.getArmies() - l_target.getArmies() / 2;
-//			l_expected = "Player \"" + d_p1.getName() + "\" bombed country \"" + l_target.getCountryId() + "\", kill \""
-//					+ l_remaining + "\" armies.";
-//			d_bombOrder = new BombOrder(d_p1, l_target);
-//			System.out.println(d_p1.getD_countries().get(0).getNeighborCountries());
-//			System.out.println(l_target.getCountryId());
-//
-//			String l_returned = d_bombOrder.execute(d_gameEngine);
-//			System.out.println(l_returned);
-//			System.out.println(l_expected);
-//			System.out.println("if");
-//			assertEquals(l_expected, l_returned);
-//		} else {
-//			l_expected = "Player \"" + d_p1.getName() + "\" is not adjacent to target country \""
-//					+ l_target.getCountryId() + "\", can't bomb.";
-//			d_bombOrder = new BombOrder(d_p1, l_target);
-//			String l_returned = d_bombOrder.execute(d_gameEngine);
-//			System.out.println(l_returned);
-//			System.out.println(l_expected);
-//			System.out.println("else");
-//			assertEquals(l_expected, l_returned);
-//		}
-//	}
 }

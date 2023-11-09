@@ -36,11 +36,10 @@ public class StartupPhaseTest {
 		p_gameMap.addNeighbor(1, 7);
 	}
 	
-	
-	@BeforeEach
 	/**
 	 * Setup method to set the default map
 	 */
+	@BeforeEach
 	public void setup()
 	{
 		d_map = new GameMap();
@@ -48,10 +47,10 @@ public class StartupPhaseTest {
 		d_gameEngine = new GameEngine(d_map);
 	}
 	
-	@Test
 	/**
 	 * Testing the game player add command functionality
 	 */
+	@Test
 	public void shouldGameplayerAdd()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
@@ -61,10 +60,10 @@ public class StartupPhaseTest {
 		assertEquals(1, d_gameEngine.getPlayers().size());
 	}
 	
-	@Test
 	/**
 	 * Testing the assign countries command functionality
 	 */
+	@Test
 	public void shouldAssignCountries()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
@@ -80,10 +79,10 @@ public class StartupPhaseTest {
 		
 	}
 	
-	@Test
 	/**
 	 * Testing the deploy command functionality
 	 */
+	@Test
 	public void shouldDeploy()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
@@ -93,10 +92,10 @@ public class StartupPhaseTest {
 		
 	}
 	
-	@Test
 	/**
 	 * Testing the advance command functionality
 	 */
+	@Test
 	public void shouldAdvance()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
@@ -106,10 +105,10 @@ public class StartupPhaseTest {
 		
 	}
 	
-	@Test
 	/**
 	 * Testing the bomb command functionality
 	 */
+	@Test
 	public void shouldBomb()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
@@ -119,10 +118,10 @@ public class StartupPhaseTest {
 		
 	}
 	
-	@Test
 	/**
 	 * Testing the blockade command functionality
 	 */
+	@Test
 	public void shouldBlockade()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
@@ -131,11 +130,11 @@ public class StartupPhaseTest {
 		assertNull(l_playsetupPhase.blockade(l_commands, null));
 		
 	}
-	
-	@Test
+
 	/**
 	 * Testing the airlift command functionality
 	 */
+	@Test
 	public void shouldAirlift()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
@@ -144,11 +143,11 @@ public class StartupPhaseTest {
 		assertNull(l_playsetupPhase.airlift(l_commands, null));
 		
 	}
-	
-	@Test
+
 	/**
 	 * Testing the Negotiate command functionality
 	 */
+	@Test
 	public void shouldNegotiate()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
@@ -157,11 +156,11 @@ public class StartupPhaseTest {
 		assertNull(l_playsetupPhase.negotiate(l_commands, null));
 		
 	}
-	
-	@Test
+
 	/**
 	 * Testing the game commit command functionality
 	 */
+	@Test
 	public void shouldCommit()
 	{
 		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
@@ -170,7 +169,4 @@ public class StartupPhaseTest {
 		assertNull(l_playsetupPhase.commit(l_commands, null));
 		
 	}
-	
-	
-
 }

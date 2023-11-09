@@ -116,9 +116,6 @@ class BlockadeOrderTest {
 	 */
 	@Test
 	public void shouldMaintainIntegrity_Of_Blockade() {
-		// given
-		String l_expected = null;
-
 		// when
 		Country l_source = getSource();
 		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());

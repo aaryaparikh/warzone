@@ -11,13 +11,13 @@ import Models.Country;
 import Models.GameMap;
 import Models.Player;
 
-class DiplomacyOrderTest {
+/**
+ * JUnit 5 test class for BlockadeOrder class.
+ *
+ * @author Dev
+ */
+public class DiplomacyOrderTest {
 
-	/**
-	 * JUnit 5 test class for BlockadeOrder class.
-	 *
-	 * @author Dev
-	 */
 	public void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);

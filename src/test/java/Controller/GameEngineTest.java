@@ -19,9 +19,9 @@ import java.io.PrintStream;
  */
 public class GameEngineTest {
 
-	private final InputStream originalSystemIn = System.in;
-	private final PrintStream originalSystemOut = System.out;
-	private final ByteArrayOutputStream systemOutContent = new ByteArrayOutputStream();
+	private final InputStream d_originalSystemIn = System.in;
+	private final PrintStream d_originalSystemOut = System.out;
+	private final ByteArrayOutputStream d_systemOutContent = new ByteArrayOutputStream();
 	private GameEngine d_gameEngine;
 	private GameMap d_map;
 
@@ -30,7 +30,7 @@ public class GameEngineTest {
 	 */
 	@BeforeEach
 	public void setUp() {
-		System.setOut(new PrintStream(systemOutContent));
+		System.setOut(new PrintStream(d_systemOutContent));
 		this.d_map = new GameMap();
 		d_map.addContinent(1, 3);
 		d_map.addCountry(1, 1);
@@ -44,8 +44,8 @@ public class GameEngineTest {
 	 */
 	@AfterEach
 	public void tearDown() {
-		System.setIn(originalSystemIn);
-		System.setOut(originalSystemOut);
+		System.setIn(d_originalSystemIn);
+		System.setOut(d_originalSystemOut);
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class GameEngineTest {
 		this.d_gameEngine = new GameEngine(d_map);
 		d_gameEngine.start();
 
-		assertTrue(systemOutContent.toString().contains("Yurui's turn"));
+		assertTrue(d_systemOutContent.toString().contains("Yurui's turn"));
 	}
 
 	/**
@@ -80,7 +80,7 @@ public class GameEngineTest {
 		this.d_gameEngine = new GameEngine(d_map);
 		d_gameEngine.start();
 
-		assertTrue(systemOutContent.toString()
+		assertTrue(d_systemOutContent.toString()
 				.contains("Player \"Yurui\" deployed \"3\" armies to country \"1\"\r\n" + ""));
 	}
 
@@ -99,7 +99,7 @@ public class GameEngineTest {
 		this.d_gameEngine = new GameEngine(d_map);
 		d_gameEngine.start();
 
-		assertTrue(systemOutContent.toString()
+		assertTrue(d_systemOutContent.toString()
 				.contains("	[Continents]\r\n" + "	Id	Value\r\n" + "	1	3\r\n" + "	2	5"));
 	}
 }
