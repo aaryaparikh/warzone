@@ -15,7 +15,6 @@ import Models.Continent;
 import Models.Country;
 import Models.GameMap;
 import Models.Player;
-import Utils.MapEditor;
 
 /**
  * JUnit 5 test class for calculating reinforcement integrity.
@@ -31,6 +30,10 @@ public class ReinforcementArmiesTest {
 	private GameEngine d_gameEngine;
 	private DeployOrder d_deployOrder;
 	private AdvanceOrder d_advanceOrder;
+	private AirliftOrder d_airLiftOrder;
+	private BlockadeOrder d_blockadeOrder;
+	private BombOrder d_bombOrder;
+	private DiplomacyOrder d_diplomacyOrder;
 
 	/**
 	 * created default Map
@@ -114,33 +117,77 @@ public class ReinforcementArmiesTest {
 		d_deployOrder.execute(d_gameEngine);
 	}
 
+	/**
+	 * Runs Deploy Order
+	 */
 	public void deploy() {
 		deploy(d_p1, d_p1.getD_countries().get(0), d_p1.getD_reinforcementPool());
 		deploy(d_p2, d_p2.getD_countries().get(0), d_p2.getD_reinforcementPool());
 		deploy(d_p3, d_p3.getD_countries().get(0), d_p3.getD_reinforcementPool());
 	}
 
+	/**
+	 * Runs Advance Order
+	 *
+	 * @param p_player
+	 * @param p_sourceCountry
+	 * @param p_targetCountry
+	 * @param p_armies
+	 */
 	public void advance(Player p_player, Country p_sourceCountry, Country p_targetCountry, int p_armies) {
 		d_advanceOrder = new AdvanceOrder(p_player, p_sourceCountry, p_targetCountry, p_armies);
 		System.out.println(d_advanceOrder.execute(d_gameEngine));
 	}
 
+	/**
+	 * Runs Airlift Order
+	 *
+	 * @param p_player
+	 * @param p_sourceCountry
+	 * @param p_targetCountry
+	 * @param p_armies
+	 */
 	public void airlift(Player p_player, Country p_sourceCountry, Country p_targetCountry, int p_armies) {
-
+		d_airLiftOrder = new AirliftOrder(p_player, p_sourceCountry, p_targetCountry, p_armies);
+		d_airLiftOrder.execute(d_gameEngine);
 	}
 
+	/**
+	 * Runs Blockade Order
+	 *
+	 * @param p_player
+	 * @param p_targetCountry
+	 */
 	public void blockade(Player p_player, Country p_targetCountry) {
-
+		d_blockadeOrder = new BlockadeOrder(p_player, p_targetCountry);
+		d_blockadeOrder.execute(d_gameEngine);
 	}
 
+	/**
+	 * Runs Bomb Order
+	 *
+	 * @param p_player
+	 * @param p_targetCountry
+	 */
 	public void bomb(Player p_player, Country p_targetCountry) {
-
+		d_bombOrder = new BombOrder(p_player, p_targetCountry);
+		d_bombOrder.execute(d_gameEngine);
 	}
 
+	/**
+	 * Runs Diplomacy Order
+	 *
+	 * @param p_player
+	 * @param p_targetPlayer
+	 */
 	public void negotiate(Player p_player, Player p_targetPlayer) {
-
+		d_diplomacyOrder = new DiplomacyOrder(p_player, p_targetPlayer);
+		d_diplomacyOrder.execute(d_gameEngine);
 	}
 
+	/**
+	 * Checks reinforcement of PLayers
+	 */
 	@Test
 	public void CheckReinforcementOfPlayers() {
 		assertAll(() -> assertEquals(getExpectedReinforcementValue(d_p1), d_p1.getD_reinforcementPool()),
@@ -148,6 +195,9 @@ public class ReinforcementArmiesTest {
 				() -> assertEquals(getExpectedReinforcementValue(d_p3), d_p3.getD_reinforcementPool()));
 	}
 
+	/**
+	 * Checks the integrity after Deploy
+	 */
 	@Test
 	public void checkIntegretyAfterDeploy() {
 
@@ -161,25 +211,4 @@ public class ReinforcementArmiesTest {
 
 		assertEquals(l_totalArmies, l_returnedArmies);
 	}
-
-	// To be completed
-
-	/*
-	 * @Test public void checkIntegrityAfterAdvance() { // deploy(); // //
-	 * System.out.println(d_p1.getD_reinforcementPool() + "" + getSource(d_p1,
-	 * 0).getArmies()); // System.out.println(d_p2.getD_reinforcementPool() + "" +
-	 * getSource(d_p2, 0).getArmies()); // //
-	 * System.out.println(d_p1.getD_countries().get(0).getNeighborCountries()); //
-	 * System.out.println(d_p2.getD_countries().get(0).getNeighborCountries()); //
-	 * System.out.println(d_p3.getD_countries().get(0).getNeighborCountries()); //
-	 * if (d_p1.getD_countries().get(0).getNeighborCountries().size() > 1) { //
-	 * advance(d_p1, getSource(d_p1, 0),
-	 * getNeighbor(d_p1.getD_countries().get(0).getNeighborCountries().get(0)), //
-	 * d_p1.getD_reinforcementPool()); // }
-	 * 
-	 * // System.out.println(d_p1.getD_reinforcementPool() + "" + getSource(d_p1,
-	 * 0).getArmies()); // System.out.println(d_p2.getD_reinforcementPool() + "" +
-	 * getSource(d_p2, 0).getArmies()); }
-	 */
-
 }
