@@ -83,4 +83,23 @@ public class GameEngineTest {
 		assertTrue(systemOutContent.toString()
 				.contains("Player \"Yurui\" deployed \"3\" armies to country \"1\"\r\n" + ""));
 	}
+
+	/**
+	 * Test Map Service perform the same when refactoring.
+	 */
+	@Test
+	public void testMapService() {
+		// Simulate user input
+		String simulatedInput = "editmap temp" + System.lineSeparator() + "showmap" + System.lineSeparator() + "next"
+				+ System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator() + "assigncountries"
+				+ System.lineSeparator() + "next" + System.lineSeparator() + "end" + System.lineSeparator() + "end"
+				+ System.lineSeparator();
+		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+
+		this.d_gameEngine = new GameEngine(d_map);
+		d_gameEngine.start();
+
+		assertTrue(systemOutContent.toString()
+				.contains("	[Continents]\r\n" + "	Id	Value\r\n" + "	1	3\r\n" + "	2	5"));
+	}
 }
