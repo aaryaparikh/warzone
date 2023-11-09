@@ -4,9 +4,13 @@ import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
 /**
- * JUnit 5 Test Suite Class for running all the Test Cases of DemoDriver.
+ * This JUnit 5 TestSuite class encompasses tests for the DemoDriver package, specifically focusing on different builds.
+ * It includes test classes for Build1DemoTest and Build2DemoTest.
  *
- * @author Yurui
+ * Usage:
+ * To execute all the demo driver tests, run this class as a JUnit test.
+ *
+ * @author Virag
  */
 @Suite
 @SelectClasses({ Build1DemoTest.class, Build2DemoTest.class })

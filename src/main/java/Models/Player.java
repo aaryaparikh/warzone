@@ -41,10 +41,10 @@ public class Player {
 
 		// Initialize card owned list
 		this.d_cardsOwned = new HashMap<String, Integer>();
-		this.d_cardsOwned.put("bomb", 1);
-		this.d_cardsOwned.put("blockade", 1);
-		this.d_cardsOwned.put("airlift", 1);
-		this.d_cardsOwned.put("negotiate", 1);
+		this.d_cardsOwned.put("bomb", 0);
+		this.d_cardsOwned.put("blockade", 0);
+		this.d_cardsOwned.put("airlift", 0);
+		this.d_cardsOwned.put("negotiate", 0);
 	}
 
 	/**
@@ -231,6 +231,7 @@ public class Player {
 		this.d_cardsOwned.replace(l_cardType, this.d_cardsOwned.get(l_cardType) + 1);
 		d_gameEngine.getD_logEntryBuffer()
 				.setString("Add one \"" + l_cardType + "\" card to Player \"" + this.getName() + "\"");
+		System.out.println("Add one \"" + l_cardType + "\" card to Player \"" + this.getName() + "\"");
 	}
 
 	/**
