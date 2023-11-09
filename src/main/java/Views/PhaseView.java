@@ -36,7 +36,7 @@ public class PhaseView {
 		// different output for different phase
 		switch (p_phase) {
 		case "edit":
-			System.out.println("\n<<EditMapPhase>><end><showmap><savemap><editmap><validatemap>");
+			System.out.println("\n<<EditMapPhase>><next><showmap><savemap><editmap><validatemap>");
 			d_gameEngine.getD_logEntryBuffer().setString("Enter Edit Map Phase");
 			break;
 		case "start":
