@@ -631,3 +631,224 @@
 2023/11/08 18:41:38>> Enter Game Issue Order Phase
 2023/11/08 18:41:40>> Game is ended by Player "Aarya".
 2023/11/08 18:41:40>> Enter Game End
+2023/11/08 18:44:47>> 
+
+2023/11/08 18:44:47>> Game Start
+2023/11/08 18:44:47>> Enter Edit Map Phase
+2023/11/08 18:44:47>> Enter Game Start Up Phase
+2023/11/08 18:44:47>> Enter Game Issue Order Phase
+2023/11/08 18:45:05>> 
+
+2023/11/08 18:45:05>> Game Start
+2023/11/08 18:45:05>> Enter Edit Map Phase
+2023/11/08 18:45:05>> Enter Game Start Up Phase
+2023/11/08 18:45:05>> Enter Game Issue Order Phase
+2023/11/08 18:45:21>> 
+
+2023/11/08 18:45:21>> Game Start
+2023/11/08 18:45:21>> Enter Edit Map Phase
+2023/11/08 18:45:21>> Enter Game Start Up Phase
+2023/11/08 18:45:21>> Enter Game Issue Order Phase
+2023/11/08 18:45:35>> 
+
+2023/11/08 18:45:35>> Game Start
+2023/11/08 18:45:35>> Enter Edit Map Phase
+2023/11/08 18:46:04>> 
+
+2023/11/08 18:46:04>> Game Start
+2023/11/08 18:46:04>> Enter Edit Map Phase
+2023/11/08 18:46:42>> 
+
+2023/11/08 18:46:42>> Game Start
+2023/11/08 18:46:42>> Enter Edit Map Phase
+2023/11/08 18:46:49>> 
+
+2023/11/08 18:46:49>> Game Start
+2023/11/08 18:46:49>> Enter Edit Map Phase
+2023/11/08 18:46:49>> Enter Game Start Up Phase
+2023/11/08 18:46:49>> Enter Game Issue Order Phase
+2023/11/08 18:48:03>> 
+
+2023/11/08 18:48:03>> Game Start
+2023/11/08 18:48:03>> Enter Edit Map Phase
+2023/11/08 18:48:05>> Enter Game Start Up Phase
+2023/11/08 18:48:06>> Enter Game Issue Order Phase
+2023/11/08 18:48:08>> Game is ended by Player "Aarya".
+2023/11/08 18:48:08>> Enter Game End
+2023/11/08 18:48:32>> 
+
+2023/11/08 18:48:32>> Game Start
+2023/11/08 18:48:32>> Enter Edit Map Phase
+2023/11/08 18:48:32>> Enter Game Start Up Phase
+2023/11/08 18:48:32>> Enter Game Issue Order Phase
+2023/11/08 18:48:41>> 
+
+2023/11/08 18:48:41>> Game Start
+2023/11/08 18:48:41>> Enter Edit Map Phase
+2023/11/08 18:48:41>> Enter Game Start Up Phase
+2023/11/08 18:48:41>> Enter Game Issue Order Phase
+2023/11/08 18:49:03>> 
+
+2023/11/08 18:49:03>> Game Start
+2023/11/08 18:49:03>> Enter Edit Map Phase
+2023/11/08 18:49:06>> Enter Game Start Up Phase
+2023/11/08 18:49:07>> Enter Game Issue Order Phase
+2023/11/08 18:49:11>> 
+
+2023/11/08 18:49:11>> Game Start
+2023/11/08 18:49:11>> Enter Edit Map Phase
+2023/11/08 18:49:14>> Enter Game Start Up Phase
+2023/11/08 18:49:18>> Enter Game Issue Order Phase
+2023/11/08 18:49:37>> 
+
+2023/11/08 18:49:37>> Game Start
+2023/11/08 18:49:37>> Enter Edit Map Phase
+2023/11/08 18:49:43>> Enter Game Start Up Phase
+2023/11/08 18:49:59>> 
+
+2023/11/08 18:49:59>> Game Start
+2023/11/08 18:49:59>> Enter Edit Map Phase
+2023/11/08 18:49:59>> Enter Game Start Up Phase
+2023/11/08 18:49:59>> Enter Game Issue Order Phase
+2023/11/08 18:50:15>> 
+
+2023/11/08 18:50:15>> Game Start
+2023/11/08 18:50:15>> Enter Edit Map Phase
+2023/11/08 18:50:15>> Enter Game Start Up Phase
+2023/11/08 18:50:15>> Enter Game Issue Order Phase
+2023/11/08 18:50:44>> 
+
+2023/11/08 18:50:44>> Game Start
+2023/11/08 18:50:44>> Enter Edit Map Phase
+2023/11/08 18:51:09>> 
+
+2023/11/08 18:51:09>> Game Start
+2023/11/08 18:51:09>> Enter Edit Map Phase
+2023/11/08 18:51:09>> Enter Game Start Up Phase
+2023/11/08 18:51:09>> Enter Game Issue Order Phase
+2023/11/08 18:52:24>> 
+
+2023/11/08 18:52:24>> Game Start
+2023/11/08 18:52:24>> Enter Edit Map Phase
+2023/11/08 18:52:24>> Enter Game Start Up Phase
+2023/11/08 18:52:38>> 
+
+2023/11/08 18:52:38>> Game Start
+2023/11/08 18:52:38>> Enter Edit Map Phase
+2023/11/08 18:52:38>> Enter Game Start Up Phase
+2023/11/08 18:52:47>> 
+
+2023/11/08 18:52:47>> Game Start
+2023/11/08 18:52:47>> Enter Edit Map Phase
+2023/11/08 18:52:47>> Enter Game Start Up Phase
+2023/11/08 18:52:47>> Enter Game Issue Order Phase
+2023/11/08 18:56:39>> 
+
+2023/11/08 18:56:39>> Game Start
+2023/11/08 18:56:39>> Enter Edit Map Phase
+2023/11/08 18:56:39>> Enter Game Start Up Phase
+2023/11/08 18:56:39>> Enter Game Issue Order Phase
+2023/11/08 18:57:17>> 
+
+2023/11/08 18:57:17>> Game Start
+2023/11/08 18:57:17>> Enter Edit Map Phase
+2023/11/08 18:57:17>> Enter Game Start Up Phase
+2023/11/08 18:57:17>> Enter Game Issue Order Phase
+2023/11/08 18:57:51>> 
+
+2023/11/08 18:57:51>> Game Start
+2023/11/08 18:57:51>> Enter Edit Map Phase
+2023/11/08 18:57:51>> Enter Game Start Up Phase
+2023/11/08 18:57:51>> Enter Game Issue Order Phase
+2023/11/08 18:58:55>> 
+
+2023/11/08 18:58:55>> Game Start
+2023/11/08 18:58:55>> Enter Edit Map Phase
+2023/11/08 18:58:55>> Enter Game Start Up Phase
+2023/11/08 18:58:55>> Enter Game Issue Order Phase
+2023/11/08 18:59:18>> 
+
+2023/11/08 18:59:18>> Game Start
+2023/11/08 18:59:18>> Enter Edit Map Phase
+2023/11/08 18:59:18>> Enter Game Start Up Phase
+2023/11/08 18:59:18>> Enter Game Issue Order Phase
+2023/11/08 19:02:28>> 
+
+2023/11/08 19:02:28>> Game Start
+2023/11/08 19:02:28>> Enter Edit Map Phase
+2023/11/08 19:02:28>> Enter Game Start Up Phase
+2023/11/08 19:02:28>> Enter Game Issue Order Phase
+2023/11/08 19:02:28>> Game is ended by Player "Aarya".
+2023/11/08 19:02:28>> Enter Game End
+2023/11/08 19:02:47>> 
+
+2023/11/08 19:02:47>> Game Start
+2023/11/08 19:02:47>> Enter Edit Map Phase
+2023/11/08 19:02:47>> Enter Game Start Up Phase
+2023/11/08 19:02:47>> Enter Game Issue Order Phase
+2023/11/08 19:02:47>> Game is ended by Player "Aarya".
+2023/11/08 19:02:47>> Enter Game End
+2023/11/08 19:03:35>> 
+
+2023/11/08 19:03:35>> Game Start
+2023/11/08 19:03:35>> Enter Edit Map Phase
+2023/11/08 19:03:35>> Enter Game Start Up Phase
+2023/11/08 19:03:35>> Enter Game Issue Order Phase
+2023/11/08 19:03:35>> Game is ended by Player "Aarya".
+2023/11/08 19:03:35>> Enter Game End
+2023/11/08 19:05:55>> 
+
+2023/11/08 19:05:55>> Game Start
+2023/11/08 19:05:55>> Enter Edit Map Phase
+2023/11/08 19:05:55>> Enter Game Start Up Phase
+2023/11/08 19:05:55>> Enter Game Issue Order Phase
+2023/11/08 19:05:55>> Game is ended by Player "Aarya".
+2023/11/08 19:05:55>> Enter Game End
+2023/11/08 19:05:55>> 
+
+2023/11/08 19:05:55>> Game Start
+2023/11/08 19:05:55>> Enter Edit Map Phase
+2023/11/08 19:05:55>> Enter Game Start Up Phase
+2023/11/08 19:05:55>> Enter Game Issue Order Phase
+2023/11/08 19:05:55>> Game is ended by Player "Aarya".
+2023/11/08 19:05:55>> Enter Game End
+2023/11/08 19:05:55>> 
+
+2023/11/08 19:05:55>> Game Start
+2023/11/08 19:05:55>> Enter Edit Map Phase
+2023/11/08 19:05:55>> Enter Game Start Up Phase
+2023/11/08 19:05:55>> Enter Game Issue Order Phase
+2023/11/08 19:05:55>> Game is ended by Player "Aarya".
+2023/11/08 19:05:55>> Enter Game End
+2023/11/08 19:08:34>> 
+
+2023/11/08 19:08:34>> Game Start
+2023/11/08 19:08:34>> Enter Edit Map Phase
+2023/11/08 19:08:36>> Enter Game Start Up Phase
+2023/11/08 19:08:51>> Enter Game Issue Order Phase
+2023/11/08 19:08:52>> Game is ended by Player "Aarya".
+2023/11/08 19:08:52>> Enter Game End
+2023/11/08 19:09:08>> 
+
+2023/11/08 19:09:08>> Game Start
+2023/11/08 19:09:08>> Enter Edit Map Phase
+2023/11/08 19:09:08>> Enter Game Start Up Phase
+2023/11/08 19:09:08>> Enter Game Issue Order Phase
+2023/11/08 19:09:08>> Game is ended by Player "Aarya".
+2023/11/08 19:09:08>> Enter Game End
+2023/11/08 19:09:08>> 
+
+2023/11/08 19:09:08>> Game Start
+2023/11/08 19:09:08>> Enter Edit Map Phase
+2023/11/08 19:09:08>> Enter Game Start Up Phase
+2023/11/08 19:09:08>> Enter Game Issue Order Phase
+2023/11/08 19:09:08>> Game is ended by Player "Aarya".
+2023/11/08 19:09:08>> Enter Game End
+2023/11/08 19:09:08>> 
+
+2023/11/08 19:09:08>> Game Start
+2023/11/08 19:09:08>> Enter Edit Map Phase
+2023/11/08 19:09:08>> Enter Game Start Up Phase
+2023/11/08 19:09:08>> Enter Game Issue Order Phase
+2023/11/08 19:09:08>> Game is ended by Player "Aarya".
+2023/11/08 19:09:08>> Enter Game End
