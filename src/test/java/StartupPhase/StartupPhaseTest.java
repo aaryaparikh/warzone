@@ -17,10 +17,10 @@ import Models.GameMap;
  */
 public class StartupPhaseTest {
 
-	public static GameMap d_map;
-	public static GameEngine d_gameEngine;
+	private static GameMap d_map;
+	private static GameEngine d_gameEngine;
 
-	public void defaultGameMap(GameMap p_gameMap) {
+	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
 

@@ -38,7 +38,7 @@ public class ReinforcementArmiesTest {
 	/**
 	 * created default Map
 	 *
-	 * @param p_gameMap
+	 * @param p_gameMap game map
 	 */
 	public void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 4);
@@ -83,10 +83,23 @@ public class ReinforcementArmiesTest {
 		d_gameEngine.assignReinforcements();
 	}
 
-	public Country getSource(Player p_player, int index) {
-		return p_player.getD_countries().get(index);
+	/**
+	 * Retrieves a country from the player's list of countries based on its index.
+	 *
+	 * @param p_player The player from whom to retrieve the country.
+	 * @param p_index    The index of the desired country in the player's list.
+	 * @return The country at the specified index.
+	 */
+	public Country getSource(Player p_player, int p_index) {
+		return p_player.getD_countries().get(p_index);
 	}
 
+	/**
+	 * Calculates the expected reinforcement value for a player based on game rules.
+	 *
+	 * @param p_player The player for whom to calculate the reinforcement value.
+	 * @return The expected reinforcement value based on the game rules.
+	 */
 	public int getExpectedReinforcementValue(Player p_player) {
 		// Implement reinforcement calculation logic based on game rules
 		int l_assignedArmies = p_player.getD_countries().size() / 3;
@@ -107,11 +120,23 @@ public class ReinforcementArmiesTest {
 			return GameConstants.MINIMUN_PLAYER_REINFORCEMENT;
 	}
 
+	/**
+	 * Displays information about the countries owned by a player.
+	 *
+	 * @param p_player The player for whom to show country information.
+	 */
 	public void showInfo(Player p_player) {
 		p_player.getD_countries().stream().forEach(
 				ele -> System.out.println(p_player.getName() + " have country => " + ele.getCountryId() + "\t "));
 	}
 
+	/**
+	 * Initiates a deployment of armies by a player to a specific country.
+	 *
+	 * @param p_player   The player who is deploying armies.
+	 * @param p_country  The country to which the armies are being deployed.
+	 * @param p_armies   The number of armies being deployed.
+	 */
 	public void deploy(Player p_player, Country p_country, int p_armies) {
 		d_deployOrder = new DeployOrder(p_player, p_player.getD_countries().get(0), p_player.getD_reinforcementPool());
 		d_deployOrder.execute(d_gameEngine);
@@ -129,10 +154,10 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Advance Order
 	 *
-	 * @param p_player
-	 * @param p_sourceCountry
-	 * @param p_targetCountry
-	 * @param p_armies
+	 * @param p_player player for test
+	 * @param p_sourceCountry source country in test
+	 * @param p_targetCountry target country in test
+	 * @param p_armies army number
 	 */
 	public void advance(Player p_player, Country p_sourceCountry, Country p_targetCountry, int p_armies) {
 		d_advanceOrder = new AdvanceOrder(p_player, p_sourceCountry, p_targetCountry, p_armies);
@@ -142,10 +167,10 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Airlift Order
 	 *
-	 * @param p_player
-	 * @param p_sourceCountry
-	 * @param p_targetCountry
-	 * @param p_armies
+	 * @param p_player player for test 
+	 * @param p_sourceCountry source country in test
+	 * @param p_targetCountry target country in test
+	 * @param p_armies army number
 	 */
 	public void airlift(Player p_player, Country p_sourceCountry, Country p_targetCountry, int p_armies) {
 		d_airLiftOrder = new AirliftOrder(p_player, p_sourceCountry, p_targetCountry, p_armies);
@@ -155,8 +180,8 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Blockade Order
 	 *
-	 * @param p_player
-	 * @param p_targetCountry
+	 * @param p_player player for test 
+	 * @param p_targetCountry target country in test
 	 */
 	public void blockade(Player p_player, Country p_targetCountry) {
 		d_blockadeOrder = new BlockadeOrder(p_player, p_targetCountry);
@@ -166,8 +191,8 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Bomb Order
 	 *
-	 * @param p_player
-	 * @param p_targetCountry
+	 * @param p_player player for test 
+	 * @param p_targetCountry target country in test
 	 */
 	public void bomb(Player p_player, Country p_targetCountry) {
 		d_bombOrder = new BombOrder(p_player, p_targetCountry);
@@ -177,8 +202,8 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Diplomacy Order
 	 *
-	 * @param p_player
-	 * @param p_targetPlayer
+	 * @param p_player player for test 
+	 * @param p_targetPlayer target country in test
 	 */
 	public void negotiate(Player p_player, Player p_targetPlayer) {
 		d_diplomacyOrder = new DiplomacyOrder(p_player, p_targetPlayer);

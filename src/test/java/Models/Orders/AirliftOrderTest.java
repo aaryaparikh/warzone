@@ -59,12 +59,13 @@ public class AirliftOrderTest {
 	/**
 	 * Method to get the valid target country object for player
 	 *
+	 * @param p_c1 country parameter
 	 * @return source country for player1
 	 */
-	public Country getValidTarget(Country c1) {
+	public Country getValidTarget(Country p_c1) {
 		Country l_targetCountry = getSourceForPlayer1();
 		for (Country c : d_gameEngine.getGameMap().getCountries()) {
-			if (c != c1 && c.getOwner() == d_p1) {
+			if (c != p_c1 && c.getOwner() == d_p1) {
 				l_targetCountry = c;
 				break;
 			}

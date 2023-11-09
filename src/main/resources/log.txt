@@ -759,3 +759,110 @@
 2023/11/08 22:03:53>> Player Virag is added.
 2023/11/08 22:03:53>> Player Virag is added.
 2023/11/08 22:03:53>> All countries are assigned to players
+2023/11/08 22:18:03>> 
+
+2023/11/08 22:18:03>> Game Start
+2023/11/08 22:18:03>> Enter Edit Map Phase
+2023/11/08 22:18:03>> Enter Game Start Up Phase
+2023/11/08 22:18:03>> Player Yurui is added.
+2023/11/08 22:18:03>> All countries are assigned to players
+2023/11/08 22:18:03>> Enter Game Issue Order Phase
+2023/11/08 22:18:03>> Game is ended by Player "Yurui".
+2023/11/08 22:18:03>> Enter Game End
+2023/11/08 22:18:03>> 
+
+2023/11/08 22:18:03>> Game Start
+2023/11/08 22:18:03>> Enter Edit Map Phase
+2023/11/08 22:18:03>> Enter Game Start Up Phase
+2023/11/08 22:18:03>> Player Yurui is added.
+2023/11/08 22:18:03>> All countries are assigned to players
+2023/11/08 22:18:03>> Enter Game Issue Order Phase
+2023/11/08 22:18:03>> Game is ended by Player "Yurui".
+2023/11/08 22:18:03>> Enter Game End
+2023/11/08 22:18:03>> 
+
+2023/11/08 22:18:03>> Game Start
+2023/11/08 22:18:03>> Enter Edit Map Phase
+2023/11/08 22:18:03>> Enter Game Start Up Phase
+2023/11/08 22:18:03>> Player Yurui is added.
+2023/11/08 22:18:03>> All countries are assigned to players
+2023/11/08 22:18:03>> Enter Game Issue Order Phase
+2023/11/08 22:18:03>> Game is ended by Player "Yurui".
+2023/11/08 22:18:03>> Enter Game End
+2023/11/08 22:18:03>> 
+
+2023/11/08 22:18:03>> Game Start
+2023/11/08 22:18:03>> Enter Edit Map Phase
+2023/11/08 22:18:03>> Enter Game Start Up Phase
+2023/11/08 22:18:03>> Enter Game Issue Order Phase
+2023/11/08 22:18:03>> Game is ended by Player "Aarya".
+2023/11/08 22:18:03>> Enter Game End
+2023/11/08 22:18:03>> 
+
+2023/11/08 22:18:03>> Game Start
+2023/11/08 22:18:03>> Enter Edit Map Phase
+2023/11/08 22:18:03>> Enter Game Start Up Phase
+2023/11/08 22:18:03>> Enter Game Issue Order Phase
+2023/11/08 22:18:03>> Game is ended by Player "Aarya".
+2023/11/08 22:18:03>> Enter Game End
+2023/11/08 22:18:03>> 
+
+2023/11/08 22:18:03>> Game Start
+2023/11/08 22:18:03>> Enter Edit Map Phase
+2023/11/08 22:18:03>> Enter Game Start Up Phase
+2023/11/08 22:18:03>> Enter Game Issue Order Phase
+2023/11/08 22:18:03>> Game is ended by Player "Aarya".
+2023/11/08 22:18:03>> Enter Game End
+2023/11/08 22:18:03>> Player Virag is added.
+2023/11/08 22:18:03>> Player Virag is added.
+2023/11/08 22:18:03>> All countries are assigned to players
+2023/11/08 22:40:27>> 
+
+2023/11/08 22:40:27>> Game Start
+2023/11/08 22:40:27>> Enter Edit Map Phase
+2023/11/08 22:40:32>> Enter Game Start Up Phase
+2023/11/08 22:40:33>> Enter Game Issue Order Phase
+2023/11/08 22:40:56>> Add an order of deploying "3" armies on "2" to Player "Aarya".
+2023/11/08 22:41:00>> Add an order of deploying "5" armies on "7" to Player "Yurui".
+2023/11/08 22:41:02>> Player "Aarya" has signified.
+2023/11/08 22:41:07>> Add an order of advancing "5" armies from "7" to "1" for Player "Yurui".
+2023/11/08 22:41:10>> Player "Yurui" has signified.
+2023/11/08 22:41:10>> Enter Game Execute Order Phase
+2023/11/08 22:41:10>> Player "Aarya" deployed "3" armies to country "2"
+2023/11/08 22:41:10>> Player "Yurui" deployed "5" armies to country "7"
+2023/11/08 22:41:10>> Armies successfully moved from country "7" to country "1" and the ownership changed to "Yurui" player.
+2023/11/08 22:41:10>> Add one "bomb" card to Player "Yurui"
+2023/11/08 22:41:10>> Enter Game Issue Order Phase
+2023/11/08 22:41:58>> Add an order of deploying "3" armies on "2" to Player "Aarya".
+2023/11/08 22:42:02>> Add a card order to bomb "2" for Player "Yurui".
+2023/11/08 22:42:02>> Delete a bomb card for Player "Yurui".
+2023/11/08 22:43:26>> 
+
+2023/11/08 22:43:26>> Game Start
+2023/11/08 22:43:26>> Enter Edit Map Phase
+2023/11/08 22:43:29>> Enter Game Start Up Phase
+2023/11/08 22:43:30>> Enter Game Issue Order Phase
+2023/11/08 22:43:48>> Add an order of deploying "5" armies on "7" to Player "Aarya".
+2023/11/08 22:43:51>> Add an order of deploying "3" armies on "1" to Player "Yurui".
+2023/11/08 22:43:52>> Player "Aarya" has signified.
+2023/11/08 22:43:59>> Add an order of advancing "3" armies from "1" to "2" for Player "Yurui".
+2023/11/08 22:44:01>> Player "Yurui" has signified.
+2023/11/08 22:44:01>> Enter Game Execute Order Phase
+2023/11/08 22:44:01>> Player "Aarya" deployed "5" armies to country "7"
+2023/11/08 22:44:01>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/08 22:44:01>> Armies successfully moved from country "1" to country "2" and the ownership changed to "Yurui" player.
+2023/11/08 22:44:01>> Add one "airlift" card to Player "Yurui"
+2023/11/08 22:44:01>> Enter Game Issue Order Phase
+2023/11/08 22:44:30>> Add an order of deploying "5" armies on "7" to Player "Aarya".
+2023/11/08 22:44:56>> Add an order of deploying "3" armies on "2" to Player "Yurui".
+2023/11/08 22:44:58>> Player "Aarya" has signified.
+2023/11/08 22:45:07>> Add a card order to airlift "6" armies from "2" to "1" for Player "Yurui".
+2023/11/08 22:45:07>> Delete an airlift card for Player "Yurui".
+2023/11/08 22:45:15>> Add an order of advancing "6" armies from "2" to "1" for Player "Yurui".
+2023/11/08 22:45:17>> Player "Yurui" has signified.
+2023/11/08 22:45:17>> Enter Game Execute Order Phase
+2023/11/08 22:45:17>> Player "Aarya" deployed "5" armies to country "7"
+2023/11/08 22:45:17>> Player "Yurui" deployed "3" armies to country "2"
+2023/11/08 22:45:17>> Armies successfully moved from country "2" to country "1"
+2023/11/08 22:45:17>> Armies successfully moved from country "2" to country "1"
+2023/11/08 22:45:17>> Enter Game Issue Order Phase
