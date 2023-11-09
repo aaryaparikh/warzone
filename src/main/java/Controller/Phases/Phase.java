@@ -184,7 +184,6 @@ public abstract class Phase {
 	 * @param p_currentPlayer The current player ending the phase.
 	 * @return A message or response related to ending the phase.
 	 */
-
 	abstract public String end(String[] p_commands, Player p_currentPlayer);
 
 	/**

@@ -19,14 +19,14 @@ import Utils.MapEditor;
  */
 public class DeployOrderTest {
 
-	public static DeployOrder d_depOrder;
-	public static GameMap d_map;
-	public static MapEditor d_lmap;
-	public static Player d_p1;
-	public static Player d_p2;
-	public static GameEngine d_gameEngine;
+	private static DeployOrder d_depOrder;
+	private static GameMap d_map;
+	private static MapEditor d_lmap;
+	private static Player d_p1;
+	private static Player d_p2;
+	private static GameEngine d_gameEngine;
 
-	public void defaultGameMap(GameMap p_gameMap) {
+	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
 

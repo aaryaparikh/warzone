@@ -1217,3 +1217,92 @@
 2023/11/08 19:45:36>> Enter Game Issue Order Phase
 2023/11/08 19:45:36>> Game is ended by Player "Yurui".
 2023/11/08 19:45:36>> Enter Game End
+2023/11/08 20:34:58>> Enter Edit Map Phase
+2023/11/08 20:34:58>> Enter Game Start Up Phase
+2023/11/08 20:34:58>> Player Yurui is added.
+2023/11/08 20:34:58>> All countries are assigned to players
+2023/11/08 20:34:58>> Enter Game Issue Order Phase
+2023/11/08 20:34:58>> Add an order of deploying "3" armies on "1" to Player "Yurui".
+2023/11/08 20:34:58>> Player "Yurui" has signified.
+2023/11/08 20:34:58>> Enter Game Execute Order Phase
+2023/11/08 20:34:58>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/08 20:34:58>> Enter Game Issue Order Phase
+2023/11/08 20:34:58>> Game is ended by Player "Yurui".
+2023/11/08 20:34:58>> Enter Game End
+2023/11/08 20:34:58>> Enter Edit Map Phase
+2023/11/08 20:34:58>> Enter Game Start Up Phase
+2023/11/08 20:34:58>> Player Yurui is added.
+2023/11/08 20:34:58>> All countries are assigned to players
+2023/11/08 20:34:58>> Enter Game Issue Order Phase
+2023/11/08 20:34:58>> Game is ended by Player "Yurui".
+2023/11/08 20:34:58>> Enter Game End
+2023/11/08 20:34:58>> Enter Edit Map Phase
+2023/11/08 20:34:58>> Edit map "temp.txt"
+2023/11/08 20:34:58>> Enter Game Start Up Phase
+2023/11/08 20:34:58>> Player Yurui is added.
+2023/11/08 20:34:58>> All countries are assigned to players
+2023/11/08 20:34:58>> Enter Game Issue Order Phase
+2023/11/08 20:34:58>> Game is ended by Player "Yurui".
+2023/11/08 20:34:58>> Enter Game End
+2023/11/08 20:35:04>> 
+
+2023/11/08 20:35:04>> Game Start
+2023/11/08 20:35:04>> Enter Edit Map Phase
+2023/11/08 20:35:04>> Enter Game Start Up Phase
+2023/11/08 20:35:04>> Player Yurui is added.
+2023/11/08 20:35:04>> All countries are assigned to players
+2023/11/08 20:35:04>> Enter Game Issue Order Phase
+2023/11/08 20:35:04>> Game is ended by Player "Yurui".
+2023/11/08 20:35:04>> Enter Game End
+2023/11/08 20:35:04>> 
+
+2023/11/08 20:35:04>> Game Start
+2023/11/08 20:35:04>> Enter Edit Map Phase
+2023/11/08 20:35:04>> Enter Game Start Up Phase
+2023/11/08 20:35:04>> Player Yurui is added.
+2023/11/08 20:35:04>> All countries are assigned to players
+2023/11/08 20:35:04>> Enter Game Issue Order Phase
+2023/11/08 20:35:04>> Game is ended by Player "Yurui".
+2023/11/08 20:35:04>> Enter Game End
+2023/11/08 20:35:04>> 
+
+2023/11/08 20:35:04>> Game Start
+2023/11/08 20:35:04>> Enter Edit Map Phase
+2023/11/08 20:35:04>> Enter Game Start Up Phase
+2023/11/08 20:35:04>> Player Yurui is added.
+2023/11/08 20:35:04>> All countries are assigned to players
+2023/11/08 20:35:04>> Enter Game Issue Order Phase
+2023/11/08 20:35:04>> Game is ended by Player "Yurui".
+2023/11/08 20:35:04>> Enter Game End
+2023/11/08 20:35:10>> 
+
+2023/11/08 20:35:10>> Game Start
+2023/11/08 20:35:10>> Enter Edit Map Phase
+2023/11/08 20:35:10>> Enter Game Start Up Phase
+2023/11/08 20:35:10>> Enter Game Issue Order Phase
+2023/11/08 20:35:10>> Game is ended by Player "Aarya".
+2023/11/08 20:35:10>> Enter Game End
+2023/11/08 20:35:10>> 
+
+2023/11/08 20:35:10>> Game Start
+2023/11/08 20:35:10>> Enter Edit Map Phase
+2023/11/08 20:35:10>> Enter Game Start Up Phase
+2023/11/08 20:35:10>> Enter Game Issue Order Phase
+2023/11/08 20:35:10>> Game is ended by Player "Aarya".
+2023/11/08 20:35:10>> Enter Game End
+2023/11/08 20:35:10>> 
+
+2023/11/08 20:35:10>> Game Start
+2023/11/08 20:35:10>> Enter Edit Map Phase
+2023/11/08 20:35:10>> Enter Game Start Up Phase
+2023/11/08 20:35:10>> Enter Game Issue Order Phase
+2023/11/08 20:35:10>> Game is ended by Player "Aarya".
+2023/11/08 20:35:10>> Enter Game End
+2023/11/08 20:40:12>> 
+
+2023/11/08 20:40:12>> Game Start
+2023/11/08 20:40:12>> Enter Edit Map Phase
+2023/11/08 20:40:16>> Enter Game Start Up Phase
+2023/11/08 20:40:17>> Enter Game Issue Order Phase
+2023/11/08 20:40:21>> Game is ended by Player "Aarya".
+2023/11/08 20:40:21>> Enter Game End

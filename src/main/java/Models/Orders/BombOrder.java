@@ -14,9 +14,9 @@ public class BombOrder extends Order {
 
 	/**
 	 * Constructor to assign initial values
-	 *
-	 * @param p_player  player who is committing bomb order
-	 * @param p_country bomb which country
+	 * 
+	 * @param p_player        player who is committing bomb order
+	 * @param p_targetCountry bomb which country
 	 */
 	public BombOrder(Player p_player, Country p_targetCountry) {
 		this.d_player = p_player;

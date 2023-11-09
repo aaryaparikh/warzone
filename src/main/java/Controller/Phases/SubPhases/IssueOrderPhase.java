@@ -10,7 +10,6 @@ import Models.Player;
  * orders. This phase allows players to issue orders, and the command handling
  * is delegated to the player command handler.
  *
- * @param p_gameEngine The GameEngine instance that manages the game.
  */
 public class IssueOrderPhase extends PlayMainPhase {
 

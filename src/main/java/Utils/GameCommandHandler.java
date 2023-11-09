@@ -22,8 +22,7 @@ public class GameCommandHandler extends CommandHandler {
 	/**
 	 * Handles game setup commands.
 	 *
-	 * @param p_commands      The player's command.
-	 * @param p_currentPlayer The current player.
+	 * @param p_commands The player's command.
 	 * 
 	 * @return handle command result
 	 */
