@@ -16,7 +16,7 @@ import Models.Player;
  */
 public class AirliftOrderTest {
 
-	public void defaultGameMap(GameMap p_gameMap) {
+	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
 
@@ -31,12 +31,12 @@ public class AirliftOrderTest {
 	}
 
 	// Creating data members required to execute tests
-	public AirliftOrder d_airLift;
-	public DeployOrder d_depOrder;
-	public GameMap d_map;
-	public GameEngine d_gameEngine;
-	public Player d_p1;
-	public Player d_p2;
+	private AirliftOrder d_airLift;
+	private DeployOrder d_depOrder;
+	private GameMap d_map;
+	private GameEngine d_gameEngine;
+	private Player d_p1;
+	private Player d_p2;
 
 	/**
 	 * Method to get the country object for player

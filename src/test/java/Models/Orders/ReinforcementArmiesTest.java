@@ -24,18 +24,14 @@ import Utils.MapEditor;
  */
 public class ReinforcementArmiesTest {
 
-	public GameMap d_map;
-	public MapEditor d_lmap;
-	public Player d_p1;
-	public Player d_p2;
-	public Player d_p3;
-	public GameEngine d_gameEngine;
-	public DeployOrder d_deployOrder;
-	public AirliftOrder d_airliftOrder;
-	public AdvanceOrder d_advanceOrder;
-	public BlockadeOrder d_blockadeOrder;
-	public DiplomacyOrder d_diplomacyOrder;
-
+	private GameMap d_map;
+	private Player d_p1;
+	private Player d_p2;
+	private Player d_p3;
+	private GameEngine d_gameEngine;
+	private DeployOrder d_deployOrder;
+	private AdvanceOrder d_advanceOrder;
+	
 	/**
 	 * created default Map
 	 *

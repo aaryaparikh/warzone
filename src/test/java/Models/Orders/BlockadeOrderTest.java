@@ -19,7 +19,7 @@ import Models.Player;
  */
 class BlockadeOrderTest {
 
-	public void defaultGameMap(GameMap p_gameMap) {
+	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
 
@@ -33,13 +33,12 @@ class BlockadeOrderTest {
 		p_gameMap.addNeighbor(1, 7);
 	}
 
-	public DeployOrder d_depOrder;
-	public AdvanceOrder d_advOrder;
-	public BlockadeOrder d_blockeOrder;
-	public GameMap d_map;
-	public GameEngine d_gameEngine;
-	public Player d_p1;
-	public Player d_p2;
+	private DeployOrder d_depOrder;
+	private BlockadeOrder d_blockeOrder;
+	private GameMap d_map;
+	private GameEngine d_gameEngine;
+	private Player d_p1;
+	private Player d_p2;
 
 	/**
 	 * Used to get the source country
