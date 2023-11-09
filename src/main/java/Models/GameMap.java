@@ -80,7 +80,7 @@ public class GameMap {
 	/**
 	 * Load GameMap
 	 * 
-	 * @param
+	 * @param p_filePath file path in system
 	 */
 	public void loadGameMap(String p_filePath) {
 		d_countries = d_mapEditor.editMap(p_filePath).getCountries();

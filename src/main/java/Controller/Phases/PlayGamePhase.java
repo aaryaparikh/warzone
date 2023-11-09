@@ -8,7 +8,6 @@ import Controller.GameEngine;
  * such as showing the game map and editing map elements are implemented to
  * handle the common behavior in game play phases.
  *
- * @param p_gameEngine The GameEngine instance that manages the game.
  */
 public abstract class PlayGamePhase extends Phase {
 

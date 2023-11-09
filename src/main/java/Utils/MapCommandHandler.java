@@ -24,8 +24,7 @@ public class MapCommandHandler extends CommandHandler {
 	/**
 	 * Handles map command.
 	 *
-	 * @param p_command       The player's command.
-	 * @param p_currentPlayer The current player.
+	 * @param p_commands The player's command.
 	 * @return A response string indicating the result of the command.
 	 */
 	public String handleMapCommand(String[] p_commands) {

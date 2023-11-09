@@ -12,7 +12,6 @@ import Utils.GameCommandHandler;
  * are assigned, the phase transitions to the issue order phase. This phase also
  * handles some invalid commands and messages.
  *
- * @param p_gameEngine The GameEngine instance that manages the game.
  */
 public class PlaySetupPhase extends PlayGamePhase {
 

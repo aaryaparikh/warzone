@@ -150,8 +150,6 @@ public class GameMapTest {
 		// given neighbor list
 		int l_expectedNeighborCount = 3;
 		Object[] l_neighborList = { 2, 3, 4 };
-		Object[] l_oppositeList = { 1 };
-
 		d_map.addCountry(1, 1);
 		d_map.addCountry(2, 2);
 		d_map.addCountry(3, 2);
