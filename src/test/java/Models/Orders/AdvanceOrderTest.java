@@ -1,5 +1,6 @@
 package Models.Orders;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -49,6 +50,7 @@ public class AdvanceOrderTest {
 		d_gameEngine.addPlayer(d_player1);
 		d_gameEngine.assignCountriesRandomly();
 		d_player1.assignReinforcements(10);
+
 	}
 
 	/**
@@ -76,15 +78,7 @@ public class AdvanceOrderTest {
 	 * @return The incorrect source Country object
 	 */
 	public Country getInvalidSource() {
-		Country l_invalidSource = getSource();
-
-		for (Country c : d_gameEngine.getGameMap().getCountries()) {
-			if (!d_gameEngine.getPlayers().get(0).getD_countries().contains(c)) {
-				l_invalidSource = c;
-			}
-		}
-		System.out.println(l_invalidSource.getCountryId());
-		return l_invalidSource;
+		return d_p2.getD_countries().get(0);
 	}
 
 	/**
@@ -121,21 +115,71 @@ public class AdvanceOrderTest {
 	 */
 	@Test
 	public void shouldReturnString_For_SuccessfulAdvancement() {
-		// given
-		String l_expected = "";
 
-		// when
-		Country l_sourceCountry = getSource();
-		int l_resource = l_sourceCountry.getCountryId();
-		System.out.println(l_resource);
-		Country l_targetCountry = getValidTarget();
-		int l_target = l_targetCountry.getCountryId();
+		Country l_source = getSource();
+		Country l_target = getValidTarget();
+		int l_armies = 5;
+		String l_expected_When_SameOwner = "Armies successfully moved from country \"" + l_source.getCountryId()
+				+ "\" to country \"" + l_target.getCountryId() + "\"";
+		String l_expected_When_DiffOwner = "Armies successfully moved from country \"" + l_source.getCountryId()
+				+ "\" to country \"" + l_target.getCountryId() + "\" and the ownership changed to \"" + d_p1.getName()
+				+ "\" player.";
 
-		l_expected = "Armies successfully moved from country \"" + l_resource + "\" to country \"" + l_target + "\"";
+		// deploy
+		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());
+		d_depOrder.execute(d_gameEngine);
 
+		// advance
+		d_advOrder = new AdvanceOrder(d_p1, l_source, l_target, l_armies);
+
+		if (l_target.getOwner() == d_p1) {
+			assertEquals(l_expected_When_SameOwner, d_advOrder.execute(d_gameEngine));
+		} else {
+			assertEquals(l_expected_When_DiffOwner, d_advOrder.execute(d_gameEngine));
+		}
+	}
+
+	/**
+	 * checks whether <i>advance</i> give valid string when passed incorrect source
+	 * country
+	 */
+	@Test
+	public void shouldReturn_ValidString_For_IncorrectCountry() {
+		Country l_correctSource = getSource();
+		Country l_incorrectSource = getInvalidSource();
+		Country l_target = getValidTarget();
+		String l_expected = "Player \"" + d_p1.getName() + "\" does not control country \""
+				+ l_incorrectSource.getCountryId() + "\", hence armies cannot be moved.";
+
+		int l_armies = d_p1.getD_reinforcementPool();
+
+		d_depOrder = new DeployOrder(d_p1, l_correctSource, l_armies);
+		d_depOrder.execute(d_gameEngine);
 		d_advOrder = new AdvanceOrder(d_player1, l_sourceCountry, l_targetCountry, 10);
 
-		// then
+
 		assertEquals(l_expected, d_advOrder.execute(d_gameEngine));
+	}
+
+	/**
+	 * checks whether the number of country
+	 */
+	@Test
+	public void shouldMaintainIntigrity() {
+		Country l_source = getSource();
+		Country l_target = getValidTarget();
+		int l_armies = 5;
+		int l_expected_armies = 5;
+
+		// deploy
+		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());
+		d_depOrder.execute(d_gameEngine);
+
+		d_advOrder = new AdvanceOrder(d_p1, l_source, l_target, l_armies);
+		d_advOrder.execute(d_gameEngine);
+
+		assertAll(() -> assertEquals(l_expected_armies, l_source.getArmies()),
+				() -> assertEquals(d_p1.getD_reinforcementPool(), l_source.getArmies() + l_target.getArmies()));
+
 	}
 }

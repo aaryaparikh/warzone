@@ -6,7 +6,7 @@ import Models.Player;
 
 /**
  * Players can bomb another country.
- * 
+ *
  */
 public class BombOrder extends Order {
 	private Player d_player;
@@ -25,7 +25,7 @@ public class BombOrder extends Order {
 
 	/**
 	 * Method to execute bomb order.
-	 * 
+	 *
 	 * @param p_game the object representing the game.
 	 * @return a response string indicating the result of the order execution.
 	 */
@@ -40,7 +40,7 @@ public class BombOrder extends Order {
 		// Check if the player has negotiated with player who owns target country.
 		if (d_player.getNegotiatedPlayers().contains(d_targetCountry.getOwner())) {
 			return String.format("Can't bomb, there is a negotiation between \"%s\" and \"%s\".", d_player.getName(),
-					d_targetCountry.getOwner());
+					d_targetCountry.getOwner().getName());
 		}
 
 		// Check if the target country is adjacent to player's countries.
