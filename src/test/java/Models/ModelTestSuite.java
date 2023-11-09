@@ -4,13 +4,15 @@ import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
 /**
- * This JUnit 5 Test Suite Class is responsible for running all the test cases related to the Models package.
- * It includes test classes for Continent, Country, GameMap, and Player.
+ * This JUnit 5 Test Suite Class is responsible for running all the test cases
+ * related to the Models package. It includes test classes for Continent,
+ * Country, GameMap, and Player.
  *
- * Usage:
- * To execute all the Models package tests, run this class as a JUnit test.
+ * Usage: To execute all the Models package tests, run this class as a JUnit
+ * test.
  *
  * Example:
+ * 
  * <pre>
  * {@code
  * ModelTestSuite suite = new ModelTestSuite();

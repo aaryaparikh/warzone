@@ -22,8 +22,6 @@ public class IssueOrderPhase extends PlayMainPhase {
 		super(p_gameEngine);
 	}
 
-	// Override methods from the PlayMainPhase class
-
 	/**
 	 * {@inheritDoc}
 	 */

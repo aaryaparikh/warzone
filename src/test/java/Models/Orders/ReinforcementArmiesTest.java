@@ -87,7 +87,7 @@ public class ReinforcementArmiesTest {
 	 * Retrieves a country from the player's list of countries based on its index.
 	 *
 	 * @param p_player The player from whom to retrieve the country.
-	 * @param p_index    The index of the desired country in the player's list.
+	 * @param p_index  The index of the desired country in the player's list.
 	 * @return The country at the specified index.
 	 */
 	public Country getSource(Player p_player, int p_index) {
@@ -133,9 +133,9 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Initiates a deployment of armies by a player to a specific country.
 	 *
-	 * @param p_player   The player who is deploying armies.
-	 * @param p_country  The country to which the armies are being deployed.
-	 * @param p_armies   The number of armies being deployed.
+	 * @param p_player  The player who is deploying armies.
+	 * @param p_country The country to which the armies are being deployed.
+	 * @param p_armies  The number of armies being deployed.
 	 */
 	public void deploy(Player p_player, Country p_country, int p_armies) {
 		d_deployOrder = new DeployOrder(p_player, p_player.getD_countries().get(0), p_player.getD_reinforcementPool());
@@ -154,10 +154,10 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Advance Order
 	 *
-	 * @param p_player player for test
+	 * @param p_player        player for test
 	 * @param p_sourceCountry source country in test
 	 * @param p_targetCountry target country in test
-	 * @param p_armies army number
+	 * @param p_armies        army number
 	 */
 	public void advance(Player p_player, Country p_sourceCountry, Country p_targetCountry, int p_armies) {
 		d_advanceOrder = new AdvanceOrder(p_player, p_sourceCountry, p_targetCountry, p_armies);
@@ -167,10 +167,10 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Airlift Order
 	 *
-	 * @param p_player player for test 
+	 * @param p_player        player for test
 	 * @param p_sourceCountry source country in test
 	 * @param p_targetCountry target country in test
-	 * @param p_armies army number
+	 * @param p_armies        army number
 	 */
 	public void airlift(Player p_player, Country p_sourceCountry, Country p_targetCountry, int p_armies) {
 		d_airLiftOrder = new AirliftOrder(p_player, p_sourceCountry, p_targetCountry, p_armies);
@@ -180,7 +180,7 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Blockade Order
 	 *
-	 * @param p_player player for test 
+	 * @param p_player        player for test
 	 * @param p_targetCountry target country in test
 	 */
 	public void blockade(Player p_player, Country p_targetCountry) {
@@ -191,7 +191,7 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Bomb Order
 	 *
-	 * @param p_player player for test 
+	 * @param p_player        player for test
 	 * @param p_targetCountry target country in test
 	 */
 	public void bomb(Player p_player, Country p_targetCountry) {
@@ -202,7 +202,7 @@ public class ReinforcementArmiesTest {
 	/**
 	 * Runs Diplomacy Order
 	 *
-	 * @param p_player player for test 
+	 * @param p_player       player for test
 	 * @param p_targetPlayer target country in test
 	 */
 	public void negotiate(Player p_player, Player p_targetPlayer) {
