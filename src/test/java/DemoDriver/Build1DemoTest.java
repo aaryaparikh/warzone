@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream;
  * 
  * @author YURUI
  */
-public class Build2DemoTest {
+public class Build1DemoTest {
 
 	private final InputStream originalSystemIn = System.in;
 	private final PrintStream originalSystemOut = System.out;
@@ -43,11 +43,12 @@ public class Build2DemoTest {
 	@Test
 	public void testDriverDemoStart() {
 		// Simulate user input
-		String simulatedInput = "next" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
+		String simulatedInput = "next" + System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator()
+				+ "assigncountries" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
 				+ System.lineSeparator() + "end" + System.lineSeparator();
 		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
-		Build2Demo.main(null);
+		Build1Demo.main(null);
 
 		assertTrue(systemOutContent.toString().contains("<<Game Start>>"));
 	}
@@ -58,11 +59,12 @@ public class Build2DemoTest {
 	@Test
 	public void testDriverDemoShowmap() {
 		// Simulate user input
-		String simulatedInput = "next" + System.lineSeparator() + "showmap" + System.lineSeparator() + "next"
+		String simulatedInput = "next" + System.lineSeparator() + "showmap" + System.lineSeparator()
+				+ "gameplayer -add Yurui" + System.lineSeparator() + "assigncountries" + System.lineSeparator() + "next"
 				+ System.lineSeparator() + "end" + System.lineSeparator() + "end" + System.lineSeparator();
 		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
-		Build2Demo.main(null);
+		Build1Demo.main(null);
 
 		assertTrue(systemOutContent.toString().contains("[Map]"));
 	}
@@ -73,11 +75,12 @@ public class Build2DemoTest {
 	@Test
 	public void testDriverDemoEnd() {
 		// Simulate user input
-		String simulatedInput = "next" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
+		String simulatedInput = "next" + System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator()
+				+ "assigncountries" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
 				+ System.lineSeparator() + "end" + System.lineSeparator();
 		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
-		Build2Demo.main(null);
+		Build1Demo.main(null);
 
 		assertTrue(systemOutContent.toString().contains("<<EndPhase>>"));
 	}
