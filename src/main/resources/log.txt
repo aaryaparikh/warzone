@@ -514,3 +514,56 @@
 
 2023/11/08 13:01:21>> Game Start
 2023/11/08 13:01:21>> Enter Edit Map Phase
+2023/11/08 19:27:15>> Player Virag is added.
+2023/11/08 19:30:44>> Player Virag is added.
+2023/11/08 19:30:58>> Player Virag is added.
+2023/11/08 19:35:10>> Player Virag is added.
+2023/11/08 19:36:18>> Player Virag is added.
+2023/11/08 19:41:19>> Player Virag is added.
+2023/11/08 19:42:59>> Player Virag is added.
+2023/11/08 19:43:25>> Player Virag is added.
+2023/11/08 19:46:10>> Player Virag is added.
+2023/11/08 19:46:21>> Player Virag is added.
+2023/11/08 19:47:32>> Player Virag is added.
+2023/11/08 19:48:10>> Player Virag is added.
+2023/11/08 19:48:40>> Player Virag is added.
+2023/11/08 19:49:01>> Player Virag is added.
+2023/11/08 19:49:12>> Player Virag is added.
+2023/11/08 19:49:25>> Player Virag is added.
+2023/11/08 19:50:51>> Player Virag is added.
+2023/11/08 19:51:41>> Player Virag is added.
+2023/11/08 19:52:28>> Player Virag is added.
+2023/11/08 19:57:17>> Player Virag is added.
+2023/11/08 19:59:08>> Player Virag is added.
+2023/11/08 20:00:38>> Player Virag is added.
+2023/11/08 20:01:35>> Player Virag is added.
+2023/11/08 20:01:52>> Player Virag is added.
+2023/11/08 20:07:11>> Player Virag is added.
+2023/11/08 20:07:11>> Player Virag is added.
+2023/11/08 20:07:30>> Player Virag is added.
+2023/11/08 20:08:31>> Player Virag is added.
+2023/11/08 20:08:31>> All countries are assigned to players
+2023/11/08 20:08:48>> Player Virag is added.
+2023/11/08 20:08:48>> All countries are assigned to players
+2023/11/08 20:17:15>> Player Virag is added.
+2023/11/08 20:17:15>> Player Virag is added.
+2023/11/08 20:17:15>> Player Dev is added.
+2023/11/08 20:17:15>> All countries are assigned to players
+2023/11/08 20:22:24>> Player Virag is added.
+2023/11/08 20:22:24>> Player Virag is added.
+2023/11/08 20:22:24>> All countries are assigned to players
+2023/11/08 20:23:25>> Player Virag is added.
+2023/11/08 20:23:25>> Player Virag is added.
+2023/11/08 20:23:25>> All countries are assigned to players
+2023/11/08 20:23:51>> Player Virag is added.
+2023/11/08 20:23:51>> Player Virag is added.
+2023/11/08 20:23:51>> All countries are assigned to players
+2023/11/08 20:27:39>> Player Virag is added.
+2023/11/08 20:27:39>> Player Virag is added.
+2023/11/08 20:27:39>> All countries are assigned to players
+2023/11/08 20:28:34>> Player Virag is added.
+2023/11/08 20:28:34>> Player Virag is added.
+2023/11/08 20:28:34>> All countries are assigned to players
+2023/11/08 20:33:51>> Player Virag is added.
+2023/11/08 20:33:51>> Player Virag is added.
+2023/11/08 20:33:51>> All countries are assigned to players
