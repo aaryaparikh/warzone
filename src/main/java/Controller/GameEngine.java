@@ -38,7 +38,7 @@ public class GameEngine {
 	/**
 	 * Unique scanner in a game
 	 */
-	public Scanner d_sc = new Scanner(System.in);
+	public Scanner d_sc;
 
 	/**
 	 * Constructor for GameEngine.
@@ -52,6 +52,7 @@ public class GameEngine {
 		this.d_playerConquerInTurn = new ArrayList<>();
 		this.d_logEntryBuffer = new LogEntryBuffer();
 		this.d_logWriter = new LogWriter(d_logEntryBuffer);
+		this.d_sc = new Scanner(System.in);
 	}
 
 	/**
