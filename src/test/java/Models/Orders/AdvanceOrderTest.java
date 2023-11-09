@@ -19,7 +19,7 @@ import Models.Player;
  * @author Dev
  */
 public class AdvanceOrderTest {
-	private void defaultGameMap(GameMap p_gameMap) {
+	public void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
 
@@ -33,10 +33,12 @@ public class AdvanceOrderTest {
 		p_gameMap.addNeighbor(1, 7);
 	}
 
-	private AdvanceOrder d_advOrder;
-	private GameMap d_map;
-	private GameEngine d_gameEngine;
-	private Player d_player1;
+	public DeployOrder d_depOrder;
+	public AdvanceOrder d_advOrder;
+	public GameMap d_map;
+	public GameEngine d_gameEngine;
+	public Player d_p1;
+	public Player d_p2;
 
 	/**
 	 * sets up some objects and initialize it with some predefined values
@@ -46,11 +48,13 @@ public class AdvanceOrderTest {
 		d_map = new GameMap();
 		defaultGameMap(d_map);
 		d_gameEngine = new GameEngine(d_map);
-		d_player1 = new Player("Dev", d_gameEngine);
-		d_gameEngine.addPlayer(d_player1);
+		d_p1 = new Player("Dev", d_gameEngine);
+		d_p2 = new Player("Aarya", d_gameEngine);
+		d_gameEngine.addPlayer(d_p1);
+		d_gameEngine.addPlayer(d_p2);
 		d_gameEngine.assignCountriesRandomly();
-		d_player1.assignReinforcements(10);
-
+		d_p1.assignReinforcements(10);
+		d_p2.assignReinforcements(5);
 	}
 
 	/**
@@ -60,7 +64,7 @@ public class AdvanceOrderTest {
 	public void teardown() {
 		d_map = null;
 		d_gameEngine = null;
-		d_player1 = null;
+		d_p1 = null;
 	}
 
 	/**
@@ -105,7 +109,7 @@ public class AdvanceOrderTest {
 	@Test
 	public void shouldSetOwnerCorrectly() {
 		// asserts the instantiation of Player in GameEngine
-		assertTrue(d_gameEngine.checkPlayerInList(d_player1));
+		assertTrue(d_gameEngine.checkPlayerInList(d_p1));
 		// asserts if reinforcement is added to the player
 		assertEquals(10, d_gameEngine.getPlayers().get(0).getD_reinforcementPool());
 	}
@@ -155,8 +159,8 @@ public class AdvanceOrderTest {
 
 		d_depOrder = new DeployOrder(d_p1, l_correctSource, l_armies);
 		d_depOrder.execute(d_gameEngine);
-		d_advOrder = new AdvanceOrder(d_player1, l_sourceCountry, l_targetCountry, 10);
 
+		d_advOrder = new AdvanceOrder(d_p1, l_incorrectSource, l_target, l_armies);
 
 		assertEquals(l_expected, d_advOrder.execute(d_gameEngine));
 	}
