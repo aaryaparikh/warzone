@@ -34,6 +34,11 @@ public class GameEngine {
 	private LogEntryBuffer d_logEntryBuffer;
 	@SuppressWarnings("unused")
 	private LogWriter d_logWriter;
+	
+	/**
+	 * Unique scanner in a game
+	 */
+	public Scanner d_sc;
 
 	/**
 	 * Constructor for GameEngine.
@@ -47,6 +52,7 @@ public class GameEngine {
 		this.d_playerConquerInTurn = new ArrayList<>();
 		this.d_logEntryBuffer = new LogEntryBuffer();
 		this.d_logWriter = new LogWriter(d_logEntryBuffer);
+		this.d_sc = new Scanner(System.in);
 	}
 
 	/**
@@ -55,7 +61,7 @@ public class GameEngine {
 	public void start() {
 		setPhase(new EditMapPhase(this));
 
-		try (Scanner l_sc = new Scanner(System.in)) {
+		try (Scanner l_sc = d_sc) {
 			// Enter edit map phase
 			getPhaseView().showNextPhaseInfo("edit");
 			while (d_gamePhase instanceof EditMapPhase) {

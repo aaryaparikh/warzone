@@ -44,19 +44,6 @@ public class Build2Demo {
 		GameEngine l_gameEngine = new GameEngine(l_map);
 		l_gameEngine.getPhaseView().showGameInfo();
 
-		/*
-		 * Initialize map edit phase l_gameEngine.setPhase("edit");
-		 * l_gameEngine.getPhaseView().showNextPhaseInfo("edit"); MapService
-		 * l_mapService = new MapService(l_map);
-		 * 
-		 * while (l_gameEngine.getPhase().equals("edit")) { // Enter map edit phase
-		 * l_mapService.main(null); l_commandHandler.handlePlayerCommand("end", null);
-		 * 
-		 * // Enter start up phase StartUpGameService StartupService = new
-		 * StartUpGameService(l_gameEngine); StartupService.main(null);
-		 * l_mapService.setD_map(l_gameEngine.getGameMap()); }
-		 */
-
 		Player p1 = new Player("Aarya", l_gameEngine);
 		Player p2 = new Player("Yurui", l_gameEngine);
 		l_gameEngine.addPlayer(p1);

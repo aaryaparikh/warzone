@@ -94,7 +94,7 @@ public class Player {
 	 */
 	public void issueOrder() {
 		@SuppressWarnings("resource")
-		Scanner l_scanner = new Scanner(System.in);
+		Scanner l_scanner = d_gameEngine.d_sc;
 		String l_userInput, l_response = "";
 
 		while (!(l_response == "nextPlayer")) {

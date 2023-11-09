@@ -41,13 +41,12 @@ public class Build1Demo {
 	public static void main(String[] p_args) {
 		// Initialize Map and Game Engine
 		GameMap l_map = new GameMap();
-		// defaultGameMap(l_map);
+		defaultGameMap(l_map);
 		GameEngine l_gameEngine = new GameEngine(l_map);
 		l_gameEngine.getPhaseView().showGameInfo();
 
 		// Initialize map edit phase
 		l_gameEngine.setPhase(new EditMapPhase(l_gameEngine));
-		l_gameEngine.getPhaseView().showNextPhaseInfo("edit");
 
 		// Game start
 		l_gameEngine.start();
