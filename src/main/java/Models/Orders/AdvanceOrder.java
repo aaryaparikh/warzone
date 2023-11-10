@@ -88,7 +88,7 @@ public class AdvanceOrder extends Order {
 		// Check if the player has negotiated with player who owns target country.
 		if (d_player.getNegotiatedPlayers().contains(d_targetCountry.getOwner())) {
 			return String.format("Can't attack, there is a negotiation between \"%s\" and \"%s\".", d_player.getName(),
-					d_targetCountry.getOwner());
+					d_targetCountry.getOwner().getName());
 		}
 
 		// Determine the capabilities of source and destination countries
