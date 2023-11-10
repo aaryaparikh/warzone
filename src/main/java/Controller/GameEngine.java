@@ -277,7 +277,7 @@ public class GameEngine {
 		resetPlayerConquerInTurn();
 
 		// Reset negotiate relationship
-		for (Player l_player : getPlayerConquerInTurn())
+		for (Player l_player : getPlayers())
 			l_player.resetNegotiatedPlayers();
 
 		// move to another play round

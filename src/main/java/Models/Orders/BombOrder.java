@@ -44,16 +44,18 @@ public class BombOrder extends Order {
 		}
 
 		// Check if the target country is adjacent to player's countries.
+		boolean l_ifBombNeighbor = false;
 		for (Country l_ownedCountry : d_player.getD_countries())
-			if (!l_ownedCountry.getNeighborCountries().contains(d_targetCountry.getCountryId()))
-				return (String.format("Player \"%s\" is not adjacent to target country \"%d\", can't bomb.",
-						d_player.getName(), d_targetCountry.getCountryId()));
+			if (l_ownedCountry.getNeighborCountries().contains(d_targetCountry.getCountryId()))
+				l_ifBombNeighbor = true;
+		if (l_ifBombNeighbor == false)
+			return String.format("Player \"%s\" is not adjacent to target country \"%d\", can't bomb.",
+					d_player.getName(), d_targetCountry.getCountryId());
 
 		// Execute bomb card order
 		if (d_targetCountry.getArmies() >= 0) {
 			int previousArmis = d_targetCountry.getArmies();
 			d_targetCountry.setArmies(d_targetCountry.getArmies() / 2);
-			d_player.deleteCardsOwned("bomb");
 			return String.format("Player \"%s\" bombed country \"%d\", kill \"%s\" armies.", d_player.getName(),
 					d_targetCountry.getCountryId(), previousArmis - d_targetCountry.getArmies());
 		} else {

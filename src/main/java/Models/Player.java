@@ -44,7 +44,7 @@ public class Player {
 		this.d_cardsOwned.put("bomb", 0);
 		this.d_cardsOwned.put("blockade", 0);
 		this.d_cardsOwned.put("airlift", 0);
-		this.d_cardsOwned.put("negotiate", 0);
+		this.d_cardsOwned.put("negotiate", 1);
 	}
 
 	/**
