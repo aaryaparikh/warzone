@@ -12,6 +12,9 @@ import Utils.MapCommandHandler;
  * map-related operations during the game setup.
  */
 public class EditMapPhase extends Phase {
+	/**
+	 * MapCommandHandler instance
+	 */
 	private MapCommandHandler d_mapCommandHandler;
 
 	/**
