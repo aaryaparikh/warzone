@@ -23,16 +23,59 @@ import Models.Player;
  */
 public class ReinforcementArmiesTest {
 
+	/**
+	 * GameMap instance
+	 */
 	private GameMap d_map;
+
+	/**
+	 * PLayer instance
+	 */
 	private Player d_p1;
+
+	/**
+	 * Player instance
+	 */
 	private Player d_p2;
+
+	/**
+	 * Player instance
+	 */
 	private Player d_p3;
+
+	/**
+	 * GameEngine instance
+	 */
 	private GameEngine d_gameEngine;
+
+	/**
+	 * DeployOrder instance
+	 */
 	private DeployOrder d_deployOrder;
+
+	/**
+	 * AdvanceOrder instance
+	 */
 	private AdvanceOrder d_advanceOrder;
+
+	/**
+	 * AirliftOrder instance
+	 */
 	private AirliftOrder d_airLiftOrder;
+
+	/**
+	 * BlackadeOrder instance
+	 */
 	private BlockadeOrder d_blockadeOrder;
+
+	/**
+	 * BombOrder instance
+	 */
 	private BombOrder d_bombOrder;
+
+	/**
+	 * DiplomacyOrder instance
+	 */
 	private DiplomacyOrder d_diplomacyOrder;
 
 	/**

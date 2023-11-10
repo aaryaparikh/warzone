@@ -1,19 +1,27 @@
 package Utils;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import Controller.GameEngine;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * JUnit 5 test class for PlayerCommandHandler class.
- * 
+ *
  * @author YURUI
  */
 public class PlayerCommandHandlerTest {
 
+	/**
+	 * PlayerCommandHandler instance
+	 */
 	private PlayerCommandHandler d_playerCommandHandler;
+
+	/**
+	 * GameEngine instance
+	 */
 	private GameEngine d_gameEngine;
 
 	/**

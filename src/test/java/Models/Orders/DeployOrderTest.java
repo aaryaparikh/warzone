@@ -18,12 +18,36 @@ import Models.Player;
  */
 public class DeployOrderTest {
 
+	/**
+	 * DeployOrder instance
+	 */
 	public DeployOrder d_depOrder;
+
+	/**
+	 * GameMap instance
+	 */
 	public GameMap d_map;
+
+	/**
+	 * Player instance
+	 */
 	public Player d_p1;
+
+	/**
+	 * Player instance
+	 */
 	public Player d_p2;
+
+	/**
+	 * GameEngine instance
+	 */
 	public GameEngine d_gameEngine;
 
+	/**
+	 * Default Game map maker
+	 *
+	 * @param p_gameMap
+	 */
 	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
