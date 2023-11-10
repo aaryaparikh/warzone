@@ -30,7 +30,9 @@ public class StartupPhaseTest {
 	private static GameEngine d_gameEngine;
 
 	/**
-	 * Default map
+	 * Set Default map
+	 * 
+	 * @param p_gameMap game map
 	 */
 	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);

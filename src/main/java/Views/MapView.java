@@ -11,9 +11,13 @@ import Models.GameMap;
  */
 public class MapView {
 	/**
-	 *
+	 * continent list
 	 */
 	private List<Continent> d_continents;
+
+	/**
+	 * country list
+	 */
 	private List<Country> d_countries;
 
 	/**
