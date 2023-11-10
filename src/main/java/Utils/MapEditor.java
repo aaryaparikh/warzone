@@ -200,10 +200,11 @@ public class MapEditor {
 				}
 
 				// validate the loaded map
+				GameMap l_tempMap = d_gameMap;
 				d_countries = l_map.getCountries();
 				d_continents = l_map.getContinents();
 				if (!validateMap())
-					return d_gameMap;
+					return l_tempMap;
 				else
 					return l_map;
 			}
@@ -272,7 +273,7 @@ public class MapEditor {
 			}
 			if (l_check == 0) {
 				System.out.println("Invalid Map: Country Assigned to a Continent that does not exist");
-				break;
+				return false;
 			}
 
 			// Step 6: Check if a country is its own neighbor
