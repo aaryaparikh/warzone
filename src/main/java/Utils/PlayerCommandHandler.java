@@ -115,6 +115,7 @@ public class PlayerCommandHandler extends CommandHandler {
 				}
 			} catch (Exception e) {
 				System.out.println("Invalid command for deploy order.");
+				return "stayCurrentPlayer";
 			}
 			break;
 
@@ -193,6 +194,7 @@ public class PlayerCommandHandler extends CommandHandler {
 				}
 			} catch (Exception e) {
 				System.out.println("Invalid command for advance order.");
+				return "stayCurrentPlayer";
 			}
 			break;
 
@@ -266,6 +268,7 @@ public class PlayerCommandHandler extends CommandHandler {
 				}
 			} catch (Exception e) {
 				System.out.println("Invalid command for bomb order.");
+				return "stayCurrentPlayer";
 			}
 			break;
 
@@ -327,6 +330,7 @@ public class PlayerCommandHandler extends CommandHandler {
 				}
 			} catch (Exception e) {
 				System.out.println("Invalid command for blockade order.");
+				return "stayCurrentPlayer";
 			}
 			break;
 
@@ -419,6 +423,7 @@ public class PlayerCommandHandler extends CommandHandler {
 				}
 			} catch (Exception e) {
 				System.out.println("Invalid command for airlift order.");
+				return "stayCurrentPlayer";
 			}
 			break;
 
@@ -489,6 +494,7 @@ public class PlayerCommandHandler extends CommandHandler {
 				}
 			} catch (Exception e) {
 				System.out.println("Invalid command for diplomacy order.");
+				return "stayCurrentPlayer";
 			}
 			break;
 
