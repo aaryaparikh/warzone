@@ -72,11 +72,11 @@ public class Player {
 		this.d_gameEngine = p_gameEngine;
 
 		// Initialize card owned list
-		this.d_cardsOwned = new HashMap<>();
+		this.d_cardsOwned = new HashMap<String, Integer>();
 		this.d_cardsOwned.put("bomb", 0);
 		this.d_cardsOwned.put("blockade", 0);
 		this.d_cardsOwned.put("airlift", 0);
-		this.d_cardsOwned.put("negotiate", 1);
+		this.d_cardsOwned.put("negotiate", 0);
 	}
 
 	/**
@@ -125,7 +125,6 @@ public class Player {
 	 *
 	 */
 	public void issueOrder() {
-		@SuppressWarnings("resource")
 		Scanner l_scanner = d_gameEngine.d_sc;
 		String l_userInput, l_response = "";
 

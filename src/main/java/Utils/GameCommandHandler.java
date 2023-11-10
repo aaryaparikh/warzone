@@ -1,6 +1,7 @@
 package Utils;
 
 import Controller.GameEngine;
+import Models.GameMap;
 import Models.Player;
 
 /**
@@ -38,9 +39,12 @@ public class GameCommandHandler extends CommandHandler {
 			if (l_commands.length < 2)
 				System.out.println("Please enter valid map file path");
 			else {
-				d_gameEngine.setGameMap(d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]));
-				System.out.println("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
-				d_logEntryBuffer.setString("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
+				GameMap l_map = d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]);
+				if (!d_gameEngine.getGameMap().equals(l_map)) {
+					System.out.println("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
+					d_logEntryBuffer.setString("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
+					d_gameEngine.setGameMap(l_map);
+				}
 			}
 			break;
 
@@ -88,7 +92,7 @@ public class GameCommandHandler extends CommandHandler {
 		case "assigncountries":
 			if (d_gameEngine.getPlayers().size() == 0)
 				System.out.println("No players, can't assign countries");
-			else if (d_gameEngine.getPlayers().size() >= d_gameEngine.getGameMap().getCountries().size())
+			else if (d_gameEngine.getPlayers().size() > d_gameEngine.getGameMap().getCountries().size())
 				System.out.println("Can't assign countries because too many players");
 			else {
 				d_gameEngine.assignCountriesRandomly();
