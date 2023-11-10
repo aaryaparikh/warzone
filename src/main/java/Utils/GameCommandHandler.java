@@ -88,7 +88,7 @@ public class GameCommandHandler extends CommandHandler {
 		case "assigncountries":
 			if (d_gameEngine.getPlayers().size() == 0)
 				System.out.println("No players, can't assign countries");
-			else if (d_gameEngine.getPlayers().size() >= d_gameEngine.getGameMap().getCountries().size())
+			else if (d_gameEngine.getPlayers().size() > d_gameEngine.getGameMap().getCountries().size())
 				System.out.println("Can't assign countries because too many players");
 			else {
 				d_gameEngine.assignCountriesRandomly();

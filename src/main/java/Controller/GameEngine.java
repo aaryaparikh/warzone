@@ -365,7 +365,7 @@ public class GameEngine {
 
 					// remove country owner
 					for (Country l_country : d_map.getCountries())
-						if (l_country.getOwner().equals(l_player))
+						if (l_player.equals(l_country.getOwner()))
 							l_country.setOwner(null);
 					d_players.remove(l_player);
 					break;
