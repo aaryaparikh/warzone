@@ -29,6 +29,9 @@ public class StartupPhaseTest {
 	 */
 	private static GameEngine d_gameEngine;
 
+	/**
+	 * Default map
+	 */
 	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);

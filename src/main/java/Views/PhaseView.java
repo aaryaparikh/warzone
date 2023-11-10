@@ -6,6 +6,10 @@ import Controller.GameEngine;
  * Represents a view for displaying information about the phases in the game.
  */
 public class PhaseView {
+
+	/**
+	 * game engine
+	 */
 	private GameEngine d_gameEngine;
 
 	/**

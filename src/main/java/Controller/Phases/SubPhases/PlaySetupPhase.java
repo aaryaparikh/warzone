@@ -15,6 +15,9 @@ import Utils.GameCommandHandler;
  */
 public class PlaySetupPhase extends PlayGamePhase {
 
+	/**
+	 * command handler in game
+	 */
 	private GameCommandHandler d_gameCommandHandler;
 
 	/**

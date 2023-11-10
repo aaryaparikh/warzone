@@ -14,6 +14,9 @@ import Utils.PlayerCommandHandler;
  */
 public abstract class PlayMainPhase extends PlayGamePhase {
 
+	/**
+	 * command handler for player
+	 */
 	private PlayerCommandHandler d_playerCommandHandler;
 
 	/**
