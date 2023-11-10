@@ -10,13 +10,24 @@ import java.time.format.DateTimeFormatter;
  */
 public class LogWriter implements Observer {
 
+	/**
+	 * FileWriter instance
+	 */
 	private FileWriter d_logFile;
+
+	/**
+	 * DateTimeFormatter instance
+	 */
 	private DateTimeFormatter d_formatter;
+
+	/**
+	 * LocalDateTime Instance
+	 */
 	private LocalDateTime d_now;
 
 	/**
 	 * Constructor to attach the object of LogEntryBuffer
-	 * 
+	 *
 	 * @param p_logEntry object of LogEntryBuffer
 	 */
 	public LogWriter(LogEntryBuffer p_logEntry) {
@@ -26,7 +37,7 @@ public class LogWriter implements Observer {
 
 	/**
 	 * Display the current time and the state changes
-	 * 
+	 *
 	 * @param p_observableState current state
 	 */
 	@Override
