@@ -44,8 +44,8 @@ public class DiplomacyOrder extends Order {
 			return String.format("Player \"%s\" has already negotiated with player \"%s\", can't do it again.",
 					d_targetPlayer.getName(), d_player.getName());
 		else {
+			d_player.addNegotiatedPlayers(d_targetPlayer);
 			d_targetPlayer.addNegotiatedPlayers(d_player);
-			d_player.deleteCardsOwned("negotiate");
 			return String.format("Player \"%s\" manage to negotiate with player \"%s\".", d_player.getName(),
 					d_targetPlayer.getName());
 		}

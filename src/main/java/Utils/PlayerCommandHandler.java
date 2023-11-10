@@ -436,13 +436,19 @@ public class PlayerCommandHandler extends CommandHandler {
 						return "stayCurrentPlayer";
 					}
 
+					// Check if the player negotiate with himself.
+					if (p_currentPlayer.getName() == l_player.getName()) {
+						String l_response = String.format("Player \"%s\" can't negotiate with himself.",
+								p_currentPlayer.getName(), l_player.getName());
+						System.out.println(l_response);
+						return "stayCurrentPlayer";
+					}
+
 					DiplomacyOrder l_negotiateOrder = new DiplomacyOrder(p_currentPlayer, l_player);
 					p_currentPlayer.addOrder(l_negotiateOrder);
 					String l_response = String.format("Add a card order of negotiating with \"%s\" for Player \"%s\".",
 							l_player.getName(), p_currentPlayer.getName());
 					d_logEntryBuffer.setString(l_response);
-
-					p_currentPlayer.addNegotiatedPlayers(l_player);
 
 					p_currentPlayer.deleteCardsOwned(l_command[0]);
 					l_response = String.format("Delete a negotiate card for Player \"%s\".", p_currentPlayer.getName());
