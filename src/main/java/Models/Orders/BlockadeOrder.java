@@ -55,7 +55,6 @@ public class BlockadeOrder extends Order {
 		} else {
 			d_targetCountry.setOwner(null);
 			d_player.getD_countries().remove(d_targetCountry);
-			d_player.deleteCardsOwned("blockade");
 			return String.format("Player \"%s\" blockade a country \"%d\", but no army.", d_player.getName(),
 					d_targetCountry.getCountryId());
 		}
