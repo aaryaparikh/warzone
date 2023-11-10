@@ -12,17 +12,49 @@ import Models.Orders.Order;
 
 /**
  * Represents a player in the game.
- * 
+ *
  * @author Dev
  */
 public class Player {
+
+	/**
+	 * Player name
+	 */
 	private String d_name;
+
+	/**
+	 * List of the Countries of the player
+	 */
 	private List<Country> d_countries;
+
+	/**
+	 * List of Orders assigned to the Player
+	 */
 	private List<Order> d_orders;
+
+	/**
+	 * Reinforcement pool of the player
+	 */
 	private int d_reinforcementPool;
+
+	/**
+	 * Cards hold by the player
+	 */
 	private HashMap<String, Integer> d_cardsOwned;
+
+	/**
+	 * List of Negotiated Player
+	 */
 	private List<Player> d_negotiatedPlayers;
+
+	/**
+	 * GameEngine instance
+	 */
 	private GameEngine d_gameEngine;
+
+	/**
+	 * check point for commit
+	 */
 	private Boolean d_ifSignified;
 
 	/**
@@ -33,14 +65,14 @@ public class Player {
 	 */
 	public Player(String p_name, GameEngine p_gameEngine) {
 		this.d_name = p_name;
-		this.d_countries = new ArrayList<Country>();
-		this.d_orders = new ArrayList<Order>();
+		this.d_countries = new ArrayList<>();
+		this.d_orders = new ArrayList<>();
 		this.d_reinforcementPool = 0;
-		this.d_negotiatedPlayers = new ArrayList<Player>();
+		this.d_negotiatedPlayers = new ArrayList<>();
 		this.d_gameEngine = p_gameEngine;
 
 		// Initialize card owned list
-		this.d_cardsOwned = new HashMap<String, Integer>();
+		this.d_cardsOwned = new HashMap<>();
 		this.d_cardsOwned.put("bomb", 0);
 		this.d_cardsOwned.put("blockade", 0);
 		this.d_cardsOwned.put("airlift", 0);
@@ -61,7 +93,7 @@ public class Player {
 	 *
 	 */
 	public void resetCountry() {
-		d_countries = new ArrayList<Country>();
+		d_countries = new ArrayList<>();
 	}
 
 	/**
@@ -222,7 +254,7 @@ public class Player {
 
 		// Get a random card
 		if (l_cardType.equals("random")) {
-			List<String> l_cardList = new ArrayList<String>();
+			List<String> l_cardList = new ArrayList<>();
 			l_cardList.addAll(GameConstants.GAME_CARD_LIST);
 			Collections.shuffle(l_cardList);
 			l_cardType = l_cardList.get(0);
@@ -268,7 +300,7 @@ public class Player {
 
 	/**
 	 * Gets whether this player signified
-	 * 
+	 *
 	 * @return the d_ifSignified
 	 */
 	public Boolean getIfSignified() {
@@ -277,7 +309,7 @@ public class Player {
 
 	/**
 	 * Sets whether this player signified
-	 * 
+	 *
 	 * @param d_ifSignified the d_ifSignified to set
 	 */
 	public void setIfSignified(Boolean d_ifSignified) {

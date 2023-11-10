@@ -7,14 +7,29 @@ import Views.MapView;
 
 /**
  * Represents a map containing continents and countries.
- * 
+ *
  * @author Aarya
  */
 public class GameMap {
 
-	private ArrayList<Continent> d_continents = new ArrayList<Continent>();
-	private ArrayList<Country> d_countries = new ArrayList<Country>();
+	/**
+	 * List of Continents in the Game
+	 */
+	private ArrayList<Continent> d_continents = new ArrayList<>();
+
+	/**
+	 * List of COuntries in the Game
+	 */
+	private ArrayList<Country> d_countries = new ArrayList<>();
+
+	/**
+	 * Continent Count
+	 */
 	private int d_continentCount = 0;
+
+	/**
+	 * Country Count
+	 */
 	private int d_countryCount = 0;
 
 	/**
@@ -71,15 +86,15 @@ public class GameMap {
 	 * Reset GameMap
 	 */
 	public void mapReset() {
-		d_continents = new ArrayList<Continent>();
-		d_countries = new ArrayList<Country>();
+		d_continents = new ArrayList<>();
+		d_countries = new ArrayList<>();
 		d_continentCount = 0;
 		d_countryCount = 0;
 	}
 
 	/**
 	 * Load GameMap
-	 * 
+	 *
 	 * @param p_filePath file path in system
 	 */
 	public void loadGameMap(String p_filePath) {
@@ -137,7 +152,7 @@ public class GameMap {
 
 	/**
 	 * Sets the list of continents on the map.
-	 * 
+	 *
 	 * @param p_continents list of continents
 	 */
 	public void setContinents(ArrayList<Continent> p_continents) {
@@ -203,7 +218,7 @@ public class GameMap {
 				break;
 			} else {
 				removeNeighbor(d_countries.get(l_i).getCountryId(), p_countryId);
-				;
+
 			}
 		}
 	}
