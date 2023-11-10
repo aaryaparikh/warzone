@@ -10,9 +10,24 @@ import Models.Player;
  * @author YURUI
  */
 public class AirliftOrder extends Order {
+	/**
+	 * Order giving player
+	 */
 	private Player d_player;
+
+	/**
+	 * Country from where armies are to be airlifted
+	 */
 	private Country d_resourceCountry;
+
+	/**
+	 * Country to where armies are to be airlifted
+	 */
 	private Country d_targetCountry;
+
+	/**
+	 * Armies to be airlifted
+	 */
 	private int d_armies;
 
 	/**

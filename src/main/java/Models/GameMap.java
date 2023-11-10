@@ -36,6 +36,10 @@ public class GameMap {
 	 * Map editor for editing a map
 	 */
 	public MapEditor d_mapEditor;
+
+	/**
+	 * Map View for the map
+	 */
 	private MapView d_mapView;
 
 	/**

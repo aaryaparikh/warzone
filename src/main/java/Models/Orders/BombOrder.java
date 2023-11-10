@@ -9,12 +9,19 @@ import Models.Player;
  *
  */
 public class BombOrder extends Order {
+	/**
+	 * Order giving player
+	 */
 	private Player d_player;
+
+	/**
+	 * Country where bomb is to be executed
+	 */
 	private Country d_targetCountry;
 
 	/**
 	 * Constructor to assign initial values
-	 * 
+	 *
 	 * @param p_player        player who is committing bomb order
 	 * @param p_targetCountry bomb which country
 	 */
@@ -48,7 +55,7 @@ public class BombOrder extends Order {
 		for (Country l_ownedCountry : d_player.getD_countries())
 			if (l_ownedCountry.getNeighborCountries().contains(d_targetCountry.getCountryId()))
 				l_ifBombNeighbor = true;
-		if (l_ifBombNeighbor == false)
+		if (!l_ifBombNeighbor)
 			return String.format("Player \"%s\" is not adjacent to target country \"%d\", can't bomb.",
 					d_player.getName(), d_targetCountry.getCountryId());
 
