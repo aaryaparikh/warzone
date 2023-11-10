@@ -18,6 +18,11 @@ import Models.Player;
  */
 public class BombOrderTest {
 
+	/**
+	 * Default Game map maker
+	 *
+	 * @param p_gameMap
+	 */
 	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
@@ -32,11 +37,34 @@ public class BombOrderTest {
 		p_gameMap.addNeighbor(1, 7);
 	}
 
+	/**
+	 * DeployOrder instance
+	 */
 	private DeployOrder d_depOrder;
+
+	/**
+	 * BombOrder instance
+	 */
 	private BombOrder d_bombOrder;
+
+	/**
+	 * GameMap instance
+	 */
 	private GameMap d_map;
+
+	/**
+	 * GameEngine instance
+	 */
 	private GameEngine d_gameEngine;
+
+	/**
+	 * Player instance
+	 */
 	private Player d_p1;
+
+	/**
+	 * PLayer instance
+	 */
 	private Player d_p2;
 
 	/**

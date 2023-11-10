@@ -9,6 +9,9 @@ import Models.GameMap;
  * @author YURUI
  */
 public class MapCommandHandler extends CommandHandler {
+	/**
+	 * Game Map instance of the GameEngine
+	 */
 	private GameMap d_map;
 
 	/**

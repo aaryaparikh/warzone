@@ -2,12 +2,23 @@ package Models;
 
 /**
  * Represents a continent in the game map.
- * 
+ *
  * @author Aarya
  */
 public class Continent {
+	/**
+	 * Continent Id
+	 */
 	private int d_continentId;
+
+	/**
+	 * Continent Value
+	 */
 	private int d_continentValue;
+
+	/**
+	 * Continent Name
+	 */
 	private String d_continentName;
 
 	/**

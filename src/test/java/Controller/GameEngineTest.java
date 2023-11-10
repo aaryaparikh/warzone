@@ -20,10 +20,29 @@ import Models.GameMap;
  */
 public class GameEngineTest {
 
+	/**
+	 * InputStream instance
+	 */
 	private final InputStream d_originalSystemIn = System.in;
+
+	/**
+	 * PrintStream instance
+	 */
 	private final PrintStream d_originalSystemOut = System.out;
+
+	/**
+	 * ByteArrayOutputStream instance
+	 */
 	private final ByteArrayOutputStream d_systemOutContent = new ByteArrayOutputStream();
+
+	/**
+	 * GameEngine instance
+	 */
 	private GameEngine d_gameEngine;
+
+	/**
+	 * GameMap instance
+	 */
 	private GameMap d_map;
 
 	/**

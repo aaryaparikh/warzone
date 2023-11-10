@@ -4,15 +4,34 @@ import java.util.ArrayList;
 
 /**
  * Represents a country in the game.
- * 
+ *
  * @author Dev
  */
 public class Country {
+	/**
+	 * Country Id
+	 */
 	private int d_countryId;
+
+	/**
+	 * Continent Id
+	 */
 	private int d_continentId;
+
+	/**
+	 * Armies held by Country
+	 */
 	private int d_armies;
+
+	/**
+	 * Owner of the Country
+	 */
 	private Player d_owner;
-	private ArrayList<Integer> d_neighborCountries = new ArrayList<Integer>();
+
+	/**
+	 * Neighbor Countries of Country
+	 */
+	private ArrayList<Integer> d_neighborCountries = new ArrayList<>();
 
 	/**
 	 * Creates a new country with the specified country and continent IDs.

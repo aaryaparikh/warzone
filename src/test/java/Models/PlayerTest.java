@@ -16,6 +16,9 @@ import Controller.GameEngine;
  */
 public class PlayerTest {
 
+	/**
+	 * Player instance
+	 */
 	private Player d_player;
 
 	/**

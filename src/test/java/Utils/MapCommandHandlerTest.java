@@ -1,19 +1,27 @@
 package Utils;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import Controller.GameEngine;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * JUnit 5 test class for MapCommandHandler class.
- * 
+ *
  * @author YURUI
  */
 public class MapCommandHandlerTest {
 
+	/**
+	 * MapCommandHandler instance
+	 */
 	private MapCommandHandler d_mapCommandHandler;
+
+	/**
+	 * GameEngine Instance
+	 */
 	private GameEngine d_gameEngine;
 
 	/**

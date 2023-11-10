@@ -6,17 +6,28 @@ import Models.Player;
 
 /**
  * Players can place reinforcements to the countries they control.
- * 
+ *
  * @author YURUI
  */
 public class DeployOrder extends Order {
+	/**
+	 * Order giving player
+	 */
 	private Player d_player;
+
+	/**
+	 * Country to where the armies need to be deployed
+	 */
 	private Country d_country;
+
+	/**
+	 * Number of armies to be deployed
+	 */
 	private int d_armies;
 
 	/**
 	 * Constructor to assign initial values
-	 * 
+	 *
 	 * @param p_player  player who is committing deploy order
 	 * @param p_country which country that reinforcements are to be deployed
 	 * @param p_armies  number of reinforcements to be deployed
@@ -29,7 +40,7 @@ public class DeployOrder extends Order {
 
 	/**
 	 * Method to execute deploy order.
-	 * 
+	 *
 	 * @param p_game the object representing the game.
 	 * @return a response string indicating the result of the order execution.
 	 */
@@ -45,7 +56,7 @@ public class DeployOrder extends Order {
 			}
 		}
 
-		if (ifDeployCountryInControl == true)
+		if (ifDeployCountryInControl)
 			return String.format("Player \"%s\" deployed \"%d\" armies to country \"%d\"", d_player.getName(), d_armies,
 					d_country.getCountryId());
 		else

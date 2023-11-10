@@ -22,16 +22,44 @@ import Views.PhaseView;
 
 /**
  * Represents the game engine core for the strategy game.
- * 
+ *
  * @author YURUI
  */
 public class GameEngine {
+	/**
+	 * List of players in the game
+	 */
 	private List<Player> d_players;
+
+	/**
+	 * Map of the game
+	 */
 	private GameMap d_map;
+
+	/**
+	 * Shows the phases of game
+	 */
 	private PhaseView d_phaseView;
+
+	/**
+	 * List of conquering player
+	 */
 	private List<Player> d_playerConquerInTurn;
+
+	/**
+	 * Maintain the game phase
+	 */
 	private Phase d_gamePhase;
+
+	/**
+	 * Log Maintainer
+	 */
 	private LogEntryBuffer d_logEntryBuffer;
+
+	/**
+	 * Game Log Writer
+	 */
+
 	@SuppressWarnings("unused")
 	private LogWriter d_logWriter;
 
@@ -85,10 +113,7 @@ public class GameEngine {
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
 
-				if (issueOrdersInTurn() == "gameEnd")
-					break;
-
-				if (executeAllCommittedOrders() == "gameOver")
+				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
 					break;
 			}
 
@@ -198,10 +223,10 @@ public class GameEngine {
 		boolean l_ifRemainPlayers = true;
 
 		// issue order in round-robin fashion
-		while (l_ifRemainPlayers == true) {
+		while (l_ifRemainPlayers) {
 			l_ifRemainPlayers = false;
 			for (Player l_player : l_playerPool)
-				if (l_player.getIfSignified() == false) {
+				if (!l_player.getIfSignified()) {
 					System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool()
 							+ " armies need to deploy]");
 
@@ -221,7 +246,7 @@ public class GameEngine {
 
 	/**
 	 * function that execute orders from Player's order list
-	 * 
+	 *
 	 * @return string to output result of executing orders
 	 */
 	public String executeAllCommittedOrders() {
@@ -229,7 +254,7 @@ public class GameEngine {
 		boolean l_ifRemainPlayers = true;
 
 		// execute every player's deploy order in round-robin fashion
-		while (l_ifRemainPlayers == true) {
+		while (l_ifRemainPlayers) {
 			l_ifRemainPlayers = false;
 			for (Player l_player : l_playerPool) {
 				Order l_order = l_player.nextOrder();
@@ -249,7 +274,7 @@ public class GameEngine {
 		l_ifRemainPlayers = true;
 
 		// execute every player's other order in round-robin fashion
-		while (l_ifRemainPlayers == true) {
+		while (l_ifRemainPlayers) {
 			l_ifRemainPlayers = false;
 			for (Player l_player : l_playerPool) {
 				Order l_order = l_player.nextOrder();
@@ -260,7 +285,7 @@ public class GameEngine {
 					d_logEntryBuffer.setString(l_response);
 
 					// check whether the game is over
-					if (checkIfGameIsOver() == true) {
+					if (checkIfGameIsOver()) {
 						System.out.println("\n[GAME OVER!]");
 						System.out.println("Player:" + l_player.getName() + " is the winner!");
 						setPhase(new EndGamePhase(this));
@@ -337,7 +362,7 @@ public class GameEngine {
 	 * Add a player to the game.
 	 *
 	 * @param p_player The player to add.
-	 * 
+	 *
 	 * @return whether it successes to add a player
 	 */
 	public boolean addPlayer(Player p_player) {
@@ -353,7 +378,7 @@ public class GameEngine {
 	 * Remove a player to the game.
 	 *
 	 * @param p_player The player to remove.
-	 * 
+	 *
 	 * @return whether it successes to remove a player
 	 */
 	public boolean removePlayer(Player p_player) {
@@ -378,7 +403,7 @@ public class GameEngine {
 	 * Check whether a player in current list.
 	 *
 	 * @param p_player The player to check.
-	 * 
+	 *
 	 * @return whether the player is in the list
 	 */
 	public boolean checkPlayerInList(Player p_player) {
@@ -433,7 +458,7 @@ public class GameEngine {
 		int l_assignedArmies = p_ownedCountries.size() / 3;
 
 		for (Continent l_continent : d_map.getContinents()) {
-			List<Country> l_countryList = new ArrayList<Country>();
+			List<Country> l_countryList = new ArrayList<>();
 			for (Country l_country : d_map.getCountries()) {
 				if (l_country.getContinentId() == l_continent.getContinentId())
 					l_countryList.add(l_country);
@@ -482,7 +507,7 @@ public class GameEngine {
 
 	/**
 	 * Get the list of players who conquer at least one territory in this turn
-	 * 
+	 *
 	 * @return the d_playerConquerInTurn
 	 */
 	public List<Player> getPlayerConquerInTurn() {
@@ -491,7 +516,7 @@ public class GameEngine {
 
 	/**
 	 * Set the list of players who conquer at least one territory in this turn
-	 * 
+	 *
 	 * @param p_player the d_playerConquerInTurn to set
 	 */
 	public void setPlayerConquerInTurn(Player p_player) {
@@ -503,7 +528,7 @@ public class GameEngine {
 	 */
 	public void resetPlayerConquerInTurn() {
 		this.d_playerConquerInTurn.clear();
-		;
+
 	}
 
 	/**

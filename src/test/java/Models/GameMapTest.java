@@ -17,6 +17,9 @@ import org.junit.jupiter.api.Test;
  * @author Dev
  */
 public class GameMapTest {
+	/**
+	 * GameMap instance
+	 */
 	private GameMap d_map;
 
 	/**
