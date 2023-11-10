@@ -18,6 +18,11 @@ import Models.Player;
  */
 public class DiplomacyOrderTest {
 
+	/**
+	 * Default Game map maker
+	 *
+	 * @param p_gameMap
+	 */
 	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
@@ -32,12 +37,39 @@ public class DiplomacyOrderTest {
 		p_gameMap.addNeighbor(1, 7);
 	}
 
+	/**
+	 * DeployOrder instance
+	 */
 	private DeployOrder d_depOrder;
+
+	/**
+	 * DiplomacyOrder instance
+	 */
 	private DiplomacyOrder d_dipOrder;
+
+	/**
+	 * BombOrder instance
+	 */
 	private BombOrder d_bombOrder;
+
+	/**
+	 * GameMap instance
+	 */
 	private GameMap d_map;
+
+	/**
+	 * GameEngine instance
+	 */
 	private GameEngine d_gameEngine;
+
+	/**
+	 * Player instance
+	 */
 	private Player d_p1;
+
+	/**
+	 * Player instance
+	 */
 	private Player d_p2;
 
 	/**

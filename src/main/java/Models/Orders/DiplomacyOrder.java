@@ -5,15 +5,22 @@ import Models.Player;
 
 /**
  * Players can negotiate with another player.
- * 
+ *
  */
 public class DiplomacyOrder extends Order {
+	/**
+	 * Order giving player
+	 */
 	private Player d_player;
+
+	/**
+	 * PLayer with who the negotiation takes place
+	 */
 	private Player d_targetPlayer;
 
 	/**
 	 * Constructor to assign initial values
-	 * 
+	 *
 	 * @param p_player       player who is committing deploy order
 	 * @param p_targetPlayer negotiate with which player
 	 */
@@ -24,7 +31,7 @@ public class DiplomacyOrder extends Order {
 
 	/**
 	 * Method to execute diplomacy order.
-	 * 
+	 *
 	 * @param p_game the object representing the game.
 	 * @return a response string indicating the result of the order execution.
 	 */

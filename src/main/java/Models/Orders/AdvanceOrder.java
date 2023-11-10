@@ -1,24 +1,40 @@
 package Models.Orders;
 
 import java.util.List;
+
 import Controller.GameEngine;
 import Models.Country;
 import Models.Player;
 
 /**
  * Players can advance reinforcements to another country.
- * 
+ *
  * @author YURUI
  */
 public class AdvanceOrder extends Order {
+	/**
+	 * Order giving player
+	 */
 	private Player d_player;
+
+	/**
+	 * Player resource country
+	 */
 	private Country d_resourceCountry;
+
+	/**
+	 * PLayer target country
+	 */
 	private Country d_targetCountry;
+
+	/**
+	 * Armies to be advanced
+	 */
 	private int d_armies;
 
 	/**
 	 * Constructor to advance order
-	 * 
+	 *
 	 * @param p_player        player who is committing advance command
 	 * @param p_sourceCountry country from which the reinforcements are to be taken
 	 * @param p_targetCountry country to which reinforcements are to be advanced
@@ -33,7 +49,7 @@ public class AdvanceOrder extends Order {
 
 	/**
 	 * Method to execute advance command
-	 * 
+	 *
 	 * @param p_game gets the object of GameEngine class
 	 * @return string according to the executed order
 	 */

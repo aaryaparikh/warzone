@@ -18,8 +18,19 @@ import org.junit.jupiter.api.Test;
  */
 public class Build2DemoTest {
 
+	/**
+	 * InputStream instance
+	 */
 	private final InputStream d_originalSystemIn = System.in;
+
+	/**
+	 * PrintStream instance
+	 */
 	private final PrintStream d_originalSystemOut = System.out;
+
+	/**
+	 * ByteArrayOutputStream instance
+	 */
 	private final ByteArrayOutputStream d_systemOutContent = new ByteArrayOutputStream();
 
 	/**

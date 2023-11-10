@@ -15,6 +15,9 @@ import org.junit.jupiter.api.Test;
  */
 public class CountryTest {
 
+	/**
+	 * Country instance
+	 */
 	private Country d_country;
 
 	/**

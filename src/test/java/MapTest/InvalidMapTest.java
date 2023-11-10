@@ -1,17 +1,19 @@
 package MapTest;
 
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import Models.Continent;
 import Models.Country;
 import Models.GameMap;
-
-import static org.junit.Assert.assertTrue;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.*;
 
 /**
  * JUnit 5 test class for checking wether the map is invalid or not.
@@ -20,9 +22,24 @@ import java.util.*;
  */
 public class InvalidMapTest {
 
+	/**
+	 * File instance
+	 */
 	private File d_testMapFile;
+
+	/**
+	 * test file name
+	 */
 	private String d_testfileName = "temp.txt";
+
+	/**
+	 * Continent list
+	 */
 	private List<Continent> d_continents;
+
+	/**
+	 * Country list
+	 */
 	private List<Country> d_countries;
 
 	/**
@@ -86,7 +103,7 @@ public class InvalidMapTest {
 
 	/**
 	 * Method to check wether the map is valid or not
-	 * 
+	 *
 	 * @return boolean Wether the map is valid or not
 	 */
 	public boolean validateMap() {
@@ -99,16 +116,15 @@ public class InvalidMapTest {
 		}
 
 		// Step 1: Check for duplicate continents and validate continent values.
-		for (int l_i = 0; l_i < d_continents.size(); l_i++) {
-			if (!l_counter.containsKey(d_continents.get(l_i).getContinentId())) {
-				l_counter.put(d_continents.get(l_i).getContinentId(), 1);
+		for (Continent d_continent : d_continents) {
+			if (!l_counter.containsKey(d_continent.getContinentId())) {
+				l_counter.put(d_continent.getContinentId(), 1);
 			} else {
-				System.out.println("Invalid Map: Duplicate Continents: " + d_continents.get(l_i).getContinentId());
+				System.out.println("Invalid Map: Duplicate Continents: " + d_continent.getContinentId());
 				return false;
 			}
-			if (d_continents.get(l_i).getContinentValue() <= 0) {
-				System.out
-						.println("Invalid Continent Value for Continent ID: " + d_continents.get(l_i).getContinentId());
+			if (d_continent.getContinentValue() <= 0) {
+				System.out.println("Invalid Continent Value for Continent ID: " + d_continent.getContinentId());
 				return false;
 			}
 		}
@@ -116,27 +132,27 @@ public class InvalidMapTest {
 
 		// Step 2: Check for duplicate countries, unreachable countries, and continent
 		// assignments.
-		for (int l_i = 0; l_i < d_countries.size(); l_i++) {
+		for (Country element : d_countries) {
 
 			// Step 3: Check for duplicate countries
-			if (!l_counter.containsKey(d_countries.get(l_i).getCountryId())) {
-				l_counter.put(d_countries.get(l_i).getContinentId(), 1);
+			if (!l_counter.containsKey(element.getCountryId())) {
+				l_counter.put(element.getContinentId(), 1);
 			} else {
-				System.out.println("Invalid Map: Duplicate Countries: " + d_countries.get(l_i).getCountryId());
+				System.out.println("Invalid Map: Duplicate Countries: " + element.getCountryId());
 				return false;
 			}
 
 			// Step 4: Check for unreachable countries (no neighboring countries assigned)
-			if (d_countries.get(l_i).getNeighborCountries().isEmpty()) {
+			if (element.getNeighborCountries().isEmpty()) {
 				System.out.println("Invalid Map: Unreachable Country: No Neighbouring countries assigned to "
-						+ d_countries.get(l_i).getCountryId());
+						+ element.getCountryId());
 				return false;
 			}
 
 			// Step 5: Check if the country is assigned to a valid continent
 			int l_check = 0;
-			for (int l_j = 0; l_j < d_continents.size(); l_j++) {
-				if (d_countries.get(l_i).getContinentId() == d_continents.get(l_j).getContinentId()) {
+			for (Continent d_continent : d_continents) {
+				if (element.getContinentId() == d_continent.getContinentId()) {
 					l_check = 1;
 					break;
 				}
@@ -147,8 +163,8 @@ public class InvalidMapTest {
 			}
 
 			// Step 6: Check if a country is its own neighbor
-			for (Integer l_neighbors : d_countries.get(l_i).getNeighborCountries()) {
-				if (l_neighbors == d_countries.get(l_i).getCountryId()) {
+			for (Integer l_neighbors : element.getNeighborCountries()) {
+				if (l_neighbors == element.getCountryId()) {
 					System.out
 							.println("Invalid Map: Country cannot be a neighbor of itself. Country ID: " + l_neighbors);
 					return false;
@@ -156,21 +172,20 @@ public class InvalidMapTest {
 
 				// Step 7: Check for duplicate neighbors
 				int l_neighborCounter = 0;
-				for (Integer l_checker : d_countries.get(l_i).getNeighborCountries()) {
+				for (Integer l_checker : element.getNeighborCountries()) {
 					if (l_checker == l_neighbors) {
 						l_neighborCounter++;
 					}
 				}
 				if (l_neighborCounter > 1) {
-					System.out.println(
-							"Invalid Map: Duplicate Neighbors for Country: " + d_countries.get(l_i).getCountryId());
+					System.out.println("Invalid Map: Duplicate Neighbors for Country: " + element.getCountryId());
 					return false;
 				}
 
 				// Step 8: Check if neighboring country exists
 				int l_checker = 0;
-				for (int l_j = 0; l_j < d_countries.size(); l_j++) {
-					if (d_countries.get(l_j).getCountryId() == l_neighbors) {
+				for (Country element2 : d_countries) {
+					if (element2.getCountryId() == l_neighbors) {
 						l_checker = 1;
 					}
 				}
@@ -182,14 +197,13 @@ public class InvalidMapTest {
 
 			// Step 9: Check if continent exists
 			int l_checker = 0;
-			for (int l_j = 0; l_j < d_continents.size(); l_j++) {
-				if (d_countries.get(l_i).getContinentId() == d_continents.get(l_j).getContinentId()) {
+			for (Continent d_continent : d_continents) {
+				if (element.getContinentId() == d_continent.getContinentId()) {
 					l_checker = 1;
 				}
 			}
 			if (l_checker == 0) {
-				System.out.println(
-						"Invalid Map: Country assigned to a continent that does not exist: " + d_countries.get(l_i));
+				System.out.println("Invalid Map: Country assigned to a continent that does not exist: " + element);
 				return false;
 			}
 		}

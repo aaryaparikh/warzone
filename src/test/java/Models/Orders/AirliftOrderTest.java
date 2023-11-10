@@ -18,6 +18,11 @@ import Models.Player;
  */
 public class AirliftOrderTest {
 
+	/**
+	 * Default Game map maker
+	 *
+	 * @param p_gameMap
+	 */
 	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
@@ -33,11 +38,34 @@ public class AirliftOrderTest {
 	}
 
 	// Creating data members required to execute tests
+	/**
+	 * Airlift instance
+	 */
 	private AirliftOrder d_airLift;
+
+	/**
+	 * DeployOrder instance
+	 */
 	private DeployOrder d_depOrder;
+
+	/**
+	 * GameMap instance
+	 */
 	private GameMap d_map;
+
+	/**
+	 * GameEngine instance
+	 */
 	private GameEngine d_gameEngine;
+
+	/**
+	 * Player instance
+	 */
 	private Player d_p1;
+
+	/**
+	 * Player instance
+	 */
 	private Player d_p2;
 
 	/**

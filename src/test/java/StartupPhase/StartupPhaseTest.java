@@ -1,10 +1,12 @@
 package StartupPhase;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import Controller.GameEngine;
 import Controller.Phases.SubPhases.PlaySetupPhase;
 import Models.Country;
@@ -12,12 +14,19 @@ import Models.GameMap;
 
 /**
  * Junit 5 class for testing the smooth functionality of startup phase
- * 
+ *
  * @author Virag
  */
 public class StartupPhaseTest {
 
+	/**
+	 * GameMap instance
+	 */
 	private static GameMap d_map;
+
+	/**
+	 * GameEngine instance
+	 */
 	private static GameEngine d_gameEngine;
 
 	private void defaultGameMap(GameMap p_gameMap) {

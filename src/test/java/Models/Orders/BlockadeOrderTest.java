@@ -19,6 +19,11 @@ import Models.Player;
  */
 class BlockadeOrderTest {
 
+	/**
+	 * Default Game map maker
+	 *
+	 * @param p_gameMap
+	 */
 	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);
 		p_gameMap.addContinent(2, 5);
@@ -33,11 +38,34 @@ class BlockadeOrderTest {
 		p_gameMap.addNeighbor(1, 7);
 	}
 
+	/**
+	 * DeployOrder instance
+	 */
 	private DeployOrder d_depOrder;
+
+	/**
+	 * BlockadOrder instance
+	 */
 	private BlockadeOrder d_blockeOrder;
+
+	/**
+	 * GameMap instance
+	 */
 	private GameMap d_map;
+
+	/**
+	 * GameEngine instance
+	 */
 	private GameEngine d_gameEngine;
+
+	/**
+	 * PLayer instance
+	 */
 	private Player d_p1;
+
+	/**
+	 * Player instance
+	 */
 	private Player d_p2;
 
 	/**

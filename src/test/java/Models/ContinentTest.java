@@ -13,6 +13,9 @@ import org.junit.jupiter.api.Test;
  */
 public class ContinentTest {
 
+	/**
+	 * Continent instance
+	 */
 	private Continent d_continent;
 
 	/**
