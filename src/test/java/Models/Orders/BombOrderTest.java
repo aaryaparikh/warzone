@@ -21,7 +21,7 @@ public class BombOrderTest {
 	/**
 	 * Default Game map maker
 	 *
-	 * @param p_gameMap
+	 * @param p_gameMap game map
 	 */
 	private void defaultGameMap(GameMap p_gameMap) {
 		p_gameMap.addContinent(1, 3);

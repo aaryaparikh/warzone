@@ -59,7 +59,6 @@ public class GameEngine {
 	/**
 	 * Game Log Writer
 	 */
-
 	@SuppressWarnings("unused")
 	private LogWriter d_logWriter;
 
