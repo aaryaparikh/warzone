@@ -51,6 +51,11 @@ public class Player {
 	 * GameEngine instance
 	 */
 	private GameEngine d_gameEngine;
+	
+	/**
+	 * Game map in player's view in each turn
+	 */
+	public List<Country> d_gameMapInTurn;
 
 	/**
 	 * check point for commit
@@ -150,6 +155,14 @@ public class Player {
 			return order;
 		}
 		return null;
+	}
+	
+	/**
+	 * Update game map before issuing orders for player.
+	 * 
+	 */
+	public void updateGameMap() {
+		this.d_gameMapInTurn = this.d_gameEngine.getGameMap().getCountries();
 	}
 
 	/**

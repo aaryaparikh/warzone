@@ -111,6 +111,8 @@ public class GameEngine {
 			getPhaseView().showNextPhaseInfo("play");
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
+				
+				updateGameMapForPlayers();
 
 				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
 					break;
@@ -470,6 +472,15 @@ public class GameEngine {
 			return l_assignedArmies;
 		else
 			return GameConstants.MINIMUN_PLAYER_REINFORCEMENT;
+	}
+	
+	/**
+	 *  Update game map for each player
+	 *  
+	 */
+	private void updateGameMapForPlayers() {
+		for (Player l_player : d_players)
+			l_player.updateGameMap();
 	}
 
 	/**
