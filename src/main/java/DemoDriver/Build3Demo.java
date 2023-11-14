@@ -1,12 +1,9 @@
 package DemoDriver;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import Controller.GameEngine;
 import Models.*;
 import Models.Strategy.AggressivePlayerStrategy;
-import Models.Strategy.PlayerStrategy;
+import Models.Strategy.BenevolentPlayerStrategy;
 import Utils.DeepCopyList;
 
 /**
@@ -15,6 +12,7 @@ import Utils.DeepCopyList;
  * 
  * @author YURUI
  */
+@SuppressWarnings("unused")
 public class Build3Demo {
 
 	/**
@@ -57,7 +55,7 @@ public class Build3Demo {
 		l_gameEngine.addPlayer(p2);
 		l_gameEngine.assignCountriesRandomly();
 		
-		p1.setD_strategy(new AggressivePlayerStrategy(p1, DeepCopyList.deepCopy(l_map.getCountries()), l_gameEngine.getD_logEntryBuffer()));
+		p1.setD_strategy(new BenevolentPlayerStrategy(p1, DeepCopyList.deepCopy(l_map.getCountries()), l_gameEngine.getD_logEntryBuffer()));
 
 		l_gameEngine.start();
 		// EndGamePhase game play
