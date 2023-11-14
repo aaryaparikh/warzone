@@ -96,6 +96,15 @@ public class Country {
 	public ArrayList<Integer> getNeighborCountries() {
 		return d_neighborCountries;
 	}
+	
+	/**
+	 * Sets a list of neighboring country IDs.
+	 *
+	 * @param p_neighborCountries The list of neighboring country IDs.
+	 */
+	public void setNeighborCountries(ArrayList<Integer> p_neighborCountries) {
+		d_neighborCountries = p_neighborCountries;
+	}
 
 	/**
 	 * Gets the number of armies in this country.

@@ -3,6 +3,7 @@ package Models.Strategy;
 import java.util.List;
 import java.util.Random;
 
+import Controller.LogEntryBuffer;
 import Models.Country;
 import Models.Player;
 import Models.Orders.DeployOrder;
@@ -13,8 +14,8 @@ import Models.Orders.Order;
  */
 public class BenevolentPlayerStrategy extends PlayerStrategy {
 
-	public BenevolentPlayerStrategy(Player p_player, List<Country> p_countryList) {
-		super(p_player, p_countryList);
+	public BenevolentPlayerStrategy(Player p_player, List<Country> p_countryList, LogEntryBuffer p_logEntryBuffer) {
+		super(p_player, p_countryList, p_logEntryBuffer);
 	}
 
 	/**
