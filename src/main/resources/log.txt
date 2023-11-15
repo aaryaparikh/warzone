@@ -201,3 +201,74 @@
 2023/11/14 19:26:15>> Armies successfully moved from country "2" to country "1" and the ownership changed to "Aarya" player.
 2023/11/14 19:26:15>> Player:Aarya is the winner!
 2023/11/14 19:26:15>> Enter Game End
+2023/11/14 21:29:40>> 
+
+2023/11/14 21:29:40>> Game Start
+2023/11/14 21:29:40>> Enter Edit Map Phase
+2023/11/14 21:29:42>> Enter Game Start Up Phase
+2023/11/14 21:29:43>> Enter Game Issue Order Phase
+2023/11/14 21:29:43>> Aggressive Strategy deploy "4" armies on "1" for Player "Aarya".
+2023/11/14 21:29:43>> Random Strategy deploy "3" armies on "2" for Player "Yurui".
+2023/11/14 21:29:43>> Aggressive Strategy deploy "1" armies on "1" for Player "Aarya".
+2023/11/14 21:29:43>> Benevolent Strategy advance "2" armies from "2" to "1" for Player "Yurui".
+2023/11/14 21:29:43>> Aggressive Strategy advance "5" armies from "1" to "2" for Player "Aarya".
+2023/11/14 21:29:43>> Player "Yurui" has signified.
+2023/11/14 21:29:43>> Player "Aarya" has signified.
+2023/11/14 21:29:43>> Enter Game Execute Order Phase
+2023/11/14 21:29:43>> Player "Aarya" deployed "4" armies to country "1"
+2023/11/14 21:29:43>> Player "Yurui" deployed "3" armies to country "2"
+2023/11/14 21:29:43>> Player "Aarya" deployed "1" armies to country "1"
+2023/11/14 21:29:43>> Armies from country "1" were not able to advance to country "2" as the attacking armies were only able to defeat the exact number of armies in target country
+2023/11/14 21:29:43>> Armies from country "2" were not able to advance to country "1" 
+ as the attacking armies could not defeat all the armies in target country
+2023/11/14 21:29:43>> Enter Game Issue Order Phase
+2023/11/14 21:29:43>> Aggressive Strategy deploy "3" armies on "1" for Player "Aarya".
+2023/11/14 21:29:43>> Random Strategy deploy "3" armies on "2" for Player "Yurui".
+2023/11/14 21:29:43>> Aggressive Strategy deploy "1" armies on "1" for Player "Aarya".
+2023/11/14 21:29:43>> Benevolent Strategy advance "1" armies from "2" to "1" for Player "Yurui".
+2023/11/14 21:29:43>> Aggressive Strategy deploy "1" armies on "1" for Player "Aarya".
+2023/11/14 21:29:43>> Player "Yurui" has signified.
+2023/11/14 21:29:43>> Aggressive Strategy advance "7" armies from "1" to "2" for Player "Aarya".
+2023/11/14 21:29:43>> Player "Aarya" has signified.
+2023/11/14 21:29:43>> Enter Game Execute Order Phase
+2023/11/14 21:29:43>> Player "Aarya" deployed "3" armies to country "1"
+2023/11/14 21:29:43>> Player "Yurui" deployed "3" armies to country "2"
+2023/11/14 21:29:43>> Player "Aarya" deployed "1" armies to country "1"
+2023/11/14 21:29:43>> Player "Aarya" deployed "1" armies to country "1"
+2023/11/14 21:29:43>> Armies successfully moved from country "1" to country "2" and the ownership changed to "Aarya" player.
+2023/11/14 21:29:43>> Player:Aarya is the winner!
+2023/11/14 21:29:43>> Enter Game End
+2023/11/14 21:34:12>> 
+
+2023/11/14 21:34:12>> Game Start
+2023/11/14 21:34:12>> Enter Edit Map Phase
+2023/11/14 21:34:14>> Enter Game Start Up Phase
+2023/11/14 21:34:15>> Enter Game Issue Order Phase
+2023/11/14 21:34:15>> Aggressive Strategy deploy "3" armies on "2" for Player "Aarya".
+2023/11/14 21:34:15>> Random Strategy deploy "3" armies on "1" for Player "Yurui".
+2023/11/14 21:34:15>> Aggressive Strategy deploy "2" armies on "2" for Player "Aarya".
+2023/11/14 21:34:15>> Random Strategy advance "3" armies from "1" to "7" for Player "Yurui".
+2023/11/14 21:34:15>> Aggressive Strategy advance "5" armies from "2" to "1" for Player "Aarya".
+2023/11/14 21:34:15>> Player "Yurui" has signified.
+2023/11/14 21:34:15>> Player "Aarya" has signified.
+2023/11/14 21:34:15>> Enter Game Execute Order Phase
+2023/11/14 21:34:15>> Player "Aarya" deployed "3" armies to country "2"
+2023/11/14 21:34:15>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/14 21:34:15>> Player "Aarya" deployed "2" armies to country "2"
+2023/11/14 21:34:15>> Armies from country "2" were not able to advance to country "1" as the attacking armies were only able to defeat the exact number of armies in target country
+2023/11/14 21:34:15>> Armies from country "1" were not able to advance to country "7" as the attacking armies were only able to defeat the exact number of armies in target country
+2023/11/14 21:34:15>> Enter Game Issue Order Phase
+2023/11/14 21:34:15>> Aggressive Strategy deploy "4" armies on "2" for Player "Aarya".
+2023/11/14 21:34:15>> Random Strategy deploy "3" armies on "1" for Player "Yurui".
+2023/11/14 21:34:15>> Aggressive Strategy deploy "1" armies on "2" for Player "Aarya".
+2023/11/14 21:34:15>> Random Strategy advance "2" armies from "1" to "7" for Player "Yurui".
+2023/11/14 21:34:15>> Aggressive Strategy advance "7" armies from "2" to "1" for Player "Aarya".
+2023/11/14 21:34:15>> Player "Yurui" has signified.
+2023/11/14 21:34:15>> Player "Aarya" has signified.
+2023/11/14 21:34:15>> Enter Game Execute Order Phase
+2023/11/14 21:34:15>> Player "Aarya" deployed "4" armies to country "2"
+2023/11/14 21:34:15>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/14 21:34:15>> Player "Aarya" deployed "1" armies to country "2"
+2023/11/14 21:34:15>> Armies successfully moved from country "2" to country "1" and the ownership changed to "Aarya" player.
+2023/11/14 21:34:15>> Player:Aarya is the winner!
+2023/11/14 21:34:15>> Enter Game End

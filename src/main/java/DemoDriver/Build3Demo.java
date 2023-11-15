@@ -4,6 +4,7 @@ import Controller.GameEngine;
 import Models.*;
 import Models.Strategy.AggressivePlayerStrategy;
 import Models.Strategy.BenevolentPlayerStrategy;
+import Models.Strategy.RandomPlayerStrategy;
 import Utils.DeepCopyList;
 
 /**
@@ -56,7 +57,7 @@ public class Build3Demo {
 		l_gameEngine.assignCountriesRandomly();
 		
 		p1.setD_strategy(new AggressivePlayerStrategy(p1, DeepCopyList.deepCopy(l_map.getCountries()), l_gameEngine.getD_logEntryBuffer()));
-		p2.setD_strategy(new AggressivePlayerStrategy(p2, DeepCopyList.deepCopy(l_map.getCountries()), l_gameEngine.getD_logEntryBuffer()));
+		p2.setD_strategy(new RandomPlayerStrategy(p2, DeepCopyList.deepCopy(l_map.getCountries()), l_gameEngine.getD_logEntryBuffer()));
 
 		l_gameEngine.start();
 		// EndGamePhase game play

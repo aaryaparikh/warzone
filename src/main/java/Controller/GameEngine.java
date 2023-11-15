@@ -117,6 +117,8 @@ public class GameEngine {
 
 				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
 					break;
+				
+				executeCommand("showmap".split(" "), null);
 			}
 
 			// Enter end phase
