@@ -18,6 +18,7 @@ import Models.Country;
 import Models.GameMap;
 import Models.Player;
 import Models.Orders.Order;
+import Utils.DeepCopyList;
 import Views.PhaseView;
 
 /**
@@ -297,6 +298,10 @@ public class GameEngine {
 			}
 		}
 
+		// Update game map for each player
+		for (Player l_player : d_players)
+			l_player.getD_strategy().d_countryList = DeepCopyList.deepCopy(this.getGameMap().getCountries());
+		
 		// Allocate cards to players
 		for (Player l_player : getPlayerConquerInTurn())
 			l_player.addCardsOwned("random");
