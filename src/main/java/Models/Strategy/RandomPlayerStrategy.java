@@ -15,9 +15,9 @@ import Models.Orders.Order;
 /**
  * ConcreteStrategy of the Strategy pattern.
  */
-public class BenevolentPlayerStrategy extends PlayerStrategy {
+public class RandomPlayerStrategy extends PlayerStrategy {
 
-	public BenevolentPlayerStrategy(Player p_player, List<Country> p_countryList, LogEntryBuffer p_logEntryBuffer) {
+	public RandomPlayerStrategy(Player p_player, List<Country> p_countryList, LogEntryBuffer p_logEntryBuffer) {
 		super(p_player, p_countryList, p_logEntryBuffer);
 	}
 
