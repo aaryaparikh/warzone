@@ -43,9 +43,26 @@ public class PlayerCommandHandler extends CommandHandler {
 			System.out.println("Game is ended by Player \"" + p_currentPlayer.getName() + "\".");
 			d_logEntryBuffer.setString("Game is ended by Player \"" + p_currentPlayer.getName() + "\".");
 			return "gameEnd";
+			
 		case "showmap":
 			d_gameEngine.getGameMap().getD_mapView().showGameMap();
 			return "stayCurrentPlayer";
+			
+		case "savegame":
+			if (p_commands.length < 2) {
+				System.out.println("Please enter file path to save game.");
+				return "stayCurrentPlayer";
+			} else {
+				for (Player l_player : d_gameEngine.getPlayers())
+					while(l_player.recordNextOrder() != null)
+						continue;
+				GameEditor.saveGameToFile(d_gameEngine, p_commands[1], p_currentPlayer.getName());
+				String l_response = String.format("Map is saved in \"%s.txt\"", p_commands[1]);
+				System.out.println(l_response);
+				d_logEntryBuffer.setString(l_response);
+				return "gameEnd";
+			}
+			
 		case "commit":
 			if (p_currentPlayer.getD_reinforcementPool() == 0) {
 				p_currentPlayer.setIfSignified(true);

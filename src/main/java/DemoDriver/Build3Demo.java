@@ -74,8 +74,8 @@ public class Build3Demo {
 				l_gameEngine.getD_logEntryBuffer()));
 		p2.setD_strategy(new CheaterPlayerStrategy(p2, DeepCopyList.deepCopy(l_map.getCountries()),
 				l_gameEngine.getD_logEntryBuffer()));
-		p3.setD_strategy(new AggressivePlayerStrategy(p3, DeepCopyList.deepCopy(l_map.getCountries()),
-				l_gameEngine.getD_logEntryBuffer()));
+		//p3.setD_strategy(new AggressivePlayerStrategy(p3, DeepCopyList.deepCopy(l_map.getCountries()),
+				//l_gameEngine.getD_logEntryBuffer()));
 
 		l_gameEngine.start();
 		// EndGamePhase game play

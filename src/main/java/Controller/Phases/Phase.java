@@ -176,6 +176,13 @@ public abstract class Phase {
 	 * @param p_commands An array of commands for moving to the next phase.
 	 */
 	abstract public void next(String[] p_commands);
+	
+	/**
+	 * Sava game to json file
+	 *
+	 * @param p_commands An array of commands for saving game
+	 */
+	abstract public void saveGame(String[] p_commands);
 
 	/**
 	 * End the current phase based on the provided commands.

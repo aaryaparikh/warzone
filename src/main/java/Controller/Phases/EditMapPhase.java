@@ -198,4 +198,12 @@ public class EditMapPhase extends Phase {
 		return null;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void saveGame(String[] p_commands) {
+		printInvalidCommandMessage();
+	}
+
 }

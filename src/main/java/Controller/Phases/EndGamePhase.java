@@ -190,4 +190,12 @@ public class EndGamePhase extends Phase {
 		d_gameEngine.setPhase(null);
 		return null;
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void saveGame(String[] p_commands) {
+		printInvalidCommandMessage();
+	}
 }

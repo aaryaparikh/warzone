@@ -47,6 +47,18 @@ public class GameCommandHandler extends CommandHandler {
 				}
 			}
 			break;
+		
+		case "savegame":
+			if (p_commands.length < 2) {
+				System.out.println("Please enter file path to save game.");
+				return "stayCurrentPlayer";
+			} else {
+				GameEditor.saveGameToFile(d_gameEngine, "src/main/resources/" + p_commands[1], null);
+				String l_response2 = String.format("Map is saved in \"%s.txt\"", p_commands[1]);
+				System.out.println(l_response2);
+				d_logEntryBuffer.setString(l_response2);
+				return "gameEnd";
+			}
 
 		// game player order support multiple options
 		case "gameplayer":

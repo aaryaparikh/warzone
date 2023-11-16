@@ -88,7 +88,8 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Create an order. the Defensive player can only use Deploy orders
+	 * Create an order. the benevolent player deploy armies first, and advance to
+	 * move if possible.
 	 * 
 	 * @return created order
 	 */

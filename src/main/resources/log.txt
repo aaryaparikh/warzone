@@ -128,3 +128,111 @@
 2023/11/15 21:38:50>> "2" armies are moved from country "5" to country "7", "Yurui" occupy country "7", "2" armies remain.
 2023/11/15 21:38:50>> Player:Yurui is the winner!
 2023/11/15 21:38:50>> Enter Game End
+2023/11/15 22:37:23>> 
+
+2023/11/15 22:37:23>> Game Start
+2023/11/15 22:37:23>> Enter Edit Map Phase
+2023/11/15 22:37:26>> Enter Game Start Up Phase
+2023/11/15 22:42:50>> 
+
+2023/11/15 22:42:50>> Game Start
+2023/11/15 22:42:50>> Enter Edit Map Phase
+2023/11/15 22:42:52>> Enter Game Start Up Phase
+2023/11/15 22:43:03>> Map is saved in "jtest.txt"
+2023/11/15 22:44:16>> 
+
+2023/11/15 22:44:16>> Game Start
+2023/11/15 22:44:16>> Enter Edit Map Phase
+2023/11/15 22:44:18>> Enter Game Start Up Phase
+2023/11/15 23:12:19>> 
+
+2023/11/15 23:12:19>> Game Start
+2023/11/15 23:12:19>> Enter Edit Map Phase
+2023/11/15 23:12:22>> Enter Game Start Up Phase
+2023/11/15 23:12:29>> Map is saved in "g1.txt"
+2023/11/15 23:14:44>> 
+
+2023/11/15 23:14:44>> Game Start
+2023/11/15 23:14:44>> Enter Edit Map Phase
+2023/11/15 23:14:45>> Enter Game Start Up Phase
+2023/11/15 23:14:48>> Map is saved in "g1.txt"
+2023/11/15 23:22:57>> 
+
+2023/11/15 23:22:57>> Game Start
+2023/11/15 23:22:57>> Enter Edit Map Phase
+2023/11/15 23:22:59>> Enter Game Start Up Phase
+2023/11/15 23:23:03>> Map is saved in "g1.txt"
+2023/11/15 23:45:24>> 
+
+2023/11/15 23:45:24>> Game Start
+2023/11/15 23:45:24>> Enter Edit Map Phase
+2023/11/15 23:45:26>> Enter Game Start Up Phase
+2023/11/15 23:45:31>> Map is saved in "g1.txt"
+2023/11/16 00:06:11>> 
+
+2023/11/16 00:06:11>> Game Start
+2023/11/16 00:06:11>> Enter Edit Map Phase
+2023/11/16 00:06:13>> Enter Game Start Up Phase
+2023/11/16 00:06:16>> Map is saved in "g1.txt"
+2023/11/16 15:49:36>> 
+
+2023/11/16 15:49:36>> Game Start
+2023/11/16 15:49:36>> Enter Edit Map Phase
+2023/11/16 15:49:37>> Enter Game Start Up Phase
+2023/11/16 15:49:41>> Map is saved in "g1.txt"
+2023/11/16 15:53:28>> 
+
+2023/11/16 15:53:28>> Game Start
+2023/11/16 15:53:28>> Enter Edit Map Phase
+2023/11/16 15:53:30>> Enter Game Start Up Phase
+2023/11/16 15:53:32>> Map is saved in "g1.txt"
+2023/11/16 16:09:29>> 
+
+2023/11/16 16:09:29>> Game Start
+2023/11/16 16:09:29>> Enter Edit Map Phase
+2023/11/16 16:09:34>> 
+
+2023/11/16 16:09:34>> Game Start
+2023/11/16 16:09:34>> Enter Edit Map Phase
+2023/11/16 16:09:36>> Enter Game Start Up Phase
+2023/11/16 16:09:42>> Map is saved in "g1.txt"
+2023/11/16 17:13:39>> 
+
+2023/11/16 17:13:39>> Game Start
+2023/11/16 17:13:39>> Enter Edit Map Phase
+2023/11/16 17:13:41>> Enter Game Start Up Phase
+2023/11/16 17:13:44>> Enter Game Issue Order Phase
+2023/11/16 17:13:44>> Cheater Strategy deploy "1" armies on "5" for Player "Aarya".
+2023/11/16 17:13:44>> Cheater Strategy deploy "1" armies on "1" for Player "Yurui".
+2023/11/16 17:16:04>> 
+
+2023/11/16 17:16:04>> Game Start
+2023/11/16 17:16:04>> Enter Edit Map Phase
+2023/11/16 17:16:06>> Enter Game Start Up Phase
+2023/11/16 17:16:07>> Enter Game Issue Order Phase
+2023/11/16 17:16:07>> Cheater Strategy deploy "1" armies on "1" for Player "Aarya".
+2023/11/16 17:16:07>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/16 17:17:03>> 
+
+2023/11/16 17:17:03>> Game Start
+2023/11/16 17:17:03>> Enter Edit Map Phase
+2023/11/16 17:17:05>> Enter Game Start Up Phase
+2023/11/16 17:17:11>> Enter Game Issue Order Phase
+2023/11/16 17:17:11>> Cheater Strategy deploy "1" armies on "1" for Player "Aarya".
+2023/11/16 17:17:11>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/16 17:17:54>> 
+
+2023/11/16 17:17:54>> Game Start
+2023/11/16 17:17:54>> Enter Edit Map Phase
+2023/11/16 17:17:57>> Enter Game Start Up Phase
+2023/11/16 17:17:58>> Enter Game Issue Order Phase
+2023/11/16 17:17:58>> Cheater Strategy deploy "1" armies on "3" for Player "Aarya".
+2023/11/16 17:17:58>> Cheater Strategy deploy "1" armies on "1" for Player "Yurui".
+2023/11/16 17:19:27>> 
+
+2023/11/16 17:19:27>> Game Start
+2023/11/16 17:19:27>> Enter Edit Map Phase
+2023/11/16 17:19:30>> Enter Game Start Up Phase
+2023/11/16 17:19:31>> Enter Game Issue Order Phase
+2023/11/16 17:19:31>> Cheater Strategy deploy "1" armies on "1" for Player "Aarya".
+2023/11/16 17:19:31>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".

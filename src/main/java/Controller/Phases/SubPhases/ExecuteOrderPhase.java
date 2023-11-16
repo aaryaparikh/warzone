@@ -101,4 +101,12 @@ public class ExecuteOrderPhase extends PlayMainPhase {
 		printInvalidCommandMessage();
 		return null;
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void saveGame(String[] p_commands) {
+		printInvalidCommandMessage();
+	}
 }

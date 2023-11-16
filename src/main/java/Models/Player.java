@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import Constants.GameConstants;
 import Controller.GameEngine;
+import Controller.Observable;
 import Models.Orders.Order;
 import Models.Strategy.PlayerStrategy;
 
@@ -16,7 +17,7 @@ import Models.Strategy.PlayerStrategy;
  *
  * @author Dev
  */
-public class Player {
+public class Player extends Observable {
 
 	/**
 	 * Player name
@@ -62,6 +63,11 @@ public class Player {
 	 * check point for commit
 	 */
 	private Boolean d_ifSignified;
+	
+	/**
+	 * String buffer
+	 */
+	private String d_stringBuffer;
 
 	/**
 	 * player strategy
@@ -157,7 +163,6 @@ public class Player {
 				String l_command = "commit";
 				d_gameEngine.executeCommand(l_command.split(" "), this);
 			}
-
 		}
 	}
 
@@ -174,7 +179,32 @@ public class Player {
 		}
 		return null;
 	}
-
+	
+	/**
+	 * Retrieves and removes the next order from the player's order list.
+	 *
+	 * @return The next order, or null if no orders are available.
+	 */
+	public Order recordNextOrder() {
+		if (!d_orders.isEmpty()) {
+			Order l_order = d_orders.get(0);
+			d_orders.remove(0);
+			d_stringBuffer = l_order.getOrderInfo();
+			notifyObservers(this);
+			return l_order;
+		}
+		return null;
+	}
+	
+	/**
+	 * Get String to record
+	 * 
+	 * @return The string
+	 **/
+	public String getString() {
+		return d_stringBuffer;
+	}
+	
 	/**
 	 * Update game map before issuing orders for player.
 	 * 

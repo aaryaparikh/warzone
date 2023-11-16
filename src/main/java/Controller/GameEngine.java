@@ -38,11 +38,6 @@ public class GameEngine {
 	private GameMap d_map;
 
 	/**
-	 * Shows the phases of game
-	 */
-	private PhaseView d_phaseView;
-
-	/**
 	 * List of conquering player
 	 */
 	private List<Player> d_playerConquerInTurn;
@@ -51,6 +46,11 @@ public class GameEngine {
 	 * Maintain the game phase
 	 */
 	private Phase d_gamePhase;
+	
+	/**
+	 * Shows the phases of game
+	 */
+	private PhaseView d_phaseView;
 
 	/**
 	 * Log Maintainer
@@ -62,7 +62,13 @@ public class GameEngine {
 	 */
 	@SuppressWarnings("unused")
 	private LogWriter d_logWriter;
-
+	
+	/**
+	 * Game Order Writer
+	 */
+	@SuppressWarnings("unused")
+	private LogWriter d_orderWriter;
+	
 	/**
 	 * Unique scanner in a game
 	 */
@@ -110,6 +116,7 @@ public class GameEngine {
 
 			// Enter game play phase
 			getPhaseView().showNextPhaseInfo("play");
+			attachPlayersWithOrderWriter();
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
 
@@ -207,6 +214,9 @@ public class GameEngine {
 			break;
 		case "next":
 			this.d_gamePhase.next(p_commands);
+			break;
+		case "savegame":
+			this.d_gamePhase.saveGame(p_commands);
 			break;
 		default:
 			System.out.println("Invalid command.");
@@ -499,6 +509,15 @@ public class GameEngine {
 	}
 
 	/**
+	 * Attach players with a order writer
+	 * 
+	 */
+	private void attachPlayersWithOrderWriter() {
+		for (Player l_player : d_players)
+			l_player.attach(d_orderWriter);
+	}
+	
+	/**
 	 * Check if the game is over.
 	 *
 	 * @return True if the game is over, otherwise false.
@@ -572,5 +591,10 @@ public class GameEngine {
 	 */
 	public void setD_logEntryBuffer(LogEntryBuffer p_logEntryBuffer) {
 		this.d_logEntryBuffer = p_logEntryBuffer;
+	}
+
+	public void setPlayers(List<Player> players) {
+		// TODO Auto-generated method stub
+		
 	}
 }
