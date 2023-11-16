@@ -181,8 +181,9 @@ public abstract class Phase {
 	 * Sava game to json file
 	 *
 	 * @param p_commands An array of commands for saving game
+	 * @param p_currentPlayer The current player ending the phase
 	 */
-	abstract public void saveGame(String[] p_commands);
+	abstract public void saveGame(String[] p_commands, Player p_currentPlayer);
 
 	/**
 	 * End the current phase based on the provided commands.

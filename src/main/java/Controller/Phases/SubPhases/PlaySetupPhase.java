@@ -159,7 +159,7 @@ public class PlaySetupPhase extends PlayGamePhase {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void saveGame(String[] p_commands) {
+	public void saveGame(String[] p_commands, Player p_currentPlayer) {
 		d_gameCommandHandler.handleGameCommand(p_commands);
 	}
 }

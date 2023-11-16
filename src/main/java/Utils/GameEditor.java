@@ -82,6 +82,7 @@ public class GameEditor {
     		writer.write("Continent Id: " + country.getContinentId() + "\n");
     		writer.write("Owner Name: " + country.getOwner().getName() + "\n");
     		writer.write("Neighbors: " + country.getNeighborCountries() + "\n");
+    		writer.write("Armies: " + country.getArmies() + "\n");
         }
         writer.write("\n");
     }
@@ -105,7 +106,10 @@ public class GameEditor {
 				l_order = l_player.nextOrder();
 			}
             
-            writer.write("Player Strategy: " + l_player.getD_strategy().getClass().getName() + "\n");
+			if (l_player.getD_strategy() == null)
+	            writer.write("Player Strategy: " + "Models.Strategy.Human" + "\n");
+			else
+				writer.write("Player Strategy: " + l_player.getD_strategy().getClass().getName() + "\n");
             writer.write("Cards: " + l_player.getCardsOwned() + "\n");
         }
         writer.write("\n");

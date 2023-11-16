@@ -97,7 +97,7 @@ public class IssueOrderPhase extends PlayMainPhase {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void saveGame(String[] p_commands) {
-		super.getD_playerCommandHandler().handlePlayerCommand(p_commands, null);
+	public void saveGame(String[] p_commands, Player p_currentPlayer) {
+		super.getD_playerCommandHandler().handlePlayerCommand(p_commands, p_currentPlayer);
 	}
 }

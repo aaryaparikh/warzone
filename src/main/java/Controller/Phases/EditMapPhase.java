@@ -202,7 +202,7 @@ public class EditMapPhase extends Phase {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void saveGame(String[] p_commands) {
+	public void saveGame(String[] p_commands, Player p_currentPlayer) {
 		printInvalidCommandMessage();
 	}
 

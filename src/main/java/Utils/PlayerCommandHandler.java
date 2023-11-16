@@ -56,11 +56,11 @@ public class PlayerCommandHandler extends CommandHandler {
 				for (Player l_player : d_gameEngine.getPlayers())
 					while(l_player.recordNextOrder() != null)
 						continue;
-				GameEditor.saveGameToFile(d_gameEngine, p_commands[1], p_currentPlayer.getName());
-				String l_response = String.format("Map is saved in \"%s.txt\"", p_commands[1]);
+				GameEditor.saveGameToFile(d_gameEngine, "src/main/resources/" + p_commands[1], p_currentPlayer.getName());
+				String l_response = String.format("Game is saved in \"%s\"", p_commands[1]);
 				System.out.println(l_response);
 				d_logEntryBuffer.setString(l_response);
-				return "gameEnd";
+				return "stayCurrentPlayer";
 			}
 			
 		case "commit":

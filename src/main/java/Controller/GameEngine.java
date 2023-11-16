@@ -67,7 +67,7 @@ public class GameEngine {
 	 * Game Order Writer
 	 */
 	@SuppressWarnings("unused")
-	private LogWriter d_orderWriter;
+	private OrderWriter d_orderWriter;
 	
 	/**
 	 * Unique scanner in a game
@@ -216,7 +216,7 @@ public class GameEngine {
 			this.d_gamePhase.next(p_commands);
 			break;
 		case "savegame":
-			this.d_gamePhase.saveGame(p_commands);
+			this.d_gamePhase.saveGame(p_commands, p_currentPlayer);
 			break;
 		default:
 			System.out.println("Invalid command.");
@@ -320,7 +320,8 @@ public class GameEngine {
 
 		// Update game map for each player
 		for (Player l_player : d_players)
-			l_player.getD_strategy().d_countryList = DeepCopyList.deepCopy(this.getGameMap().getCountries());
+			if (l_player.getD_strategy() != null)
+				l_player.getD_strategy().d_countryList = DeepCopyList.deepCopy(this.getGameMap().getCountries());
 
 		// Allocate cards to players
 		for (Player l_player : getPlayerConquerInTurn())
@@ -513,6 +514,7 @@ public class GameEngine {
 	 * 
 	 */
 	private void attachPlayersWithOrderWriter() {
+		this.d_orderWriter = new OrderWriter();
 		for (Player l_player : d_players)
 			l_player.attach(d_orderWriter);
 	}
