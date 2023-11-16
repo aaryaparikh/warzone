@@ -25,7 +25,7 @@ public abstract class PlayerStrategy {
 
 	public LogEntryBuffer d_logEntryBuffer;
 
-	protected abstract Country toAttack();
+	protected abstract Country toAttack(Country p_sourceCountry);
 
 	protected abstract Country toAttackFrom();
 

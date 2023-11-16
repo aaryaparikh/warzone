@@ -112,13 +112,13 @@ public class GameEngine {
 			getPhaseView().showNextPhaseInfo("play");
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
-				
+
 				updateGameMapForPlayers();
+
+				executeCommand("showmap".split(" "), null);
 
 				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
 					break;
-				
-				executeCommand("showmap".split(" "), null);
 			}
 
 			// Enter end phase
@@ -303,7 +303,7 @@ public class GameEngine {
 		// Update game map for each player
 		for (Player l_player : d_players)
 			l_player.getD_strategy().d_countryList = DeepCopyList.deepCopy(this.getGameMap().getCountries());
-		
+
 		// Allocate cards to players
 		for (Player l_player : getPlayerConquerInTurn())
 			l_player.addCardsOwned("random");
@@ -480,10 +480,10 @@ public class GameEngine {
 		else
 			return GameConstants.MINIMUN_PLAYER_REINFORCEMENT;
 	}
-	
+
 	/**
-	 *  Update game map for each player
-	 *  
+	 * Update game map for each player
+	 * 
 	 */
 	private void updateGameMapForPlayers() {
 		for (Player l_player : d_players)

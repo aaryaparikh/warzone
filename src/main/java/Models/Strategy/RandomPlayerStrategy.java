@@ -25,7 +25,7 @@ public class RandomPlayerStrategy extends PlayerStrategy {
 	 * 
 	 * @return null
 	 */
-	protected Country toAttack() {
+	protected Country toAttack(Country p_sourceCountry) {
 		return null;
 	}
 
@@ -108,9 +108,8 @@ public class RandomPlayerStrategy extends PlayerStrategy {
 
 			// Log order
 			String l_response = String.format(
-					"Random Strategy advance \"%s\" armies from \"%s\" to \"%s\" for Player \"%s\".",
-					l_movedArmies, l_randomSourceCountry.getCountryId(), l_randomTargetCountry.getCountryId(),
-					d_player.getName());
+					"Random Strategy advance \"%s\" armies from \"%s\" to \"%s\" for Player \"%s\".", l_movedArmies,
+					l_randomSourceCountry.getCountryId(), l_randomTargetCountry.getCountryId(), d_player.getName());
 			d_logEntryBuffer.setString(l_response);
 			System.out.println(l_response);
 
@@ -122,10 +121,11 @@ public class RandomPlayerStrategy extends PlayerStrategy {
 			return new AdvanceOrder(d_player, l_randomSourceCountry, l_randomTargetCountry, l_movedArmies);
 		}
 	}
-	
+
 	private Country findNeighborCountry(Country p_country) {
 		Random l_rand = new Random();
-		int l_neighborId = p_country.getNeighborCountries().get(l_rand.nextInt(p_country.getNeighborCountries().size()));
+		int l_neighborId = p_country.getNeighborCountries()
+				.get(l_rand.nextInt(p_country.getNeighborCountries().size()));
 		for (Country l_country : d_player.getD_gameEngine().getGameMap().getCountries())
 			if (l_country.getCountryId() == l_neighborId)
 				return l_country;
