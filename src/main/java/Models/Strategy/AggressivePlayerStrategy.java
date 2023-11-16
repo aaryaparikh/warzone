@@ -27,7 +27,7 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	 * 
 	 * @return null
 	 */
-	protected Country toAttack() {
+	protected Country toAttack(Country p_sourceCountry) {
 		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies).reversed());
 
 		int l_attackTarget = 0;
@@ -130,7 +130,7 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 			return new DeployOrder(d_player, l_deployCountry, l_armies);
 		} else {
 			Country l_attackSourceCountry = toAttackFrom();
-			Country l_attackTargetCountry = toAttack();
+			Country l_attackTargetCountry = toAttack(l_attackSourceCountry);
 
 			// Depend on country in player's view
 			Country l_attackSourceCountryInList = null;

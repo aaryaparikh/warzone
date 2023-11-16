@@ -52,7 +52,7 @@ public class Player {
 	 * GameEngine instance
 	 */
 	private GameEngine d_gameEngine;
-	
+
 	/**
 	 * Game map in player's view in each turn
 	 */
@@ -62,11 +62,11 @@ public class Player {
 	 * check point for commit
 	 */
 	private Boolean d_ifSignified;
-	
+
 	/**
 	 * player strategy
 	 */
-	private PlayerStrategy d_strategy;	
+	private PlayerStrategy d_strategy;
 
 	/**
 	 * Creates a new player with the specified name.
@@ -157,7 +157,7 @@ public class Player {
 				String l_command = "commit";
 				d_gameEngine.executeCommand(l_command.split(" "), this);
 			}
-				
+
 		}
 	}
 
@@ -174,7 +174,7 @@ public class Player {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Update game map before issuing orders for player.
 	 * 

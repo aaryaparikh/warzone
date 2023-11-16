@@ -96,7 +96,7 @@ public class Country {
 	public ArrayList<Integer> getNeighborCountries() {
 		return d_neighborCountries;
 	}
-	
+
 	/**
 	 * Sets a list of neighboring country IDs.
 	 *

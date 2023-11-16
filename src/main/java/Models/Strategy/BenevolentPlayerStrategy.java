@@ -27,7 +27,7 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 	 * 
 	 * @return null
 	 */
-	protected Country toAttack() {
+	protected Country toAttack(Country p_sourceCountry) {
 		return null;
 	}
 
