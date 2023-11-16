@@ -300,6 +300,14 @@ public class GameEngine {
 			}
 		}
 
+		// kick player who has no countries
+		List<Player> l_playerList = new ArrayList<>();
+		for (Player l_player : d_players)
+			if (l_player.getD_countries().size() == 0)
+				l_playerList.add(l_player);
+		for (Player l_player : l_playerList)
+			d_players.remove(l_player);
+
 		// Update game map for each player
 		for (Player l_player : d_players)
 			l_player.getD_strategy().d_countryList = DeepCopyList.deepCopy(this.getGameMap().getCountries());

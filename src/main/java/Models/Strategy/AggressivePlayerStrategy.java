@@ -13,7 +13,7 @@ import Models.Orders.DeployOrder;
 import Models.Orders.Order;
 
 /**
- * ConcreteStrategy of the Strategy pattern.
+ * AggressivePlayerStrategy of the Strategy pattern.
  */
 public class AggressivePlayerStrategy extends PlayerStrategy {
 
