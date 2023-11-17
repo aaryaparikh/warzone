@@ -41,7 +41,7 @@ public class CheaterPlayerStrategy extends PlayerStrategy {
 		for (int l_neighbor : p_sourceCountry.getNeighborCountries()) {
 			boolean l_ifNeighborOwned = false;
 			for (Country l_countryInList : d_countryList)
-				if ((l_countryInList.getCountryId() == l_neighbor) && (l_countryInList.getOwner().equals(d_player)))
+				if ((l_countryInList.getCountryId() == l_neighbor) && (l_countryInList.getOwner().getName().equals(d_player.getName())))
 					l_ifNeighborOwned = true;
 
 			// Could attack country not controled

@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.List;
 import Controller.GameEngine;
 import Controller.LogEntryBuffer;
-import Controller.Phases.Phase;
 import Models.Continent;
 import Models.Country;
 import Models.GameMap;
@@ -145,6 +144,13 @@ public class GameEditor {
 				gameEngine.setGameMap(loadMap(reader));
 
 				gameEngine.setPlayers(loadPlayers(reader));
+				
+				// Update country owner to be real player
+				for (Country l_country : gameEngine.getGameMap().getCountries()) {
+					for (Player l_player : gameEngine.getPlayers())
+						if (l_player.getName().equals(l_country.getOwner().getName()))
+							l_country.setOwner(l_player);
+				}
 
 				gameEngine.resumeFromSetupPhase();
 			}
@@ -156,6 +162,13 @@ public class GameEditor {
 				gameEngine.setGameMap(loadMap(reader));
 
 				gameEngine.setPlayers(loadPlayers(reader));
+				
+				// Update country owner to be real player
+				for (Country l_country : gameEngine.getGameMap().getCountries()) {
+					for (Player l_player : gameEngine.getPlayers())
+						if (l_player.getName().equals(l_country.getOwner().getName()))
+							l_country.setOwner(l_player);
+				}
 
 				gameEngine.resumeFromPlayPhase();
 			}
@@ -340,8 +353,10 @@ public class GameEditor {
 				constructor.setAccessible(true);
 
 				// Create an instance using the constructor
+
 				l_player.setD_strategy((PlayerStrategy) constructor.newInstance(l_player,
-						d_gameEngine.getGameMap().getCountries(), d_gameEngine.getD_logEntryBuffer()));
+						DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()),
+						d_gameEngine.getD_logEntryBuffer()));
 			}
 
 			// Load Cards
@@ -390,18 +405,4 @@ public class GameEditor {
 		}
 		return keyValuePairs;
 	}
-
-	private static Phase instantiatePhase(String phaseClassName) {
-		// Instantiate Phase based on class name
-		// Implementation depends on how your Phase classes are structured
-		// For example, using reflection:
-		try {
-			Class<?> phaseClass = Class.forName(phaseClassName);
-			return (Phase) phaseClass.newInstance();
-		} catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-
 }
