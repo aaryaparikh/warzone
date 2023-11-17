@@ -402,3 +402,20 @@
 2023/11/16 18:31:58>> Cheater Strategy deploy "1" armies on "2" for Player "Aarya".
 2023/11/16 18:31:58>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
 2023/11/16 18:32:09>> Game is saved in "g1.txt"
+2023/11/16 18:56:55>> 
+
+2023/11/16 18:56:55>> Game Start
+2023/11/16 18:56:55>> Enter Edit Map Phase
+2023/11/16 18:56:56>> Enter Game Start Up Phase
+2023/11/16 18:56:57>> Enter Game Issue Order Phase
+2023/11/16 18:56:57>> Cheater Strategy deploy "1" armies on "1" for Player "Aarya".
+2023/11/16 18:56:57>> Cheater Strategy deploy "1" armies on "3" for Player "Yurui".
+2023/11/16 18:57:03>> Add an order of deploying "2" armies on "7" to Player "Dev".
+2023/11/16 18:57:03>> Cheater Strategy deploy "1" armies on "2" for Player "Aarya".
+2023/11/16 18:57:03>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/16 18:57:06>> Add an order of deploying "1" armies on "7" to Player "Dev".
+2023/11/16 18:57:06>> Cheater Strategy deploy "4" armies on "1" for Player "Aarya".
+2023/11/16 18:57:06>> Cheater Strategy deploy "2" armies on "3" for Player "Yurui".
+2023/11/16 18:57:11>> Game is saved in "g1"
+2023/11/16 18:57:14>> Game is ended by Player "Dev".
+2023/11/16 18:57:14>> Enter Game End

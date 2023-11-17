@@ -12,12 +12,11 @@ import Models.Continent;
 import Models.Country;
 import Models.GameMap;
 import Models.Player;
-import Models.Orders.Order;
 
 /**
  * EditMapPhase the map information
  *
- * @author Aarya
+ * @author Yurui
  */
 public class GameEditor {
 	/**
@@ -41,7 +40,7 @@ public class GameEditor {
             	savePlayerTurn(playerName, writer);
             saveMap(gameEngine.getGameMap(), writer);
             savePlayers(gameEngine.getPlayers(), writer);
-            saveConqueringPlayers(gameEngine, writer);
+            saveOrderIssued(writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -92,19 +91,13 @@ public class GameEditor {
         for (Player l_player : players) {
             writer.write("Player Name: " + l_player.getName() + "\n");
             
+            // save country id
             List<Country> l_countries = l_player.getD_countries();
             List<Integer> l_countryIds = new ArrayList<>();
-
             for (Country l_country : l_countries) {
                 l_countryIds.add(l_country.getCountryId());
             }
             writer.write("Countries: " + l_countryIds + "\n");
-            
-			Order l_order = l_player.nextOrder();
-			while (l_order != null) {
-				saveOrder(l_order, writer);
-				l_order = l_player.nextOrder();
-			}
             
 			if (l_player.getD_strategy() == null)
 	            writer.write("Player Strategy: " + "Models.Strategy.Human" + "\n");
@@ -115,16 +108,18 @@ public class GameEditor {
         writer.write("\n");
     }
     
-    private static void saveOrder(Order order, BufferedWriter writer) throws IOException {
-        // Save conquering player data
-    	writer.write("Order type: " + order.getOrderType() + "\n");
-        writer.write("\n");
-    }
+    private static void saveOrderIssued(BufferedWriter writer) throws IOException {
+        writer.write("Orders:\n");
+    	try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/orders.txt"))) {
+        	// Load GameEngine data
+            String line;
+            while ((line = reader.readLine()) != null && !line.isEmpty()) {
+                writer.write(line + "\n");
+            }
 
-    private static void saveConqueringPlayers(GameEngine gameEngine, BufferedWriter writer) throws IOException {
-        // Save conquering player data
-    	writer.write("Conquering players: " + gameEngine.getPlayerConquerInTurn() + "\n");
-        writer.write("\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 	/**
