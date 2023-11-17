@@ -24,17 +24,28 @@ public class Build3Demo {
 	 * 
 	 */
 	public static void defaultGameMap(GameMap p_gameMap) {
-		p_gameMap.addContinent(1, 3);
+		p_gameMap.addContinent(1, 6);
 		p_gameMap.addContinent(2, 5);
+		p_gameMap.addContinent(3, 4);
 
 		p_gameMap.addCountry(1, 1);
 		p_gameMap.addCountry(2, 1);
+		p_gameMap.addCountry(3, 2);
+		p_gameMap.addCountry(5, 3);
 		p_gameMap.addCountry(7, 2);
 
 		p_gameMap.addNeighbor(1, 2);
 		p_gameMap.addNeighbor(2, 1);
 		p_gameMap.addNeighbor(7, 1);
 		p_gameMap.addNeighbor(1, 7);
+		p_gameMap.addNeighbor(2, 3);
+		p_gameMap.addNeighbor(3, 2);
+
+		p_gameMap.addNeighbor(7, 5);
+		p_gameMap.addNeighbor(5, 7);
+
+		p_gameMap.addNeighbor(2, 5);
+		p_gameMap.addNeighbor(5, 2);
 	}
 
 	/**
@@ -52,15 +63,19 @@ public class Build3Demo {
 
 		Player p1 = new Player("Aarya", l_gameEngine);
 		Player p2 = new Player("Yurui", l_gameEngine);
+		Player p3 = new Player("Dev", l_gameEngine);
 
 		l_gameEngine.addPlayer(p1);
 		l_gameEngine.addPlayer(p2);
+		l_gameEngine.addPlayer(p3);
 		l_gameEngine.assignCountriesRandomly();
 
 		p1.setD_strategy(new CheaterPlayerStrategy(p1, DeepCopyList.deepCopy(l_map.getCountries()),
 				l_gameEngine.getD_logEntryBuffer()));
 		p2.setD_strategy(new CheaterPlayerStrategy(p2, DeepCopyList.deepCopy(l_map.getCountries()),
 				l_gameEngine.getD_logEntryBuffer()));
+		//p3.setD_strategy(new AggressivePlayerStrategy(p3, DeepCopyList.deepCopy(l_map.getCountries()),
+				//l_gameEngine.getD_logEntryBuffer()));
 
 		l_gameEngine.start();
 		// EndGamePhase game play

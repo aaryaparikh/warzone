@@ -67,4 +67,12 @@ public class BlockadeOrder extends Order {
 	public String getOrderType() {
 		return "Blockade";
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String getOrderInfo() {
+		return String.format("%s blockade %d", d_player.getName(), d_targetCountry.getCountryId());
+	}
 }

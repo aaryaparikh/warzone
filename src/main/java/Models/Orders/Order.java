@@ -23,4 +23,11 @@ public abstract class Order {
 	 * @return the command type
 	 */
 	public abstract String getOrderType();
+	
+	/**
+	 * method to get order information
+	 * 
+	 * @return the order information
+	 */
+	public abstract String getOrderInfo();
 }

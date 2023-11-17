@@ -65,4 +65,12 @@ public class DiplomacyOrder extends Order {
 	public String getOrderType() {
 		return "Negotiate";
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String getOrderInfo() {
+		return String.format("%s negotiate %d", d_player.getName());
+	}
 }

@@ -149,4 +149,12 @@ public class AdvanceOrder extends Order {
 	public String getOrderType() {
 		return "Advance";
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String getOrderInfo() {
+		return String.format("%s advance %d %d %d", d_player.getName(), d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_armies);
+	}
 }

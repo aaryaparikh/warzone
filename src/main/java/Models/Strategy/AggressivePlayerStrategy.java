@@ -13,7 +13,7 @@ import Models.Orders.DeployOrder;
 import Models.Orders.Order;
 
 /**
- * ConcreteStrategy of the Strategy pattern.
+ * AggressivePlayerStrategy of the Strategy pattern.
  */
 public class AggressivePlayerStrategy extends PlayerStrategy {
 
@@ -103,7 +103,7 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Create an order. the aggresive player Deploy armies first, and advance to
+	 * Create an order. the aggresive player deploy armies first, and advance to
 	 * attack if possible.
 	 * 
 	 * @return created order

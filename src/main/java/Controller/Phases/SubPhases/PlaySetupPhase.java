@@ -154,4 +154,12 @@ public class PlaySetupPhase extends PlayGamePhase {
 		printInvalidCommandMessage();
 		return null;
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void saveGame(String[] p_commands, Player p_currentPlayer) {
+		d_gameCommandHandler.handleGameCommand(p_commands);
+	}
 }
