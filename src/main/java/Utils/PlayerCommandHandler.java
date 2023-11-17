@@ -63,13 +63,12 @@ public class PlayerCommandHandler extends CommandHandler {
 				d_logEntryBuffer.setString(l_response);
 				return "stayCurrentPlayer";
 			}
-			
+
 		case "loadgame":
 			if (p_commands.length < 2) {
 				System.out.println("Please enter file path to load game.");
 				return "stayCurrentPlayer";
-			}
-			else {
+			} else {
 				String l_response2 = String.format("Game is loaded from \"%s\"", p_commands[1]);
 				System.out.println(l_response2);
 				d_logEntryBuffer.setString(l_response2);
@@ -131,12 +130,12 @@ public class PlayerCommandHandler extends CommandHandler {
 								Integer.parseInt(l_command[2]));
 						p_currentPlayer.addOrder(l_deployOrder);
 						p_currentPlayer.decreaseReinforcementPool(Integer.parseInt(l_command[2]));
-						
+
 						// Update player's map in turn
 						for (Country l_countryInTurn : p_currentPlayer.d_gameMapInTurn)
 							if (l_countryInTurn.getCountryId() == l_country.getCountryId())
 								l_countryInTurn.addArmies(Integer.parseInt(l_command[2]));
-						
+
 						String l_response = String.format(
 								"Add an order of deploying \"%s\" armies on \"%s\" to Player \"%s\".", l_command[2],
 								l_country.getCountryId(), p_currentPlayer.getName());
@@ -184,12 +183,13 @@ public class PlayerCommandHandler extends CommandHandler {
 							System.out.println(l_response);
 							return "stayCurrentPlayer";
 						}
-						
+
 						// Check if the player has enough armies in the specified country.
 						for (Country l_country : p_currentPlayer.d_gameMapInTurn)
-							if (l_country.getCountryId() == l_sourceCountry.getCountryId())							
+							if (l_country.getCountryId() == l_sourceCountry.getCountryId())
 								if (l_country.getArmies() < Integer.parseInt(l_command[3])) {
-									String l_response = String.format("Player \"%s\" does not have enough armies on this country \"%d\"",
+									String l_response = String.format(
+											"Player \"%s\" does not have enough armies on this country \"%d\"",
 											p_currentPlayer.getName(), l_sourceCountry.getCountryId());
 									System.out.println(l_response);
 									return "stayCurrentPlayer";
@@ -212,7 +212,7 @@ public class PlayerCommandHandler extends CommandHandler {
 									AdvanceOrder l_advanceOrder = new AdvanceOrder(p_currentPlayer, l_sourceCountry,
 											l_targetCountry, Integer.parseInt(l_command[3]));
 									p_currentPlayer.addOrder(l_advanceOrder);
-									
+
 									// Update player's map information in turn
 									for (Country l_countryInTurn : p_currentPlayer.d_gameMapInTurn)
 										if (l_countryInTurn.getCountryId() == l_sourceCountry.getCountryId())
@@ -220,7 +220,7 @@ public class PlayerCommandHandler extends CommandHandler {
 									for (Country l_countryInTurn : p_currentPlayer.d_gameMapInTurn)
 										if (l_countryInTurn.getCountryId() == l_targetCountry.getCountryId())
 											l_countryInTurn.setOwner(p_currentPlayer);
-									
+
 									String l_response = String.format(
 											"Add an order of advancing \"%s\" armies from \"%s\" to \"%s\" for Player \"%s\".",
 											l_command[3], l_sourceCountry.getCountryId(),

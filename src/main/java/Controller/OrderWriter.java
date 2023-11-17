@@ -6,7 +6,7 @@ import java.io.IOException;
 import Models.Player;
 
 /**
- * write the output to log file
+ * write the output to order buffer file
  */
 public class OrderWriter implements Observer {
 
@@ -21,11 +21,10 @@ public class OrderWriter implements Observer {
 	 * @param p_logEntry object of LogEntryBuffer
 	 */
 	public OrderWriter() {
-
 	}
 
 	/**
-	 * Display the current time and the state changes
+	 * Record order in order buffer file
 	 *
 	 * @param p_observableState current state
 	 */
@@ -40,7 +39,11 @@ public class OrderWriter implements Observer {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * Make order buffer clear
+	 *
+	 */
 	public void reset() {
 		try {
 			d_logFile = new FileWriter(("src/main/resources/orders.txt"), false);

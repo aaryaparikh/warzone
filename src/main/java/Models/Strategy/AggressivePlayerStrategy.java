@@ -13,19 +13,32 @@ import Models.Orders.DeployOrder;
 import Models.Orders.Order;
 
 /**
- * AggressivePlayerStrategy of the Strategy pattern.
+ * AggressivePlayerStrategy represents the Aggressive strategy of the Strategy
+ * pattern. This strategy focuses on deploying armies aggressively and attacking
+ * neighboring countries.
+ * 
+ * @author Yurui
  */
 public class AggressivePlayerStrategy extends PlayerStrategy {
 
+	/**
+	 * Creates an AggressivePlayerStrategy instance with the specified player,
+	 * country list, and log entry buffer.
+	 * 
+	 * @param p_player         The player associated with this strategy.
+	 * @param p_countryList    The list of countries owned by the player.
+	 * @param p_logEntryBuffer The buffer for logging strategy-related entries.
+	 */
 	public AggressivePlayerStrategy(Player p_player, List<Country> p_countryList, LogEntryBuffer p_logEntryBuffer) {
 		super(p_player, p_countryList, p_logEntryBuffer);
 	}
 
 	/**
-	 * Determines the country to attack to. The Defensive player does not attack, so
-	 * this returns null.
+	 * Determines the country to attack. The Aggressive player targets the
+	 * neighboring country with the lowest armies.
 	 * 
-	 * @return null
+	 * @param p_sourceCountry The country from which the attack is initiated.
+	 * @return The target country to attack.
 	 */
 	protected Country toAttack(Country p_sourceCountry) {
 		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies).reversed());
@@ -56,20 +69,20 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Determines where to launch an attack from. The Defensive player does not
-	 * attack, so it returns null
+	 * Determines where to launch an attack from. The Aggressive player does not
+	 * defend, so it returns null.
 	 * 
-	 * @return the player's country with the most armies
+	 * @return null
 	 */
 	protected Country toDefend() {
 		return null;
 	}
 
 	/**
-	 * Determines where to launch an attack from. The Defensive player does not
-	 * attack, so it returns null
+	 * Determines where to launch an attack from. The Aggressive player selects the
+	 * country with the most armies.
 	 * 
-	 * @return attack source country
+	 * @return The player's country with the most armies.
 	 */
 	protected Country toAttackFrom() {
 		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies).reversed());
@@ -93,8 +106,8 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Determine where armies are moved to. The Defensive player does not move, so
-	 * it reutrns null
+	 * Determines where to move armies from. The Aggressive player does not move
+	 * armies, so it returns null.
 	 * 
 	 * @return null
 	 */
@@ -103,10 +116,10 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Create an order. the aggresive player deploy armies first, and advance to
-	 * attack if possible.
+	 * Creates an order based on the Aggressive strategy. Deploys armies first and
+	 * advances to attack if possible.
 	 * 
-	 * @return created order
+	 * @return The created order.
 	 */
 	public Order createOrder() {
 		Random l_rand = new Random();

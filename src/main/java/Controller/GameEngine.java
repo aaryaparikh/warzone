@@ -94,7 +94,7 @@ public class GameEngine {
 	}
 
 	/**
-	 * Function that defines the main flow of a game
+	 * Function that defines the main flow of a game, and start in normal way
 	 */
 	public void start() {
 		setPhase(new EditMapPhase(this));
@@ -144,7 +144,7 @@ public class GameEngine {
 	}
 
 	/**
-	 * Function that defines the main flow of a game
+	 * To resume the game to setup phase and continue to play
 	 */
 	public void resumeToSetupPhase() {
 		setPhase(new PlaySetupPhase(this));
@@ -185,7 +185,9 @@ public class GameEngine {
 	}
 
 	/**
-	 * Function that defines the main flow of a game
+	 * Resume the game to play phase, and continue to play
+	 * 
+	 * @param p_currentPlayer resume to this player's turn
 	 */
 	public void resumeToPlayPhase(String p_currentPlayer) {
 		setPhase(new IssueOrderPhase(this));
@@ -195,22 +197,21 @@ public class GameEngine {
 			// Enter game play phase
 			getPhaseView().showNextPhaseInfo("play");
 			attachPlayersWithOrderWriter();
-			
+
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
 
 				updateGameMapForPlayers();
 
 				executeCommand("showmap".split(" "), null);
-				
+
 				if (l_ifFirstTurn == true) {
-					if ((resumeIssueOrdersInTurn(p_currentPlayer) == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
+					if ((resumeIssueOrdersInTurn(p_currentPlayer) == "gameEnd")
+							|| (executeAllCommittedOrders() == "gameOver"))
 						break;
 					l_ifFirstTurn = false;
-				}
-				else
-					if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
-						break;
+				} else if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
+					break;
 			}
 
 			// Enter end phase
@@ -319,7 +320,7 @@ public class GameEngine {
 	 */
 	public String issueOrdersInTurn() {
 		d_orderWriter.reset();
-		
+
 		List<Player> l_playerPool = getPlayers();
 		for (Player l_player : l_playerPool)
 			l_player.setIfSignified(false);
@@ -429,32 +430,34 @@ public class GameEngine {
 
 		return "nextRound";
 	}
-	
+
 	/**
-	 * Function that takes player's input and adds their orders to the queue.
+	 * Resume to specific player's turn, take player's input and adds their orders
+	 * to the queue.
 	 *
+	 * @param p_currentPlayer resume to the player's turn
 	 * @return string to output result of issuing orders
 	 */
 	public String resumeIssueOrdersInTurn(String p_currentPlayer) {
 		List<Player> l_playerPool = getPlayers();
 		for (Player l_player : l_playerPool)
 			l_player.setIfSignified(false);
-		
+
 		// Reload Orders in order buffer
 		try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/orders.txt"))) {
-	        String line;
-	        while ((line = reader.readLine()) != null && !line.isEmpty()) {
-	        	String[] l_fullOrder = line.substring(">> ".length()).split(" ");
-	        	System.out.println(line.substring(">> ".length()));
-	        	
-	        	Player l_orderPlayer = null;
-	        	for (Player l_player : d_players )
-	        		if (l_player.getName().equals(l_fullOrder[0]))
-	        			l_orderPlayer = l_player;
-	        	if (l_orderPlayer != null)
-	        		this.executeCommand(Arrays.copyOfRange(l_fullOrder, 1, l_fullOrder.length), l_orderPlayer);
-	        }
-			
+			String line;
+			while ((line = reader.readLine()) != null && !line.isEmpty()) {
+				String[] l_fullOrder = line.substring(">> ".length()).split(" ");
+				System.out.println(line.substring(">> ".length()));
+
+				Player l_orderPlayer = null;
+				for (Player l_player : d_players)
+					if (l_player.getName().equals(l_fullOrder[0]))
+						l_orderPlayer = l_player;
+				if (l_orderPlayer != null)
+					this.executeCommand(Arrays.copyOfRange(l_fullOrder, 1, l_fullOrder.length), l_orderPlayer);
+			}
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -462,7 +465,7 @@ public class GameEngine {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-				
+
 		boolean l_ifRemainPlayers = true;
 
 		// issue order in round-robin fashion
@@ -476,7 +479,7 @@ public class GameEngine {
 					else
 						l_resumePlayerTurn = null;
 				}
-			
+
 				// Continue to rotate
 				if (!l_player.getIfSignified()) {
 					System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool()
@@ -495,51 +498,6 @@ public class GameEngine {
 		getPhaseView().showNextPhaseInfo("execute");
 		setPhase(new ExecuteOrderPhase(this));
 		return null;
-	}
-
-	/**
-	 * Get the list of players.
-	 *
-	 * @return The list of players.
-	 */
-	public List<Player> getPlayers() {
-		return this.d_players;
-	}
-
-	/**
-	 * Get the game map.
-	 *
-	 * @return The game map.
-	 */
-	public GameMap getGameMap() {
-		return this.d_map;
-	}
-
-	/**
-	 * Set the game map.
-	 *
-	 * @param p_map The game map.
-	 */
-	public void setGameMap(GameMap p_map) {
-		this.d_map = p_map;
-	}
-
-	/**
-	 * Set the game phase.
-	 *
-	 * @param p_phase The game phase.
-	 */
-	public void setPhase(Phase p_phase) {
-		this.d_gamePhase = p_phase;
-	}
-
-	/**
-	 * Get the game phase.
-	 *
-	 * @return The game phase.
-	 */
-	public Phase getPhase() {
-		return d_gamePhase;
 	}
 
 	/**
@@ -691,6 +649,60 @@ public class GameEngine {
 	}
 
 	/**
+	 * Get the list of players.
+	 *
+	 * @return The list of players.
+	 */
+	public List<Player> getPlayers() {
+		return this.d_players;
+	}
+
+	/**
+	 * Set the players
+	 *
+	 * @param p_players player list
+	 */
+	public void setPlayers(List<Player> p_players) {
+		this.d_players = p_players;
+	}
+
+	/**
+	 * Get the game map.
+	 *
+	 * @return The game map.
+	 */
+	public GameMap getGameMap() {
+		return this.d_map;
+	}
+
+	/**
+	 * Set the game map.
+	 *
+	 * @param p_map The game map.
+	 */
+	public void setGameMap(GameMap p_map) {
+		this.d_map = p_map;
+	}
+
+	/**
+	 * Set the game phase.
+	 *
+	 * @param p_phase The game phase.
+	 */
+	public void setPhase(Phase p_phase) {
+		this.d_gamePhase = p_phase;
+	}
+
+	/**
+	 * Get the game phase.
+	 *
+	 * @return The game phase.
+	 */
+	public Phase getPhase() {
+		return d_gamePhase;
+	}
+
+	/**
 	 * Get the phase view.
 	 *
 	 * @return PhaseView.
@@ -731,7 +743,6 @@ public class GameEngine {
 	 */
 	public void resetPlayerConquerInTurn() {
 		this.d_playerConquerInTurn.clear();
-
 	}
 
 	/**
@@ -750,9 +761,5 @@ public class GameEngine {
 	 */
 	public void setD_logEntryBuffer(LogEntryBuffer p_logEntryBuffer) {
 		this.d_logEntryBuffer = p_logEntryBuffer;
-	}
-
-	public void setPlayers(List<Player> p_players) {
-		this.d_players = p_players;
 	}
 }

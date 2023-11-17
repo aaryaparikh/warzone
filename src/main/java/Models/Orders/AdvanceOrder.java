@@ -105,7 +105,7 @@ public class AdvanceOrder extends Order {
 			// Check if target country is neutral
 			if (l_playerBeingAttacked != null)
 				l_playerBeingAttacked.getD_countries().remove(d_targetCountry);
-			
+
 			d_targetCountry.setOwner(d_player);
 			d_player.addCountry(d_targetCountry);
 

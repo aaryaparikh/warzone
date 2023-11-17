@@ -193,12 +193,10 @@ public class Player extends Observable {
 			d_stringBuffer = l_order.getOrderInfo();
 			notifyObservers(this);
 			return l_order;
+		} else if (this.getIfSignified() == true) {
+			d_stringBuffer = d_name + " commit";
+			notifyObservers(this);
 		}
-		else
-			if (this.getIfSignified() == true) {
-				d_stringBuffer = d_name + " commit";
-				notifyObservers(this);
-			}
 		return null;
 	}
 
