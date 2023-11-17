@@ -31,3 +31,8 @@ In build2, please run Build2Demo.java under src/main/java.
 Except for output from build1, all running information is saved in log.txt which is under src/main/resources.
 
 Add new features for build2's requirement, and refactor the project to follow State Pattern, Command Pattern and Observer Pattern.
+
+# Build3
+In build3, please run Build3Demo.java.
+
+The game could be saved and loaded at any time except EditMapPhase, a game loaded will be resumed at the time a player is issuing an order.
