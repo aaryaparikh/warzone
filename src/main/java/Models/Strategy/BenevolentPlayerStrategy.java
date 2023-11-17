@@ -13,18 +13,31 @@ import Models.Orders.DeployOrder;
 import Models.Orders.Order;
 
 /**
- * ConcreteStrategy of the Strategy pattern.
+ * BenevolentPlayerStrategy represents the Benevolent strategy of the Strategy
+ * pattern. This strategy focuses on defending its countries and reinforcing the
+ * weakest territories.
+ * 
+ * @author Yurui
  */
 public class BenevolentPlayerStrategy extends PlayerStrategy {
 
+	/**
+	 * Creates a BenevolentPlayerStrategy instance with the specified player,
+	 * country list, and log entry buffer.
+	 * 
+	 * @param p_player         The player associated with this strategy.
+	 * @param p_countryList    The list of countries owned by the player.
+	 * @param p_logEntryBuffer The buffer for logging strategy-related entries.
+	 */
 	public BenevolentPlayerStrategy(Player p_player, List<Country> p_countryList, LogEntryBuffer p_logEntryBuffer) {
 		super(p_player, p_countryList, p_logEntryBuffer);
 	}
 
 	/**
-	 * Determines the country to attack to. The Defensive player does not attack, so
-	 * this returns null.
+	 * Determines the country to attack. The Benevolent player does not attack, so
+	 * it returns null.
 	 * 
+	 * @param p_sourceCountry The country from which the attack is initiated.
 	 * @return null
 	 */
 	protected Country toAttack(Country p_sourceCountry) {
@@ -32,10 +45,10 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Determines which territory should be defended. The Defensive player decides
+	 * Determines which territory should be defended. The Benevolent player decides
 	 * to defend its country with the most armies.
 	 * 
-	 * @return the player's country with the most armies
+	 * @return The player's country with the most armies.
 	 */
 	protected Country toDefend() {
 		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies).reversed());
@@ -50,18 +63,20 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Determines where to launch an attack from. The Defensive player does not
-	 * attack, so it returns null @ return null
+	 * Determines where to launch an attack from. The Benevolent player does not
+	 * attack, so it returns null.
+	 * 
+	 * @return null
 	 */
 	protected Country toAttackFrom() {
 		return null;
 	}
 
 	/**
-	 * Determine where armies are moved to. The Defensive player does not move, so
-	 * it reutrns null
+	 * Determine where armies are moved to. The Benevolent player reinforces the
+	 * weakest neighboring territory.
 	 * 
-	 * @return null
+	 * @return The target country to reinforce.
 	 */
 	protected Country toMoveFrom() {
 		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies).reversed());
@@ -88,10 +103,10 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Create an order. the benevolent player deploy armies first, and advance to
+	 * Create an order. The Benevolent player deploys armies first and advances to
 	 * move if possible.
 	 * 
-	 * @return created order
+	 * @return The created order.
 	 */
 	public Order createOrder() {
 		Random l_rand = new Random();

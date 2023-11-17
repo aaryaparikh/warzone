@@ -11,16 +11,28 @@ import Models.Orders.DeployOrder;
 import Models.Orders.Order;
 
 /**
- * ConcreteStrategy of the Strategy pattern.
+ * RandomPlayerStrategy represents the Random strategy of the Strategy pattern.
+ * This strategy focuses on deploying armies aggressively and moving to
+ * neighboring countries.
+ * 
+ * @author Yurui
  */
 public class RandomPlayerStrategy extends PlayerStrategy {
 
+	/**
+	 * Creates an RandomPlayerStrategy instance with the specified player, country
+	 * list, and log entry buffer.
+	 * 
+	 * @param p_player         The player associated with this strategy.
+	 * @param p_countryList    The list of countries owned by the player.
+	 * @param p_logEntryBuffer The buffer for logging strategy-related entries.
+	 */
 	public RandomPlayerStrategy(Player p_player, List<Country> p_countryList, LogEntryBuffer p_logEntryBuffer) {
 		super(p_player, p_countryList, p_logEntryBuffer);
 	}
 
 	/**
-	 * Determines the country to attack to. The Defensive player does not attack, so
+	 * Determines the country to attack to. The Randon player does not attack, so
 	 * this returns null.
 	 * 
 	 * @return null
@@ -30,10 +42,10 @@ public class RandomPlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Determines which territory should be defended. The Defensive player decides
-	 * to defend its country with the most armies.
+	 * Determines which territory should be defended. The Random player randomly
+	 * decides to defend its country.
 	 * 
-	 * @return the player's country with the most armies
+	 * @return the player's country to defend
 	 */
 	protected Country toDefend() {
 		Random l_rand = new Random();
@@ -41,18 +53,19 @@ public class RandomPlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Determines where to launch an attack from. The Defensive player does not
-	 * attack, so it returns null @ return null
+	 * Determines where to launch an attack from. The Random player does not attack,
+	 * so it returns null
+	 * 
+	 * @return null
 	 */
 	protected Country toAttackFrom() {
 		return null;
 	}
 
 	/**
-	 * Determine where armies are moved to. The Defensive player does not move, so
-	 * it reutrns null
+	 * Determine where armies are moved to.
 	 * 
-	 * @return null
+	 * @return country to move
 	 */
 	protected Country toMoveFrom() {
 		Random l_rand = new Random();
@@ -60,7 +73,7 @@ public class RandomPlayerStrategy extends PlayerStrategy {
 	}
 
 	/**
-	 * Create an order. the Defensive player can only use Deploy orders
+	 * Create an order. the Random player can only use Deploy orders and move armies
 	 * 
 	 * @return created order
 	 */
@@ -122,6 +135,12 @@ public class RandomPlayerStrategy extends PlayerStrategy {
 		}
 	}
 
+	/**
+	 * Find a neighbor country
+	 * 
+	 * @param p_country The source country
+	 * @return neighbor country
+	 */
 	private Country findNeighborCountry(Country p_country) {
 		Random l_rand = new Random();
 		int l_neighborId = p_country.getNeighborCountries()

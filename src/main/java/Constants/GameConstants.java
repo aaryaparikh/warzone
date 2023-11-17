@@ -24,7 +24,7 @@ public final class GameConstants {
 	public static final List<String> GAME_CARD_LIST = List.of("bomb", "blockade", "airlift", "negotiate");
 
 	/**
-	 * Player type in game
+	 * Player strategy in game
 	 */
 	public static final List<String> GAME_PLAYER_LIST = List.of("human", "aggressive", "benevolent", "random",
 			"cheater");
