@@ -63,7 +63,7 @@ public class Player extends Observable {
 	 * check point for commit
 	 */
 	private Boolean d_ifSignified;
-	
+
 	/**
 	 * String buffer
 	 */
@@ -179,7 +179,7 @@ public class Player extends Observable {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Retrieves and removes the next order from the player's order list.
 	 *
@@ -195,7 +195,7 @@ public class Player extends Observable {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Get String to record
 	 * 
@@ -204,7 +204,7 @@ public class Player extends Observable {
 	public String getString() {
 		return d_stringBuffer;
 	}
-	
+
 	/**
 	 * Update game map before issuing orders for player.
 	 * 

@@ -40,8 +40,7 @@ public class OrderWriter implements Observer {
 
 		try {
 			d_logFile = new FileWriter(("src/main/resources/orders.txt"), true);
-			d_logFile.append(
-					">> " + ((Player) p_observableState).getString() + "\n");
+			d_logFile.append(">> " + ((Player) p_observableState).getString() + "\n");
 			d_logFile.close();
 		} catch (IOException e) {
 			e.printStackTrace();

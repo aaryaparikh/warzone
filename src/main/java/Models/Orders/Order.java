@@ -23,7 +23,7 @@ public abstract class Order {
 	 * @return the command type
 	 */
 	public abstract String getOrderType();
-	
+
 	/**
 	 * method to get order information
 	 * 

@@ -46,7 +46,7 @@ public class GameEngine {
 	 * Maintain the game phase
 	 */
 	private Phase d_gamePhase;
-	
+
 	/**
 	 * Shows the phases of game
 	 */
@@ -62,13 +62,13 @@ public class GameEngine {
 	 */
 	@SuppressWarnings("unused")
 	private LogWriter d_logWriter;
-	
+
 	/**
 	 * Game Order Writer
 	 */
 	@SuppressWarnings("unused")
 	private OrderWriter d_orderWriter;
-	
+
 	/**
 	 * Unique scanner in a game
 	 */
@@ -114,6 +114,79 @@ public class GameEngine {
 				executeCommand(l_commands, null);
 			}
 
+			// Enter game play phase
+			getPhaseView().showNextPhaseInfo("play");
+			attachPlayersWithOrderWriter();
+			while (d_gamePhase instanceof PlayMainPhase) {
+				assignReinforcements();
+
+				updateGameMapForPlayers();
+
+				executeCommand("showmap".split(" "), null);
+
+				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
+					break;
+			}
+
+			// Enter end phase
+			getPhaseView().showNextPhaseInfo("end");
+			while (d_gamePhase instanceof EndGamePhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
+				executeCommand(l_commands, null);
+			}
+		}
+	}
+
+	/**
+	 * Function that defines the main flow of a game
+	 */
+	public void resumeFromSetupPhase() {
+		setPhase(new PlaySetupPhase(this));
+
+		try (Scanner l_sc = d_sc) {
+			// Enter game setup phase
+			getPhaseView().showNextPhaseInfo("start");
+			while (d_gamePhase instanceof PlaySetupPhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
+				executeCommand(l_commands, null);
+			}
+
+			// Enter game play phase
+			getPhaseView().showNextPhaseInfo("play");
+			attachPlayersWithOrderWriter();
+			while (d_gamePhase instanceof PlayMainPhase) {
+				assignReinforcements();
+
+				updateGameMapForPlayers();
+
+				executeCommand("showmap".split(" "), null);
+
+				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
+					break;
+			}
+
+			// Enter end phase
+			getPhaseView().showNextPhaseInfo("end");
+			while (d_gamePhase instanceof EndGamePhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
+				executeCommand(l_commands, null);
+			}
+		}
+	}
+
+	/**
+	 * Function that defines the main flow of a game
+	 */
+	public void resumeFromPlayPhase() {
+		setPhase(new IssueOrderPhase(this));
+
+		try (Scanner l_sc = d_sc) {
 			// Enter game play phase
 			getPhaseView().showNextPhaseInfo("play");
 			attachPlayersWithOrderWriter();
@@ -217,6 +290,9 @@ public class GameEngine {
 			break;
 		case "savegame":
 			this.d_gamePhase.saveGame(p_commands, p_currentPlayer);
+			break;
+		case "loadgame":
+			this.d_gamePhase.loadGame(p_commands, p_currentPlayer);
 			break;
 		default:
 			System.out.println("Invalid command.");
@@ -518,7 +594,7 @@ public class GameEngine {
 		for (Player l_player : d_players)
 			l_player.attach(d_orderWriter);
 	}
-	
+
 	/**
 	 * Check if the game is over.
 	 *
@@ -595,8 +671,7 @@ public class GameEngine {
 		this.d_logEntryBuffer = p_logEntryBuffer;
 	}
 
-	public void setPlayers(List<Player> players) {
-		// TODO Auto-generated method stub
-		
+	public void setPlayers(List<Player> p_players) {
+		this.d_players = p_players;
 	}
 }

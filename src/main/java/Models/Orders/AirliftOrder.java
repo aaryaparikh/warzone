@@ -98,12 +98,13 @@ public class AirliftOrder extends Order {
 	public int getD_armies() {
 		return d_armies;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public String getOrderInfo() {
-		return String.format("%s airlift %d %d %d", d_player.getName(), d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_armies);
+		return String.format("%s airlift %d %d %d", d_player.getName(), d_resourceCountry.getCountryId(),
+				d_targetCountry.getCountryId(), d_armies);
 	}
 }

@@ -102,12 +102,12 @@ public class AdvanceOrder extends Order {
 		if (l_capabilitySourceCountryArmies > l_targetCountryArmies) {
 			Player l_playerBeingAttacked = d_targetCountry.getOwner();
 
-			d_targetCountry.setOwner(d_player);
-			d_player.addCountry(d_targetCountry);
-
 			// Check if target country is neutral
 			if (l_playerBeingAttacked != null)
 				l_playerBeingAttacked.getD_countries().remove(d_targetCountry);
+			
+			d_targetCountry.setOwner(d_player);
+			d_player.addCountry(d_targetCountry);
 
 			d_resourceCountry.setArmies(l_sourceCountryArmies - d_armies);
 			d_targetCountry.setArmies(d_armies - l_capabilityTargetCountryArmies);
@@ -155,6 +155,7 @@ public class AdvanceOrder extends Order {
 	 */
 	@Override
 	public String getOrderInfo() {
-		return String.format("%s advance %d %d %d", d_player.getName(), d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_armies);
+		return String.format("%s advance %d %d %d", d_player.getName(), d_resourceCountry.getCountryId(),
+				d_targetCountry.getCountryId(), d_armies);
 	}
 }

@@ -206,4 +206,12 @@ public class EditMapPhase extends Phase {
 		printInvalidCommandMessage();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void loadGame(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
+	}
+
 }
