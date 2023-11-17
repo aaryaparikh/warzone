@@ -11,6 +11,7 @@ import Controller.GameEngine;
 import Controller.Observable;
 import Models.Orders.Order;
 import Models.Strategy.PlayerStrategy;
+import Utils.DeepCopyList;
 
 /**
  * Represents a player in the game.
@@ -63,7 +64,7 @@ public class Player extends Observable {
 	 * check point for commit
 	 */
 	private Boolean d_ifSignified;
-	
+
 	/**
 	 * String buffer
 	 */
@@ -179,7 +180,7 @@ public class Player extends Observable {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Retrieves and removes the next order from the player's order list.
 	 *
@@ -193,9 +194,14 @@ public class Player extends Observable {
 			notifyObservers(this);
 			return l_order;
 		}
+		else
+			if (this.getIfSignified() == true) {
+				d_stringBuffer = d_name + " commit";
+				notifyObservers(this);
+			}
 		return null;
 	}
-	
+
 	/**
 	 * Get String to record
 	 * 
@@ -204,13 +210,15 @@ public class Player extends Observable {
 	public String getString() {
 		return d_stringBuffer;
 	}
-	
+
 	/**
 	 * Update game map before issuing orders for player.
 	 * 
 	 */
 	public void updateGameMap() {
-		this.d_gameMapInTurn = this.d_gameEngine.getGameMap().getCountries();
+		this.d_gameMapInTurn = DeepCopyList.deepCopy(this.d_gameEngine.getGameMap().getCountries());
+		if (this.getD_strategy() != null)
+			this.getD_strategy().d_countryList = d_gameMapInTurn;
 	}
 
 	/**

@@ -65,7 +65,7 @@ public class DiplomacyOrder extends Order {
 	public String getOrderType() {
 		return "Negotiate";
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

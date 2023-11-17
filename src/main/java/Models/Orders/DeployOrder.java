@@ -89,7 +89,7 @@ public class DeployOrder extends Order {
 	public String getOrderType() {
 		return "Deploy";
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

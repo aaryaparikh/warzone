@@ -78,7 +78,7 @@ public class BombOrder extends Order {
 	public String getOrderType() {
 		return "Bomb";
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

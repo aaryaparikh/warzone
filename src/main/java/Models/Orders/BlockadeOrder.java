@@ -67,7 +67,7 @@ public class BlockadeOrder extends Order {
 	public String getOrderType() {
 		return "Blockade";
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
