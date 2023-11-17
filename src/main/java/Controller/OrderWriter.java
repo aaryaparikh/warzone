@@ -21,13 +21,7 @@ public class OrderWriter implements Observer {
 	 * @param p_logEntry object of LogEntryBuffer
 	 */
 	public OrderWriter() {
-		try {
-			d_logFile = new FileWriter(("src/main/resources/orders.txt"), false);
-			d_logFile.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
 
 	/**
@@ -41,6 +35,15 @@ public class OrderWriter implements Observer {
 		try {
 			d_logFile = new FileWriter(("src/main/resources/orders.txt"), true);
 			d_logFile.append(">> " + ((Player) p_observableState).getString() + "\n");
+			d_logFile.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void reset() {
+		try {
+			d_logFile = new FileWriter(("src/main/resources/orders.txt"), false);
 			d_logFile.close();
 		} catch (IOException e) {
 			e.printStackTrace();

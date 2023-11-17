@@ -62,10 +62,11 @@ public class GameCommandHandler extends CommandHandler {
 			if (p_commands.length < 2)
 				System.out.println("Please enter file path to load game.");
 			else {
-				GameEditor.loadGameFromFile("src/main/resources/" + p_commands[1]);
 				String l_response2 = String.format("Game is loaded from \"%s\"", p_commands[1]);
 				System.out.println(l_response2);
 				d_logEntryBuffer.setString(l_response2);
+				GameEditor.loadGameFromFile("src/main/resources/" + p_commands[1]);
+				System.exit(0);
 			}
 
 			// game player order support multiple options

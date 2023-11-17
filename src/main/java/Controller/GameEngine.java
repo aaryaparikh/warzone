@@ -1,6 +1,11 @@
 package Controller;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -66,7 +71,6 @@ public class GameEngine {
 	/**
 	 * Game Order Writer
 	 */
-	@SuppressWarnings("unused")
 	private OrderWriter d_orderWriter;
 
 	/**
@@ -142,7 +146,7 @@ public class GameEngine {
 	/**
 	 * Function that defines the main flow of a game
 	 */
-	public void resumeFromSetupPhase() {
+	public void resumeToSetupPhase() {
 		setPhase(new PlaySetupPhase(this));
 
 		try (Scanner l_sc = d_sc) {
@@ -183,22 +187,30 @@ public class GameEngine {
 	/**
 	 * Function that defines the main flow of a game
 	 */
-	public void resumeFromPlayPhase() {
+	public void resumeToPlayPhase(String p_currentPlayer) {
 		setPhase(new IssueOrderPhase(this));
 
+		boolean l_ifFirstTurn = true;
 		try (Scanner l_sc = d_sc) {
 			// Enter game play phase
 			getPhaseView().showNextPhaseInfo("play");
 			attachPlayersWithOrderWriter();
+			
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
 
 				updateGameMapForPlayers();
 
 				executeCommand("showmap".split(" "), null);
-
-				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
-					break;
+				
+				if (l_ifFirstTurn == true) {
+					if ((resumeIssueOrdersInTurn(p_currentPlayer) == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
+						break;
+					l_ifFirstTurn = false;
+				}
+				else
+					if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
+						break;
 			}
 
 			// Enter end phase
@@ -306,6 +318,8 @@ public class GameEngine {
 	 * @return string to output result of issuing orders
 	 */
 	public String issueOrdersInTurn() {
+		d_orderWriter.reset();
+		
 		List<Player> l_playerPool = getPlayers();
 		for (Player l_player : l_playerPool)
 			l_player.setIfSignified(false);
@@ -414,6 +428,73 @@ public class GameEngine {
 		setPhase(new IssueOrderPhase(this));
 
 		return "nextRound";
+	}
+	
+	/**
+	 * Function that takes player's input and adds their orders to the queue.
+	 *
+	 * @return string to output result of issuing orders
+	 */
+	public String resumeIssueOrdersInTurn(String p_currentPlayer) {
+		List<Player> l_playerPool = getPlayers();
+		for (Player l_player : l_playerPool)
+			l_player.setIfSignified(false);
+		
+		// Reload Orders in order buffer
+		try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/orders.txt"))) {
+	        String line;
+	        while ((line = reader.readLine()) != null && !line.isEmpty()) {
+	        	String[] l_fullOrder = line.substring(">> ".length()).split(" ");
+	        	System.out.println(line.substring(">> ".length()));
+	        	
+	        	Player l_orderPlayer = null;
+	        	for (Player l_player : d_players )
+	        		if (l_player.getName().equals(l_fullOrder[0]))
+	        			l_orderPlayer = l_player;
+	        	if (l_orderPlayer != null)
+	        		this.executeCommand(Arrays.copyOfRange(l_fullOrder, 1, l_fullOrder.length), l_orderPlayer);
+	        }
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		boolean l_ifRemainPlayers = true;
+
+		// issue order in round-robin fashion
+		String l_resumePlayerTurn = p_currentPlayer;
+		while (l_ifRemainPlayers) {
+			l_ifRemainPlayers = false;
+			for (Player l_player : l_playerPool) {
+				if (l_resumePlayerTurn != null) {
+					if (!l_player.getName().equals(p_currentPlayer))
+						continue;
+					else
+						l_resumePlayerTurn = null;
+				}
+			
+				// Continue to rotate
+				if (!l_player.getIfSignified()) {
+					System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool()
+							+ " armies need to deploy]");
+
+					l_player.issueOrder();
+
+					if (this.getPhase() instanceof EndGamePhase)
+						return "gameEnd";
+					l_ifRemainPlayers = true;
+				}
+			}
+		}
+
+		System.out.println("[All players have signified]");
+		getPhaseView().showNextPhaseInfo("execute");
+		setPhase(new ExecuteOrderPhase(this));
+		return null;
 	}
 
 	/**

@@ -151,12 +151,11 @@ public class GameEditor {
 						if (l_player.getName().equals(l_country.getOwner().getName()))
 							l_country.setOwner(l_player);
 				}
-
-				gameEngine.resumeFromSetupPhase();
+				
+				gameEngine.resumeToSetupPhase();
 			}
 
 			if (l_phaseName.equals("IssueOrderPhase")) {
-				@SuppressWarnings("unused")
 				String currentPlayer = loadPlayerTurn(reader);
 
 				gameEngine.setGameMap(loadMap(reader));
@@ -169,8 +168,10 @@ public class GameEditor {
 						if (l_player.getName().equals(l_country.getOwner().getName()))
 							l_country.setOwner(l_player);
 				}
+				
+				loadOrderIssued(reader, "src/main/resources/orders.txt");
 
-				gameEngine.resumeFromPlayPhase();
+				gameEngine.resumeToPlayPhase(currentPlayer);
 			}
 
 		} catch (IOException e) {
@@ -405,4 +406,26 @@ public class GameEditor {
 		}
 		return keyValuePairs;
 	}
+	
+    private static void loadOrderIssued(BufferedReader reader, String filePath) throws IOException {
+        // Truncate the file to make it empty
+		try {
+			FileWriter d_logFile = new FileWriter(("src/main/resources/orders.txt"), false);
+			d_logFile.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        
+        String line;
+        while ((line = reader.readLine()) != null && !line.isEmpty()) {
+            if (line.equals("Orders:"))
+            	continue;
+            // Write the loaded order to the same file
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+                writer.write(line + "\n");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

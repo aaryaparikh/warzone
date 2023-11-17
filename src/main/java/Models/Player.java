@@ -11,6 +11,7 @@ import Controller.GameEngine;
 import Controller.Observable;
 import Models.Orders.Order;
 import Models.Strategy.PlayerStrategy;
+import Utils.DeepCopyList;
 
 /**
  * Represents a player in the game.
@@ -193,6 +194,11 @@ public class Player extends Observable {
 			notifyObservers(this);
 			return l_order;
 		}
+		else
+			if (this.getIfSignified() == true) {
+				d_stringBuffer = d_name + " commit";
+				notifyObservers(this);
+			}
 		return null;
 	}
 
@@ -210,7 +216,9 @@ public class Player extends Observable {
 	 * 
 	 */
 	public void updateGameMap() {
-		this.d_gameMapInTurn = this.d_gameEngine.getGameMap().getCountries();
+		this.d_gameMapInTurn = DeepCopyList.deepCopy(this.d_gameEngine.getGameMap().getCountries());
+		if (this.getD_strategy() != null)
+			this.getD_strategy().d_countryList = d_gameMapInTurn;
 	}
 
 	/**
