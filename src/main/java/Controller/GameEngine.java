@@ -79,6 +79,11 @@ public class GameEngine {
 	public Scanner d_sc;
 
 	/**
+	 * Tournament setting
+	 */
+	public Tournament d_tournament;
+
+	/**
 	 * Constructor for GameEngine.
 	 *
 	 * @param p_map The game map.
@@ -91,6 +96,7 @@ public class GameEngine {
 		this.d_logEntryBuffer = new LogEntryBuffer();
 		this.d_logWriter = new LogWriter(d_logEntryBuffer);
 		this.d_sc = new Scanner(System.in);
+		this.d_tournament = new Tournament(this, d_phaseView, d_logEntryBuffer, d_logWriter);
 	}
 
 	/**
@@ -115,7 +121,28 @@ public class GameEngine {
 				String l_userInput;
 				l_userInput = l_sc.nextLine();
 				String l_commands[] = l_userInput.split(" ");
-				executeCommand(l_commands, null);
+				
+				// Decide whether to launch a tournament
+				if (executeCommand(l_commands, null) == "tournament") {
+					System.out.println(">> Tournament has players:");
+					for (Player l_player : getPlayers()) {
+						String l_strategyName = l_player.getD_strategy().getClass().getTypeName().split("\\.")[2];
+						System.out.println(l_player.getName() + " " + l_strategyName);
+					}
+					System.out.println(">> Tournament has " + d_tournament.d_listOfMapFiles.size() + " maps.");
+					
+					System.out.println(">> " + d_tournament.d_numberOfGames + " games will launch with maximum " + d_tournament.d_maxNumberOfTurns + " turns.");
+					
+					System.out.println(">> Please Enter \"start\" to Start Tournament / Enter other to Go Back.");
+					l_userInput = d_sc.nextLine();
+					if (l_userInput.equals("start"))
+						d_tournament.start();
+					else {
+						getPhaseView().showNextPhaseInfo("start");
+						continue;
+					}
+					System.exit(0);
+				}
 			}
 
 			// Enter game play phase
@@ -269,6 +296,9 @@ public class GameEngine {
 			break;
 		case "assigncountries":
 			l_response = this.d_gamePhase.assignCountries(p_commands);
+			break;
+		case "tournament":
+			l_response = this.d_gamePhase.tournament(p_commands);
 			break;
 
 		// play game command
@@ -619,7 +649,7 @@ public class GameEngine {
 	 * Update game map for each player
 	 * 
 	 */
-	private void updateGameMapForPlayers() {
+	public void updateGameMapForPlayers() {
 		for (Player l_player : d_players)
 			l_player.updateGameMap();
 	}
@@ -628,7 +658,7 @@ public class GameEngine {
 	 * Attach players with a order writer
 	 * 
 	 */
-	private void attachPlayersWithOrderWriter() {
+	public void attachPlayersWithOrderWriter() {
 		this.d_orderWriter = new OrderWriter();
 		for (Player l_player : d_players)
 			l_player.attach(d_orderWriter);
