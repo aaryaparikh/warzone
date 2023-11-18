@@ -2,8 +2,6 @@ package Models;
 
 import java.util.ArrayList;
 
-import Utils.MapEditor;
-import Utils.MapEditorAdapter;
 import Views.MapView;
 
 /**
