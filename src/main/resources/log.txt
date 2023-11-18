@@ -2263,3 +2263,154 @@
 2023/11/18 01:02:18>> Player "Aarya" deployed "1" armies to country "1"
 2023/11/18 01:02:18>> "7" armies are moved from country "1" to country "2", "Aarya" occupy country "2", "4" armies remain.
 2023/11/18 01:02:18>> Player:Aarya is the winner!
+2023/11/18 13:21:10>> 
+
+2023/11/18 13:21:10>> Game Start
+2023/11/18 13:21:10>> Enter Edit Map Phase
+2023/11/18 13:21:17>> Edit map "canada.map"
+2023/11/18 13:22:04>> 
+
+2023/11/18 13:22:04>> Game Start
+2023/11/18 13:22:04>> Enter Edit Map Phase
+2023/11/18 13:22:10>> Edit map "canada.map"
+2023/11/18 13:22:39>> 
+
+2023/11/18 13:22:39>> Game Start
+2023/11/18 13:22:39>> Enter Edit Map Phase
+2023/11/18 13:22:44>> Edit map "canada.map"
+2023/11/18 13:23:16>> 
+
+2023/11/18 13:23:16>> Game Start
+2023/11/18 13:23:16>> Enter Edit Map Phase
+2023/11/18 13:24:26>> Edit map "canada.map"
+2023/11/18 13:25:05>> 
+
+2023/11/18 13:25:05>> Game Start
+2023/11/18 13:25:05>> Enter Edit Map Phase
+2023/11/18 13:25:22>> Edit map "canada.map"
+2023/11/18 13:25:47>> 
+
+2023/11/18 13:25:47>> Game Start
+2023/11/18 13:25:47>> Enter Edit Map Phase
+2023/11/18 13:29:39>> 
+
+2023/11/18 13:29:39>> Game Start
+2023/11/18 13:29:39>> Enter Edit Map Phase
+2023/11/18 13:32:26>> 
+
+2023/11/18 13:32:26>> Game Start
+2023/11/18 13:32:26>> Enter Edit Map Phase
+2023/11/18 13:33:35>> 
+
+2023/11/18 13:33:35>> Game Start
+2023/11/18 13:33:35>> Enter Edit Map Phase
+2023/11/18 13:34:23>> 
+
+2023/11/18 13:34:23>> Game Start
+2023/11/18 13:34:23>> Enter Edit Map Phase
+2023/11/18 13:35:29>> 
+
+2023/11/18 13:35:29>> Game Start
+2023/11/18 13:35:29>> Enter Edit Map Phase
+2023/11/18 13:37:06>> Edit map "canada.map"
+2023/11/18 13:40:51>> 
+
+2023/11/18 13:40:51>> Game Start
+2023/11/18 13:40:51>> Enter Edit Map Phase
+2023/11/18 13:41:01>> Edit map "canada.map"
+2023/11/18 13:41:16>> 
+
+2023/11/18 13:41:16>> Game Start
+2023/11/18 13:41:16>> Enter Edit Map Phase
+2023/11/18 13:43:09>> 
+
+2023/11/18 13:43:09>> Game Start
+2023/11/18 13:43:09>> Enter Edit Map Phase
+2023/11/18 13:45:24>> 
+
+2023/11/18 13:45:24>> Game Start
+2023/11/18 13:45:24>> Enter Edit Map Phase
+2023/11/18 13:47:13>> 
+
+2023/11/18 13:47:13>> Game Start
+2023/11/18 13:47:13>> Enter Edit Map Phase
+2023/11/18 13:47:18>> Edit map "canada.map"
+2023/11/18 13:50:43>> 
+
+2023/11/18 13:50:43>> Game Start
+2023/11/18 13:50:43>> Enter Edit Map Phase
+2023/11/18 13:51:06>> Edit map "China.map"
+2023/11/18 13:53:37>> 
+
+2023/11/18 13:53:37>> Game Start
+2023/11/18 13:53:37>> Enter Edit Map Phase
+2023/11/18 13:53:44>> Edit map "India.map"
+2023/11/18 13:55:03>> Edit map "China.map"
+2023/11/18 14:04:43>> Edit map "India.map"
+2023/11/18 14:05:18>> Edit map "India.map"
+2023/11/18 14:05:30>> 
+
+2023/11/18 14:05:30>> Game Start
+2023/11/18 14:05:30>> Enter Edit Map Phase
+2023/11/18 14:05:31>> Edit map "India.map"
+2023/11/18 14:05:40>> Edit map "India.map"
+2023/11/18 14:11:00>> 
+
+2023/11/18 14:11:00>> Game Start
+2023/11/18 14:11:00>> Enter Edit Map Phase
+2023/11/18 14:11:07>> Edit map "India.map"
+2023/11/18 14:12:58>> Edit map "India.map"
+2023/11/18 14:20:26>> 
+
+2023/11/18 14:20:26>> Game Start
+2023/11/18 14:20:26>> Enter Edit Map Phase
+2023/11/18 14:20:34>> Edit map "India.map"
+2023/11/18 14:21:49>> Edit map "China.map"
+2023/11/18 14:37:28>> 
+
+2023/11/18 14:37:28>> Game Start
+2023/11/18 14:37:28>> Enter Edit Map Phase
+2023/11/18 14:37:33>> Edit map "India.map".
+2023/11/18 14:38:02>> 
+
+2023/11/18 14:38:02>> Game Start
+2023/11/18 14:38:02>> Enter Edit Map Phase
+2023/11/18 14:38:08>> Edit map "India.map".
+2023/11/18 15:50:57>> 
+
+2023/11/18 15:50:57>> Game Start
+2023/11/18 15:50:57>> Enter Edit Map Phase
+2023/11/18 15:51:06>> Edit map "Canada.map".
+2023/11/18 15:58:00>> 
+
+2023/11/18 15:58:00>> Game Start
+2023/11/18 15:58:00>> Enter Edit Map Phase
+2023/11/18 15:58:11>> Edit map "Canada.map".
+2023/11/18 15:58:29>> Map is saved in "src/main/resources/ConquestMaps/canada.map"
+2023/11/18 16:01:18>> Map is saved in "src/main/resources/ConquestMaps/test.map"
+2023/11/18 16:04:13>> 
+
+2023/11/18 16:04:13>> Game Start
+2023/11/18 16:04:13>> Enter Edit Map Phase
+2023/11/18 16:04:25>> Edit map "Canada.map".
+2023/11/18 16:05:17>> 
+
+2023/11/18 16:05:17>> Game Start
+2023/11/18 16:05:17>> Enter Edit Map Phase
+2023/11/18 16:05:23>> Edit map "Canada.map".
+2023/11/18 16:05:28>> Conquest Map is saved in "src/main/resources/ConquestMaps/test.map"
+2023/11/18 16:06:06>> 
+
+2023/11/18 16:06:06>> Game Start
+2023/11/18 16:06:06>> Enter Edit Map Phase
+2023/11/18 16:06:13>> Edit map "Canada.map".
+2023/11/18 16:06:26>> Conquest Map is saved in "src/main/resources/ConquestMaps/Test.map"
+2023/11/18 16:06:48>> Edit map "China.map".
+2023/11/18 16:06:58>> Conquest Map is saved in "src/main/resources/ConquestMaps/test.map"
+2023/11/18 16:07:09>> Edit map "India.map".
+2023/11/18 16:07:14>> Conquest Map is saved in "src/main/resources/ConquestMaps/test.map"
+2023/11/18 16:08:14>> 
+
+2023/11/18 16:08:14>> Game Start
+2023/11/18 16:08:14>> Enter Edit Map Phase
+2023/11/18 16:08:31>> Edit map "firstmap.txt".

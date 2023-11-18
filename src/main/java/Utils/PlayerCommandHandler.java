@@ -56,7 +56,7 @@ public class PlayerCommandHandler extends CommandHandler {
 				for (Player l_player : d_gameEngine.getPlayers())
 					while (l_player.recordNextOrder() != null)
 						continue;
-				GameEditor.saveGameToFile(d_gameEngine, "src/main/resources/" + p_commands[1],
+				GameEditor.saveGameToFile(d_gameEngine, "src/main/resources/Games/" + p_commands[1],
 						p_currentPlayer.getName());
 				String l_response = String.format("Game is saved in \"%s\"", p_commands[1]);
 				System.out.println(l_response);
@@ -72,7 +72,7 @@ public class PlayerCommandHandler extends CommandHandler {
 				String l_response2 = String.format("Game is loaded from \"%s\"", p_commands[1]);
 				System.out.println(l_response2);
 				d_logEntryBuffer.setString(l_response2);
-				GameEditor.loadGameFromFile("src/main/resources/" + p_commands[1]);
+				GameEditor.loadGameFromFile("src/main/resources/Games/" + p_commands[1]);
 				System.exit(0);
 			}
 

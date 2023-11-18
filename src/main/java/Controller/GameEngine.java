@@ -121,7 +121,7 @@ public class GameEngine {
 				String l_userInput;
 				l_userInput = l_sc.nextLine();
 				String l_commands[] = l_userInput.split(" ");
-				
+
 				// Decide whether to launch a tournament
 				if (executeCommand(l_commands, null) == "tournament") {
 					System.out.println(">> Tournament has players:");
@@ -130,9 +130,10 @@ public class GameEngine {
 						System.out.println(l_player.getName() + " " + l_strategyName);
 					}
 					System.out.println(">> Tournament has " + d_tournament.d_listOfMapFiles.size() + " maps.");
-					
-					System.out.println(">> " + d_tournament.d_numberOfGames + " games will launch with maximum " + d_tournament.d_maxNumberOfTurns + " turns.");
-					
+
+					System.out.println(">> " + d_tournament.d_numberOfGames + " games will launch with maximum "
+							+ d_tournament.d_maxNumberOfTurns + " turns.");
+
 					System.out.println(">> Please Enter \"start\" to Start Tournament / Enter other to Go Back.");
 					l_userInput = d_sc.nextLine();
 					if (l_userInput.equals("start"))
