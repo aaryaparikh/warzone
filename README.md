@@ -33,6 +33,12 @@ Except for output from build1, all running information is saved in log.txt which
 Add new features for build2's requirement, and refactor the project to follow State Pattern, Command Pattern and Observer Pattern.
 
 # Build3
-In build3, please run Build3Demo.java.
+As for build3, please run Build3Demo.java.
 
-The game could be saved and loaded at any time except EditMapPhase, a game loaded will be resumed at the time a player is issuing an order.
+In EditMapPhase, "editmap Canada.map"/"savemap Canada.map" to edit/save a Conquest Map, "editmap firstmap.txt"/"savemap firstmap.txt" to edit/save a Domination Map.
+
+In GameStartupPhase and IssueOrderPhase, input "savegame g1"/"loadgame g1" to save/load a game to/from a game file.
+
+In GameStartupPhase, input "tournament -M firstmap.txt secondmap.txt thirdmap.txt -P aggressive cheater -G 3 -D 4" to start a tournament.
+
+Different from Build2, in GameStartupPhase, after "gamplayer -add", choose to select strategy for a new player.
