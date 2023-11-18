@@ -41,13 +41,26 @@ public class GameCommandHandler extends CommandHandler {
 			break;
 		case "loadmap":
 			if (l_commands.length < 2)
-				System.out.println("Please enter valid map file path");
+				System.out.println("Please enter valid map file name to load.");
 			else {
-				GameMap l_map = d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]);
-				if (!d_gameEngine.getGameMap().equals(l_map)) {
-					System.out.println("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
-					d_logEntryBuffer.setString("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
-					d_gameEngine.setGameMap(l_map);
+				if (p_commands[1].split("\\.")[1].equals("map")) {
+					MapEditorAdapter l_mapEditor = new MapEditorAdapter(d_gameEngine.getGameMap());
+					GameMap l_map = l_mapEditor.loadMap(l_commands[1]);
+
+					if (!d_gameEngine.getGameMap().equals(l_map)) {
+						System.out.println("\"" + l_commands[1] + "\" is loaded as the game map.");
+						d_logEntryBuffer.setString("\"" + l_commands[1] + "\" is loaded as the game map.");
+						d_gameEngine.setGameMap(l_map);
+					}
+				} else {
+					MapEditor l_mapEditor = new MapEditor(d_gameEngine.getGameMap());
+					GameMap l_map = l_mapEditor.loadMap(l_commands[1]);
+
+					if (!d_gameEngine.getGameMap().equals(l_map)) {
+						System.out.println("\"" + l_commands[1] + "\" is loaded as the game map.");
+						d_logEntryBuffer.setString("\"" + l_commands[1] + "\" is loaded as the game map.");
+						d_gameEngine.setGameMap(l_map);
+					}
 				}
 			}
 			break;
@@ -56,7 +69,7 @@ public class GameCommandHandler extends CommandHandler {
 			if (p_commands.length < 2)
 				System.out.println("Please enter file path to save game.");
 			else {
-				GameEditor.saveGameToFile(d_gameEngine, "src/main/resources/" + p_commands[1], null);
+				GameEditor.saveGameToFile(d_gameEngine, "src/main/resources/Games/" + p_commands[1], null);
 				String l_response2 = String.format("Game is saved in \"%s\"", p_commands[1]);
 				System.out.println(l_response2);
 				d_logEntryBuffer.setString(l_response2);
@@ -69,7 +82,7 @@ public class GameCommandHandler extends CommandHandler {
 				String l_response2 = String.format("Game is loaded from \"%s\"", p_commands[1]);
 				System.out.println(l_response2);
 				d_logEntryBuffer.setString(l_response2);
-				GameEditor.loadGameFromFile("src/main/resources/" + p_commands[1]);
+				GameEditor.loadGameFromFile("src/main/resources/Games/" + p_commands[1]);
 				System.exit(0);
 			}
 
@@ -88,7 +101,16 @@ public class GameCommandHandler extends CommandHandler {
 					continue;
 				if (l_commands[l_index].equals("-P"))
 					break;
-				GameMap l_map = d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[l_index]);
+				
+				GameMap l_map = null;
+				if (l_commands[l_index].split("\\.")[1].equals("map")) {
+					MapEditorAdapter l_mapEditor = new MapEditorAdapter(d_gameEngine.getGameMap());
+					l_map = l_mapEditor.loadMap(l_commands[l_index]);
+				}
+				else {
+					MapEditor l_mapEditor = new MapEditor(d_gameEngine.getGameMap());
+					l_map = l_mapEditor.loadMap(l_commands[l_index]);
+				}
 				if (l_map != null)
 					d_gameEngine.d_tournament.d_listOfMapFiles.add(l_map);
 			}

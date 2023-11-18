@@ -19,17 +19,17 @@ public class MapEditor {
 	/**
 	 * List of Continents
 	 */
-	private List<Continent> d_continents;
+	protected List<Continent> d_continents;
 
 	/**
 	 * List of Countries
 	 */
-	private List<Country> d_countries;
+	protected List<Country> d_countries;
 
 	/**
 	 * Game Map instance
 	 */
-	private GameMap d_gameMap;
+	protected GameMap d_gameMap;
 
 	/**
 	 * Constructor for map editor
@@ -70,10 +70,9 @@ public class MapEditor {
 				}
 				l_text += "\n";
 			}
-			FileWriter l_writer = new FileWriter("src/main/resources/" + p_fileName + ".txt");
+			FileWriter l_writer = new FileWriter("src/main/resources/DominationMaps/" + p_fileName);
 			l_writer.write(l_text);
 			l_writer.close();
-			System.out.println("File Saved Successfully");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -90,7 +89,7 @@ public class MapEditor {
 		GameMap l_map = new GameMap();
 
 		try {
-			File l_mapFile = new File("src/main/resources/" + p_fileName + ".txt");
+			File l_mapFile = new File("src/main/resources/" + p_fileName);
 
 			// Check whether the file exist in the path
 			if (!l_mapFile.exists()) {
@@ -99,7 +98,7 @@ public class MapEditor {
 				l_text = "[Continents]\n";
 				l_text = l_text + "\n[Countries]\n";
 				l_text = l_text + "\n[Borders]\n";
-				FileWriter l_writer = new FileWriter("src/main/resources/" + p_fileName + ".txt");
+				FileWriter l_writer = new FileWriter("src/main/resources/DominationMaps/" + p_fileName);
 				l_writer.write(l_text);
 				l_writer.close();
 			} else {
@@ -161,7 +160,7 @@ public class MapEditor {
 		String l_text = "";
 
 		try {
-			File l_mapFile = new File("src/main/resources/" + p_fileName + ".txt");
+			File l_mapFile = new File("src/main/resources/DominationMaps/" + p_fileName);
 
 			// Check whether the file exist in the path
 			if (!l_mapFile.exists()) {
@@ -246,27 +245,27 @@ public class MapEditor {
 
 		// Step 2: Check for duplicate countries, unreachable countries, and continent
 		// assignments.
-		for (Country element : d_countries) {
+		for (Country l_element : d_countries) {
 
 			// Step 3: Check for duplicate countries
-			if (!l_counter.containsKey(element.getCountryId())) {
-				l_counter.put(element.getContinentId(), 1);
+			if (!l_counter.containsKey(l_element.getCountryId())) {
+				l_counter.put(l_element.getCountryId(), 1);
 			} else {
-				System.out.println("Invalid Map: Duplicate Countries: " + element.getCountryId());
+				System.out.println("Invalid Map: Duplicate Countries: " + l_element.getCountryId());
 				return false;
 			}
 
 			// Step 4: Check for unreachable countries (no neighboring countries assigned)
-			if (element.getNeighborCountries().isEmpty()) {
+			if (l_element.getNeighborCountries().isEmpty()) {
 				System.out.println("Invalid Map: Unreachable Country: No Neighbouring countries assigned to "
-						+ element.getCountryId());
+						+ l_element.getCountryId());
 				return false;
 			}
 
 			// Step 5: Check if the country is assigned to a valid continent
 			int l_check = 0;
 			for (Continent d_continent : d_continents) {
-				if (element.getContinentId() == d_continent.getContinentId()) {
+				if (l_element.getContinentId() == d_continent.getContinentId()) {
 					l_check = 1;
 					break;
 				}
@@ -277,8 +276,8 @@ public class MapEditor {
 			}
 
 			// Step 6: Check if a country is its own neighbor
-			for (Integer l_neighbors : element.getNeighborCountries()) {
-				if (l_neighbors == element.getCountryId()) {
+			for (Integer l_neighbors : l_element.getNeighborCountries()) {
+				if (l_neighbors == l_element.getCountryId()) {
 					System.out
 							.println("Invalid Map: Country cannot be a neighbor of itself. Country ID: " + l_neighbors);
 					return false;
@@ -286,13 +285,13 @@ public class MapEditor {
 
 				// Step 7: Check for duplicate neighbors
 				int l_neighborCounter = 0;
-				for (Integer l_checker : element.getNeighborCountries()) {
+				for (Integer l_checker : l_element.getNeighborCountries()) {
 					if (l_checker == l_neighbors) {
 						l_neighborCounter++;
 					}
 				}
 				if (l_neighborCounter > 1) {
-					System.out.println("Invalid Map: Duplicate Neighbors for Country: " + element.getCountryId());
+					System.out.println("Invalid Map: Duplicate Neighbors for Country: " + l_element.getCountryId());
 					return false;
 				}
 
@@ -312,12 +311,12 @@ public class MapEditor {
 			// Step 9: Check if continent exists
 			int l_checker = 0;
 			for (Continent d_continent : d_continents) {
-				if (element.getContinentId() == d_continent.getContinentId()) {
+				if (l_element.getContinentId() == d_continent.getContinentId()) {
 					l_checker = 1;
 				}
 			}
 			if (l_checker == 0) {
-				System.out.println("Invalid Map: Country assigned to a continent that does not exist: " + element);
+				System.out.println("Invalid Map: Country assigned to a continent that does not exist: " + l_element);
 				return false;
 			}
 		}

@@ -42,14 +42,25 @@ public class MapCommandHandler extends CommandHandler {
 				l_response = String.format("Please enter file path to save map.");
 				System.out.println(l_response);
 			} else {
-				d_map.d_mapEditor.write(p_commands[1]);
-				l_response = String.format("Map is saved in \"%s.txt\"", p_commands[1]);
+				if (p_commands[1].split("\\.")[1].equals("map")) {
+					MapEditorAdapter l_mapEditor = new MapEditorAdapter(d_map);
+					l_mapEditor.write(p_commands[1]);
+					l_response = String.format("Conquest Map is saved in \"src/main/resources/ConquestMaps/%s\"",
+							p_commands[1]);
+				} else {
+					MapEditor l_mapEditor = new MapEditor(d_map);
+					l_mapEditor.write(p_commands[1]);
+					l_response = String.format("Domination Map is saved in \"src/main/resources/DominationMaps/%s\"",
+							p_commands[1]);
+				}
 				System.out.println(l_response);
 				d_logEntryBuffer.setString(l_response);
 			}
 			break;
 		case "validatemap":
-			if (d_map.d_mapEditor.validateMap()) {
+			MapEditor l_tempMapEditor = new MapEditor(d_map);
+			
+			if (l_tempMapEditor.validateMap()) {
 				l_response = String.format("This Map is valid");
 				System.out.println(l_response);
 				d_logEntryBuffer.setString(l_response);
@@ -60,15 +71,24 @@ public class MapCommandHandler extends CommandHandler {
 			break;
 		case "editmap":
 			if (p_commands.length < 2)
-				System.out.println("Please enter file path to load map.");
+				System.out.println("Please enter file path to edit map.");
 			else {
-				d_map.d_mapEditor.editMap(p_commands[1]);
-				l_response = String.format("Edit map \"%s.txt\"", p_commands[1]);
+				if (p_commands[1].split("\\.")[1].equals("map")) {
+					MapEditorAdapter l_mapEditor = new MapEditorAdapter(d_map);
+					l_mapEditor.editMap(p_commands[1]);
+				} else {
+					MapEditor l_mapEditor = new MapEditor(d_map);
+					l_mapEditor.editMap(p_commands[1]);
+				}
+				l_response = String.format("Edit map \"%s\".", p_commands[1]);
+				System.out.println(l_response);
 				d_logEntryBuffer.setString(l_response);
 			}
 			break;
 		case "next":
-			if (d_map.d_mapEditor.validateMap())
+			MapEditor l_tempMapEditor2 = new MapEditor(d_map);
+
+			if (l_tempMapEditor2.validateMap())
 				return "Valid";
 			else
 				System.out.println("Since invalid map, can't move to play.");
