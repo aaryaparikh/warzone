@@ -67,7 +67,7 @@ public class Build3Demo {
 
 		l_gameEngine.addPlayer(p1);
 		l_gameEngine.addPlayer(p2);
-		l_gameEngine.addPlayer(p3);
+		// l_gameEngine.addPlayer(p3);
 		l_gameEngine.assignCountriesRandomly();
 
 		p1.setD_strategy(new CheaterPlayerStrategy(p1, DeepCopyList.deepCopy(l_map.getCountries()),

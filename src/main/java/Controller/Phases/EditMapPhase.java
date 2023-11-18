@@ -214,4 +214,12 @@ public class EditMapPhase extends Phase {
 		printInvalidCommandMessage();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String tournament(String[] p_commands) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
