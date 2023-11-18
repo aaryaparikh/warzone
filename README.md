@@ -39,6 +39,6 @@ In EditMapPhase, "editmap Canada.map"/"savemap Canada.map" to edit/save a Conque
 
 In GameStartupPhase and IssueOrderPhase, input "savegame g1"/"loadgame g1" to save/load a game to/from a game file.
 
-In GameStartupPhase, input "tournament -M firstmap.txt secondmap.txt thirdmap.txt -P aggressive cheater -G 3 -D 4" to start a tournament.
+In GameStartupPhase, input "tournament -M firstmap.txt secondmap.txt thirdmap.txt -P aggressive cheater random -G 3 -D 7" to start a tournament.
 
 Different from Build2, in GameStartupPhase, after "gamplayer -add", choose to select strategy for a new player.
