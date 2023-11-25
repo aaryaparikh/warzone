@@ -2,7 +2,6 @@ package Models;
 
 import java.util.ArrayList;
 
-import Utils.MapEditor;
 import Views.MapView;
 
 /**
@@ -11,6 +10,10 @@ import Views.MapView;
  * @author Aarya
  */
 public class GameMap {
+	/**
+	 * Map information
+	 */
+	public String d_mapInfo;
 
 	/**
 	 * List of Continents in the Game
@@ -32,10 +35,7 @@ public class GameMap {
 	 */
 	private int d_countryCount = 0;
 
-	/**
-	 * Map editor for editing a map
-	 */
-	public MapEditor d_mapEditor;
+
 
 	/**
 	 * Map View for the map
@@ -46,7 +46,6 @@ public class GameMap {
 	 * Constructor for GameMap
 	 */
 	public GameMap() {
-		d_mapEditor = new MapEditor(this);
 		d_mapView = new MapView(this);
 	}
 
@@ -94,18 +93,6 @@ public class GameMap {
 		d_countries = new ArrayList<>();
 		d_continentCount = 0;
 		d_countryCount = 0;
-	}
-
-	/**
-	 * Load GameMap
-	 *
-	 * @param p_filePath file path in system
-	 */
-	public void loadGameMap(String p_filePath) {
-		d_countries = d_mapEditor.editMap(p_filePath).getCountries();
-		d_continents = d_mapEditor.editMap(p_filePath).getContinents();
-		d_countryCount = d_countries.size();
-		d_continentCount = d_continents.size();
 	}
 
 	/**
@@ -177,6 +164,18 @@ public class GameMap {
 	}
 
 	/**
+	 * Adds a new continent to the map.
+	 *
+	 * @param p_continentId    The identifier of the continent.
+	 * @param p_continentValue The value of the continent.
+	 */
+	public void addContinent(int p_continentId, int p_continentValue, String p_continentName) {
+		d_continents.add(new Continent(p_continentId, p_continentValue, p_continentName));
+		d_continentCount++;
+		d_continents.sort((o1, o2) -> o1.getContinentId() - o2.getContinentId());
+	}
+
+	/**
 	 * Removes a continent from the map by its identifier.
 	 *
 	 * @param p_continentId The identifier of the continent to remove.
@@ -205,6 +204,32 @@ public class GameMap {
 	 */
 	public void addCountry(int p_countryId, int p_continentId) {
 		d_countries.add(new Country(p_countryId, p_continentId));
+		d_countries.sort((o1, o2) -> o1.getCountryId() - o2.getCountryId());
+		d_countryCount++;
+	}
+
+	/**
+	 * Adds a new country to the map.
+	 *
+	 * @param p_countryId   The identifier of the country.
+	 * @param p_continentId The identifier of the continent to which the country
+	 *                      belongs.
+	 */
+	public void addCountry(int p_countryId, int p_continentId, String p_countryName) {
+		d_countries.add(new Country(p_countryId, p_continentId, p_countryName));
+		d_countries.sort((o1, o2) -> o1.getCountryId() - o2.getCountryId());
+		d_countryCount++;
+	}
+
+	/**
+	 * Adds a new country to the map.
+	 *
+	 * @param p_countryId   The identifier of the country.
+	 * @param p_continentId The identifier of the continent to which the country
+	 *                      belongs.
+	 */
+	public void addCountry(int p_countryId, int p_continentId, String p_countryName, String p_xAxis, String p_yAxis) {
+		d_countries.add(new Country(p_countryId, p_continentId, p_countryName, p_xAxis, p_yAxis));
 		d_countries.sort((o1, o2) -> o1.getCountryId() - o2.getCountryId());
 		d_countryCount++;
 	}

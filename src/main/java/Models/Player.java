@@ -8,14 +8,17 @@ import java.util.Scanner;
 
 import Constants.GameConstants;
 import Controller.GameEngine;
+import Controller.Observable;
 import Models.Orders.Order;
+import Models.Strategy.PlayerStrategy;
+import Utils.DeepCopyList;
 
 /**
  * Represents a player in the game.
  *
  * @author Dev
  */
-public class Player {
+public class Player extends Observable {
 
 	/**
 	 * Player name
@@ -53,9 +56,24 @@ public class Player {
 	private GameEngine d_gameEngine;
 
 	/**
+	 * Game map in player's view in each turn
+	 */
+	public List<Country> d_gameMapInTurn;
+
+	/**
 	 * check point for commit
 	 */
 	private Boolean d_ifSignified;
+
+	/**
+	 * String buffer
+	 */
+	private String d_stringBuffer;
+
+	/**
+	 * player strategy
+	 */
+	private PlayerStrategy d_strategy;
 
 	/**
 	 * Creates a new player with the specified name.
@@ -70,6 +88,7 @@ public class Player {
 		this.d_reinforcementPool = 0;
 		this.d_negotiatedPlayers = new ArrayList<>();
 		this.d_gameEngine = p_gameEngine;
+		this.d_strategy = null;
 
 		// Initialize card owned list
 		this.d_cardsOwned = new HashMap<String, Integer>();
@@ -125,16 +144,26 @@ public class Player {
 	 *
 	 */
 	public void issueOrder() {
-		Scanner l_scanner = d_gameEngine.d_sc;
-		String l_userInput, l_response = "";
+		if (this.getD_strategy() == null) {
+			Scanner l_scanner = d_gameEngine.d_sc;
+			String l_userInput, l_response = "";
 
-		while (!(l_response == "nextPlayer")) {
-			l_userInput = l_scanner.nextLine();
-			String l_commands[] = l_userInput.split(" ");
+			while (!(l_response == "nextPlayer")) {
+				l_userInput = l_scanner.nextLine();
+				String l_commands[] = l_userInput.split(" ");
 
-			l_response = d_gameEngine.executeCommand(l_commands, this);
-			if (l_response == "gameEnd")
-				break;
+				l_response = d_gameEngine.executeCommand(l_commands, this);
+				if (l_response == "gameEnd")
+					break;
+			}
+		} else {
+			Order l_order = this.getD_strategy().createOrder();
+			if (l_order != null)
+				this.addOrder(l_order);
+			else {
+				String l_command = "commit";
+				d_gameEngine.executeCommand(l_command.split(" "), this);
+			}
 		}
 	}
 
@@ -150,6 +179,44 @@ public class Player {
 			return order;
 		}
 		return null;
+	}
+
+	/**
+	 * Retrieves and removes the next order from the player's order list.
+	 *
+	 * @return The next order, or null if no orders are available.
+	 */
+	public Order recordNextOrder() {
+		if (!d_orders.isEmpty()) {
+			Order l_order = d_orders.get(0);
+			d_orders.remove(0);
+			d_stringBuffer = l_order.getOrderInfo();
+			notifyObservers(this);
+			return l_order;
+		} else if (this.getIfSignified() == true) {
+			d_stringBuffer = d_name + " commit";
+			notifyObservers(this);
+		}
+		return null;
+	}
+
+	/**
+	 * Get String to record
+	 * 
+	 * @return The string
+	 **/
+	public String getString() {
+		return d_stringBuffer;
+	}
+
+	/**
+	 * Update game map before issuing orders for player.
+	 * 
+	 */
+	public void updateGameMap() {
+		this.d_gameMapInTurn = DeepCopyList.deepCopy(this.d_gameEngine.getGameMap().getCountries());
+		if (this.getD_strategy() != null)
+			this.getD_strategy().d_countryList = d_gameMapInTurn;
 	}
 
 	/**
@@ -313,5 +380,32 @@ public class Player {
 	 */
 	public void setIfSignified(Boolean d_ifSignified) {
 		this.d_ifSignified = d_ifSignified;
+	}
+
+	/**
+	 * Get strategy
+	 * 
+	 * @return the d_strategy
+	 */
+	public PlayerStrategy getD_strategy() {
+		return d_strategy;
+	}
+
+	/**
+	 * Set strategy
+	 * 
+	 * @param p_strategy the d_strategy to set
+	 */
+	public void setD_strategy(PlayerStrategy p_strategy) {
+		this.d_strategy = p_strategy;
+	}
+
+	/**
+	 * Get d_gameEngine
+	 * 
+	 * @return the d_gameEngine
+	 */
+	public GameEngine getD_gameEngine() {
+		return d_gameEngine;
 	}
 }

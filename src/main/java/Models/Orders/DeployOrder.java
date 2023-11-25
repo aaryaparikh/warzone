@@ -89,4 +89,12 @@ public class DeployOrder extends Order {
 	public String getOrderType() {
 		return "Deploy";
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String getOrderInfo() {
+		return String.format("%s deploy %d %d", d_player.getName(), d_country.getCountryId(), d_armies);
+	}
 }

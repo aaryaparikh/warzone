@@ -29,9 +29,29 @@ public class Country {
 	private Player d_owner;
 
 	/**
+	 * Name of the Country
+	 */
+	public String d_countryName;
+
+	/**
+	 * Coutry's x postion
+	 */
+	public String d_xAxis;
+
+	/**
+	 * Coutry's y postion
+	 */
+	public String d_yAxis;
+
+	/**
 	 * Neighbor Countries of Country
 	 */
 	private ArrayList<Integer> d_neighborCountries = new ArrayList<>();
+
+	/**
+	 * Neighbor Country names
+	 */
+	public ArrayList<Integer> d_neighborNames = new ArrayList<>();
 
 	/**
 	 * Creates a new country with the specified country and continent IDs.
@@ -43,6 +63,34 @@ public class Country {
 	public Country(int p_countryId, int p_continentId) {
 		this.d_countryId = p_countryId;
 		d_continentId = p_continentId;
+	}
+
+	/**
+	 * Creates a new country with the specified country and continent IDs.
+	 *
+	 * @param p_countryId   The unique identifier for the country.
+	 * @param p_continentId The identifier for the continent to which this country
+	 *                      belongs.
+	 */
+	public Country(int p_countryId, int p_continentId, String p_countryName) {
+		this.d_countryId = p_countryId;
+		this.d_continentId = p_continentId;
+		this.d_countryName = p_countryName;
+	}
+
+	/**
+	 * Creates a new country with the specified country and continent IDs.
+	 *
+	 * @param p_countryId   The unique identifier for the country.
+	 * @param p_continentId The identifier for the continent to which this country
+	 *                      belongs.
+	 */
+	public Country(int p_countryId, int p_continentId, String p_countryName, String p_xAxis, String p_yAxis) {
+		this.d_countryId = p_countryId;
+		this.d_continentId = p_continentId;
+		this.d_countryName = p_countryName;
+		this.d_xAxis = p_xAxis;
+		this.d_yAxis = p_yAxis;
 	}
 
 	/**
@@ -95,6 +143,15 @@ public class Country {
 	 */
 	public ArrayList<Integer> getNeighborCountries() {
 		return d_neighborCountries;
+	}
+
+	/**
+	 * Sets a list of neighboring country IDs.
+	 *
+	 * @param p_neighborCountries The list of neighboring country IDs.
+	 */
+	public void setNeighborCountries(ArrayList<Integer> p_neighborCountries) {
+		d_neighborCountries = p_neighborCountries;
 	}
 
 	/**

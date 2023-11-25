@@ -1,0 +1,37 @@
+Game Phase: Controller.Phases.SubPhases.IssueOrderPhase
+
+Player turn: Dev
+
+Continent Id: 1
+Continent Value: 3
+Continent Id: 2
+Continent Value: 5
+
+Country Id: 1
+Continent Id: 1
+Owner Name: Dev
+Neighbors: [2, 7]
+Armies: 1
+Country Id: 2
+Continent Id: 1
+Owner Name: Dev
+Neighbors: [1]
+Armies: 1
+Country Id: 7
+Continent Id: 2
+Owner Name: Aarya
+Neighbors: [1]
+Armies: 0
+
+
+Player Name: Aarya
+Countries: [7]
+Player Strategy: Models.Strategy.CheaterPlayerStrategy
+Cards: {negotiate=1, blockade=2, airlift=1, bomb=1}
+Player Name: Dev
+Countries: [2, 1]
+Player Strategy: Models.Strategy.Human
+Cards: {negotiate=1, blockade=1, airlift=1, bomb=2}
+
+Orders:
+>> Aarya deploy 7 2

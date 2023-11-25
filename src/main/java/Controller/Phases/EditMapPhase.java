@@ -198,4 +198,28 @@ public class EditMapPhase extends Phase {
 		return null;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void saveGame(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void loadGame(String[] p_commands, Player p_currentPlayer) {
+		printInvalidCommandMessage();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String tournament(String[] p_commands) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

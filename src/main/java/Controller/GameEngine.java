@@ -1,6 +1,11 @@
 package Controller;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -18,6 +23,7 @@ import Models.Country;
 import Models.GameMap;
 import Models.Player;
 import Models.Orders.Order;
+import Utils.DeepCopyList;
 import Views.PhaseView;
 
 /**
@@ -37,11 +43,6 @@ public class GameEngine {
 	private GameMap d_map;
 
 	/**
-	 * Shows the phases of game
-	 */
-	private PhaseView d_phaseView;
-
-	/**
 	 * List of conquering player
 	 */
 	private List<Player> d_playerConquerInTurn;
@@ -50,6 +51,11 @@ public class GameEngine {
 	 * Maintain the game phase
 	 */
 	private Phase d_gamePhase;
+
+	/**
+	 * Shows the phases of game
+	 */
+	private PhaseView d_phaseView;
 
 	/**
 	 * Log Maintainer
@@ -63,9 +69,19 @@ public class GameEngine {
 	private LogWriter d_logWriter;
 
 	/**
+	 * Game Order Writer
+	 */
+	private OrderWriter d_orderWriter;
+
+	/**
 	 * Unique scanner in a game
 	 */
 	public Scanner d_sc;
+
+	/**
+	 * Tournament setting
+	 */
+	public Tournament d_tournament;
 
 	/**
 	 * Constructor for GameEngine.
@@ -80,10 +96,11 @@ public class GameEngine {
 		this.d_logEntryBuffer = new LogEntryBuffer();
 		this.d_logWriter = new LogWriter(d_logEntryBuffer);
 		this.d_sc = new Scanner(System.in);
+		this.d_tournament = new Tournament(this, d_phaseView, d_logEntryBuffer, d_logWriter);
 	}
 
 	/**
-	 * Function that defines the main flow of a game
+	 * Function that defines the main flow of a game, and start in normal way
 	 */
 	public void start() {
 		setPhase(new EditMapPhase(this));
@@ -104,15 +121,124 @@ public class GameEngine {
 				String l_userInput;
 				l_userInput = l_sc.nextLine();
 				String l_commands[] = l_userInput.split(" ");
+
+				// Decide whether to launch a tournament
+				if (executeCommand(l_commands, null) == "tournament") {
+					System.out.println(">> Tournament has players:");
+					for (Player l_player : getPlayers()) {
+						String l_strategyName = l_player.getD_strategy().getClass().getTypeName().split("\\.")[2];
+						System.out.println(l_player.getName() + " " + l_strategyName);
+					}
+					System.out.println(">> Tournament has " + d_tournament.d_listOfMapFiles.size() + " maps.");
+
+					System.out.println(">> " + d_tournament.d_numberOfGames + " games will launch with maximum "
+							+ d_tournament.d_maxNumberOfTurns + " turns.");
+
+					System.out.println(">> Please Enter \"start\" to Start Tournament / Enter other to Go Back.");
+					l_userInput = d_sc.nextLine();
+					if (l_userInput.equals("start"))
+						d_tournament.start();
+					else {
+						getPhaseView().showNextPhaseInfo("start");
+						continue;
+					}
+					System.exit(0);
+				}
+			}
+
+			// Enter game play phase
+			getPhaseView().showNextPhaseInfo("play");
+			attachPlayersWithOrderWriter();
+			while (d_gamePhase instanceof PlayMainPhase) {
+				assignReinforcements();
+
+				updateGameMapForPlayers();
+
+				executeCommand("showmap".split(" "), null);
+
+				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
+					break;
+			}
+
+			// Enter end phase
+			getPhaseView().showNextPhaseInfo("end");
+			while (d_gamePhase instanceof EndGamePhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
+				executeCommand(l_commands, null);
+			}
+		}
+	}
+
+	/**
+	 * To resume the game to setup phase and continue to play
+	 */
+	public void resumeToSetupPhase() {
+		setPhase(new PlaySetupPhase(this));
+
+		try (Scanner l_sc = d_sc) {
+			// Enter game setup phase
+			getPhaseView().showNextPhaseInfo("start");
+			while (d_gamePhase instanceof PlaySetupPhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
 				executeCommand(l_commands, null);
 			}
 
 			// Enter game play phase
 			getPhaseView().showNextPhaseInfo("play");
+			attachPlayersWithOrderWriter();
 			while (d_gamePhase instanceof PlayMainPhase) {
 				assignReinforcements();
 
+				updateGameMapForPlayers();
+
+				executeCommand("showmap".split(" "), null);
+
 				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
+					break;
+			}
+
+			// Enter end phase
+			getPhaseView().showNextPhaseInfo("end");
+			while (d_gamePhase instanceof EndGamePhase) {
+				String l_userInput;
+				l_userInput = l_sc.nextLine();
+				String l_commands[] = l_userInput.split(" ");
+				executeCommand(l_commands, null);
+			}
+		}
+	}
+
+	/**
+	 * Resume the game to play phase, and continue to play
+	 * 
+	 * @param p_currentPlayer resume to this player's turn
+	 */
+	public void resumeToPlayPhase(String p_currentPlayer) {
+		setPhase(new IssueOrderPhase(this));
+
+		boolean l_ifFirstTurn = true;
+		try (Scanner l_sc = d_sc) {
+			// Enter game play phase
+			getPhaseView().showNextPhaseInfo("play");
+			attachPlayersWithOrderWriter();
+
+			while (d_gamePhase instanceof PlayMainPhase) {
+				assignReinforcements();
+
+				updateGameMapForPlayers();
+
+				executeCommand("showmap".split(" "), null);
+
+				if (l_ifFirstTurn == true) {
+					if ((resumeIssueOrdersInTurn(p_currentPlayer) == "gameEnd")
+							|| (executeAllCommittedOrders() == "gameOver"))
+						break;
+					l_ifFirstTurn = false;
+				} else if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
 					break;
 			}
 
@@ -172,6 +298,9 @@ public class GameEngine {
 		case "assigncountries":
 			l_response = this.d_gamePhase.assignCountries(p_commands);
 			break;
+		case "tournament":
+			l_response = this.d_gamePhase.tournament(p_commands);
+			break;
 
 		// play game command
 		case "deploy":
@@ -203,6 +332,12 @@ public class GameEngine {
 		case "next":
 			this.d_gamePhase.next(p_commands);
 			break;
+		case "savegame":
+			this.d_gamePhase.saveGame(p_commands, p_currentPlayer);
+			break;
+		case "loadgame":
+			this.d_gamePhase.loadGame(p_commands, p_currentPlayer);
+			break;
 		default:
 			System.out.println("Invalid command.");
 		}
@@ -215,6 +350,8 @@ public class GameEngine {
 	 * @return string to output result of issuing orders
 	 */
 	public String issueOrdersInTurn() {
+		d_orderWriter.reset();
+
 		List<Player> l_playerPool = getPlayers();
 		for (Player l_player : l_playerPool)
 			l_player.setIfSignified(false);
@@ -295,6 +432,19 @@ public class GameEngine {
 			}
 		}
 
+		// kick player who has no countries
+		List<Player> l_playerList = new ArrayList<>();
+		for (Player l_player : d_players)
+			if (l_player.getD_countries().size() == 0)
+				l_playerList.add(l_player);
+		for (Player l_player : l_playerList)
+			d_players.remove(l_player);
+
+		// Update game map for each player
+		for (Player l_player : d_players)
+			if (l_player.getD_strategy() != null)
+				l_player.getD_strategy().d_countryList = DeepCopyList.deepCopy(this.getGameMap().getCountries());
+
 		// Allocate cards to players
 		for (Player l_player : getPlayerConquerInTurn())
 			l_player.addCardsOwned("random");
@@ -313,48 +463,72 @@ public class GameEngine {
 	}
 
 	/**
-	 * Get the list of players.
+	 * Resume to specific player's turn, take player's input and adds their orders
+	 * to the queue.
 	 *
-	 * @return The list of players.
+	 * @param p_currentPlayer resume to the player's turn
+	 * @return string to output result of issuing orders
 	 */
-	public List<Player> getPlayers() {
-		return this.d_players;
-	}
+	public String resumeIssueOrdersInTurn(String p_currentPlayer) {
+		List<Player> l_playerPool = getPlayers();
+		for (Player l_player : l_playerPool)
+			l_player.setIfSignified(false);
 
-	/**
-	 * Get the game map.
-	 *
-	 * @return The game map.
-	 */
-	public GameMap getGameMap() {
-		return this.d_map;
-	}
+		// Reload Orders in order buffer
+		try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/orders.txt"))) {
+			String line;
+			while ((line = reader.readLine()) != null && !line.isEmpty()) {
+				String[] l_fullOrder = line.substring(">> ".length()).split(" ");
+				System.out.println(line.substring(">> ".length()));
 
-	/**
-	 * Set the game map.
-	 *
-	 * @param p_map The game map.
-	 */
-	public void setGameMap(GameMap p_map) {
-		this.d_map = p_map;
-	}
+				Player l_orderPlayer = null;
+				for (Player l_player : d_players)
+					if (l_player.getName().equals(l_fullOrder[0]))
+						l_orderPlayer = l_player;
+				if (l_orderPlayer != null)
+					this.executeCommand(Arrays.copyOfRange(l_fullOrder, 1, l_fullOrder.length), l_orderPlayer);
+			}
 
-	/**
-	 * Set the game phase.
-	 *
-	 * @param p_phase The game phase.
-	 */
-	public void setPhase(Phase p_phase) {
-		this.d_gamePhase = p_phase;
-	}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-	/**
-	 * Get the game phase.
-	 *
-	 * @return The game phase.
-	 */
-	public Phase getPhase() {
-		return d_gamePhase;
+		boolean l_ifRemainPlayers = true;
+
+		// issue order in round-robin fashion
+		String l_resumePlayerTurn = p_currentPlayer;
+		while (l_ifRemainPlayers) {
+			l_ifRemainPlayers = false;
+			for (Player l_player : l_playerPool) {
+				if (l_resumePlayerTurn != null) {
+					if (!l_player.getName().equals(p_currentPlayer))
+						continue;
+					else
+						l_resumePlayerTurn = null;
+				}
+
+				// Continue to rotate
+				if (!l_player.getIfSignified()) {
+					System.out.println("[Player " + l_player.getName() + "'s turn][" + l_player.getD_reinforcementPool()
+							+ " armies need to deploy]");
+
+					l_player.issueOrder();
+
+					if (this.getPhase() instanceof EndGamePhase)
+						return "gameEnd";
+					l_ifRemainPlayers = true;
+				}
+			}
+		}
+
+		System.out.println("[All players have signified]");
+		getPhaseView().showNextPhaseInfo("execute");
+		setPhase(new ExecuteOrderPhase(this));
+		return null;
 	}
 
 	/**
@@ -473,6 +647,25 @@ public class GameEngine {
 	}
 
 	/**
+	 * Update game map for each player
+	 * 
+	 */
+	public void updateGameMapForPlayers() {
+		for (Player l_player : d_players)
+			l_player.updateGameMap();
+	}
+
+	/**
+	 * Attach players with a order writer
+	 * 
+	 */
+	public void attachPlayersWithOrderWriter() {
+		this.d_orderWriter = new OrderWriter();
+		for (Player l_player : d_players)
+			l_player.attach(d_orderWriter);
+	}
+
+	/**
 	 * Check if the game is over.
 	 *
 	 * @return True if the game is over, otherwise false.
@@ -484,6 +677,60 @@ public class GameEngine {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Get the list of players.
+	 *
+	 * @return The list of players.
+	 */
+	public List<Player> getPlayers() {
+		return this.d_players;
+	}
+
+	/**
+	 * Set the players
+	 *
+	 * @param p_players player list
+	 */
+	public void setPlayers(List<Player> p_players) {
+		this.d_players = p_players;
+	}
+
+	/**
+	 * Get the game map.
+	 *
+	 * @return The game map.
+	 */
+	public GameMap getGameMap() {
+		return this.d_map;
+	}
+
+	/**
+	 * Set the game map.
+	 *
+	 * @param p_map The game map.
+	 */
+	public void setGameMap(GameMap p_map) {
+		this.d_map = p_map;
+	}
+
+	/**
+	 * Set the game phase.
+	 *
+	 * @param p_phase The game phase.
+	 */
+	public void setPhase(Phase p_phase) {
+		this.d_gamePhase = p_phase;
+	}
+
+	/**
+	 * Get the game phase.
+	 *
+	 * @return The game phase.
+	 */
+	public Phase getPhase() {
+		return d_gamePhase;
 	}
 
 	/**
@@ -527,7 +774,6 @@ public class GameEngine {
 	 */
 	public void resetPlayerConquerInTurn() {
 		this.d_playerConquerInTurn.clear();
-
 	}
 
 	/**

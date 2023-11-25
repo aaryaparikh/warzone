@@ -92,4 +92,29 @@ public class IssueOrderPhase extends PlayMainPhase {
 	public String end(String[] p_commands, Player p_currentPlayer) {
 		return super.getD_playerCommandHandler().handlePlayerCommand(p_commands, p_currentPlayer);
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void saveGame(String[] p_commands, Player p_currentPlayer) {
+		super.getD_playerCommandHandler().handlePlayerCommand(p_commands, p_currentPlayer);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void loadGame(String[] p_commands, Player p_currentPlayer) {
+		super.getD_playerCommandHandler().handlePlayerCommand(p_commands, p_currentPlayer);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String tournament(String[] p_commands) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -57,7 +57,7 @@ public class AdvanceOrder extends Order {
 	public String execute(GameEngine p_game) {
 		// Check if the player controls the resource country
 		if (!d_player.getD_countries().contains(d_resourceCountry)) {
-			return String.format("Player \"%s\" does not control country \"%d\", hence armies cannot be moved.",
+			return String.format("Player \"%s\" does not control country \"%d\", thus armies cannot be moved.",
 					d_player.getName(), d_resourceCountry.getCountryId());
 		}
 
@@ -72,7 +72,7 @@ public class AdvanceOrder extends Order {
 		List<Integer> l_neighborCountries = d_resourceCountry.getNeighborCountries();
 		if (!l_neighborCountries.contains(d_targetCountry.getCountryId())) {
 			return String.format(
-					"Armies cannot be moved from country \"%d\" to country \"%d\" because they are not neighbors",
+					"Armies can't be moved from country \"%d\" to country \"%d\" because they are not neighbors",
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId());
 		}
 
@@ -81,14 +81,14 @@ public class AdvanceOrder extends Order {
 				&& d_player.getD_countries().contains(d_targetCountry)) {
 			d_resourceCountry.subtractArmies(d_armies);
 			d_targetCountry.addArmies(d_armies);
-			return String.format("Armies successfully moved from country \"%d\" to country \"%d\"",
+			return String.format("\"%d\" armies are moved from country \"%d\" to country \"%d\"", d_armies,
 					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId());
 		}
 
 		// Check if the player has negotiated with player who owns target country.
 		if (d_player.getNegotiatedPlayers().contains(d_targetCountry.getOwner())) {
 			return String.format("Can't attack, there is a negotiation between \"%s\" and \"%s\".", d_player.getName(),
-					d_targetCountry.getOwner());
+					d_targetCountry.getOwner().getName());
 		}
 
 		// Determine the capabilities of source and destination countries
@@ -102,12 +102,12 @@ public class AdvanceOrder extends Order {
 		if (l_capabilitySourceCountryArmies > l_targetCountryArmies) {
 			Player l_playerBeingAttacked = d_targetCountry.getOwner();
 
-			d_targetCountry.setOwner(d_player);
-			d_player.addCountry(d_targetCountry);
-
 			// Check if target country is neutral
 			if (l_playerBeingAttacked != null)
 				l_playerBeingAttacked.getD_countries().remove(d_targetCountry);
+
+			d_targetCountry.setOwner(d_player);
+			d_player.addCountry(d_targetCountry);
 
 			d_resourceCountry.setArmies(l_sourceCountryArmies - d_armies);
 			d_targetCountry.setArmies(d_armies - l_capabilityTargetCountryArmies);
@@ -117,8 +117,9 @@ public class AdvanceOrder extends Order {
 				p_game.setPlayerConquerInTurn(d_player);
 
 			return String.format(
-					"Armies successfully moved from country \"%d\" to country \"%d\" and the ownership changed to \"%s\" player.",
-					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
+					"\"%d\" armies are moved from country \"%d\" to country \"%d\", \"%s\" occupy country \"%d\", \"%d\" armies remain.",
+					d_armies, d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName(),
+					d_targetCountry.getCountryId(), d_targetCountry.getArmies());
 
 			// Handle the attack where the source country and destination country are evenly
 			// matched
@@ -126,16 +127,18 @@ public class AdvanceOrder extends Order {
 			d_resourceCountry.setArmies(l_sourceCountryArmies - l_capabilityTargetCountryArmies);
 			d_targetCountry.setArmies(0);
 			return String.format(
-					"Armies from country \"%d\" were not able to advance to country \"%d\" as the attacking armies were only able to defeat the exact number of armies in target country",
-					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
+					"\"%d\" armies from country \"%d\" defeat the exact number in country \"%d\", can't conquer it and \"%d\" armies remain.",
+					d_armies, d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(),
+					d_armies - l_capabilityTargetCountryArmies);
 
 			// Handle the attack where the destination country wins
 		} else {
 			d_resourceCountry.setArmies(l_sourceCountryArmies - d_armies);
 			d_targetCountry.subtractArmies(l_capabilitySourceCountryArmies);
 			return String.format(
-					"Armies from country \"%d\" were not able to advance to country \"%d\" \n as the attacking armies could not defeat all the armies in target country",
-					d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(), d_player.getName());
+					"\"%d\" armies from country \"%d\" can't conquer country \"%d\", \"%d\" remain in target.",
+					d_armies, d_resourceCountry.getCountryId(), d_targetCountry.getCountryId(),
+					d_targetCountry.getArmies());
 		}
 	}
 
@@ -145,5 +148,14 @@ public class AdvanceOrder extends Order {
 	@Override
 	public String getOrderType() {
 		return "Advance";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String getOrderInfo() {
+		return String.format("%s advance %d %d %d", d_player.getName(), d_resourceCountry.getCountryId(),
+				d_targetCountry.getCountryId(), d_armies);
 	}
 }

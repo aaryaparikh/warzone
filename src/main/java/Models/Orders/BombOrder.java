@@ -78,4 +78,12 @@ public class BombOrder extends Order {
 	public String getOrderType() {
 		return "Bomb";
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String getOrderInfo() {
+		return String.format("%s bomb %d %d %d", d_player.getName(), d_targetCountry.getCountryId());
+	}
 }

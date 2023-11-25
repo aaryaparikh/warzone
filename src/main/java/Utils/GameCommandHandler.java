@@ -3,6 +3,10 @@ package Utils;
 import Controller.GameEngine;
 import Models.GameMap;
 import Models.Player;
+import Models.Strategy.AggressivePlayerStrategy;
+import Models.Strategy.BenevolentPlayerStrategy;
+import Models.Strategy.CheaterPlayerStrategy;
+import Models.Strategy.RandomPlayerStrategy;
 
 /**
  * Handles game commands.
@@ -37,16 +41,126 @@ public class GameCommandHandler extends CommandHandler {
 			break;
 		case "loadmap":
 			if (l_commands.length < 2)
-				System.out.println("Please enter valid map file path");
+				System.out.println("Please enter valid map file name to load.");
 			else {
-				GameMap l_map = d_gameEngine.getGameMap().d_mapEditor.loadMap(l_commands[1]);
-				if (!d_gameEngine.getGameMap().equals(l_map)) {
-					System.out.println("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
-					d_logEntryBuffer.setString("\"" + l_commands[1] + ".txt\" is loaded as the game map.");
-					d_gameEngine.setGameMap(l_map);
+				if (p_commands[1].split("\\.")[1].equals("map")) {
+					MapEditorAdapter l_mapEditor = new MapEditorAdapter(d_gameEngine.getGameMap());
+					GameMap l_map = l_mapEditor.loadMap(l_commands[1]);
+
+					if (!d_gameEngine.getGameMap().equals(l_map)) {
+						System.out.println("\"" + l_commands[1] + "\" is loaded as the game map.");
+						d_logEntryBuffer.setString("\"" + l_commands[1] + "\" is loaded as the game map.");
+						d_gameEngine.setGameMap(l_map);
+					}
+				} else {
+					MapEditor l_mapEditor = new MapEditor(d_gameEngine.getGameMap());
+					GameMap l_map = l_mapEditor.loadMap(l_commands[1]);
+
+					if (!d_gameEngine.getGameMap().equals(l_map)) {
+						System.out.println("\"" + l_commands[1] + "\" is loaded as the game map.");
+						d_logEntryBuffer.setString("\"" + l_commands[1] + "\" is loaded as the game map.");
+						d_gameEngine.setGameMap(l_map);
+					}
 				}
 			}
 			break;
+
+		case "savegame":
+			if (p_commands.length < 2)
+				System.out.println("Please enter file path to save game.");
+			else {
+				GameEditor.saveGameToFile(d_gameEngine, "src/main/resources/Games/" + p_commands[1], null);
+				String l_response2 = String.format("Game is saved in \"%s\"", p_commands[1]);
+				System.out.println(l_response2);
+				d_logEntryBuffer.setString(l_response2);
+			}
+
+		case "loadgame":
+			if (p_commands.length < 2)
+				System.out.println("Please enter file path to load game.");
+			else {
+				String l_response2 = String.format("Game is loaded from \"%s\"", p_commands[1]);
+				System.out.println(l_response2);
+				d_logEntryBuffer.setString(l_response2);
+				GameEditor.loadGameFromFile("src/main/resources/Games/" + p_commands[1]);
+				System.exit(0);
+			}
+
+		case "tournament":
+			if (l_commands.length < 9) {
+				System.out.println(
+						"Please enter tournament -M listofmapfiles -P listofplayerstrategies -G numberofgames -D maxnumberofturns");
+				break;
+			}
+
+			int l_index = 1;
+
+			// set game maps for tournament
+			for (; l_index < l_commands.length; l_index += 1) {
+				if (l_commands[l_index].equals("-M"))
+					continue;
+				if (l_commands[l_index].equals("-P"))
+					break;
+				
+				GameMap l_map = null;
+				if (l_commands[l_index].split("\\.")[1].equals("map")) {
+					MapEditorAdapter l_mapEditor = new MapEditorAdapter(d_gameEngine.getGameMap());
+					l_map = l_mapEditor.loadMap(l_commands[l_index]);
+				}
+				else {
+					MapEditor l_mapEditor = new MapEditor(d_gameEngine.getGameMap());
+					l_map = l_mapEditor.loadMap(l_commands[l_index]);
+				}
+				if (l_map != null)
+					d_gameEngine.d_tournament.d_listOfMapFiles.add(l_map);
+			}
+
+			int l_indexFlag = l_index;
+			// set player strategy for tournament
+			for (; l_index < l_commands.length; l_index += 1) {
+				if (l_commands[l_index].equals("-P"))
+					continue;
+				if (l_commands[l_index].equals("-G"))
+					break;
+
+				Player l_player = d_gameEngine.getPlayers().get(l_index - l_indexFlag - 1);
+
+				switch (l_commands[l_index]) {
+				case "":
+					break;
+				case "human":
+					break;
+				case "aggressive":
+					l_player.setD_strategy(new AggressivePlayerStrategy(l_player,
+							DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()), d_logEntryBuffer));
+					break;
+				case "benevolent":
+					l_player.setD_strategy(new BenevolentPlayerStrategy(l_player,
+							DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()), d_logEntryBuffer));
+					break;
+				case "random":
+					l_player.setD_strategy(new RandomPlayerStrategy(l_player,
+							DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()), d_logEntryBuffer));
+					break;
+				case "cheater":
+					l_player.setD_strategy(new CheaterPlayerStrategy(l_player,
+							DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()), d_logEntryBuffer));
+					break;
+				}
+			}
+
+			if (l_index + 1 < l_commands.length)
+				d_gameEngine.d_tournament.d_numberOfGames = Integer.parseInt(l_commands[l_index + 1]);
+
+			if (l_index + 3 < l_commands.length)
+				d_gameEngine.d_tournament.d_maxNumberOfTurns = Integer.parseInt(l_commands[l_index + 3]);
+
+			for (Player l_player : d_gameEngine.getPlayers())
+				if (l_player.getD_strategy() == null)
+					l_player.setD_strategy(new CheaterPlayerStrategy(l_player,
+							DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()), d_logEntryBuffer));
+
+			return "tournament";
 
 		// game player order support multiple options
 		case "gameplayer":
@@ -63,7 +177,47 @@ public class GameCommandHandler extends CommandHandler {
 						}
 
 						if (d_gameEngine.addPlayer(l_player)) {
-							l_response = String.format("Player " + l_commands[l_i + 1] + " is added.");
+							Boolean l_ifNeedValidStrategy = true;
+							String l_userStrategy = "";
+
+							while (l_ifNeedValidStrategy == true) {
+								l_ifNeedValidStrategy = false;
+								System.out.println(
+										">> Please Enter Valid Player Strategy (\"Enter\"/human, aggressive, benevolent, random, cheater)");
+								l_userStrategy = d_gameEngine.d_sc.nextLine();
+
+								switch (l_userStrategy) {
+								case "":
+									break;
+								case "human":
+									break;
+								case "aggressive":
+									l_player.setD_strategy(new AggressivePlayerStrategy(l_player,
+											DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()),
+											d_logEntryBuffer));
+									break;
+								case "benevolent":
+									l_player.setD_strategy(new BenevolentPlayerStrategy(l_player,
+											DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()),
+											d_logEntryBuffer));
+									break;
+								case "random":
+									l_player.setD_strategy(new RandomPlayerStrategy(l_player,
+											DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()),
+											d_logEntryBuffer));
+									break;
+								case "cheater":
+									l_player.setD_strategy(new CheaterPlayerStrategy(l_player,
+											DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()),
+											d_logEntryBuffer));
+									break;
+								default:
+									l_ifNeedValidStrategy = true;
+								}
+							}
+
+							l_response = String
+									.format(l_userStrategy + " player \"" + l_commands[l_i + 1] + "\" is added.");
 							System.out.println(l_response);
 							d_logEntryBuffer.setString(l_response);
 						} else
