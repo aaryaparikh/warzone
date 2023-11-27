@@ -35,8 +35,6 @@ public class GameMap {
 	 */
 	private int d_countryCount = 0;
 
-
-
 	/**
 	 * Map View for the map
 	 */
@@ -168,6 +166,7 @@ public class GameMap {
 	 *
 	 * @param p_continentId    The identifier of the continent.
 	 * @param p_continentValue The value of the continent.
+	 * @param p_continentName	The name of the continent
 	 */
 	public void addContinent(int p_continentId, int p_continentValue, String p_continentName) {
 		d_continents.add(new Continent(p_continentId, p_continentValue, p_continentName));
@@ -214,6 +213,7 @@ public class GameMap {
 	 * @param p_countryId   The identifier of the country.
 	 * @param p_continentId The identifier of the continent to which the country
 	 *                      belongs.
+	 * @param p_countryName	The name of the country                  
 	 */
 	public void addCountry(int p_countryId, int p_continentId, String p_countryName) {
 		d_countries.add(new Country(p_countryId, p_continentId, p_countryName));
@@ -227,6 +227,9 @@ public class GameMap {
 	 * @param p_countryId   The identifier of the country.
 	 * @param p_continentId The identifier of the continent to which the country
 	 *                      belongs.
+	 * @param p_countryName Country name string
+	 * @param p_xAxis		x coordinate
+	 * @param p_yAxis		y coordinate  
 	 */
 	public void addCountry(int p_countryId, int p_continentId, String p_countryName, String p_xAxis, String p_yAxis) {
 		d_countries.add(new Country(p_countryId, p_continentId, p_countryName, p_xAxis, p_yAxis));

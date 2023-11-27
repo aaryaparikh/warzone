@@ -1,0 +1,486 @@
+Game Phase: Controller.Phases.SubPhases.IssueOrderPhase
+
+Player turn: Dev
+
+Continent Id: 1
+Continent Value: 12
+Continent Id: 2
+Continent Value: 10
+Continent Id: 3
+Continent Value: 6
+Continent Id: 4
+Continent Value: 14
+Continent Id: 5
+Continent Value: 7
+Continent Id: 6
+Continent Value: 4
+Continent Id: 7
+Continent Value: 5
+Continent Id: 8
+Continent Value: 6
+Continent Id: 9
+Continent Value: 5
+Continent Id: 10
+Continent Value: 8
+Continent Id: 11
+Continent Value: 5
+Continent Id: 12
+Continent Value: 2
+Continent Id: 13
+Continent Value: 1
+Continent Id: 14
+Continent Value: 2
+
+Country Id: 1
+Continent Id: 1
+Owner Name: Yurui
+Neighbors: [2, 12]
+Armies: 0
+Country Id: 2
+Continent Id: 1
+Owner Name: Aarya
+Neighbors: [1, 3]
+Armies: 0
+Country Id: 3
+Continent Id: 1
+Owner Name: Yurui
+Neighbors: [2, 4]
+Armies: 0
+Country Id: 4
+Continent Id: 1
+Owner Name: Yurui
+Neighbors: [3, 5]
+Armies: 0
+Country Id: 5
+Continent Id: 1
+Owner Name: Yurui
+Neighbors: [4, 6]
+Armies: 0
+Country Id: 6
+Continent Id: 1
+Owner Name: Yurui
+Neighbors: [5, 7]
+Armies: 0
+Country Id: 7
+Continent Id: 1
+Owner Name: Yurui
+Neighbors: [6, 8]
+Armies: 0
+Country Id: 8
+Continent Id: 1
+Owner Name: Dev
+Neighbors: [7, 9, 22]
+Armies: 0
+Country Id: 9
+Continent Id: 1
+Owner Name: Yurui
+Neighbors: [8, 10]
+Armies: 0
+Country Id: 10
+Continent Id: 1
+Owner Name: Dev
+Neighbors: [9, 11, 12]
+Armies: 0
+Country Id: 11
+Continent Id: 1
+Owner Name: Yurui
+Neighbors: [10]
+Armies: 0
+Country Id: 12
+Continent Id: 1
+Owner Name: Yurui
+Neighbors: [1, 10, 14]
+Armies: 0
+Country Id: 13
+Continent Id: 2
+Owner Name: Aarya
+Neighbors: [14]
+Armies: 0
+Country Id: 14
+Continent Id: 2
+Owner Name: Yurui
+Neighbors: [12, 13, 15, 16, 18, 41]
+Armies: 0
+Country Id: 15
+Continent Id: 2
+Owner Name: Aarya
+Neighbors: [14, 16, 76]
+Armies: 0
+Country Id: 16
+Continent Id: 2
+Owner Name: Aarya
+Neighbors: [14, 15]
+Armies: 0
+Country Id: 17
+Continent Id: 2
+Owner Name: Aarya
+Neighbors: [21, 39]
+Armies: 0
+Country Id: 18
+Continent Id: 2
+Owner Name: Dev
+Neighbors: [14, 19, 41]
+Armies: 0
+Country Id: 19
+Continent Id: 2
+Owner Name: Yurui
+Neighbors: [18, 21]
+Armies: 0
+Country Id: 20
+Continent Id: 2
+Owner Name: Aarya
+Neighbors: [21]
+Armies: 0
+Country Id: 21
+Continent Id: 2
+Owner Name: Aarya
+Neighbors: [17, 19, 20, 22, 31]
+Armies: 0
+Country Id: 22
+Continent Id: 2
+Owner Name: Aarya
+Neighbors: [8, 21, 30]
+Armies: 0
+Country Id: 23
+Continent Id: 3
+Owner Name: Dev
+Neighbors: [24, 25, 29]
+Armies: 0
+Country Id: 24
+Continent Id: 3
+Owner Name: Aarya
+Neighbors: [23, 25, 26, 27]
+Armies: 0
+Country Id: 25
+Continent Id: 3
+Owner Name: Aarya
+Neighbors: [23, 24, 26, 29, 30]
+Armies: 0
+Country Id: 26
+Continent Id: 3
+Owner Name: Aarya
+Neighbors: [24, 25, 27, 28, 32]
+Armies: 0
+Country Id: 27
+Continent Id: 3
+Owner Name: Yurui
+Neighbors: [24, 26, 28, 43]
+Armies: 0
+Country Id: 28
+Continent Id: 3
+Owner Name: Yurui
+Neighbors: [26, 27, 33, 43, 44]
+Armies: 0
+Country Id: 29
+Continent Id: 4
+Owner Name: Dev
+Neighbors: [23, 25, 30]
+Armies: 0
+Country Id: 30
+Continent Id: 4
+Owner Name: Dev
+Neighbors: [22, 25, 29, 31, 32]
+Armies: 0
+Country Id: 31
+Continent Id: 4
+Owner Name: Dev
+Neighbors: [21, 30, 36]
+Armies: 0
+Country Id: 32
+Continent Id: 4
+Owner Name: Yurui
+Neighbors: [26, 30, 33, 35]
+Armies: 0
+Country Id: 33
+Continent Id: 4
+Owner Name: Aarya
+Neighbors: [28, 32, 34, 44, 52, 53]
+Armies: 0
+Country Id: 34
+Continent Id: 4
+Owner Name: Aarya
+Neighbors: [33, 37, 38, 53, 54]
+Armies: 0
+Country Id: 35
+Continent Id: 4
+Owner Name: Aarya
+Neighbors: [32, 36]
+Armies: 0
+Country Id: 36
+Continent Id: 4
+Owner Name: Dev
+Neighbors: [31, 35, 37, 39]
+Armies: 0
+Country Id: 37
+Continent Id: 4
+Owner Name: Yurui
+Neighbors: [34, 36, 38, 39, 44]
+Armies: 0
+Country Id: 38
+Continent Id: 4
+Owner Name: Dev
+Neighbors: [34, 37, 39, 54, 64]
+Armies: 0
+Country Id: 39
+Continent Id: 4
+Owner Name: Dev
+Neighbors: [17, 36, 37, 38, 40, 41]
+Armies: 0
+Country Id: 40
+Continent Id: 4
+Owner Name: Aarya
+Neighbors: [39, 41, 42]
+Armies: 0
+Country Id: 41
+Continent Id: 4
+Owner Name: Dev
+Neighbors: [14, 18, 39, 40]
+Armies: 0
+Country Id: 42
+Continent Id: 4
+Owner Name: Dev
+Neighbors: [40]
+Armies: 0
+Country Id: 43
+Continent Id: 5
+Owner Name: Yurui
+Neighbors: [27, 28, 44, 45]
+Armies: 0
+Country Id: 44
+Continent Id: 5
+Owner Name: Dev
+Neighbors: [28, 33, 37, 43, 45, 52]
+Armies: 0
+Country Id: 45
+Continent Id: 5
+Owner Name: Aarya
+Neighbors: [43, 44, 47, 48]
+Armies: 0
+Country Id: 46
+Continent Id: 5
+Owner Name: Yurui
+Neighbors: [47]
+Armies: 0
+Country Id: 47
+Continent Id: 5
+Owner Name: Yurui
+Neighbors: [45, 46, 48]
+Armies: 0
+Country Id: 48
+Continent Id: 5
+Owner Name: Dev
+Neighbors: [45, 47, 49, 51]
+Armies: 0
+Country Id: 49
+Continent Id: 5
+Owner Name: Yurui
+Neighbors: [48, 50]
+Armies: 0
+Country Id: 50
+Continent Id: 6
+Owner Name: Yurui
+Neighbors: [49, 51, 56]
+Armies: 0
+Country Id: 51
+Continent Id: 6
+Owner Name: Aarya
+Neighbors: [48, 50, 52, 53, 55]
+Armies: 0
+Country Id: 52
+Continent Id: 6
+Owner Name: Aarya
+Neighbors: [33, 44, 51, 53]
+Armies: 0
+Country Id: 53
+Continent Id: 6
+Owner Name: Aarya
+Neighbors: [33, 34, 51, 52, 54]
+Armies: 0
+Country Id: 54
+Continent Id: 7
+Owner Name: Dev
+Neighbors: [34, 38, 53, 55, 64]
+Armies: 0
+Country Id: 55
+Continent Id: 7
+Owner Name: Dev
+Neighbors: [51, 54, 56, 57, 58, 63, 64]
+Armies: 0
+Country Id: 56
+Continent Id: 7
+Owner Name: Dev
+Neighbors: [50, 55, 57]
+Armies: 0
+Country Id: 57
+Continent Id: 7
+Owner Name: Aarya
+Neighbors: [55, 56, 58]
+Armies: 0
+Country Id: 58
+Continent Id: 7
+Owner Name: Yurui
+Neighbors: [55, 57, 59, 63]
+Armies: 0
+Country Id: 59
+Continent Id: 8
+Owner Name: Aarya
+Neighbors: [58, 60, 61, 63]
+Armies: 0
+Country Id: 60
+Continent Id: 8
+Owner Name: Dev
+Neighbors: [59, 61, 63]
+Armies: 0
+Country Id: 61
+Continent Id: 8
+Owner Name: Yurui
+Neighbors: [59, 60, 62, 66]
+Armies: 0
+Country Id: 62
+Continent Id: 8
+Owner Name: Dev
+Neighbors: [61, 63, 64, 65]
+Armies: 0
+Country Id: 63
+Continent Id: 8
+Owner Name: Dev
+Neighbors: [55, 58, 59, 60, 62, 64]
+Armies: 0
+Country Id: 64
+Continent Id: 8
+Owner Name: Dev
+Neighbors: [38, 54, 55, 62, 63]
+Armies: 0
+Country Id: 65
+Continent Id: 9
+Owner Name: Yurui
+Neighbors: [62, 66, 67]
+Armies: 0
+Country Id: 66
+Continent Id: 9
+Owner Name: Dev
+Neighbors: [61, 65, 68]
+Armies: 0
+Country Id: 67
+Continent Id: 9
+Owner Name: Dev
+Neighbors: [65, 68]
+Armies: 0
+Country Id: 68
+Continent Id: 9
+Owner Name: Aarya
+Neighbors: [66, 67, 69, 70]
+Armies: 0
+Country Id: 69
+Continent Id: 9
+Owner Name: Yurui
+Neighbors: [68, 70]
+Armies: 0
+Country Id: 70
+Continent Id: 10
+Owner Name: Dev
+Neighbors: [68, 69, 71, 72]
+Armies: 0
+Country Id: 71
+Continent Id: 10
+Owner Name: Yurui
+Neighbors: [70, 86]
+Armies: 0
+Country Id: 72
+Continent Id: 10
+Owner Name: Aarya
+Neighbors: [70, 73, 74]
+Armies: 0
+Country Id: 73
+Continent Id: 10
+Owner Name: Aarya
+Neighbors: [72, 74, 79, 80, 81]
+Armies: 0
+Country Id: 74
+Continent Id: 10
+Owner Name: Dev
+Neighbors: [72, 73, 75, 79]
+Armies: 0
+Country Id: 75
+Continent Id: 10
+Owner Name: Yurui
+Neighbors: [74, 76, 77, 79]
+Armies: 0
+Country Id: 76
+Continent Id: 10
+Owner Name: Yurui
+Neighbors: [15, 75]
+Armies: 0
+Country Id: 77
+Continent Id: 10
+Owner Name: Dev
+Neighbors: [75, 78, 79]
+Armies: 0
+Country Id: 78
+Continent Id: 11
+Owner Name: Yurui
+Neighbors: [77, 79, 80]
+Armies: 0
+Country Id: 79
+Continent Id: 11
+Owner Name: Aarya
+Neighbors: [73, 74, 75, 77, 78, 80]
+Armies: 0
+Country Id: 80
+Continent Id: 11
+Owner Name: Aarya
+Neighbors: [73, 78, 79, 81]
+Armies: 0
+Country Id: 81
+Continent Id: 11
+Owner Name: Dev
+Neighbors: [73, 80, 82]
+Armies: 0
+Country Id: 82
+Continent Id: 11
+Owner Name: Yurui
+Neighbors: [81, 83]
+Armies: 0
+Country Id: 83
+Continent Id: 12
+Owner Name: Dev
+Neighbors: [82, 84]
+Armies: 0
+Country Id: 84
+Continent Id: 12
+Owner Name: Aarya
+Neighbors: [83, 85, 87]
+Armies: 0
+Country Id: 85
+Continent Id: 13
+Owner Name: Aarya
+Neighbors: [84]
+Armies: 0
+Country Id: 86
+Continent Id: 14
+Owner Name: Aarya
+Neighbors: [71, 87]
+Armies: 0
+Country Id: 87
+Continent Id: 14
+Owner Name: Dev
+Neighbors: [84, 86]
+Armies: 0
+
+
+Player Name: Aarya
+Countries: [13, 35, 53, 16, 79, 73, 17, 68, 24, 21, 26, 22, 20, 72, 85, 33, 59, 40, 2, 34, 84, 15, 57, 52, 86, 51, 45, 80, 25]
+Player Strategy: Models.Strategy.CheaterPlayerStrategy
+Cards: {negotiate=1, blockade=1, airlift=1, bomb=1}
+Player Name: Yurui
+Countries: [1, 6, 50, 69, 19, 71, 65, 47, 32, 4, 58, 61, 49, 11, 46, 82, 76, 5, 75, 9, 78, 12, 3, 28, 14, 43, 37, 27, 7]
+Player Strategy: Models.Strategy.CheaterPlayerStrategy
+Cards: {negotiate=1, blockade=1, airlift=1, bomb=1}
+Player Name: Dev
+Countries: [67, 29, 62, 81, 44, 41, 64, 55, 54, 74, 83, 60, 38, 48, 66, 10, 77, 56, 63, 70, 30, 18, 42, 87, 8, 36, 23, 31, 39]
+Player Strategy: Models.Strategy.Human
+Cards: {negotiate=1, blockade=1, airlift=1, bomb=1}
+
+Orders:
+>> Aarya deploy 2 1
+>> Yurui deploy 1 1

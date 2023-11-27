@@ -10,6 +10,11 @@ import Models.Continent;
 import Models.Country;
 import Models.GameMap;
 
+/**
+ * Map Editor Adapter in Adapter Pattern
+ * 
+ * @author YURUI
+ */
 public class MapEditorAdapter extends MapEditor {
 	/**
 	 * Constructor for map editor adapter

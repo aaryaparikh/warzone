@@ -71,6 +71,7 @@ public class Country {
 	 * @param p_countryId   The unique identifier for the country.
 	 * @param p_continentId The identifier for the continent to which this country
 	 *                      belongs.
+	 * @param p_countryName Country name string
 	 */
 	public Country(int p_countryId, int p_continentId, String p_countryName) {
 		this.d_countryId = p_countryId;
@@ -84,6 +85,9 @@ public class Country {
 	 * @param p_countryId   The unique identifier for the country.
 	 * @param p_continentId The identifier for the continent to which this country
 	 *                      belongs.
+	 * @param p_countryName Country name string
+	 * @param p_xAxis		x coordinate
+	 * @param p_yAxis		y coordinate                    
 	 */
 	public Country(int p_countryId, int p_continentId, String p_countryName, String p_xAxis, String p_yAxis) {
 		this.d_countryId = p_countryId;

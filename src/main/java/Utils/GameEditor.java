@@ -44,6 +44,7 @@ public class GameEditor {
 	/**
 	 * Writes the game information to a file with the given filename.
 	 *
+	 * @param p_gameEngine Game Engine
 	 * @param p_filePath   The name of the file to write to.
 	 * @param p_playerName The name of the player.
 	 */
