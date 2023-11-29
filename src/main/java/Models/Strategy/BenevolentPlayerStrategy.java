@@ -51,7 +51,7 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 	 * @return The player's country with the most armies.
 	 */
 	protected Country toDefend() {
-		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies).reversed());
+		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies));
 
 		// Judge whether country is controled by himself
 		for (Country l_countryInGame : d_countryList) {
@@ -78,7 +78,7 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 	 * 
 	 * @return The target country to reinforce.
 	 */
-	protected Country toMoveFrom() {
+	protected Country toMoveFrom(Country p_sourceCountry) {
 		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies).reversed());
 
 		// Judge whether country is controled by himself
@@ -130,7 +130,7 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 			return new DeployOrder(d_player, l_deployCountry, l_armies);
 
 		} else {
-			Country l_defendSourceCountry = toMoveFrom();
+			Country l_defendSourceCountry = toMoveFrom(null);
 			Country l_defendTargetCountry = toDefend();
 
 			// Depend on country in player's view

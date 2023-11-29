@@ -3,8 +3,6 @@ package Models.Strategy;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Random;
-
 import Controller.LogEntryBuffer;
 import Models.Country;
 import Models.Player;
@@ -49,7 +47,7 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 				if (l_countryOwned.getCountryId() == l_countryInGame.getCountryId())
 
 					// Judge whether neighbor is control by himself
-					for (int l_neighbor : l_countryOwned.getNeighborCountries()) {
+					for (int l_neighbor : p_sourceCountry.getNeighborCountries()) {
 						boolean l_ifNeighborOwned = false;
 						for (Country l_neighborOwned : d_player.getD_countries())
 							if (l_neighbor == l_neighborOwned.getCountryId())
@@ -109,9 +107,17 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	 * Determines where to move armies from. The Aggressive player does not move
 	 * armies, so it returns null.
 	 * 
+	 * @param p_sourceCountry The country from which the attack is initiated.
 	 * @return null
 	 */
-	protected Country toMoveFrom() {
+	protected Country toMoveFrom(Country p_targetCountry) {
+		for (Country l_countryInGame : d_countryList) {
+			for (Country l_countryOwned : d_player.getD_countries())
+				if (l_countryInGame.getCountryId() == l_countryOwned.getCountryId())
+					if (p_targetCountry.getNeighborCountries().contains(l_countryInGame.getCountryId())
+							&& (l_countryInGame.getArmies() != 0))
+						return l_countryOwned;
+		}
 		return null;
 	}
 
@@ -122,10 +128,8 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	 * @return The created order.
 	 */
 	public Order createOrder() {
-		Random l_rand = new Random();
-
 		if (d_player.getD_reinforcementPool() > 0) {
-			int l_armies = l_rand.nextInt(d_player.getD_reinforcementPool()) + 1;
+			int l_armies = d_player.getD_reinforcementPool();
 			Country l_deployCountry = toAttackFrom();
 
 			// Log order
@@ -143,11 +147,9 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 			return new DeployOrder(d_player, l_deployCountry, l_armies);
 		} else {
 			Country l_attackSourceCountry = toAttackFrom();
-			Country l_attackTargetCountry = toAttack(l_attackSourceCountry);
-
-			// Depend on country in player's view
 			Country l_attackSourceCountryInList = null;
 
+			// No more attack order
 			if (l_attackSourceCountry == null)
 				return null;
 			else
@@ -155,25 +157,51 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 					if (l_country.getCountryId() == l_attackSourceCountry.getCountryId())
 						l_attackSourceCountryInList = l_country;
 
-			if (l_attackSourceCountryInList.getArmies() == 0)
-				return null;
+			// Aggrerate armies before attacking
+			Country l_moveSourceCountry = toMoveFrom(l_attackSourceCountry);
+			if (l_moveSourceCountry != null) {
+				int l_moveArmies = l_moveSourceCountry.getArmies();
 
-			int l_attackArmies = l_attackSourceCountryInList.getArmies();
+				// Log order
+				String l_response = String.format(
+						"Aggressive Strategy advance to aggregate \"%s\" armies from \"%s\" to \"%s\" for Player \"%s\".",
+						l_moveArmies, l_moveSourceCountry.getCountryId(), l_attackSourceCountry.getCountryId(),
+						d_player.getName());
+				d_logEntryBuffer.setString(l_response);
+				System.out.println(l_response);
 
-			// Log order
-			String l_response = String.format(
-					"Aggressive Strategy advance \"%s\" armies from \"%s\" to \"%s\" for Player \"%s\".",
-					l_attackArmies, l_attackSourceCountry.getCountryId(), l_attackTargetCountry.getCountryId(),
-					d_player.getName());
-			d_logEntryBuffer.setString(l_response);
-			System.out.println(l_response);
+				// Update game information
+				for (Country l_country : d_countryList)
+					if (l_country.getCountryId() == l_attackSourceCountry.getCountryId())
+						l_country.setArmies(l_country.getArmies() + l_moveSourceCountry.getArmies());
+				for (Country l_country : d_countryList)
+					if (l_country.getCountryId() == l_moveSourceCountry.getCountryId())
+						l_country.setArmies(0);
 
-			// Update game information
-			for (Country l_country : d_countryList)
-				if (l_country.getCountryId() == l_attackSourceCountry.getCountryId())
-					l_country.setArmies(0);
+				return new AdvanceOrder(d_player, l_moveSourceCountry, l_attackSourceCountry, l_moveArmies);
+			} else {
+				Country l_attackTargetCountry = toAttack(l_attackSourceCountry);
 
-			return new AdvanceOrder(d_player, l_attackSourceCountry, l_attackTargetCountry, l_attackArmies);
+				if (l_attackSourceCountryInList.getArmies() == 0)
+					return null;
+
+				int l_attackArmies = l_attackSourceCountryInList.getArmies();
+
+				// Log order
+				String l_response = String.format(
+						"Aggressive Strategy advance \"%s\" armies from \"%s\" to attack \"%s\" for Player \"%s\".",
+						l_attackArmies, l_attackSourceCountry.getCountryId(), l_attackTargetCountry.getCountryId(),
+						d_player.getName());
+				d_logEntryBuffer.setString(l_response);
+				System.out.println(l_response);
+
+				// Update game information
+				for (Country l_country : d_countryList)
+					if (l_country.getCountryId() == l_attackSourceCountry.getCountryId())
+						l_country.setArmies(0);
+
+				return new AdvanceOrder(d_player, l_attackSourceCountry, l_attackTargetCountry, l_attackArmies);
+			}
 		}
 	}
 }

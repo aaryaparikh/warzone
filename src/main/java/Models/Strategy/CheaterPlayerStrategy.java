@@ -159,7 +159,7 @@ public class CheaterPlayerStrategy extends PlayerStrategy {
 	 * 
 	 * @return null
 	 */
-	protected Country toMoveFrom() {
+	protected Country toMoveFrom(Country p_sourceCountry) {
 		return null;
 	}
 

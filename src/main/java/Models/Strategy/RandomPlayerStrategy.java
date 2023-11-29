@@ -67,7 +67,7 @@ public class RandomPlayerStrategy extends PlayerStrategy {
 	 * 
 	 * @return country to move
 	 */
-	protected Country toMoveFrom() {
+	protected Country toMoveFrom(Country p_sourceCountry) {
 		Random l_rand = new Random();
 		return d_player.getD_countries().get(l_rand.nextInt(d_player.getD_countries().size()));
 	}
@@ -99,7 +99,7 @@ public class RandomPlayerStrategy extends PlayerStrategy {
 			return new DeployOrder(d_player, l_deployCountry, l_armies);
 
 		} else {
-			Country l_randomSourceCountry = toMoveFrom();
+			Country l_randomSourceCountry = toMoveFrom(null);
 			Country l_randomTargetCountry = findNeighborCountry(l_randomSourceCountry);
 
 			// Depend on country in player's view

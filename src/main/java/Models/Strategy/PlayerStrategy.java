@@ -58,9 +58,10 @@ public abstract class PlayerStrategy {
 	/**
 	 * Determines where armies are moved from.
 	 *
+	 * @param p_sourceCountry The country from which the attack is initiated.
 	 * @return The source country for moving armies.
 	 */
-	protected abstract Country toMoveFrom();
+	protected abstract Country toMoveFrom(Country p_sourceCountry);
 
 	/**
 	 * Determines which territory should be defended.
