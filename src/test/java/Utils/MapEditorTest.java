@@ -11,7 +11,7 @@ import Models.GameMap;
  *
  * @author Dev
  */
-class MapEditorTest {
+public class MapEditorTest {
 
 	/**
 	 * Default Game map maker
@@ -36,7 +36,7 @@ class MapEditorTest {
 	 * Test the gamemap to be equal
 	 */
 	@Test
-	void testEqualGameMap() {
+	public void testEqualGameMap() {
 		GameMap d_map = new GameMap();
 		defaultGameMap(d_map);
 		MapEditor d_mapEditor = new MapEditor(d_map);
