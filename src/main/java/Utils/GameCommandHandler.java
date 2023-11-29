@@ -101,13 +101,12 @@ public class GameCommandHandler extends CommandHandler {
 					continue;
 				if (l_commands[l_index].equals("-P"))
 					break;
-				
+
 				GameMap l_map = null;
 				if (l_commands[l_index].split("\\.")[1].equals("map")) {
 					MapEditorAdapter l_mapEditor = new MapEditorAdapter(d_gameEngine.getGameMap());
 					l_map = l_mapEditor.loadMap(l_commands[l_index]);
-				}
-				else {
+				} else {
 					MapEditor l_mapEditor = new MapEditor(d_gameEngine.getGameMap());
 					l_map = l_mapEditor.loadMap(l_commands[l_index]);
 				}

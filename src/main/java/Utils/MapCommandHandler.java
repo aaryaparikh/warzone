@@ -59,7 +59,7 @@ public class MapCommandHandler extends CommandHandler {
 			break;
 		case "validatemap":
 			MapEditor l_tempMapEditor = new MapEditor(d_map);
-			
+
 			if (l_tempMapEditor.validateMap()) {
 				l_response = String.format("This Map is valid");
 				System.out.println(l_response);
