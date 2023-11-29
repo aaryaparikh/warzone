@@ -1,9 +1,16 @@
 package Utils;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.jupiter.api.Test;
 
 import Models.GameMap;
 
+/**
+ * Test for the MapEditor class
+ *
+ * @author Dev
+ */
 class MapEditorTest {
 
 	/**
@@ -25,15 +32,16 @@ class MapEditorTest {
 		p_gameMap.addNeighbor(1, 7);
 	}
 
+	/**
+	 * Test the gamemap to be equal
+	 */
 	@Test
-	void test() {
+	void testEqualGameMap() {
 		GameMap d_map = new GameMap();
 		defaultGameMap(d_map);
 		MapEditor d_mapEditor = new MapEditor(d_map);
 		GameMap l_map = d_mapEditor.loadMap("thirdmap.txt");
 
-		System.out.println(l_map.equals(d_map));
-
+		assertTrue(l_map.equals(d_map));
 	}
-
 }
