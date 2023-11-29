@@ -109,7 +109,7 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	 * Determines where to move armies from. The Aggressive player does not move
 	 * armies, so it returns null.
 	 * 
-	 * @param p_sourceCountry The country from which the attack is initiated.
+	 * @param p_targetCountry The country from which the attack is initiated.
 	 * @return null
 	 */
 	protected Country toMoveFrom(Country p_targetCountry) {

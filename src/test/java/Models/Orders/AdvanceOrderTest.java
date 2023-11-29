@@ -154,11 +154,11 @@ public class AdvanceOrderTest {
 		Country l_source = getSource();
 		Country l_target = getValidTarget();
 		int l_armies = 5;
-		String l_expected_When_SameOwner ="\""+l_armies+"\" armies are moved from country \"" + l_source.getCountryId()
-				+ "\" to country \"" + l_target.getCountryId() + "\"";
-		String l_expected_When_DiffOwner ="\""+l_armies+"\" armies are moved from country \"" + l_source.getCountryId()
-				+ "\" to country \"" + l_target.getCountryId() + "\", \""+d_p1.getName()+"\" occupy country \"" + l_target.getCountryId()
-				+ "\", \""+l_armies+"\" armies remain.";
+		String l_expected_When_SameOwner = "\"" + l_armies + "\" armies are moved from country \""
+				+ l_source.getCountryId() + "\" to country \"" + l_target.getCountryId() + "\"";
+		String l_expected_When_DiffOwner = "\"" + l_armies + "\" armies are moved from country \""
+				+ l_source.getCountryId() + "\" to country \"" + l_target.getCountryId() + "\", \"" + d_p1.getName()
+				+ "\" occupy country \"" + l_target.getCountryId() + "\", \"" + l_armies + "\" armies remain.";
 
 		// deploy
 		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());
@@ -217,65 +217,68 @@ public class AdvanceOrderTest {
 				() -> assertEquals(d_p1.getD_reinforcementPool(), l_source.getArmies() + l_target.getArmies()));
 
 	}
-	
-	
 
 	/**
-     * Test the scenario where the target country is not a neighbor of the source country.
-     * @author Virag
-     */
-	
+	 * Test the scenario where the target country is not a neighbor of the source
+	 * country.
+	 * 
+	 * @author Virag
+	 */
+
 	@Test
-    public void shouldReturnString_For_NonNeighborTargetCountry() {
-        Country source = getSource();
-        Country nonNeighborTarget = d_gameEngine.getGameMap().getCountries().stream()
-                .filter(c -> !source.getNeighborCountries().contains(c.getCountryId()))
-                .findFirst()
-                .orElseThrow(); // Assumes there is at least one non-neighbor country
+	public void shouldReturnString_For_NonNeighborTargetCountry() {
+		Country source = getSource();
+		Country nonNeighborTarget = d_gameEngine.getGameMap().getCountries().stream()
+				.filter(c -> !source.getNeighborCountries().contains(c.getCountryId())).findFirst().orElseThrow(); // Assumes
+																													// there
+																													// is
+																													// at
+																													// least
+																													// one
+																													// non-neighbor
+																													// country
 
-        int armies = 5;
+		int armies = 5;
 
-        d_depOrder = new DeployOrder(d_p1, source, armies);
-        d_depOrder.execute(d_gameEngine);
+		d_depOrder = new DeployOrder(d_p1, source, armies);
+		d_depOrder.execute(d_gameEngine);
 
-        d_advOrder = new AdvanceOrder(d_p1, source, nonNeighborTarget, armies);
-        String result = d_advOrder.execute(d_gameEngine);
+		d_advOrder = new AdvanceOrder(d_p1, source, nonNeighborTarget, armies);
+		String result = d_advOrder.execute(d_gameEngine);
 
-        assertEquals(String.format(
-                "Armies can't be moved from country \"%d\" to country \"%d\" because they are not neighbors",
-                source.getCountryId(), nonNeighborTarget.getCountryId()), result);
-    }
-	
-	/**
-     * Test the scenario where the target country is neutral.
-     * @author Virag
-     */
-	@Test
-	public void shouldConquerNeutralTargetCountry() {
-	    Country source = getSource();
-
-	    // Find a neutral country or create one if none is present
-	    Country neutralTarget = d_gameEngine.getGameMap().getCountries().stream()
-	            .filter(c -> c.getOwner() == null)
-	            .findFirst()
-	            .orElseGet(() -> {
-	                Country newNeutralCountry = new Country(1,1);
-	                d_gameEngine.getGameMap().addCountry(1,1);
-	                return newNeutralCountry;
-	            });
-
-	    int armies = source.getArmies();
-
-	    d_depOrder = new DeployOrder(d_p1, source, armies);
-	    d_depOrder.execute(d_gameEngine);
-
-	    d_advOrder = new AdvanceOrder(d_p1, source, neutralTarget, armies);
-	    String result = d_advOrder.execute(d_gameEngine);
-
-	    assertFalse(result.contains(String.format("\"%d\" armies are moved from country \"%d\" to country \"%d\"",
-	            armies, source.getCountryId(), neutralTarget.getCountryId())));
-
+		assertEquals(String.format(
+				"Armies can't be moved from country \"%d\" to country \"%d\" because they are not neighbors",
+				source.getCountryId(), nonNeighborTarget.getCountryId()), result);
 	}
 
+	/**
+	 * Test the scenario where the target country is neutral.
+	 * 
+	 * @author Virag
+	 */
+	@Test
+	public void shouldConquerNeutralTargetCountry() {
+		Country source = getSource();
+
+		// Find a neutral country or create one if none is present
+		Country neutralTarget = d_gameEngine.getGameMap().getCountries().stream().filter(c -> c.getOwner() == null)
+				.findFirst().orElseGet(() -> {
+					Country newNeutralCountry = new Country(1, 1);
+					d_gameEngine.getGameMap().addCountry(1, 1);
+					return newNeutralCountry;
+				});
+
+		int armies = source.getArmies();
+
+		d_depOrder = new DeployOrder(d_p1, source, armies);
+		d_depOrder.execute(d_gameEngine);
+
+		d_advOrder = new AdvanceOrder(d_p1, source, neutralTarget, armies);
+		String result = d_advOrder.execute(d_gameEngine);
+
+		assertFalse(result.contains(String.format("\"%d\" armies are moved from country \"%d\" to country \"%d\"",
+				armies, source.getCountryId(), neutralTarget.getCountryId())));
+
+	}
 
 }

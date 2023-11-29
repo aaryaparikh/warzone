@@ -3,7 +3,6 @@ import org.junit.platform.suite.api.Suite;
 
 import Controller.ControllerTestSuite;
 import DemoDriver.DemoDriverTestSuite;
-import MapTest.InvalidMapTest;
 import Models.ModelTestSuite;
 import Models.Orders.OrderTestSuite;
 import StartupPhase.StartupPhaseTest;
@@ -34,8 +33,8 @@ import Utils.UtilsTestSuite;
  * @author Virag
  */
 @Suite
-@SelectClasses({ ModelTestSuite.class, OrderTestSuite.class, StartupPhaseTest.class, 
-		UtilsTestSuite.class, DemoDriverTestSuite.class, ControllerTestSuite.class })
+@SelectClasses({ ModelTestSuite.class, OrderTestSuite.class, StartupPhaseTest.class, UtilsTestSuite.class,
+		DemoDriverTestSuite.class, ControllerTestSuite.class })
 public class SuperTestSuite {
 
 }

@@ -58,9 +58,9 @@ class TournamentTest {
 	public void testTournamentEnded() {
 		// Simulate user input
 		String l_simulatedInput = "next" + System.lineSeparator()
-				+ "tournament -M firstmap.txt secondmap.txt thirdmap.txt -P aggressive cheater random -G 3 -D 7"
-				+ System.lineSeparator() + "back" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
-				+ System.lineSeparator() + "end";
+				+ "tournament -M firstmap.txt secondmap.txt thirdmap.txt -P aggressive cheater random -G 3 -D 10"
+				+ System.lineSeparator() + "back" + System.lineSeparator() + "assigncountries" + System.lineSeparator()
+				+ "next" + System.lineSeparator() + "end" + System.lineSeparator() + "end";
 		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		Build3Demo.main(null);
