@@ -130,7 +130,7 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	 * @return The created order.
 	 */
 	public Order createOrder() {
-		
+
 		// Deploy strongest country each time
 		if (d_player.getD_reinforcementPool() > 0) {
 			Random l_rand = new Random();

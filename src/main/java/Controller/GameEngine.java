@@ -148,7 +148,7 @@ public class GameEngine {
 			// Enter game play phase
 			getPhaseView().showNextPhaseInfo("play");
 			attachPlayersWithOrderWriter();
-			
+
 			int l_gameTurn = 1;
 
 			while ((d_gamePhase instanceof PlayMainPhase) && (l_gameTurn <= 50)) {
@@ -160,7 +160,7 @@ public class GameEngine {
 
 				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
 					break;
-				
+
 				l_gameTurn += 1;
 			}
 
@@ -169,7 +169,7 @@ public class GameEngine {
 			if (l_gameTurn > 50) {
 				System.out.println(String.format("Game draw! This game runs more than 50 rounds."));
 			}
-			
+
 			while (d_gamePhase instanceof EndGamePhase) {
 				String l_userInput;
 				l_userInput = l_sc.nextLine();

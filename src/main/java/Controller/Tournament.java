@@ -77,14 +77,14 @@ public class Tournament {
 
 		for (int l_gameNumber = 0; l_gameNumber < d_numberOfGames; l_gameNumber++) {
 			System.out.print("\n<Tournament Game " + (l_gameNumber + 1) + " Start>");
-			
+
 			for (GameMap l_gameMapEachTurn : d_listOfMapFiles) {
 				d_gameEngine.setGameMap(l_gameMapEachTurn);
 				System.out.println("\n<Game map is " + l_gameMapEachTurn.d_mapInfo + ">");
 				d_gameEngine.setPlayers(DeepCopyList.deepCopy(l_playerListBuffer, d_gameEngine));
 
 				d_gameEngine.assignCountriesRandomly();
-				
+
 				// Kick player if no country owned
 				List<Player> l_playerList = new ArrayList<>();
 				for (Player l_player : d_gameEngine.getPlayers())
@@ -92,7 +92,7 @@ public class Tournament {
 						l_playerList.add(l_player);
 				for (Player l_player : l_playerList)
 					d_gameEngine.getPlayers().remove(l_player);
-				
+
 				d_gameEngine.attachPlayersWithOrderWriter();
 				d_gameEngine.executeCommand("showmap".split(" "), null);
 
@@ -133,14 +133,14 @@ public class Tournament {
 				System.out.print(d_listOfMapFiles.get(l_mapIndex).d_mapInfo + "\n");
 			else
 				System.out.print(d_listOfMapFiles.get(l_mapIndex).d_mapInfo + ", ");
-		
+
 		System.out.print("Players: ");
 		for (int l_playerIndex = 0; l_playerIndex < l_playerListBuffer.size(); l_playerIndex++)
 			if (l_playerIndex == l_playerListBuffer.size() - 1)
 				System.out.print(l_playerListBuffer.get(l_playerIndex).getName() + "\n");
 			else
 				System.out.print(l_playerListBuffer.get(l_playerIndex).getName() + ", ");
-		
+
 		System.out.println("Games: " + d_numberOfGames);
 		System.out.println("Max Turns: " + d_maxNumberOfTurns);
 
@@ -148,13 +148,13 @@ public class Tournament {
 		for (int l_gameIndex = 0; l_gameIndex < d_numberOfGames; l_gameIndex++)
 			System.out.print("| Game " + (l_gameIndex + 1) + "\t");
 		System.out.println();
-		
-        for (int l_mapIndex = 0; l_mapIndex < d_listOfMapFiles.size(); l_mapIndex++) {
+
+		for (int l_mapIndex = 0; l_mapIndex < d_listOfMapFiles.size(); l_mapIndex++) {
 			System.out.print("| " + d_listOfMapFiles.get(l_mapIndex).d_mapInfo + "\t");
 
-            for (int l_gameIndex = 0; l_gameIndex < d_numberOfGames; l_gameIndex++)
-                System.out.print("| " + d_gameResults.get(l_gameIndex * d_listOfMapFiles.size()  + l_mapIndex) + "\t");
-            System.out.print("|\n");
-        }
+			for (int l_gameIndex = 0; l_gameIndex < d_numberOfGames; l_gameIndex++)
+				System.out.print("| " + d_gameResults.get(l_gameIndex * d_listOfMapFiles.size() + l_mapIndex) + "\t");
+			System.out.print("|\n");
+		}
 	}
 }

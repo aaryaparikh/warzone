@@ -97,6 +97,8 @@ public class GameCommandHandler extends CommandHandler {
 
 			int l_index = 1;
 
+			d_gameEngine.d_tournament.d_listOfMapFiles.clear();
+
 			// set game maps for tournament
 			for (; l_index < l_commands.length; l_index += 1) {
 				if (l_commands[l_index].equals("-M"))
@@ -118,6 +120,12 @@ public class GameCommandHandler extends CommandHandler {
 				}
 			}
 
+			if ((d_gameEngine.d_tournament.d_listOfMapFiles.size() > 5)
+					|| (d_gameEngine.d_tournament.d_listOfMapFiles.size() < 1)) {
+				System.out.println("Please enter tournament -M between 1 to 5 maps");
+				break;
+			}
+
 			d_gameEngine.setPlayers(new ArrayList<>());
 
 			// set player strategy for tournament
@@ -128,7 +136,7 @@ public class GameCommandHandler extends CommandHandler {
 					break;
 
 				Player l_player = null;
-				
+
 				switch (l_commands[l_index]) {
 				case "":
 					break;
@@ -161,11 +169,28 @@ public class GameCommandHandler extends CommandHandler {
 				}
 			}
 
-			if (l_index + 1 < l_commands.length)
-				d_gameEngine.d_tournament.d_numberOfGames = Integer.parseInt(l_commands[l_index + 1]);
+			if ((d_gameEngine.getPlayers().size() > 4) || (d_gameEngine.getPlayers().size() < 2)) {
+				System.out.println("Please enter tournament -P between 2 to 4 players");
+				break;
+			}
 
-			if (l_index + 3 < l_commands.length)
-				d_gameEngine.d_tournament.d_maxNumberOfTurns = Integer.parseInt(l_commands[l_index + 3]);
+			if (l_index + 1 < l_commands.length) {
+				if ((Integer.parseInt(l_commands[l_index + 1]) > 5)
+						|| (Integer.parseInt(l_commands[l_index + 1]) < 1)) {
+					System.out.println("Please enter tournament -G between 1 to 5");
+					break;
+				} else
+					d_gameEngine.d_tournament.d_numberOfGames = Integer.parseInt(l_commands[l_index + 1]);
+			}
+
+			if (l_index + 3 < l_commands.length) {
+				if ((Integer.parseInt(l_commands[l_index + 3]) > 50)
+						|| (Integer.parseInt(l_commands[l_index + 3]) < 10)) {
+					System.out.println("Please enter tournament -D between 10 to 50");
+					break;
+				} else
+					d_gameEngine.d_tournament.d_maxNumberOfTurns = Integer.parseInt(l_commands[l_index + 3]);
+			}
 
 			for (Player l_player : d_gameEngine.getPlayers())
 				if (l_player.getD_strategy() == null)

@@ -146,3 +146,14 @@
 2023/11/29 16:45:06>> "1" armies are moved from country "2" to country "3", "Yurui" occupy country "3", "1" armies remain.
 2023/11/29 16:45:06>> Player:Yurui is the winner!
 2023/11/29 16:45:06>> Enter Game End
+2023/11/29 18:35:10>> 
+
+2023/11/29 18:35:10>> Game Start
+2023/11/29 18:35:10>> Enter Edit Map Phase
+2023/11/29 18:35:14>> Enter Game Start Up Phase
+2023/11/29 18:35:29>> Enter Game Start Up Phase
+2023/11/29 18:37:20>> 
+
+2023/11/29 18:37:20>> Game Start
+2023/11/29 18:37:20>> Enter Edit Map Phase
+2023/11/29 18:37:22>> Enter Game Start Up Phase
