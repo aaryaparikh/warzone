@@ -5,7 +5,7 @@ import org.junit.platform.suite.api.Suite;
 
 /**
  * ControllerTestSuite is a JUnit test suite for the Controller package.
- * It combines and runs the tests from the selected classes, such as TournamentTest.
+ * It combines and runs the tests from the selected classes, such as TournamentTest and the GameEngine Test.
  *
  * This suite is annotated with JUnit's @Suite and @SelectClasses annotations
  * to specify the classes that should be included in the test suite.
@@ -26,7 +26,7 @@ import org.junit.platform.suite.api.Suite;
  * @see org.junit.platform.suite.api.SelectClasses
  */
 @Suite
-@SelectClasses({ TournamentTest.class })
+@SelectClasses({ GameEngineTest.class, TournamentTest.class })
 public class ControllerTestSuite {
 
 }
