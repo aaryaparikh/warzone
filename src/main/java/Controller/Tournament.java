@@ -74,13 +74,13 @@ public class Tournament {
 
 		List<Player> l_playerListBuffer = new ArrayList<>();
 		l_playerListBuffer = DeepCopyList.deepCopy(d_gameEngine.getPlayers(), d_gameEngine);
-		
+
 		for (int l_gameNumber = 0; l_gameNumber < d_numberOfGames; l_gameNumber++) {
 			System.out.println("\n<Tournament Game " + (l_gameNumber + 1) + " Start>");
 
 			d_gameEngine.setGameMap(d_listOfMapFiles.get(l_gameNumber % d_listOfMapFiles.size()));
 			d_gameEngine.setPlayers(DeepCopyList.deepCopy(l_playerListBuffer, d_gameEngine));
-			
+
 			d_gameEngine.assignCountriesRandomly();
 			d_gameEngine.attachPlayersWithOrderWriter();
 			d_gameEngine.executeCommand("showmap".split(" "), null);
