@@ -153,11 +153,11 @@ public class AdvanceOrderTest {
 		Country l_source = getSource();
 		Country l_target = getValidTarget();
 		int l_armies = 5;
-		String l_expected_When_SameOwner = "Armies successfully moved from country \"" + l_source.getCountryId()
+		String l_expected_When_SameOwner ="\""+l_armies+"\" armies are moved from country \"" + l_source.getCountryId()
 				+ "\" to country \"" + l_target.getCountryId() + "\"";
-		String l_expected_When_DiffOwner = "Armies successfully moved from country \"" + l_source.getCountryId()
-				+ "\" to country \"" + l_target.getCountryId() + "\" and the ownership changed to \"" + d_p1.getName()
-				+ "\" player.";
+		String l_expected_When_DiffOwner ="\""+l_armies+"\" armies are moved from country \"" + l_source.getCountryId()
+				+ "\" to country \"" + l_target.getCountryId() + "\", \""+d_p1.getName()+"\" occupy country \"" + l_target.getCountryId()
+				+ "\", \""+l_armies+"\" armies remain.";
 
 		// deploy
 		d_depOrder = new DeployOrder(d_p1, l_source, d_p1.getD_reinforcementPool());
@@ -183,7 +183,7 @@ public class AdvanceOrderTest {
 		Country l_incorrectSource = getInvalidSource();
 		Country l_target = getValidTarget();
 		String l_expected = "Player \"" + d_p1.getName() + "\" does not control country \""
-				+ l_incorrectSource.getCountryId() + "\", hence armies cannot be moved.";
+				+ l_incorrectSource.getCountryId() + "\", thus armies cannot be moved.";
 
 		int l_armies = d_p1.getD_reinforcementPool();
 
