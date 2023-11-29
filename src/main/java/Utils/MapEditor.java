@@ -89,7 +89,7 @@ public class MapEditor {
 		GameMap l_map = new GameMap();
 
 		try {
-			File l_mapFile = new File("src/main/resources/" + p_fileName);
+			File l_mapFile = new File("src/main/resources/DominationMaps/" + p_fileName);
 
 			// Check whether the file exist in the path
 			if (!l_mapFile.exists()) {

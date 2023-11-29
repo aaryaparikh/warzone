@@ -18,7 +18,6 @@ public class OrderWriter implements Observer {
 	/**
 	 * Constructor to attach the object of LogEntryBuffer
 	 *
-	 * @param p_logEntry object of LogEntryBuffer
 	 */
 	public OrderWriter() {
 	}

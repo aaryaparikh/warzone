@@ -10,20 +10,21 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import Controller.GameEngine;
 import Controller.LogEntryBuffer;
 import Models.Continent;
 import Models.Country;
 import Models.GameMap;
 import Models.Player;
-import Models.Strategy.*;
+import Models.Strategy.PlayerStrategy;
 
 /**
  * The GameEditor class is responsible for editing and saving map information in
  * the game. It provides methods to write the map information to a file,
  * including the game engine data, player turns, map details, player
  * information, and issued orders.
- * 
+ *
  * @author Yurui
  */
 public class GameEditor {
@@ -44,6 +45,7 @@ public class GameEditor {
 	/**
 	 * Writes the game information to a file with the given filename.
 	 *
+	 * @param p_gameEngine The instance of the GameEngine.
 	 * @param p_filePath   The name of the file to write to.
 	 * @param p_playerName The name of the player.
 	 */
