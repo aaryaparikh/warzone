@@ -109,11 +109,15 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 	 * @return The created order.
 	 */
 	public Order createOrder() {
-		Random l_rand = new Random();
-
+		
+		// Deploy weakest country each time
 		if (d_player.getD_reinforcementPool() > 0) {
+			Random l_rand = new Random();
 			int l_armies = l_rand.nextInt(d_player.getD_reinforcementPool()) + 1;
 			Country l_deployCountry = toDefend();
+			
+			if (l_deployCountry == null)
+				return null;
 
 			// Log order
 			String l_response = String.format("Benevolent Strategy deploy \"%s\" armies on \"%s\" for Player \"%s\".",

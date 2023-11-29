@@ -3,6 +3,8 @@ package Models.Strategy;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
+
 import Controller.LogEntryBuffer;
 import Models.Country;
 import Models.Player;
@@ -128,8 +130,11 @@ public class AggressivePlayerStrategy extends PlayerStrategy {
 	 * @return The created order.
 	 */
 	public Order createOrder() {
+		
+		// Deploy strongest country each time
 		if (d_player.getD_reinforcementPool() > 0) {
-			int l_armies = d_player.getD_reinforcementPool();
+			Random l_rand = new Random();
+			int l_armies = l_rand.nextInt(d_player.getD_reinforcementPool()) + 1;
 			Country l_deployCountry = toAttackFrom();
 
 			// Log order

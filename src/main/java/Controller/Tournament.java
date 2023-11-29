@@ -76,47 +76,85 @@ public class Tournament {
 		l_playerListBuffer = DeepCopyList.deepCopy(d_gameEngine.getPlayers(), d_gameEngine);
 
 		for (int l_gameNumber = 0; l_gameNumber < d_numberOfGames; l_gameNumber++) {
-			System.out.println("\n<Tournament Game " + (l_gameNumber + 1) + " Start>");
+			System.out.print("\n<Tournament Game " + (l_gameNumber + 1) + " Start>");
+			
+			for (GameMap l_gameMapEachTurn : d_listOfMapFiles) {
+				d_gameEngine.setGameMap(l_gameMapEachTurn);
+				System.out.println("\n<Game map is " + l_gameMapEachTurn.d_mapInfo + ">");
+				d_gameEngine.setPlayers(DeepCopyList.deepCopy(l_playerListBuffer, d_gameEngine));
 
-			d_gameEngine.setGameMap(d_listOfMapFiles.get(l_gameNumber % d_listOfMapFiles.size()));
-			d_gameEngine.setPlayers(DeepCopyList.deepCopy(l_playerListBuffer, d_gameEngine));
+				d_gameEngine.assignCountriesRandomly();
+				
+				// Kick player if no country owned
+				List<Player> l_playerList = new ArrayList<>();
+				for (Player l_player : d_gameEngine.getPlayers())
+					if (l_player.getD_countries().size() == 0)
+						l_playerList.add(l_player);
+				for (Player l_player : l_playerList)
+					d_gameEngine.getPlayers().remove(l_player);
+				
+				d_gameEngine.attachPlayersWithOrderWriter();
+				d_gameEngine.executeCommand("showmap".split(" "), null);
 
-			d_gameEngine.assignCountriesRandomly();
-			d_gameEngine.attachPlayersWithOrderWriter();
-			d_gameEngine.executeCommand("showmap".split(" "), null);
+				// Enter game play phase
+				d_gameEngine.setPhase(new IssueOrderPhase(d_gameEngine));
+				d_phaseView.showNextPhaseInfo("play");
 
-			// Enter game play phase
-			d_gameEngine.setPhase(new IssueOrderPhase(d_gameEngine));
-			d_phaseView.showNextPhaseInfo("play");
+				int l_gameTurn = 1;
+				while ((d_gameEngine.getPhase() instanceof PlayMainPhase) && (l_gameTurn <= d_maxNumberOfTurns)) {
+					d_gameEngine.assignReinforcements();
 
-			int l_gameTurn = 1;
-			while ((d_gameEngine.getPhase() instanceof PlayMainPhase) && (l_gameTurn <= d_maxNumberOfTurns)) {
-				d_gameEngine.assignReinforcements();
+					d_gameEngine.updateGameMapForPlayers();
 
-				d_gameEngine.updateGameMapForPlayers();
+					d_gameEngine.issueOrdersInTurn();
 
-				d_gameEngine.issueOrdersInTurn();
+					if (d_gameEngine.executeAllCommittedOrders() == "gameOver")
+						break;
 
-				if (d_gameEngine.executeAllCommittedOrders() == "gameOver")
-					break;
+					l_gameTurn += 1;
+				}
 
-				l_gameTurn += 1;
-			}
-
-			String l_gameResult;
-			if (l_gameTurn > d_maxNumberOfTurns) {
-				l_gameResult = String.format("Game %d exceed max turn, not end.", l_gameNumber + 1);
-				d_gameResults.add(l_gameResult);
-			} else {
-				l_gameResult = String.format("Game %d end, player \"%s\" is the winner.", l_gameNumber + 1,
-						d_gameEngine.getGameMap().getCountries().get(0).getOwner().getName());
-				d_gameResults.add(l_gameResult);
+				String l_gameResult;
+				if (l_gameTurn > d_maxNumberOfTurns) {
+					l_gameResult = "-Draw-";
+					d_gameResults.add(l_gameResult);
+				} else {
+					l_gameResult = d_gameEngine.getGameMap().getCountries().get(0).getOwner().getName();
+					d_gameResults.add(l_gameResult);
+				}
 			}
 		}
 
-		// Enter end phase
-		System.out.println("\n<Tournament Game End>");
-		for (String l_result : d_gameResults)
-			System.out.println(l_result);
+		// Output report
+		System.out.println("\n\n<Tournament Report>");
+		System.out.print("Maps: ");
+		for (int l_mapIndex = 0; l_mapIndex < d_listOfMapFiles.size(); l_mapIndex++)
+			if (l_mapIndex == d_listOfMapFiles.size() - 1)
+				System.out.print(d_listOfMapFiles.get(l_mapIndex).d_mapInfo + "\n");
+			else
+				System.out.print(d_listOfMapFiles.get(l_mapIndex).d_mapInfo + ", ");
+		
+		System.out.print("Players: ");
+		for (int l_playerIndex = 0; l_playerIndex < l_playerListBuffer.size(); l_playerIndex++)
+			if (l_playerIndex == l_playerListBuffer.size() - 1)
+				System.out.print(l_playerListBuffer.get(l_playerIndex).getName() + "\n");
+			else
+				System.out.print(l_playerListBuffer.get(l_playerIndex).getName() + ", ");
+		
+		System.out.println("Games: " + d_numberOfGames);
+		System.out.println("Max Turns: " + d_maxNumberOfTurns);
+
+		System.out.print("\n\t\t");
+		for (int l_gameIndex = 0; l_gameIndex < d_numberOfGames; l_gameIndex++)
+			System.out.print("| Game " + (l_gameIndex + 1) + "\t");
+		System.out.println();
+		
+        for (int l_mapIndex = 0; l_mapIndex < d_listOfMapFiles.size(); l_mapIndex++) {
+			System.out.print("| " + d_listOfMapFiles.get(l_mapIndex).d_mapInfo + "\t");
+
+            for (int l_gameIndex = 0; l_gameIndex < d_numberOfGames; l_gameIndex++)
+                System.out.print("| " + d_gameResults.get(l_gameIndex * d_listOfMapFiles.size()  + l_mapIndex) + "\t");
+            System.out.print("|\n");
+        }
 	}
 }

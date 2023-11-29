@@ -1,5 +1,7 @@
 package Utils;
 
+import java.util.ArrayList;
+
 import Controller.GameEngine;
 import Models.GameMap;
 import Models.Player;
@@ -110,11 +112,14 @@ public class GameCommandHandler extends CommandHandler {
 					MapEditor l_mapEditor = new MapEditor(d_gameEngine.getGameMap());
 					l_map = l_mapEditor.loadMap(l_commands[l_index]);
 				}
-				if (l_map != null)
+				if (l_map != null) {
+					l_map.d_mapInfo = l_commands[l_index];
 					d_gameEngine.d_tournament.d_listOfMapFiles.add(l_map);
+				}
 			}
 
-			int l_indexFlag = l_index;
+			d_gameEngine.setPlayers(new ArrayList<>());
+
 			// set player strategy for tournament
 			for (; l_index < l_commands.length; l_index += 1) {
 				if (l_commands[l_index].equals("-P"))
@@ -122,26 +127,34 @@ public class GameCommandHandler extends CommandHandler {
 				if (l_commands[l_index].equals("-G"))
 					break;
 
-				Player l_player = d_gameEngine.getPlayers().get(l_index - l_indexFlag - 1);
-
+				Player l_player = null;
+				
 				switch (l_commands[l_index]) {
 				case "":
 					break;
 				case "human":
 					break;
 				case "aggressive":
+					l_player = new Player("Aggressive", d_gameEngine);
+					d_gameEngine.addPlayer(l_player);
 					l_player.setD_strategy(new AggressivePlayerStrategy(l_player,
 							DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()), d_logEntryBuffer));
 					break;
 				case "benevolent":
+					l_player = new Player("Benevolent", d_gameEngine);
+					d_gameEngine.addPlayer(l_player);
 					l_player.setD_strategy(new BenevolentPlayerStrategy(l_player,
 							DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()), d_logEntryBuffer));
 					break;
 				case "random":
+					l_player = new Player("Random", d_gameEngine);
+					d_gameEngine.addPlayer(l_player);
 					l_player.setD_strategy(new RandomPlayerStrategy(l_player,
 							DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()), d_logEntryBuffer));
 					break;
 				case "cheater":
+					l_player = new Player("Cheater", d_gameEngine);
+					d_gameEngine.addPlayer(l_player);
 					l_player.setD_strategy(new CheaterPlayerStrategy(l_player,
 							DeepCopyList.deepCopy(d_gameEngine.getGameMap().getCountries()), d_logEntryBuffer));
 					break;

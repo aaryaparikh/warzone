@@ -65,7 +65,6 @@ public class GameEngine {
 	/**
 	 * Game Log Writer
 	 */
-	@SuppressWarnings("unused")
 	private LogWriter d_logWriter;
 
 	/**
@@ -149,7 +148,10 @@ public class GameEngine {
 			// Enter game play phase
 			getPhaseView().showNextPhaseInfo("play");
 			attachPlayersWithOrderWriter();
-			while (d_gamePhase instanceof PlayMainPhase) {
+			
+			int l_gameTurn = 1;
+
+			while ((d_gamePhase instanceof PlayMainPhase) && (l_gameTurn <= 50)) {
 				assignReinforcements();
 
 				updateGameMapForPlayers();
@@ -158,10 +160,16 @@ public class GameEngine {
 
 				if ((issueOrdersInTurn() == "gameEnd") || (executeAllCommittedOrders() == "gameOver"))
 					break;
+				
+				l_gameTurn += 1;
 			}
 
 			// Enter end phase
 			getPhaseView().showNextPhaseInfo("end");
+			if (l_gameTurn > 50) {
+				System.out.println(String.format("Game draw! This game runs more than 50 rounds."));
+			}
+			
 			while (d_gamePhase instanceof EndGamePhase) {
 				String l_userInput;
 				l_userInput = l_sc.nextLine();
