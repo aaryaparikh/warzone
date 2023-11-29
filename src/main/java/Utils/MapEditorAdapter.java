@@ -10,6 +10,11 @@ import Models.Continent;
 import Models.Country;
 import Models.GameMap;
 
+/**
+ * Represents a map editor adapter which adapts to any of the map format.
+ *
+ * @author Dev
+ */
 public class MapEditorAdapter extends MapEditor {
 	/**
 	 * Constructor for map editor adapter
@@ -26,6 +31,7 @@ public class MapEditorAdapter extends MapEditor {
 	 * @param p_fileName The name of the file to load the map from.
 	 * @return The loaded map.
 	 */
+	@Override
 	public GameMap editMap(String p_fileName) {
 		String l_text = "";
 		GameMap l_map = new GameMap();
@@ -137,6 +143,7 @@ public class MapEditorAdapter extends MapEditor {
 	 * @param p_fileName The name of the file to load the map from.
 	 * @return The loaded map.
 	 */
+	@Override
 	public GameMap loadMap(String p_fileName) {
 		String l_text = "";
 		GameMap l_map = new GameMap();
@@ -250,6 +257,7 @@ public class MapEditorAdapter extends MapEditor {
 	 *
 	 * @param p_fileName The name of the file to write to.
 	 */
+	@Override
 	public void write(String p_fileName) {
 		if (!validateMap()) {
 			System.out.println("Since invalid Map, it can't be saved as Conquest Map.");
