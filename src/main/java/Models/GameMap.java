@@ -286,4 +286,37 @@ public class GameMap {
 		}
 	}
 
+	/**
+	 * Checking for two gameMaps to be equal.
+	 *
+	 * @param p_gameMap The other game map with whom this gamemap need to be compare
+	 * @return True if continents and countries of this gamemap and p_game is same
+	 */
+	public boolean equals(GameMap p_gameMap) {
+		boolean flag = true;
+		if (this.getD_continentCount() == p_gameMap.getD_continentCount()
+				&& this.getD_countryCount() == p_gameMap.getD_countryCount()) {
+			// checking continent list
+			for (int i = 0; i < this.d_continentCount; i++) {
+				if (this.getContinents().get(i).getContinentId() != p_gameMap.getContinents().get(i).getContinentId()) {
+					flag = false;
+					break;
+				}
+			}
+			// checking countries list
+			if (flag) {
+				for (int i = 0; i < this.getD_countryCount(); i++) {
+					if (this.getCountries().get(i).getCountryId() != p_gameMap.getCountries().get(i).getCountryId()) {
+						flag = false;
+						break;
+					}
+				}
+			}
+		} else {
+			flag = false;
+		}
+
+		return flag;
+	}
+
 }
