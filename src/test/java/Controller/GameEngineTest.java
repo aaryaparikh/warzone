@@ -75,8 +75,8 @@ public class GameEngineTest {
 	public void testGameEngineIssueOrders() {
 		// Simulate user input
 		String l_simulatedInput = "next" + System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator()
-				+ "assigncountries" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
-				+ System.lineSeparator() + "end" + System.lineSeparator();
+				+ "\n" + System.lineSeparator() + "assigncountries" + System.lineSeparator() + "next"
+				+ System.lineSeparator() + "end" + System.lineSeparator() + "end" + System.lineSeparator();
 		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		this.d_gameEngine = new GameEngine(d_map);
@@ -92,9 +92,9 @@ public class GameEngineTest {
 	public void testGameEngineExecuteOrders() {
 		// Simulate user input
 		String l_simulatedInput = "next" + System.lineSeparator() + "showmap" + System.lineSeparator()
-				+ "gameplayer -add Yurui" + System.lineSeparator() + "assigncountries" + System.lineSeparator() + "next"
-				+ System.lineSeparator() + "deploy 1 3" + System.lineSeparator() + "commit" + System.lineSeparator()
-				+ "end" + System.lineSeparator() + "end" + System.lineSeparator();
+				+ "gameplayer -add Yurui" + System.lineSeparator() + "\n" + System.lineSeparator() + "assigncountries"
+				+ System.lineSeparator() + "next" + System.lineSeparator() + "deploy 1 3" + System.lineSeparator()
+				+ "commit" + System.lineSeparator() + "end" + System.lineSeparator() + "end" + System.lineSeparator();
 		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		this.d_gameEngine = new GameEngine(d_map);
@@ -110,16 +110,16 @@ public class GameEngineTest {
 	@Test
 	public void testMapService() {
 		// Simulate user input
-		String simulatedInput = "editmap temp" + System.lineSeparator() + "showmap" + System.lineSeparator() + "next"
-				+ System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator() + "assigncountries"
-				+ System.lineSeparator() + "next" + System.lineSeparator() + "end" + System.lineSeparator() + "end"
-				+ System.lineSeparator();
+		String simulatedInput = "editmap test.map" + System.lineSeparator() + "showmap" + System.lineSeparator()
+				+ "next" + System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator() + "\n"
+				+ System.lineSeparator() + "assigncountries" + System.lineSeparator() + "next" + System.lineSeparator()
+				+ "end" + System.lineSeparator() + "end" + System.lineSeparator();
 		System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
 		this.d_gameEngine = new GameEngine(d_map);
 		d_gameEngine.start();
 
 		assertTrue(d_systemOutContent.toString()
-				.contains("	[Continents]\r\n" + "	Id	Value\r\n" + "	1	3\r\n" + "	2	5"));
+				.contains("	[Continents]\r\n" + "	Id	Value\r\n" + "	1	5\r\n" + "	2	5"));
 	}
 }

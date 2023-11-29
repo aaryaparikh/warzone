@@ -57,8 +57,8 @@ public class Build1DemoTest {
 	public void testDriverDemoStart() {
 		// Simulate user input
 		String l_simulatedInput = "next" + System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator()
-				+ "assigncountries" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
-				+ System.lineSeparator() + "end" + System.lineSeparator();
+				+ "\n" + System.lineSeparator() + "assigncountries" + System.lineSeparator() + "next"
+				+ System.lineSeparator() + "end" + System.lineSeparator() + "end" + System.lineSeparator();
 		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		Build1Demo.main(null);
@@ -73,8 +73,9 @@ public class Build1DemoTest {
 	public void testDriverDemoShowmap() {
 		// Simulate user input
 		String l_simulatedInput = "next" + System.lineSeparator() + "showmap" + System.lineSeparator()
-				+ "gameplayer -add Yurui" + System.lineSeparator() + "assigncountries" + System.lineSeparator() + "next"
-				+ System.lineSeparator() + "end" + System.lineSeparator() + "end" + System.lineSeparator();
+				+ "gameplayer -add Yurui" + System.lineSeparator() + "\n" + System.lineSeparator() + "assigncountries"
+				+ System.lineSeparator() + "next" + System.lineSeparator() + "end" + System.lineSeparator() + "end"
+				+ System.lineSeparator();
 		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		Build1Demo.main(null);
@@ -89,8 +90,8 @@ public class Build1DemoTest {
 	public void testDriverDemoEnd() {
 		// Simulate user input
 		String l_simulatedInput = "next" + System.lineSeparator() + "gameplayer -add Yurui" + System.lineSeparator()
-				+ "assigncountries" + System.lineSeparator() + "next" + System.lineSeparator() + "end"
-				+ System.lineSeparator() + "end" + System.lineSeparator();
+				+ "\n" + System.lineSeparator() + "assigncountries" + System.lineSeparator() + "next"
+				+ System.lineSeparator() + "end" + System.lineSeparator() + "end" + System.lineSeparator();
 		System.setIn(new ByteArrayInputStream(l_simulatedInput.getBytes()));
 
 		Build1Demo.main(null);
