@@ -24,8 +24,8 @@ import org.junit.platform.suite.api.Suite;
  * @author Virag
  */
 @Suite
-@SelectClasses({ AdvanceOrderTest.class, AirliftOrderTest.class, BlockadeOrder.class, DeployOrderTest.class,
-		DiplomacyOrderTest.class, AirliftOrderTest.class })
+@SelectClasses({ AdvanceOrderTest.class, AirliftOrderTest.class, BlockadeOrderTest.class, DeployOrderTest.class,
+		DiplomacyOrderTest.class, AirliftOrderTest.class, ReinforcementArmiesTest.class, BombOrderTest.class })
 public class OrderTestSuite {
 
 }
