@@ -13,8 +13,8 @@ import Utils.UtilsTestSuite;
  * The SuperTestSuite class is the top-level JUnit 5 test suite for the entire
  * project. It includes various sub-test suites covering different aspects of
  * the project's functionality.
- * 
- * 
+ *
+ *
  * <b>Sub-suites included in this SuperTestSuite:</b>
  * <ul>
  * <li>ModelTestSuite: Tests for the Models package, covering data structures
@@ -27,15 +27,15 @@ import Utils.UtilsTestSuite;
  * <li>DemoDriverTestSuite: Tests for the demo driver or user interface
  * components.</li>
  * </ul>
- * 
+ *
  * Usage: To execute all the tests for the entire project, run this class as a
  * JUnit test.
- * 
+ *
  * @author Virag
  */
 @Suite
 @SelectClasses({ ModelTestSuite.class, OrderTestSuite.class, StartupPhaseTest.class, InvalidMapTest.class,
-		UtilsTestSuite.class, DemoDriverTestSuite.class})
+		UtilsTestSuite.class, DemoDriverTestSuite.class, ControllerTestSuite.class })
 public class SuperTestSuite {
 
 }
