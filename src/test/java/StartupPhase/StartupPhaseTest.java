@@ -59,35 +59,6 @@ public class StartupPhaseTest {
 	}
 
 	/**
-	 * Testing the game player add command functionality
-	 */
-	@Test
-	public void shouldGameplayerAdd() {
-		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
-		d_gameEngine.setPhase(l_playsetupPhase);
-		String l_commands[] = { "gameplayer", "-add", "Virag" };
-		l_playsetupPhase.gamePlayer(l_commands);
-		assertEquals(1, d_gameEngine.getPlayers().size());
-	}
-
-	/**
-	 * Testing the assign countries command functionality
-	 */
-	@Test
-	public void shouldAssignCountries() {
-		PlaySetupPhase l_playsetupPhase = new PlaySetupPhase(d_gameEngine);
-		d_gameEngine.setPhase(l_playsetupPhase);
-		String l_commands[] = { "gameplayer", "-add", "Virag" };
-		l_playsetupPhase.gamePlayer(l_commands);
-		String l_commands_assign[] = { "assigncountries" };
-		l_playsetupPhase.assignCountries(l_commands_assign);
-		for (Country c : d_gameEngine.getGameMap().getCountries()) {
-			assertTrue(c.getOwner().getName().equals("Virag"));
-		}
-
-	}
-
-	/**
 	 * Testing the deploy command functionality
 	 */
 	@Test

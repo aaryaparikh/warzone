@@ -3515,3 +3515,1141 @@
 2023/11/29 12:19:56>> "2" armies are moved from country "2" to country "5", "Yurui" occupy country "5", "2" armies remain.
 2023/11/29 12:19:56>> Player:Yurui is the winner!
 2023/11/29 12:19:56>> Enter Game End
+2023/11/29 14:35:09>> 
+
+2023/11/29 14:35:09>> Game Start
+2023/11/29 14:35:09>> Enter Edit Map Phase
+2023/11/29 14:35:09>> Enter Game Start Up Phase
+2023/11/29 14:35:09>>  player "Yurui" is added.
+2023/11/29 14:35:09>> All countries are assigned to players
+2023/11/29 14:35:09>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Game is ended by Player "Yurui".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> 
+
+2023/11/29 14:35:10>> Game Start
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>>  player "Yurui" is added.
+2023/11/29 14:35:10>> All countries are assigned to players
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Game is ended by Player "Yurui".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> 
+
+2023/11/29 14:35:10>> Game Start
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>>  player "Yurui" is added.
+2023/11/29 14:35:10>> All countries are assigned to players
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Game is ended by Player "Yurui".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> 
+
+2023/11/29 14:35:10>> Game Start
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Game is ended by Player "Aarya".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> 
+
+2023/11/29 14:35:10>> Game Start
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Game is ended by Player "Aarya".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> 
+
+2023/11/29 14:35:10>> Game Start
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Game is ended by Player "Aarya".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>>  player "Yurui" is added.
+2023/11/29 14:35:10>> All countries are assigned to players
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Add an order of deploying "3" armies on "1" to Player "Yurui".
+2023/11/29 14:35:10>> Player "Yurui" has signified.
+2023/11/29 14:35:10>> Enter Game Execute Order Phase
+2023/11/29 14:35:10>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Game is ended by Player "Yurui".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>>  player "Yurui" is added.
+2023/11/29 14:35:10>> All countries are assigned to players
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Game is ended by Player "Yurui".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Edit map "test.map".
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>>  player "Yurui" is added.
+2023/11/29 14:35:10>> All countries are assigned to players
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Game is ended by Player "Yurui".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> 
+
+2023/11/29 14:35:10>> Game Start
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Cheater Strategy deploy "1" armies on "3" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:35:10>> Game is ended by Player "Dev".
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:35:10>> 
+
+2023/11/29 14:35:10>> Game Start
+2023/11/29 14:35:10>> Enter Edit Map Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>> Enter Game Start Up Phase
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Aggressive Strategy deploy "2" armies on "1" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:35:10>> Random Strategy deploy "3" armies on "7" for Player "Dev".
+2023/11/29 14:35:10>> Aggressive Strategy deploy "1" armies on "1" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/29 14:35:10>> Random Strategy advance "1" armies from "7" to "5" for Player "Dev".
+2023/11/29 14:35:10>> Aggressive Strategy advance "3" armies from "1" to "2" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "2" armies on "2" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Dev" has signified.
+2023/11/29 14:35:10>> Player "Aarya" has signified.
+2023/11/29 14:35:10>> Cheater Strategy advance "1" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "1" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "1" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "1" armies from "5" to "7" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Yurui" has signified.
+2023/11/29 14:35:10>> Enter Game Execute Order Phase
+2023/11/29 14:35:10>> Player "Aarya" deployed "2" armies to country "1"
+2023/11/29 14:35:10>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:35:10>> Player "Dev" deployed "3" armies to country "7"
+2023/11/29 14:35:10>> Player "Aarya" deployed "1" armies to country "1"
+2023/11/29 14:35:10>> Player "Yurui" deployed "1" armies to country "5"
+2023/11/29 14:35:10>> Player "Yurui" deployed "2" armies to country "2"
+2023/11/29 14:35:10>> "3" armies from country "1" can't conquer country "2", "1" remain in target.
+2023/11/29 14:35:10>> "1" armies are moved from country "2" to country "1", "Yurui" occupy country "1", "1" armies remain.
+2023/11/29 14:35:10>> "1" armies from country "7" defeat the exact number in country "5", can't conquer it and "0" armies remain.
+2023/11/29 14:35:10>> "0" armies from country "2" defeat the exact number in country "3", can't conquer it and "0" armies remain.
+2023/11/29 14:35:10>> "0" armies from country "2" defeat the exact number in country "3", can't conquer it and "0" armies remain.
+2023/11/29 14:35:10>> "0" armies from country "5" can't conquer country "7", "2" remain in target.
+2023/11/29 14:35:10>> Add one "airlift" card to Player "Yurui"
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Aggressive Strategy deploy "3" armies on "3" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "2" armies on "1" for Player "Yurui".
+2023/11/29 14:35:10>> Random Strategy deploy "3" armies on "7" for Player "Dev".
+2023/11/29 14:35:10>> Aggressive Strategy advance "3" armies from "3" to "2" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "1" armies on "1" for Player "Yurui".
+2023/11/29 14:35:10>> Random Strategy advance "4" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:35:10>> Player "Aarya" has signified.
+2023/11/29 14:35:10>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Dev" has signified.
+2023/11/29 14:35:10>> Cheater Strategy deploy "3" armies on "5" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy deploy "3" armies on "1" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "3" armies from "1" to "7" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "4" armies from "1" to "7" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "4" armies from "5" to "7" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "1" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Yurui" has signified.
+2023/11/29 14:35:10>> Enter Game Execute Order Phase
+2023/11/29 14:35:10>> Player "Aarya" deployed "3" armies to country "3"
+2023/11/29 14:35:10>> Player "Yurui" deployed "2" armies to country "1"
+2023/11/29 14:35:10>> Player "Dev" deployed "3" armies to country "7"
+2023/11/29 14:35:10>> Player "Yurui" deployed "1" armies to country "1"
+2023/11/29 14:35:10>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:35:10>> Player "Yurui" deployed "3" armies to country "5"
+2023/11/29 14:35:10>> Player "Yurui" deployed "1" armies to country "5"
+2023/11/29 14:35:10>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/29 14:35:10>> "3" armies are moved from country "3" to country "2", "Aarya" occupy country "2", "2" armies remain.
+2023/11/29 14:35:10>> "3" armies from country "1" can't conquer country "7", "3" remain in target.
+2023/11/29 14:35:10>> "3" armies from country "7" can't conquer country "1", "2" remain in target.
+2023/11/29 14:35:10>> "2" armies are moved from country "1" to country "7", "Yurui" occupy country "7", "2" armies remain.
+2023/11/29 14:35:10>> "4" armies are moved from country "5" to country "7"
+2023/11/29 14:35:10>> Player "Yurui" does not control country "2", thus armies cannot be moved.
+2023/11/29 14:35:10>> Add one "bomb" card to Player "Aarya"
+2023/11/29 14:35:10>> Add one "blockade" card to Player "Yurui"
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Aggressive Strategy deploy "2" armies on "2" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "3" armies on "1" for Player "Yurui".
+2023/11/29 14:35:10>> Aggressive Strategy deploy "1" armies on "2" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "1" armies on "1" for Player "Yurui".
+2023/11/29 14:35:10>> Aggressive Strategy advance "5" armies from "2" to "5" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Aarya" has signified.
+2023/11/29 14:35:10>> Cheater Strategy advance "6" armies from "7" to "3" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "3" armies from "1" to "2" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "1" armies from "1" to "2" for Player "Yurui".
+2023/11/29 14:35:10>> Cheater Strategy advance "1" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Yurui" has signified.
+2023/11/29 14:35:10>> Enter Game Execute Order Phase
+2023/11/29 14:35:10>> Player "Aarya" deployed "2" armies to country "2"
+2023/11/29 14:35:10>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/29 14:35:10>> Player "Aarya" deployed "1" armies to country "2"
+2023/11/29 14:35:10>> Player "Yurui" deployed "1" armies to country "1"
+2023/11/29 14:35:10>> Player "Yurui" deployed "1" armies to country "5"
+2023/11/29 14:35:10>> "5" armies are moved from country "2" to country "5", "Aarya" occupy country "5", "4" armies remain.
+2023/11/29 14:35:10>> Armies can't be moved from country "7" to country "3" because they are not neighbors
+2023/11/29 14:35:10>> "3" armies are moved from country "1" to country "2", "Yurui" occupy country "2", "3" armies remain.
+2023/11/29 14:35:10>> "1" armies are moved from country "1" to country "2"
+2023/11/29 14:35:10>> Player "Yurui" does not control country "5", thus armies cannot be moved.
+2023/11/29 14:35:10>> Add one "bomb" card to Player "Aarya"
+2023/11/29 14:35:10>> Add one "bomb" card to Player "Yurui"
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Aggressive Strategy deploy "2" armies on "5" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "7" armies on "7" for Player "Yurui".
+2023/11/29 14:35:10>> Aggressive Strategy deploy "1" armies on "5" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy advance "4" armies from "7" to "5" for Player "Yurui".
+2023/11/29 14:35:10>> Aggressive Strategy deploy "1" armies on "5" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy advance "9" armies from "7" to "5" for Player "Yurui".
+2023/11/29 14:35:10>> Aggressive Strategy advance "8" armies from "5" to "2" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy advance "1" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Aarya" has signified.
+2023/11/29 14:35:10>> Cheater Strategy advance "3" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Yurui" has signified.
+2023/11/29 14:35:10>> Enter Game Execute Order Phase
+2023/11/29 14:35:10>> Player "Aarya" deployed "2" armies to country "5"
+2023/11/29 14:35:10>> Player "Yurui" deployed "7" armies to country "7"
+2023/11/29 14:35:10>> Player "Aarya" deployed "1" armies to country "5"
+2023/11/29 14:35:10>> Player "Aarya" deployed "1" armies to country "5"
+2023/11/29 14:35:10>> "8" armies are moved from country "5" to country "2", "Aarya" occupy country "2", "5" armies remain.
+2023/11/29 14:35:10>> "4" armies are moved from country "7" to country "5", "Yurui" occupy country "5", "4" armies remain.
+2023/11/29 14:35:10>> "9" armies are moved from country "7" to country "5"
+2023/11/29 14:35:10>> Player "Yurui" does not control country "2", thus armies cannot be moved.
+2023/11/29 14:35:10>> Player "Yurui" does not control country "2", thus armies cannot be moved.
+2023/11/29 14:35:10>> Add one "airlift" card to Player "Aarya"
+2023/11/29 14:35:10>> Add one "bomb" card to Player "Yurui"
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Aggressive Strategy deploy "1" armies on "2" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "5" armies on "1" for Player "Yurui".
+2023/11/29 14:35:10>> Aggressive Strategy deploy "2" armies on "2" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy advance "5" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:35:10>> Aggressive Strategy advance "8" armies from "2" to "5" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy advance "8" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Aarya" has signified.
+2023/11/29 14:35:10>> Cheater Strategy advance "5" armies from "1" to "2" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Yurui" has signified.
+2023/11/29 14:35:10>> Enter Game Execute Order Phase
+2023/11/29 14:35:10>> Player "Aarya" deployed "1" armies to country "2"
+2023/11/29 14:35:10>> Player "Yurui" deployed "5" armies to country "1"
+2023/11/29 14:35:10>> Player "Aarya" deployed "2" armies to country "2"
+2023/11/29 14:35:10>> "8" armies from country "2" can't conquer country "5", "8" remain in target.
+2023/11/29 14:35:10>> "5" armies are moved from country "5" to country "2", "Yurui" occupy country "2", "5" armies remain.
+2023/11/29 14:35:10>> "3" armies are moved from country "5" to country "2"
+2023/11/29 14:35:10>> "5" armies are moved from country "1" to country "2"
+2023/11/29 14:35:10>> Add one "negotiate" card to Player "Yurui"
+2023/11/29 14:35:10>> Enter Game Issue Order Phase
+2023/11/29 14:35:10>> Aggressive Strategy deploy "1" armies on "3" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy deploy "11" armies on "2" for Player "Yurui".
+2023/11/29 14:35:10>> Aggressive Strategy deploy "2" armies on "3" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy advance "1" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:35:10>> Aggressive Strategy advance "3" armies from "3" to "2" for Player "Aarya".
+2023/11/29 14:35:10>> Cheater Strategy advance "23" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:35:10>> Player "Aarya" has signified.
+2023/11/29 14:35:10>> Player "Yurui" has signified.
+2023/11/29 14:35:10>> Enter Game Execute Order Phase
+2023/11/29 14:35:10>> Player "Aarya" deployed "1" armies to country "3"
+2023/11/29 14:35:10>> Player "Yurui" deployed "11" armies to country "2"
+2023/11/29 14:35:10>> Player "Aarya" deployed "2" armies to country "3"
+2023/11/29 14:35:10>> "3" armies from country "3" can't conquer country "2", "22" remain in target.
+2023/11/29 14:35:10>> "1" armies are moved from country "2" to country "3", "Yurui" occupy country "3", "1" armies remain.
+2023/11/29 14:35:10>> Player:Yurui is the winner!
+2023/11/29 14:35:10>> Enter Game End
+2023/11/29 14:37:55>> 
+
+2023/11/29 14:37:55>> Game Start
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>>  player "Yurui" is added.
+2023/11/29 14:37:55>> All countries are assigned to players
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Game is ended by Player "Yurui".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> 
+
+2023/11/29 14:37:55>> Game Start
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>>  player "Yurui" is added.
+2023/11/29 14:37:55>> All countries are assigned to players
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Game is ended by Player "Yurui".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> 
+
+2023/11/29 14:37:55>> Game Start
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>>  player "Yurui" is added.
+2023/11/29 14:37:55>> All countries are assigned to players
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Game is ended by Player "Yurui".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> 
+
+2023/11/29 14:37:55>> Game Start
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Game is ended by Player "Aarya".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> 
+
+2023/11/29 14:37:55>> Game Start
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Game is ended by Player "Aarya".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> 
+
+2023/11/29 14:37:55>> Game Start
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Game is ended by Player "Aarya".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>>  player "Yurui" is added.
+2023/11/29 14:37:55>> All countries are assigned to players
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Add an order of deploying "3" armies on "1" to Player "Yurui".
+2023/11/29 14:37:55>> Player "Yurui" has signified.
+2023/11/29 14:37:55>> Enter Game Execute Order Phase
+2023/11/29 14:37:55>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Game is ended by Player "Yurui".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>>  player "Yurui" is added.
+2023/11/29 14:37:55>> All countries are assigned to players
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Game is ended by Player "Yurui".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Edit map "test.map".
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>>  player "Yurui" is added.
+2023/11/29 14:37:55>> All countries are assigned to players
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Game is ended by Player "Yurui".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> 
+
+2023/11/29 14:37:55>> Game Start
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Cheater Strategy deploy "1" armies on "3" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy deploy "1" armies on "1" for Player "Yurui".
+2023/11/29 14:37:55>> Game is ended by Player "Dev".
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:37:55>> 
+
+2023/11/29 14:37:55>> Game Start
+2023/11/29 14:37:55>> Enter Edit Map Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>> Enter Game Start Up Phase
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Aggressive Strategy deploy "1" armies on "2" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy deploy "1" armies on "1" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy deploy "3" armies on "3" for Player "Dev".
+2023/11/29 14:37:55>> Aggressive Strategy deploy "2" armies on "2" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy advance "2" armies from "3" to "2" for Player "Dev".
+2023/11/29 14:37:55>> Aggressive Strategy advance "3" armies from "2" to "5" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy deploy "2" armies on "1" for Player "Yurui".
+2023/11/29 14:37:55>> Player "Dev" has signified.
+2023/11/29 14:37:55>> Player "Aarya" has signified.
+2023/11/29 14:37:55>> Cheater Strategy advance "1" armies from "1" to "2" for Player "Yurui".
+2023/11/29 14:37:55>> Cheater Strategy advance "1" armies from "1" to "7" for Player "Yurui".
+2023/11/29 14:37:55>> Cheater Strategy advance "1" armies from "1" to "7" for Player "Yurui".
+2023/11/29 14:37:55>> Cheater Strategy advance "1" armies from "5" to "7" for Player "Yurui".
+2023/11/29 14:37:55>> Player "Yurui" has signified.
+2023/11/29 14:37:55>> Enter Game Execute Order Phase
+2023/11/29 14:37:55>> Player "Aarya" deployed "1" armies to country "2"
+2023/11/29 14:37:55>> Player "Yurui" deployed "1" armies to country "1"
+2023/11/29 14:37:55>> Player "Dev" deployed "3" armies to country "3"
+2023/11/29 14:37:55>> Player "Aarya" deployed "2" armies to country "2"
+2023/11/29 14:37:55>> Player "Yurui" deployed "1" armies to country "5"
+2023/11/29 14:37:55>> Player "Yurui" deployed "2" armies to country "1"
+2023/11/29 14:37:55>> "3" armies are moved from country "2" to country "5", "Aarya" occupy country "5", "2" armies remain.
+2023/11/29 14:37:55>> "1" armies are moved from country "1" to country "2", "Yurui" occupy country "2", "1" armies remain.
+2023/11/29 14:37:55>> "2" armies are moved from country "3" to country "2", "Dev" occupy country "2", "1" armies remain.
+2023/11/29 14:37:55>> "1" armies are moved from country "1" to country "7", "Yurui" occupy country "7", "1" armies remain.
+2023/11/29 14:37:55>> "1" armies are moved from country "1" to country "7"
+2023/11/29 14:37:55>> Player "Yurui" does not control country "5", thus armies cannot be moved.
+2023/11/29 14:37:55>> Add one "airlift" card to Player "Aarya"
+2023/11/29 14:37:55>> Add one "airlift" card to Player "Yurui"
+2023/11/29 14:37:55>> Add one "bomb" card to Player "Dev"
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Aggressive Strategy deploy "1" armies on "5" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy deploy "1" armies on "7" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy deploy "1" armies on "2" for Player "Dev".
+2023/11/29 14:37:55>> Aggressive Strategy deploy "2" armies on "5" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy deploy "1" armies on "7" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy deploy "2" armies on "3" for Player "Dev".
+2023/11/29 14:37:55>> Aggressive Strategy deploy "1" armies on "5" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy deploy "1" armies on "1" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy advance "3" armies from "3" to "2" for Player "Dev".
+2023/11/29 14:37:55>> Aggressive Strategy advance "6" armies from "5" to "2" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy advance "3" armies from "7" to "5" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy advance "1" armies from "2" to "3" for Player "Dev".
+2023/11/29 14:37:55>> Player "Aarya" has signified.
+2023/11/29 14:37:55>> Cheater Strategy advance "1" armies from "7" to "5" for Player "Yurui".
+2023/11/29 14:37:55>> Player "Dev" has signified.
+2023/11/29 14:37:55>> Cheater Strategy advance "2" armies from "1" to "2" for Player "Yurui".
+2023/11/29 14:37:55>> Player "Yurui" has signified.
+2023/11/29 14:37:55>> Enter Game Execute Order Phase
+2023/11/29 14:37:55>> Player "Aarya" deployed "1" armies to country "5"
+2023/11/29 14:37:55>> Player "Yurui" deployed "1" armies to country "7"
+2023/11/29 14:37:55>> Player "Dev" deployed "1" armies to country "2"
+2023/11/29 14:37:55>> Player "Aarya" deployed "2" armies to country "5"
+2023/11/29 14:37:55>> Player "Yurui" deployed "1" armies to country "7"
+2023/11/29 14:37:55>> Player "Dev" deployed "2" armies to country "3"
+2023/11/29 14:37:55>> Player "Aarya" deployed "1" armies to country "5"
+2023/11/29 14:37:55>> Player "Yurui" deployed "1" armies to country "1"
+2023/11/29 14:37:55>> "6" armies are moved from country "5" to country "2", "Aarya" occupy country "2", "4" armies remain.
+2023/11/29 14:37:55>> "3" armies are moved from country "7" to country "5", "Yurui" occupy country "5", "3" armies remain.
+2023/11/29 14:37:55>> "3" armies from country "3" can't conquer country "2", "2" remain in target.
+2023/11/29 14:37:55>> "1" armies are moved from country "7" to country "5"
+2023/11/29 14:37:55>> Player "Dev" does not control country "2", thus armies cannot be moved.
+2023/11/29 14:37:55>> "1" armies from country "1" can't conquer country "2", "1" remain in target.
+2023/11/29 14:37:55>> Add one "negotiate" card to Player "Aarya"
+2023/11/29 14:37:55>> Add one "airlift" card to Player "Yurui"
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Aggressive Strategy deploy "2" armies on "2" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy deploy "2" armies on "1" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy deploy "2" armies on "3" for Player "Dev".
+2023/11/29 14:37:55>> Aggressive Strategy deploy "1" armies on "2" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy deploy "3" armies on "5" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy deploy "1" armies on "3" for Player "Dev".
+2023/11/29 14:37:55>> Aggressive Strategy advance "4" armies from "2" to "5" for Player "Aarya".
+2023/11/29 14:37:55>> Cheater Strategy advance "2" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy advance "2" armies from "3" to "2" for Player "Dev".
+2023/11/29 14:37:55>> Player "Aarya" has signified.
+2023/11/29 14:37:55>> Cheater Strategy advance "5" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:37:55>> Player "Dev" has signified.
+2023/11/29 14:37:55>> Cheater Strategy advance "2" armies from "1" to "2" for Player "Yurui".
+2023/11/29 14:37:55>> Player "Yurui" has signified.
+2023/11/29 14:37:55>> Enter Game Execute Order Phase
+2023/11/29 14:37:55>> Player "Aarya" deployed "2" armies to country "2"
+2023/11/29 14:37:55>> Player "Yurui" deployed "2" armies to country "1"
+2023/11/29 14:37:55>> Player "Dev" deployed "2" armies to country "3"
+2023/11/29 14:37:55>> Player "Aarya" deployed "1" armies to country "2"
+2023/11/29 14:37:55>> Player "Yurui" deployed "3" armies to country "5"
+2023/11/29 14:37:55>> Player "Dev" deployed "1" armies to country "3"
+2023/11/29 14:37:55>> "4" armies from country "2" can't conquer country "5", "4" remain in target.
+2023/11/29 14:37:55>> "2" armies are moved from country "5" to country "2", "Yurui" occupy country "2", "2" armies remain.
+2023/11/29 14:37:55>> "2" armies from country "3" defeat the exact number in country "2", can't conquer it and "0" armies remain.
+2023/11/29 14:37:55>> "2" armies are moved from country "5" to country "2"
+2023/11/29 14:37:55>> "2" armies are moved from country "1" to country "2"
+2023/11/29 14:37:55>> Add one "airlift" card to Player "Yurui"
+2023/11/29 14:37:55>> Enter Game Issue Order Phase
+2023/11/29 14:37:55>> Cheater Strategy deploy "11" armies on "2" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy deploy "2" armies on "3" for Player "Dev".
+2023/11/29 14:37:55>> Cheater Strategy advance "2" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy deploy "1" armies on "3" for Player "Dev".
+2023/11/29 14:37:55>> Cheater Strategy advance "13" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:37:55>> Random Strategy advance "1" armies from "3" to "2" for Player "Dev".
+2023/11/29 14:37:55>> Player "Yurui" has signified.
+2023/11/29 14:37:55>> Player "Dev" has signified.
+2023/11/29 14:37:55>> Enter Game Execute Order Phase
+2023/11/29 14:37:55>> Player "Yurui" deployed "11" armies to country "2"
+2023/11/29 14:37:55>> Player "Dev" deployed "2" armies to country "3"
+2023/11/29 14:37:55>> Player "Dev" deployed "1" armies to country "3"
+2023/11/29 14:37:55>> "2" armies from country "2" can't conquer country "3", "2" remain in target.
+2023/11/29 14:37:55>> "1" armies from country "3" can't conquer country "2", "12" remain in target.
+2023/11/29 14:37:55>> "12" armies are moved from country "2" to country "3", "Yurui" occupy country "3", "11" armies remain.
+2023/11/29 14:37:55>> Player:Yurui is the winner!
+2023/11/29 14:37:55>> Enter Game End
+2023/11/29 14:38:32>> 
+
+2023/11/29 14:38:32>> Game Start
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>>  player "Yurui" is added.
+2023/11/29 14:38:32>> All countries are assigned to players
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Game is ended by Player "Yurui".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> 
+
+2023/11/29 14:38:32>> Game Start
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>>  player "Yurui" is added.
+2023/11/29 14:38:32>> All countries are assigned to players
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Game is ended by Player "Yurui".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> 
+
+2023/11/29 14:38:32>> Game Start
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>>  player "Yurui" is added.
+2023/11/29 14:38:32>> All countries are assigned to players
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Game is ended by Player "Yurui".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> 
+
+2023/11/29 14:38:32>> Game Start
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Game is ended by Player "Aarya".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> 
+
+2023/11/29 14:38:32>> Game Start
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Game is ended by Player "Aarya".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> 
+
+2023/11/29 14:38:32>> Game Start
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Game is ended by Player "Aarya".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>>  player "Yurui" is added.
+2023/11/29 14:38:32>> All countries are assigned to players
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Add an order of deploying "3" armies on "1" to Player "Yurui".
+2023/11/29 14:38:32>> Player "Yurui" has signified.
+2023/11/29 14:38:32>> Enter Game Execute Order Phase
+2023/11/29 14:38:32>> Player "Yurui" deployed "3" armies to country "1"
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Game is ended by Player "Yurui".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>>  player "Yurui" is added.
+2023/11/29 14:38:32>> All countries are assigned to players
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Game is ended by Player "Yurui".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Edit map "test.map".
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>>  player "Yurui" is added.
+2023/11/29 14:38:32>> All countries are assigned to players
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Game is ended by Player "Yurui".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> 
+
+2023/11/29 14:38:32>> Game Start
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Cheater Strategy deploy "1" armies on "2" for Player "Aarya".
+2023/11/29 14:38:32>> Cheater Strategy deploy "1" armies on "1" for Player "Yurui".
+2023/11/29 14:38:32>> Game is ended by Player "Dev".
+2023/11/29 14:38:32>> Enter Game End
+2023/11/29 14:38:32>> 
+
+2023/11/29 14:38:32>> Game Start
+2023/11/29 14:38:32>> Enter Edit Map Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>> Enter Game Start Up Phase
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Aggressive Strategy deploy "3" armies on "1" for Player "Aarya".
+2023/11/29 14:38:32>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "3" armies on "5" for Player "Dev".
+2023/11/29 14:38:32>> Aggressive Strategy advance "3" armies from "1" to "2" for Player "Aarya".
+2023/11/29 14:38:32>> Cheater Strategy deploy "1" armies on "7" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "1" armies on "5" for Player "Dev".
+2023/11/29 14:38:32>> Player "Aarya" has signified.
+2023/11/29 14:38:32>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy advance "3" armies from "5" to "7" for Player "Dev".
+2023/11/29 14:38:32>> Cheater Strategy advance "1" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:38:32>> Player "Dev" has signified.
+2023/11/29 14:38:32>> Cheater Strategy advance "1" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:38:32>> Cheater Strategy advance "1" armies from "7" to "5" for Player "Yurui".
+2023/11/29 14:38:32>> Player "Yurui" has signified.
+2023/11/29 14:38:32>> Enter Game Execute Order Phase
+2023/11/29 14:38:32>> Player "Aarya" deployed "3" armies to country "1"
+2023/11/29 14:38:32>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:32>> Player "Dev" deployed "3" armies to country "5"
+2023/11/29 14:38:32>> Player "Yurui" deployed "1" armies to country "7"
+2023/11/29 14:38:32>> Player "Dev" deployed "1" armies to country "5"
+2023/11/29 14:38:32>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:32>> "3" armies from country "1" defeat the exact number in country "2", can't conquer it and "1" armies remain.
+2023/11/29 14:38:32>> "0" armies from country "2" can't conquer country "1", "1" remain in target.
+2023/11/29 14:38:32>> "3" armies are moved from country "5" to country "7", "Dev" occupy country "7", "2" armies remain.
+2023/11/29 14:38:32>> "0" armies from country "2" defeat the exact number in country "3", can't conquer it and "0" armies remain.
+2023/11/29 14:38:32>> Player "Yurui" does not control country "7", thus armies cannot be moved.
+2023/11/29 14:38:32>> Add one "airlift" card to Player "Dev"
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Aggressive Strategy deploy "1" armies on "1" for Player "Aarya".
+2023/11/29 14:38:32>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:32>> Aggressive Strategy deploy "2" armies on "1" for Player "Aarya".
+2023/11/29 14:38:32>> Cheater Strategy deploy "2" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "3" armies on "7" for Player "Dev".
+2023/11/29 14:38:32>> Aggressive Strategy advance "4" armies from "1" to "2" for Player "Aarya".
+2023/11/29 14:38:32>> Cheater Strategy advance "1" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy advance "6" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:38:32>> Player "Aarya" has signified.
+2023/11/29 14:38:32>> Cheater Strategy advance "2" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:38:32>> Player "Dev" has signified.
+2023/11/29 14:38:32>> Player "Yurui" has signified.
+2023/11/29 14:38:32>> Enter Game Execute Order Phase
+2023/11/29 14:38:32>> Player "Aarya" deployed "1" armies to country "1"
+2023/11/29 14:38:32>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:32>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:32>> Player "Aarya" deployed "2" armies to country "1"
+2023/11/29 14:38:32>> Player "Yurui" deployed "2" armies to country "2"
+2023/11/29 14:38:32>> Player "Dev" deployed "3" armies to country "7"
+2023/11/29 14:38:32>> "4" armies from country "1" defeat the exact number in country "2", can't conquer it and "1" armies remain.
+2023/11/29 14:38:32>> "0" armies from country "2" defeat the exact number in country "3", can't conquer it and "0" armies remain.
+2023/11/29 14:38:32>> "6" armies are moved from country "7" to country "1", "Dev" occupy country "1", "5" armies remain.
+2023/11/29 14:38:32>> "0" armies from country "2" can't conquer country "1", "5" remain in target.
+2023/11/29 14:38:32>> Add one "bomb" card to Player "Dev"
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Aggressive Strategy deploy "2" armies on "3" for Player "Aarya".
+2023/11/29 14:38:32>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "5" armies on "1" for Player "Dev".
+2023/11/29 14:38:32>> Aggressive Strategy deploy "1" armies on "3" for Player "Aarya".
+2023/11/29 14:38:32>> Cheater Strategy deploy "2" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Player "Dev" has signified.
+2023/11/29 14:38:32>> Aggressive Strategy advance "3" armies from "3" to "2" for Player "Aarya".
+2023/11/29 14:38:32>> Cheater Strategy advance "1" armies from "2" to "3" for Player "Yurui".
+2023/11/29 14:38:32>> Player "Aarya" has signified.
+2023/11/29 14:38:32>> Cheater Strategy advance "2" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:32>> Player "Yurui" has signified.
+2023/11/29 14:38:32>> Enter Game Execute Order Phase
+2023/11/29 14:38:32>> Player "Aarya" deployed "2" armies to country "3"
+2023/11/29 14:38:32>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:32>> Player "Dev" deployed "5" armies to country "1"
+2023/11/29 14:38:32>> Player "Aarya" deployed "1" armies to country "3"
+2023/11/29 14:38:32>> Player "Yurui" deployed "2" armies to country "2"
+2023/11/29 14:38:32>> "3" armies from country "3" can't conquer country "2", "1" remain in target.
+2023/11/29 14:38:32>> "1" armies are moved from country "2" to country "3", "Yurui" occupy country "3", "1" armies remain.
+2023/11/29 14:38:32>> "0" armies from country "2" can't conquer country "5", "1" remain in target.
+2023/11/29 14:38:32>> Add one "blockade" card to Player "Yurui"
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Cheater Strategy deploy "2" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "2" armies on "5" for Player "Dev".
+2023/11/29 14:38:32>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:32>> Cheater Strategy advance "2" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "1" armies on "1" for Player "Dev".
+2023/11/29 14:38:32>> Cheater Strategy advance "1" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:32>> Cheater Strategy advance "1" armies from "3" to "5" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy advance "1" armies from "7" to "5" for Player "Dev".
+2023/11/29 14:38:32>> Player "Yurui" has signified.
+2023/11/29 14:38:32>> Random Strategy advance "2" armies from "5" to "7" for Player "Dev".
+2023/11/29 14:38:32>> Player "Dev" has signified.
+2023/11/29 14:38:32>> Enter Game Execute Order Phase
+2023/11/29 14:38:32>> Player "Yurui" deployed "2" armies to country "2"
+2023/11/29 14:38:32>> Player "Dev" deployed "2" armies to country "5"
+2023/11/29 14:38:32>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:32>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:32>> Player "Dev" deployed "1" armies to country "1"
+2023/11/29 14:38:32>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:32>> "2" armies from country "2" can't conquer country "5", "1" remain in target.
+2023/11/29 14:38:32>> "1" armies are moved from country "7" to country "5"
+2023/11/29 14:38:32>> "1" armies from country "2" can't conquer country "5", "1" remain in target.
+2023/11/29 14:38:32>> "1" armies are moved from country "5" to country "7"
+2023/11/29 14:38:32>> Armies can't be moved from country "3" to country "5" because they are not neighbors
+2023/11/29 14:38:32>> Enter Game Issue Order Phase
+2023/11/29 14:38:32>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "3" armies on "1" for Player "Dev".
+2023/11/29 14:38:32>> Cheater Strategy deploy "2" armies on "2" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy deploy "2" armies on "7" for Player "Dev".
+2023/11/29 14:38:32>> Cheater Strategy advance "1" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:32>> Random Strategy advance "1" armies from "1" to "7" for Player "Dev".
+2023/11/29 14:38:32>> Cheater Strategy advance "2" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:32>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "1"
+2023/11/29 14:38:33>> Player "Yurui" deployed "2" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "7"
+2023/11/29 14:38:33>> "1" armies are moved from country "2" to country "5", "Yurui" occupy country "5", "1" armies remain.
+2023/11/29 14:38:33>> "1" armies are moved from country "1" to country "7"
+2023/11/29 14:38:33>> "2" armies are moved from country "2" to country "5"
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "5" because they are not neighbors
+2023/11/29 14:38:33>> Add one "airlift" card to Player "Yurui"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "3" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "8" armies from "7" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "4" armies from "1" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "5" armies from "5" to "7" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "5" to "7" for Player "Yurui".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "7" for Player "Yurui".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "2" to "7" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "5"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "7"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "5"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> "5" armies from country "5" can't conquer country "7", "5" remain in target.
+2023/11/29 14:38:33>> "5" armies are moved from country "7" to country "5", "Dev" occupy country "5", "3" armies remain.
+2023/11/29 14:38:33>> Player "Yurui" does not control country "5", thus armies cannot be moved.
+2023/11/29 14:38:33>> "4" armies are moved from country "1" to country "7"
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "7" because they are not neighbors
+2023/11/29 14:38:33>> Armies can't be moved from country "2" to country "7" because they are not neighbors
+2023/11/29 14:38:33>> Add one "blockade" card to Player "Dev"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "4" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "5" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "1" armies from "7" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "4" armies from "5" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "1"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "5"
+2023/11/29 14:38:33>> "4" armies from country "2" can't conquer country "5", "1" remain in target.
+2023/11/29 14:38:33>> "1" armies are moved from country "7" to country "5"
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "5" because they are not neighbors
+2023/11/29 14:38:33>> "2" armies are moved from country "5" to country "7"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "5" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "2" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "3" armies from "1" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "5"
+2023/11/29 14:38:33>> Player "Yurui" deployed "2" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> "1" armies from country "2" can't conquer country "5", "1" remain in target.
+2023/11/29 14:38:33>> "3" armies from country "1" defeat the exact number in country "2", can't conquer it and "1" armies remain.
+2023/11/29 14:38:33>> "0" armies from country "2" can't conquer country "5", "1" remain in target.
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "5" because they are not neighbors
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "2" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "5" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "7" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "2" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "5" armies to country "7"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> "2" armies are moved from country "2" to country "5", "Yurui" occupy country "5", "1" armies remain.
+2023/11/29 14:38:33>> "7" armies are moved from country "7" to country "1"
+2023/11/29 14:38:33>> "1" armies are moved from country "2" to country "5"
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "5" because they are not neighbors
+2023/11/29 14:38:33>> Add one "negotiate" card to Player "Yurui"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "5" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "7" armies from "5" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "2" armies from "7" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy advance "3" armies from "1" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "5" armies to country "5"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> Armies can't be moved from country "5" to country "5" because they are not neighbors
+2023/11/29 14:38:33>> "2" armies from country "7" can't conquer country "5", "5" remain in target.
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "5" because they are not neighbors
+2023/11/29 14:38:33>> "3" armies are moved from country "1" to country "2", "Dev" occupy country "2", "3" armies remain.
+2023/11/29 14:38:33>> Add one "airlift" card to Player "Dev"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "4" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "4" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "2" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "4" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "10" armies from "1" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy advance "1" armies from "2" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "5"
+2023/11/29 14:38:33>> Player "Dev" deployed "4" armies to country "1"
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> "4" armies from country "5" can't conquer country "2", "1" remain in target.
+2023/11/29 14:38:33>> "10" armies are moved from country "1" to country "7"
+2023/11/29 14:38:33>> "4" armies are moved from country "3" to country "2", "Yurui" occupy country "2", "3" armies remain.
+2023/11/29 14:38:33>> Player "Dev" does not control country "2", thus armies cannot be moved.
+2023/11/29 14:38:33>> "2" armies are moved from country "5" to country "2"
+2023/11/29 14:38:33>> Add one "airlift" card to Player "Yurui"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "3" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "7" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Cheater Strategy advance "6" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Cheater Strategy advance "3" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "5" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "1"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "5"
+2023/11/29 14:38:33>> "6" armies from country "2" can't conquer country "1", "5" remain in target.
+2023/11/29 14:38:33>> "7" armies are moved from country "7" to country "1"
+2023/11/29 14:38:33>> "3" armies from country "2" can't conquer country "1", "10" remain in target.
+2023/11/29 14:38:33>> Armies can't be moved from country "5" to country "1" because they are not neighbors
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "5" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "6" armies from "5" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy advance "7" armies from "1" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "7" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "5" armies to country "5"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "7"
+2023/11/29 14:38:33>> Armies can't be moved from country "5" to country "1" because they are not neighbors
+2023/11/29 14:38:33>> "7" armies are moved from country "1" to country "7"
+2023/11/29 14:38:33>> "7" armies are moved from country "7" to country "1"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "5" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "3" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "11" armies from "5" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "10" armies from "7" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy advance "2" armies from "1" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "5" armies to country "5"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "7"
+2023/11/29 14:38:33>> Armies can't be moved from country "5" to country "1" because they are not neighbors
+2023/11/29 14:38:33>> "10" armies from country "7" can't conquer country "5", "5" remain in target.
+2023/11/29 14:38:33>> "2" armies are moved from country "1" to country "2", "Dev" occupy country "2", "2" armies remain.
+2023/11/29 14:38:33>> Add one "bomb" card to Player "Dev"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "2" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "3" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "3" armies on "2" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "4" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "6" armies from "2" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "2"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "2"
+2023/11/29 14:38:33>> "3" armies from country "5" can't conquer country "2", "5" remain in target.
+2023/11/29 14:38:33>> "5" armies are moved from country "2" to country "5", "Dev" occupy country "5", "3" armies remain.
+2023/11/29 14:38:33>> "4" armies are moved from country "3" to country "2", "Yurui" occupy country "2", "4" armies remain.
+2023/11/29 14:38:33>> Player "Yurui" does not control country "5", thus armies cannot be moved.
+2023/11/29 14:38:33>> Add one "blockade" card to Player "Dev"
+2023/11/29 14:38:33>> Add one "bomb" card to Player "Yurui"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "3" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "4" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "2" armies from "5" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "2" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "4" armies from "1" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "5" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "7"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> "4" armies from country "2" defeat the exact number in country "5", can't conquer it and "1" armies remain.
+2023/11/29 14:38:33>> "0" armies are moved from country "5" to country "7"
+2023/11/29 14:38:33>> "2" armies are moved from country "2" to country "5", "Yurui" occupy country "5", "2" armies remain.
+2023/11/29 14:38:33>> "4" armies are moved from country "1" to country "2", "Dev" occupy country "2", "3" armies remain.
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "5" because they are not neighbors
+2023/11/29 14:38:33>> Add one "negotiate" card to Player "Yurui"
+2023/11/29 14:38:33>> Add one "bomb" card to Player "Dev"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "2" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "5" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "5" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "1" armies from "2" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "4" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "1" armies from "1" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "5" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "2" armies to country "5"
+2023/11/29 14:38:33>> Player "Dev" deployed "5" armies to country "7"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "5"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "1"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "5"
+2023/11/29 14:38:33>> "4" armies from country "5" defeat the exact number in country "2", can't conquer it and "1" armies remain.
+2023/11/29 14:38:33>> "0" armies are moved from country "2" to country "1"
+2023/11/29 14:38:33>> "2" armies are moved from country "5" to country "2", "Yurui" occupy country "2", "2" armies remain.
+2023/11/29 14:38:33>> "1" armies from country "1" can't conquer country "2", "1" remain in target.
+2023/11/29 14:38:33>> "1" armies are moved from country "3" to country "2"
+2023/11/29 14:38:33>> Add one "airlift" card to Player "Yurui"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "3" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "2" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "3" armies from "1" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "5" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "10" armies from "7" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "5" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "1"
+2023/11/29 14:38:33>> Player "Yurui" deployed "2" armies to country "2"
+2023/11/29 14:38:33>> "5" armies from country "2" can't conquer country "1", "5" remain in target.
+2023/11/29 14:38:33>> "3" armies are moved from country "1" to country "7"
+2023/11/29 14:38:33>> "2" armies from country "2" defeat the exact number in country "1", can't conquer it and "0" armies remain.
+2023/11/29 14:38:33>> "10" armies are moved from country "7" to country "5", "Dev" occupy country "5", "9" armies remain.
+2023/11/29 14:38:33>> Player "Yurui" does not control country "5", thus armies cannot be moved.
+2023/11/29 14:38:33>> Add one "bomb" card to Player "Dev"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "3" armies on "5" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "2" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "5" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "3" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "9" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "5"
+2023/11/29 14:38:33>> Player "Yurui" deployed "2" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "5"
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "1" because they are not neighbors
+2023/11/29 14:38:33>> "9" armies are moved from country "7" to country "1"
+2023/11/29 14:38:33>> "1" armies from country "2" can't conquer country "1", "8" remain in target.
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "5" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "3" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "1" armies from "1" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "3" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "1" armies from "7" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy advance "6" armies from "5" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "5" armies to country "1"
+2023/11/29 14:38:33>> "3" armies from country "2" can't conquer country "1", "11" remain in target.
+2023/11/29 14:38:33>> "1" armies are moved from country "1" to country "7"
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "1" because they are not neighbors
+2023/11/29 14:38:33>> "1" armies are moved from country "7" to country "5"
+2023/11/29 14:38:33>> "6" armies are moved from country "5" to country "7"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "3" armies from "2" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "3" to "1" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy advance "4" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "4" armies from "5" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "1"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "1"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "1"
+2023/11/29 14:38:33>> "3" armies from country "2" can't conquer country "1", "13" remain in target.
+2023/11/29 14:38:33>> "4" armies are moved from country "7" to country "1"
+2023/11/29 14:38:33>> Armies can't be moved from country "3" to country "1" because they are not neighbors
+2023/11/29 14:38:33>> "4" armies are moved from country "5" to country "2", "Dev" occupy country "2", "4" armies remain.
+2023/11/29 14:38:33>> Add one "airlift" card to Player "Dev"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "2" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "6" armies on "2" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "4" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "4" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "2" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy advance "6" armies from "2" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy advance "9" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "1" armies from "5" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "2" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "6" armies to country "2"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "4" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> "4" armies from country "3" can't conquer country "2", "8" remain in target.
+2023/11/29 14:38:33>> "6" armies are moved from country "2" to country "5"
+2023/11/29 14:38:33>> "1" armies from country "3" can't conquer country "2", "1" remain in target.
+2023/11/29 14:38:33>> "9" armies are moved from country "7" to country "1"
+2023/11/29 14:38:33>> "1" armies are moved from country "5" to country "7"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "2" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "5" armies on "5" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy deploy "1" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "2" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "1" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "1" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "5" armies from "5" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "4" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "1" armies from "2" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "17" armies from "1" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "2" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "5" armies to country "5"
+2023/11/29 14:38:33>> Player "Yurui" deployed "1" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "1"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "1"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "7"
+2023/11/29 14:38:33>> "2" armies are moved from country "3" to country "2", "Yurui" occupy country "2", "1" armies remain.
+2023/11/29 14:38:33>> "5" armies are moved from country "5" to country "2", "Dev" occupy country "2", "4" armies remain.
+2023/11/29 14:38:33>> "1" armies from country "3" can't conquer country "2", "3" remain in target.
+2023/11/29 14:38:33>> "4" armies are moved from country "7" to country "1"
+2023/11/29 14:38:33>> "1" armies are moved from country "2" to country "5"
+2023/11/29 14:38:33>> "17" armies are moved from country "1" to country "2"
+2023/11/29 14:38:33>> Add one "negotiate" card to Player "Yurui"
+2023/11/29 14:38:33>> Add one "blockade" card to Player "Dev"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "10" armies on "2" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "3" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "5" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy advance "10" armies from "2" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "7" armies from "1" to "7" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "2" armies from "7" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "10" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "5"
+2023/11/29 14:38:33>> "3" armies from country "3" can't conquer country "2", "27" remain in target.
+2023/11/29 14:38:33>> "10" armies are moved from country "2" to country "1"
+2023/11/29 14:38:33>> "7" armies are moved from country "1" to country "7"
+2023/11/29 14:38:33>> "2" armies are moved from country "7" to country "5"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "3" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "5" armies on "2" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy deploy "1" armies on "2" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy deploy "3" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "9" armies from "2" to "5" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "2" armies from "1" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "5" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "1" armies to country "2"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "7"
+2023/11/29 14:38:33>> "3" armies from country "3" can't conquer country "2", "21" remain in target.
+2023/11/29 14:38:33>> "9" armies are moved from country "2" to country "5"
+2023/11/29 14:38:33>> "2" armies are moved from country "1" to country "2"
+2023/11/29 14:38:33>> Enter Game Issue Order Phase
+2023/11/29 14:38:33>> Cheater Strategy deploy "3" armies on "3" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "3" armies on "5" for Player "Dev".
+2023/11/29 14:38:33>> Cheater Strategy advance "3" armies from "3" to "2" for Player "Yurui".
+2023/11/29 14:38:33>> Random Strategy deploy "4" armies on "7" for Player "Dev".
+2023/11/29 14:38:33>> Player "Yurui" has signified.
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "5" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy deploy "2" armies on "2" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "10" armies from "1" to "2" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "14" armies from "7" to "1" for Player "Dev".
+2023/11/29 14:38:33>> Random Strategy advance "1" armies from "2" to "3" for Player "Dev".
+2023/11/29 14:38:33>> Player "Dev" has signified.
+2023/11/29 14:38:33>> Enter Game Execute Order Phase
+2023/11/29 14:38:33>> Player "Yurui" deployed "3" armies to country "3"
+2023/11/29 14:38:33>> Player "Dev" deployed "3" armies to country "5"
+2023/11/29 14:38:33>> Player "Dev" deployed "4" armies to country "7"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "5"
+2023/11/29 14:38:33>> Player "Dev" deployed "2" armies to country "2"
+2023/11/29 14:38:33>> "3" armies from country "3" can't conquer country "2", "14" remain in target.
+2023/11/29 14:38:33>> "10" armies are moved from country "1" to country "2"
+2023/11/29 14:38:33>> "14" armies are moved from country "7" to country "1"
+2023/11/29 14:38:33>> "1" armies are moved from country "2" to country "3", "Dev" occupy country "3", "1" armies remain.
+2023/11/29 14:38:33>> Player:Dev is the winner!
+2023/11/29 14:38:33>> Enter Game End
