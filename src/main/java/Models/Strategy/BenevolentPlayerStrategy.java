@@ -79,7 +79,7 @@ public class BenevolentPlayerStrategy extends PlayerStrategy {
 	 * @return The target country to reinforce.
 	 */
 	protected Country toMoveFrom(Country p_sourceCountry) {
-		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies).reversed());
+		Collections.sort(d_countryList, Comparator.comparingInt(Country::getArmies));
 
 		// Judge whether country is controled by himself
 		for (Country l_countryInGame : d_countryList) {
